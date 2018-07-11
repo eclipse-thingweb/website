@@ -1,17 +1,22 @@
-<!-- 
-Hugo Quick Start
+# thingweb Website (using Hugo static site generator)
+
+
+## Hugo Quick Start
 https://gohugo.io/getting-started/quick-start/
--->
 
 
-<!-- Add Some Content  -->
-hugo new posts/my-first-post.md
+### Add Some Content
+`hugo new posts/my-first-post.md`
 
 
-<!-- start the Hugo server with drafts enabled  -->
-hugo server -D
+### start the Hugo server with drafts enabled
 
-<!-- build Hugo website  in /public  -->
-hugo 
-<!-- build Hugo website with drafts enabled in /public  -->
-hugo -D
+`hugo server -D`
+
+### build Hugo website  in `/public`
+
+`hugo` 
+
+### build Hugo website with drafts enabled in `/public` 
+
+`hugo -D`
