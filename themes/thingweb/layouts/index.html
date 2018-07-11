@@ -13,29 +13,10 @@
                 	<div class="wel-content text-center">
                     	<h3>What We Do</h3>
                         <img src="img/others/what-line.png" class="img-fluid"/>
-						
-						
-	<!-- {{ $mainMenu := .Site.Menus.main | default (slice "post") }} -->
-	{{ $mainMenu_count := len .Site.Menus.main }}
-	<br />
-	{{ printf "%#v" $.Site.Menus.main }}
-	<br />
-	{{ $mainMenu_count }}
-	<br />
-	<!-- https://gohugo.io/content-management/menus/ -->
-	{{ range .Site.Menus.main }}
-		{{ .URL }} XX {{ .Name }}
-	{{ end }}
-	<br />
-	{{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
-	{{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
-	{{ $mainSections_count := len $section }}
-	<!-- {{/* $.mainMenu_count */}} -->
-	{{ if ge $mainMenu_count 1 }}
-		GREATER-EQ
-	{{ end }}
 
 	{{ .Content }}
+	
+	<p>!! TODO decide which content goes on frontpage !! </p>
 						
 						<!--<p>Fusce ultricies orci ac feugiat suscipit leo massa sodales velit et scelerisque mi tortor at ipsum cligula augue bibendum accumsan vestibulum ut commodo a mi Morbi ornare gravida elit Integer cons velit et scelerisque mi tortor at ipsum cligula augue bibendum accumsan vestibulum ut commodo a mi Morbi ornare gravida elit Integer</p> -->
                         <a href="#" class="btn btn-read">Read More</a>

@@ -1,9 +1,13 @@
-baseURL = "http://thingweb.io/"
+baseURL = "http://thingweb.io"
 languageCode = "en-us"
 title = "thingweb"
 
 theme = "thingweb"
 # theme = "ananke"
+
+# both following flags needed so that the content in /public uses correct locations
+uglyURLs = "true"
+relativeURLs = "true"
 
 #MetaDataFormat = "yaml"
 #DefaultContentLanguage = "en"
