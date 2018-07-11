@@ -14,14 +14,17 @@
                                     <i class="fa fa-bars"></i>
                                   </button>
                                   <div class="collapse navbar-collapse" id="navbarNav">
-                                    <ul class="navbar-nav">                                                                              
-                                      <li class="nav-item active">
+                                    <ul class="navbar-nav">
+									  {{ $currentPage := . }}
+									  {{/* printf "%#v" $currentPage.URL */}}
+                                      <li class="nav-item {{ if eq $currentPage.URL "/" }}active{{ end }}"><!-- active -->
                                         <a class="nav-link" href="/">HOME</a>
                                       </li>
+									  
 									  	<!-- https://gohugo.io/content-management/menus/ -->
 										<!-- HOW to higlight the one that is currently loaded? Based on URI ? -->
 										{{ range .Site.Menus.main }}
-											<li class="nav-item">
+											<li class="nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
 												<a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
 											</li>
 										{{ end }}
