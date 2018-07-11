@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+{{/* define "main" */}}
+<!-- https://gohugo.io/variables/site/ -->
+	{{ partial "head.html" . }}
+
+    <body>
+		{{ partial "header.html" . }}
+        
+        <div class="holder">
+        	<div class="wel-holder">
+            	<div class="container">
+                	<div class="wel-content text-center">
+                    	<h3>What We Do</h3>
+                        <img src="img/others/what-line.png" class="img-fluid"/>
+						
+						
+	<!-- {{ $mainMenu := .Site.Menus.main | default (slice "post") }} -->
+	{{ $mainMenu_count := len .Site.Menus.main }}
+	<br />
+	{{ printf "%#v" $.Site.Menus.main }}
+	<br />
+	{{ $mainMenu_count }}
+	<br />
+	<!-- https://gohugo.io/content-management/menus/ -->
+	{{ range .Site.Menus.main }}
+		{{ .URL }} XX {{ .Name }}
+	{{ end }}
+	<br />
+	{{ $mainSections := .Site.Params.mainSections | default (slice "post") }}
+	{{ $section := where .Site.RegularPages "Section" "in" $mainSections }}
+	{{ $mainSections_count := len $section }}
+	<!-- {{/* $.mainMenu_count */}} -->
+	{{ if ge $mainMenu_count 1 }}
+		GREATER-EQ
+	{{ end }}
+
+	{{ .Content }}
+						
+						<!--<p>Fusce ultricies orci ac feugiat suscipit leo massa sodales velit et scelerisque mi tortor at ipsum cligula augue bibendum accumsan vestibulum ut commodo a mi Morbi ornare gravida elit Integer cons velit et scelerisque mi tortor at ipsum cligula augue bibendum accumsan vestibulum ut commodo a mi Morbi ornare gravida elit Integer</p> -->
+                        <a href="#" class="btn btn-read">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="why-holder">
+                <div class="why-bottom-all">
+                	<div class="why-sh">
+                    	<img src="/img/others/twhy-1.png" class="img-fluid" width="100%"/>
+                    </div>
+                    <div class="container">
+                    	<div class="why-in">
+                        	<div class="row">
+                            	<div class="col-sm-6">
+                                	<div class="why-text">
+                                    	<h3>Why We Are</h3>
+                                        <p>Fusce ultricies orci ac feugiat suscipit leo massa sodales velit et scelerisque mi tortor at ipsum cligula augue bibendum accumsan vestibulum ut commodo a mi </p>
+                                        <p>Morbi ornare gravida elit Integer congue augue et malesuada iaculis ipsum dui aliquet felis at cursus magna nisl nec </p>
+                                        <a href="#" class="btn btn-read">READ MORE</a>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                	<div class="why-img text-center">
+                                    	<img src="/img/others/why-computer.png" class="img-fluid"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-sh sp">
+                    	<img src="/img/others/twhy-2.png" class="img-fluid" width="100%"/>
+                    </div>
+                </div>
+            </div>
+            <div class="webtechnology-holder">
+            	<div class="web-sh sp1">
+                    <img src="/img/others/web-1.png" class="img-fluid" width="100%"/>
+                </div>
+                <div class="web-in-all">
+                	<div class="container-fluid sp">
+                    	<div class="row sp">
+                            <div class="col-sm-6 sp">
+                                <div class="web-image">
+                                	<img src="/img/others/web-image.jpg" class="img-fluid"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 sp">
+                                <div class="web-text">
+                                	<h3>web technology</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea modo consequat. </p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim Sed ut perspiciatis unde ..</p>
+                                    <a href="#" class="btn btn-read">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="web-sh sp2">
+                    <img src="/img/others/web-2.png" class="img-fluid" width="100%"/>
+                </div>
+            </div>
+			
+			<!-- ICONS -->
+			{{ partial "icons.html" . }}
+
+			
+			<!-- PROJECTS -->
+			{{ partial "projects.html" . }}
+
+			
+			<!-- TESTIMONIALS -->
+			{{ partial "testimonals.html" . }}
+			
+        </div>
+        
+        {{ partial "footer.html" . }}
+		
+		
+    </body>
+{{/* end */}}
+</html>
+
+
+
+
+	
+

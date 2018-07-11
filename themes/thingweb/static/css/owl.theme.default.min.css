@@ -1,0 +1,13 @@
+.owl-theme .owl-controls{margin-top:0px;text-align:center;-webkit-tap-highlight-color:transparent}
+
+.owl-theme .owl-controls .owl-nav [class*=owl-]{color:#fff;font-size:14px;margin:2px 3px;padding:4px 7px;background:#fff;display:inline-block;cursor:pointer;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px; border:1px solid #d50401;}
+
+.owl-theme .owl-controls .owl-nav [class*=owl-]:hover{background:#fff;color:#fff;text-decoration:none; border:1px solid #d50401;}
+
+.owl-theme .owl-controls .owl-nav .disabled{opacity:1;cursor:default}
+
+.owl-theme .owl-dots .owl-dot{display:inline-block;zoom:1;*display:inline}
+
+.holder .owl-theme .owl-dots .owl-dot span{width:19px;height:19px;margin:2px 4px;background:transparent;display:block;-webkit-backface-visibility:visible; background:url(../img/icons/t-normal.png) no-repeat;  }
+
+.holder .owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{background:url(../img/icons/t-active.png) no-repeat;  width:19px;height:19px; }
