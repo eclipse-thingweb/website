@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://thingweb.io/contact.html</loc>
+    <lastmod>2018-07-12T09:35:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/posts/my-first-post.html</loc>
+    <lastmod>2018-07-11T13:33:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/posts/my-second-post.html</loc>
+    <lastmod>2018-07-11T13:33:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/news/news-01.html</loc>
+    <lastmod>2018-07-11T13:33:25+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/categories.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/news.html</loc>
+    <lastmod>2018-07-11T13:33:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/posts.html</loc>
+    <lastmod>2018-07-11T13:33:25+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/tags.html</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thingweb.io/</loc>
+    <lastmod>2018-07-12T09:35:33+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

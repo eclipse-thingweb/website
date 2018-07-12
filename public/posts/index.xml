@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on thingweb</title>
+    <link>http://thingweb.io/posts.html</link>
+    <description>Recent content in Posts on thingweb</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jul 2018 13:33:25 +0200</lastBuildDate>
+    
+	<atom:link href="http://thingweb.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://thingweb.io/posts/my-first-post.html</link>
+      <pubDate>Wed, 11 Jul 2018 13:33:25 +0200</pubDate>
+      
+      <guid>http://thingweb.io/posts/my-first-post.html</guid>
+      <description>Content for My First Post</description>
+    </item>
+    
+    <item>
+      <title>My Second Post</title>
+      <link>http://thingweb.io/posts/my-second-post.html</link>
+      <pubDate>Wed, 11 Jul 2018 13:33:25 +0200</pubDate>
+      
+      <guid>http://thingweb.io/posts/my-second-post.html</guid>
+      <description>Content for My Second Post</description>
+    </item>
+    
+  </channel>
+</rss>
