@@ -4,6 +4,10 @@ addons:
     packages:
       - python-pygments
 
+# grant the needed permission
+before_install:
+  - chmod +x binaries/hugo
+	  
 # Clean and don't fail
 install:
   - rm -rf public || exit 0
