@@ -250,7 +250,6 @@ let read1 = await thing.properties.count.read();
 console.info("count value is", read1);
 ```
 
-
 ```javascript
 // increment property #1
 await thing.actions.increment.invoke();
