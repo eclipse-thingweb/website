@@ -1,10 +1,15 @@
 #Web of Things – first hands-on 
+
 This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices. As a growing area, IoT services and application have a huge potential. From home automation to smart-grid passing by industrial manufacturers, IoT is gaining popularity as a potential solution to address their need. Several technologies can be used to build an IoT application mainly because of the specific constraints of the devices. This creates interoperability challenges for communication between devices. WoT offers an approach to expose and consume IoT resources as web resources.
+
 ##Introduction
+
 WoT is an initiative by the W3C to apply on the IoT device the same principles as for the existing web resources across the Internet. The main idea behind WoT is exposing virtual or physical devices as a resource with a description of its capabilities. That resource can then be accessed from a browser or another device in the same manner as web page. WoT is not a proposition for a new communication protocol between devices, it uses existing protocols to communicate with the devices according to their communication capabilities. It presents a set of architectural and programming patterns for building interoperable devices base on the following three fundamentals:
+
 + Uniform Resource Identifier (URI) for identifying devices and their descriptions
 + A wide variety of existing protocols for accessing the devices
 + A description of the description as metadata used both for interoperability and presentability proposes
+
 ##WoT Architecture
 
 The central component of the WoT architecture is “WoT Servient” which is functional virtual device. A Servient extends the IoT physical devices by providing standard access and controls capabilities to the devices.
@@ -18,8 +23,11 @@ A Servient provides a protocol agnostic runtime for the application using the re
 A Servient instance can run on multiple platforms at different layer of the IoT network. It can be deployed inside the IoT device itself in condition to have a minimum processing power. It may also be deployed in side a smart hub or edge node to adapt legacy devices to the architecture. this adaptation role can also be provided by a Servient deployed on the cloud. last but not least, Servient Instances can be accessed as web resources by Smart phone and web browsers.
 
 ## Setup the raspberry pi zero w
+
 We assume that the raspberry pi used is a freshly installed one with Debian. First, it needs to be configured for a network connection. Second, the environment needs to be configured mainly by installing NodeJS and few other dependencies. Finally, things-web needs to be installed on the system.
+
 ### Network configuration
+
 Insert the SD card on your card reader and create the two following files as illustrated in the image below:
 
 ![Network configuration](../images/network_config_rpi.gif "Network configuration")
@@ -82,6 +90,7 @@ wot@node.wot:~$ npm version
  
 
 ###Cloning the repository 
+
 The reference implementation of the Web of Things is published in github as node.wot project at [github](https://github.com/eclipse/thingweb.node-wot) . The project is part of eclipse foundation.
 Use the command below to clone the repository on your local system:
 
@@ -94,9 +103,11 @@ wot@node.wot:~$ git clone https://github.com/eclipse/thingweb.node-wot
  
 
 ###Installation 
+
 The installation process is composed from mainly two steps. The first step is installs the nodeJS dependences. The second step installs and build the node.wot project.
 
 ####Installing the packages
+
 Node.wot requires dependencies such as Typescript, lerna, … . by running the command below, those dependencies are installed:
 
 ```console
@@ -107,6 +118,7 @@ wot@node.wot:~$ npm install
  
 
 ####Building the libraries 
+
 As the node.wot project is mainly developed Typescript, “tsc” needs to be executed to trans-compile that code to JavaScript. The command bellows builds the projects and its packages:
 
 
@@ -118,6 +130,7 @@ wot@node.wot:~$ npm run build
  
 
 ####Running the example Servient 
+
 Run the command below to expose a “server” servient
 
 ```console
@@ -129,6 +142,7 @@ You can access to the thing description generated at http://localhost:8080/count
 ![Example](../images/example-5.gif "Example")
 
 ##Things Description
+
 The Things Description (TD) is one major element of the web of things approach. It is a json or jsonld object that describes a thing. As illustrated below, it describes aspects such as name, description, list of accessible properties and list of available actions.
  
 ![TD](../images/td-6.gif "TD")
@@ -141,16 +155,19 @@ The property section describes interesting information about the exposed propert
 
 
 ###Actions
+
 The actions describe the exposed actions exposed by the thing. They enable a client to remotely invoke the function associated to this action. Like for the properties, the actions expose a “href” URI that can be used to invoke those actions as illustrated below:
  
 ![Actions](../images/action-8.gif "Actions")
 
 ###Standard description
+
 The full list of the elements that can be used in a TD is available on the W3C draft document available at https://www.w3.org/TR/wot-thing-description/ .
 
 Once you create a Servient using the reference implementation, a TD respecting the standard is automatically generated for your exposed thing. The next section describes how to create a Servient and access to its TD.
 
 ##A Servient 
+
 Web of Things programming model is based on the notion on “Servient”. A Servient is a program developed using the WoT scripting API and can behave at the same time as a server and a client.
 For example, a Servient can be a client for a field device (light bulb) and server for the mobile application that is used to control that device.
 
@@ -213,6 +230,7 @@ Within an action, you can retrieve properties using the “read()” function an
 The full counter example is available on the repository under “examples\scripts\counter.js”
 
 ###Client Mode
+
 Node.wot allows you also to consume existing things exposed using the WoT. Assume that we have our counter example running on a machine, we can create a “client” to communicate with that counter.
 
 First step is to create the thing that we are willing to consume. For that, we use the exposed thing descriptor to create that “client” thing as illustrated below:
@@ -247,6 +265,7 @@ Modifying those properties of invoking the actions results on modifications on t
 The full client example is available on the repository at examples\scripts\counter-client.js
 
 ##Conclusion
+
 WoT presents interesting approach to build IoT application. It adoption by the industry will be a significant step towards fighting the risk of fragmentation that may limit the development of IoT applications. The scripting API provides a way 
 ##References
 
