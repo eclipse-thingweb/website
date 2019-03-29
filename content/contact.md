@@ -5,6 +5,6 @@ draft: false
 menu: "main"
 ---
 
-Single page content for "Contact"
+# How to contact us
 
-Update: 2018-08-02 13:35
+Github: [https://github.com/eclipse/thingweb.node-wot/](https://github.com/eclipse/thingweb.node-wot/)
