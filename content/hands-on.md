@@ -4,7 +4,7 @@ draft: false
 menu: "main"
 ---
 
-# Web of Things – hands-on 
+# Web of Things
 
 This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices. As a growing area, IoT services and application have a huge potential. From home automation to smart-grid passing by industrial manufacturers, IoT is gaining popularity as a potential solution to address their need. Several technologies can be used to build an IoT application mainly because of the specific constraints of the devices. This creates interoperability challenges for communication between devices. WoT offers an approach to expose and consume IoT resources as web resources.
 
@@ -20,11 +20,11 @@ WoT is an initiative by the W3C to apply on the IoT device the same principles a
 
 The central component of the WoT architecture is “WoT Servient” which is functional virtual device. A Servient extends the IoT physical devices by providing standard access and controls capabilities to the devices.
 
-![WoT Servient architecture](../images/WoT_Servient_architecture.gif "WoT Servient architecture")
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/WoT_Servient_architecture.gif" alt="WoT Servient architecture"/>
 
 A Servient provides a protocol agnostic runtime for the application using the resource model. Servient application uses this resource model which enable interoperability with other Serviants and users that are using multiple bindings. Servient may acts on the same time as a client and a server according to the applications' behavior. The resources associated to a Servient instance are described on a Things description. It uses JSON-LD to make this description readable by both humans and machine. Such a description enhances the machine to machine communication and makes the things ready for the Semantic Web.
 
-![Deployment scenarios](../images/Deployment_scenarios.gif "Deployment scenarios")
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/Deployment_scenarios.gif" alt="Deployment scenarios"/>
 
 A Servient instance can run on multiple platforms at different layer of the IoT network. It can be deployed inside the IoT device itself in condition to have a minimum processing power. It may also be deployed in side a smart hub or edge node to adapt legacy devices to the architecture. this adaptation role can also be provided by a Servient deployed on the cloud. last but not least, Servient Instances can be accessed as web resources by Smart phone and web browsers.
 
@@ -36,7 +36,7 @@ We assume that the raspberry pi used is a freshly installed one with Debian. Fir
 
 Insert the SD card on your card reader and create the two following files as illustrated in the image below:
 
-![Network configuration](../images/network_config_rpi.gif "Network configuration")
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/network_config_rpi.gif" alt="Network configuration"/>
 
 
 wpa_supplicant.conf: is the file that is used to configure your WiFi on command line. This file must contain the following configuration where **######** is your WiFi password
@@ -92,7 +92,7 @@ wot@node.wot:~$ npm version
 
 
 
-![Installation](../images/install-1.gif "Installation ")
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/install-1.gif" alt="Installation"/>
  
 
 ### Cloning the repository 
@@ -103,8 +103,8 @@ Use the command below to clone the repository on your local system:
 ```console
 wot@node.wot:~$ git clone https://github.com/eclipse/thingweb.node-wot
 ```
-![Cloning](../images/clone-2.gif "Cloning repo")
 
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/clone-2.gif" alt="Cloning repo"/>
 
  
 
@@ -119,8 +119,8 @@ Node.wot requires dependencies such as Typescript, lerna, … . by running the c
 ```console
 wot@node.wot:~$ npm install
 ```
-![Installation](../images/install-3.gif "Installation")
 
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/install-3.gif" alt="Installation"/>
  
 
 #### Building the libraries 
@@ -131,8 +131,8 @@ As the node.wot project is mainly developed Typescript, “tsc” needs to be ex
 ```console
 wot@node.wot:~$ npm run build
 ```
-![Build](../images/build-4.gif "Build")
 
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/build-4.gif" alt="Build"/>
  
 
 #### Running the example Servient 
@@ -144,27 +144,26 @@ wot@node.wot:~$ node packages\cli\dist\cli.js examples\scripts\counter.js
 ```
 
 You can access to the thing description generated at http://localhost:8080/counter 
- 
-![Example](../images/example-5.gif "Example")
+
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/example-5.gif" alt="Example"/>
 
 ## Things Description
 
 The Things Description (TD) is one major element of the web of things approach. It is a json or jsonld object that describes a thing. As illustrated below, it describes aspects such as name, description, list of accessible properties and list of available actions.
- 
-![TD](../images/td-6.gif "TD")
+
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/td-6.gif" alt="TD"/>
 
 ### Properties
 
 The property section describes interesting information about the exposed property as illustrated below. It offers also the “href” that defines the URI that the client can use to access to this property as a resource. 
 
-![Properties](../images/prop-7.gif "Properties")
-
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/prop-7.gif" alt="Properties"/>
 
 ### Actions
 
 The actions describe the exposed actions exposed by the thing. They enable a client to remotely invoke the function associated to this action. Like for the properties, the actions expose a “href” URI that can be used to invoke those actions as illustrated below:
- 
-![Actions](../images/action-8.gif "Actions")
+
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/action-8.gif" alt="Actions"/>
 
 ### Standard description
 
@@ -211,7 +210,7 @@ This code will create the property, so it can be exposed and accessed both using
 
 Once your run the servient, the exposed property will be accessible at http://localhost:8080/counter/properties/count  as illustrated below:
 
-![Result](../images/rest-9.gif "Result")
+<img style="width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/rest-9.gif" alt="Result"/>
 
 
 Now that we have our property exposed, we can start adding our actions. An action as added to Serviant as described below:
