@@ -276,7 +276,6 @@ WoT presents interesting approach to build IoT application. It adoption by the i
 
 1. https://w3c.github.io/wot/architecture/wot-architecture.html#general-description-of-wot-servient
 2. https://github.com/w3c/wot
-3. https://webofthings.org/
 
 
 
