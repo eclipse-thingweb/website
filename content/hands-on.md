@@ -1,4 +1,10 @@
-# Web of Things – first hands-on 
+---
+title: "Hands-on"
+draft: false
+menu: "main"
+---
+
+# Web of Things – hands-on 
 
 This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices. As a growing area, IoT services and application have a huge potential. From home automation to smart-grid passing by industrial manufacturers, IoT is gaining popularity as a potential solution to address their need. Several technologies can be used to build an IoT application mainly because of the specific constraints of the devices. This creates interoperability challenges for communication between devices. WoT offers an approach to expose and consume IoT resources as web resources.
 
