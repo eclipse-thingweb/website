@@ -24,7 +24,7 @@
 									  	<!-- https://gohugo.io/content-management/menus/ -->
 										<!-- HOW to higlight the one that is currently loaded? Based on URI ? -->
 										{{ range .Site.Menus.main }}
-											<li class="nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+											<li class="nav-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}">
 												<a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
 											</li>
 										{{ end }}
