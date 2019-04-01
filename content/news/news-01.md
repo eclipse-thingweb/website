@@ -1,7 +1,11 @@
 ---
-title: "News"
-date: 2018-07-11T13:33:25+02:00
+title: "Second W3C Workshop on the Web of Things (3-5 June 2019)"
 draft: false
 ---
 
-Content News01 page
+# Second W3C Workshop on the Web of Things
+## The Open Web to Challenge IoT Fragmentation
+### 3-5 June 2019, Munich, Germany
+
+For more information, please consult the following website:
+https://www.w3.org/WoT/ws-2019/cfp.html
