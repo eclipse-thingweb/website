@@ -8,8 +8,8 @@
 		{{ $currentPage := . }}
 		{{/* printf "%#v" $currentPage.URL */}}
 		
-		<div class="why-holder">
-			<div class="why-bottom-all">
+		<div class="holder"><!-- why-holder -->
+			<div class="wel-holder"><!-- why-bottom-all -->
 				<!--
 				<div class="why-sh">
 					<img src="/img/others/twhy-1.png" class="img-fluid" width="100%"/>
@@ -18,16 +18,17 @@
 				<div class="container">
 					<div ><!-- class="why-in" -->
 						<div class="row">
-							<div class="col-sm-6">
+							<div class="col-sm-12">
 								<div class="why-text">
-									<h3>{{ .Title }}</h3>
+									<h1>{{ .Title }}</h1>
 									
 									<ul>
 									<!-- Ranges through content/post/*.md -->
 									{{ range .Data.Pages }}
 										<li>
 											<!-- .Permalink  includes thingweb.io -->
-											<a href="{{.URL}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+											<!-- {{.Date.Format "2006-01-02"}} |  -->
+											<a href="{{.URL}}">{{.Title}}</a>
 										</li>
 									{{ end }}
 									</ul>
