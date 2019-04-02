@@ -1,5 +1,6 @@
 ---
 title: "Second W3C Workshop on the Web of Things (3-5 June 2019)"
+date: 2019-02-04T09:35:33+02:00
 draft: false
 ---
 
