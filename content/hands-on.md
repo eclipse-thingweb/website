@@ -274,7 +274,7 @@ The full client example is available on the repository at examples\scripts\count
 WoT presents interesting approach to build IoT application. It adoption by the industry will be a significant step towards fighting the risk of fragmentation that may limit the development of IoT applications. The scripting API provides a way 
 ##References
 
-1. https://w3c.github.io/wot/architecture/wot-architecture.html#general-description-of-wot-servient
+1. https://www.w3.org/TR/wot-architecture/
 2. https://github.com/w3c/wot
 
 
