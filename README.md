@@ -1,5 +1,7 @@
 # thingweb Website
 
+Rendered version: http://www.thingweb.io/
+
 ## Domain with Github pages
 
 https://help.github.com/articles/using-a-custom-domain-with-github-pages/
