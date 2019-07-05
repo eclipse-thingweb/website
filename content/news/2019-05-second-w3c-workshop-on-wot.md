@@ -10,3 +10,5 @@ draft: false
 
 For more information, please consult the following website:
 https://www.w3.org/WoT/ws-2019/cfp.html
+
+Video on Youtube from [Open Day](https://www.youtube.com/watch?v=5k4JufTE9MQ)
