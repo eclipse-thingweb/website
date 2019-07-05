@@ -1,15 +1,8 @@
 # thingweb Website
 
-## Domain with Github pages
+Rendered version: http://www.thingweb.io/
 
-https://help.github.com/articles/using-a-custom-domain-with-github-pages/
-
-### TODO's
-
-- figure out how to setup DNS/redirect to github `/public` folder.
-
-
-## Hugo static site generator
+## Use Hugo static site generator
 https://gohugo.io/getting-started/quick-start/
 
 
