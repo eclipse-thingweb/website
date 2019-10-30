@@ -183,30 +183,30 @@ To expose a new thing (Server mode), you need first to create the thing my passi
 
 ```javascript
 let thing = WoT.produce({
-      name: "counter",
+      title: "counter",
       description: "counter example Thing",
-      "@context": ["http://www.w3.org/ns/td", {"iot": "http://example.org/iot"}],
+      "@context": ["https://www.w3.org/2019/wot/td/v1", {"iot": "http://example.org/iot"}],
+      properties: {
+        count: {
+          type: "integer",
+          description: "current counter value",
+          "iot:Custom": "example annotation",
+          observable: true,
+          readOnly: true
+        }
+      },
+      actions: {
+        increment: {
+          description: "Incrementing counter value (with optional step parameter as uriVariable)"
+        }
+      }
    });
 
 ```
 
-This code initiates the creation of a thing named “counter” and adds metadata such as context to that thing.
+This code initiates the creation of a thing named “counter” with its interactions and adds metadata such as context to that thing.
 
-Assume that our objective is to create a thing that implements few actions on a counter such as incrementation and decrementation.  For that we need to define the counter properties that we will manipulate on our example as bellow:
-```javascript
-thing.addProperty(
-   NAME_PROPERTY_COUNT,
-   {
-      type: "integer",
-      description: "current counter value",
-      "iot:Custom": "example annotation",
-      observable: true,
-      writable: true
-   },
-   0);
-```
-
-This code will create the property, so it can be exposed and accessed both using the scripting API and using a binding (by default, the HTTP, and COAP bindings are used to expose things on node.wot).
+This will create the property, so it can be exposed and accessed both using the scripting API and using a binding (by default, the HTTP, and COAP bindings are used to expose things on node.wot).
 
 Once your run the servient, the exposed property will be accessible at http://localhost:8080/counter/properties/count  as illustrated below:
 
@@ -217,20 +217,19 @@ Now that we have our property exposed, we can start adding our actions. An actio
 
 
 ```javascript
-thing.addAction(
-   NAME_ACTION_INCREMENT,
-   {},
-   () => {
-      console.log("Incrementing");
-      return thing.properties[NAME_PROPERTY_COUNT].read().then( (count) => {
-         let value = count + 1;
-         thing.properties[NAME_PROPERTY_COUNT].write(value);
+thing.setActionHandler(
+   "increment",
+   (params, options) => {
+      return thing.readProperty("count").then( (count) => {
+        let value = count + 1;
+        console.log("Incrementing count from " + count + " to " + value);
+        thing.writeProperty("count", value);
       });
    });
 ```
 
 
-Within an action, you can retrieve properties using the “read()” function and write the value to the thing once your value manipulated using the “write()” function.
+Within an action, you can retrieve properties using the “readProperty()” function and write the value to the thing once your value manipulated using the “writeProperty()” function.
 
 The full counter example is available on the repository under “examples\scripts\counter.js”
 
@@ -241,9 +240,9 @@ Node.wot allows you also to consume existing things exposed using the WoT. Assum
 First step is to create the thing that we are willing to consume. For that, we use the exposed thing descriptor to create that “client” thing as illustrated below:
 
 ```javascript
-WoT.fetch("http://localhost:8080/counter").then( async (td) => {
+WoTHelpers.fetch("http://localhost:8080/counter").then( async (td) => {
 
-let thing = WoT.consume(td);
+    let thing = await WoT.consume(td);
 
 }).catch( (err) => { console.error("Fetch error:", err); });
 
@@ -253,15 +252,15 @@ The created thing enables access to all the properties and actions exposed by th
 
 ```javascript
 // read property #1
-let read1 = await thing.properties.count.read();
+let read1 = await thing.readProperty("count");
 console.info("count value is", read1);
 ```
 
 
 ```javascript
 // increment property #1
-await thing.actions.increment.invoke();
-let inc1 = await thing.properties.count.read();
+await thing.invokeAction("increment");
+let inc1 = await thing.readProperty("count");
 console.info("count value after increment #1 is", inc1);
 ```
 
