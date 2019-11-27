@@ -13,6 +13,7 @@ For example, this way one can install only the CoAP binding if the device will o
 
 The source files can be found [at the examples folder of node-wot](https://github.com/eclipse/thingweb.node-wot/tree/master/examples/templates/exposed-thing). You should modify this code to match your needs.
 
+
 ## Code Structure
 
 The structure can be seen in two parts:
@@ -129,6 +130,18 @@ If you don't need to understand everything in the code, just make sure you do th
     + Adapt `add_actions()` of line 122:
         - set an Action Handler for each action you have, like in lines 131-139. You can use ajv for input validation.
     + Remove `add_events()` of line 135-137. This is to remind that events are not added like the other interaction affordances.
+
+### Installation and Running
+
+- Get the latest node.js: 
+```bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+You will need to change 10.x to a newer version if needed
+- To install dependencies: `npm install`
+- To build (transcompiling Typescript to javascript): `npm run build`
+- To run the code: `npm run start` 
 
 ## Change from Version 0.6.X to 0.7.X for Exposed Things
 
