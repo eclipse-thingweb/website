@@ -84,7 +84,8 @@ Upon start, a WoT object will be created and passed to the `base.ts` (or `base.j
 
 ### base.ts
 
-This is where the logic of the ExposedThing is implemented and its TD can be seen. 
+This is where the logic of the ExposedThing is implemented and its TD can be seen.
+
 - WoT object: The WoT object allows the use of methods such as `produce()` which are used with a servient. As it can be seen, in `base.ts` there is no link to a servient that is created in the `index.js` file and used to pass a WoT object. Similar to the CLI, this file relies on the WoT object which is defined using the `wot-typescript-definitions` in line 1.
 - request and TD registration: [request](https://www.npmjs.com/package/request) is a very simple library for HTTP requests. In this script, we use it to send an HTTP POST request to a TD directory with its TD as the payload. When the ExposedThing is exposed, in line 81 the registrer method is called with its TD. Lines 84-98 implement the registration methods to the given TD Directory address. We wait 10 seconds before trying again, which recursively calls itself, meaning that every 10 seconds it will try to register its TD. If the `TD_DIRECTORY` is not defined in `index.js` this method will not be executed.
 - JSON Schema Validation: We use [ajv](https://www.npmjs.com/package/ajv) for JSON Schema validation, which is to this date the fastest and the most up-to-date JSON Schema validation library in npm. You can use it in the handlers of action invokes or property writes in order to validate the data sent by the Consumer. In order to use ajv, we include it in line 5 and instantiate in line 6. How it can be used is seen in line 133 where an invalid data is responded with "Invalid input" error.
@@ -110,6 +111,7 @@ This is where the logic of the ExposedThing is implemented and its TD can be see
 ## What to change and get running
 
 If you don't need to understand everything in the code, just make sure you do the following at least before installing, building and running:
+
 - `package.json`:
     + Change `package.json` to include the bindings you want, e.g. add ` "@node-wot/binding-coap": "0.7.0-SNAPSHOT.3",` to dependencies.
     + Change npm related information such as `name`, `version` etc.
@@ -146,6 +148,7 @@ You will need to change 10.x to a newer version if needed
 ## Change from Version 0.6.X to 0.7.X for Exposed Things
 
 Resulting from the discussions in the Scripting API, the API has changed on 28.10.2019. This was a rather big change that also resulted changes in node-wot. Below is a list of changes:
+
 - You need to pass a full TD (but without forms) as argument to the `produce()` method. Before only non interaction information were passed.
 - You cannot do `myExposedThing.td` and have to pass through `myExposedThing.getThingDescription()`
 - `WoTFactory` is replaced by `WoT` in `wot-typescript-definitions`. You thus see `WoT.produce()` instead of `thingFactory.produce()`
