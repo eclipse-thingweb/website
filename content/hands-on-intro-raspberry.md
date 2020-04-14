@@ -311,7 +311,12 @@ console.info("count value after increment #1 is", inc1);
 
 
 Modifying those properties by invoking the actions result on modifications on the "server" Thing.
-The full client example is available in the repository at `examples/scripts/counter-client.js`.
+The full client example is available in the repository at `examples/scripts/counter-client.js`, which can be run using the same `cli.js` but with the `--clientonly` flag:
+
+```console
+wot@node-wot:~$ node packages/cli/dist/cli.js examples/scripts/counter.js --clientonly
+```
+
 
 ## Conclusion
 
