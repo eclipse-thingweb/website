@@ -10,3 +10,4 @@ This section aims to provide hands-on information about the Web of Things (WoT) 
 
 * [Introduction and Raspberry Pi Setup](hands-on-intro-raspberry.html)
 * [Exposed Thing with node-wot as Dependency](hands-on-exposed-thing-guide.html)
+* [Smart coffee machine and node-wot API usage](smart-coffee-machine.html)
