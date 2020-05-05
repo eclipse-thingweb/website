@@ -35,7 +35,7 @@ Here, we will explain what every (or most!) of the lines do. If you just want to
 - devDependencies (lines 12-17): These are the dependencies that will be used during development time. 
 Most importantly, `wot-typescript-definitions` is needed in order for TypeScript to understand what is `WoT`, `ExposedThing` etc. 
 
-```js
+{{< highlight js >}}
 {
     ...
     "devDependencies": {
@@ -46,14 +46,14 @@ Most importantly, `wot-typescript-definitions` is needed in order for TypeScript
     }
     ...
 }
-```
+{{< / highlight >}}
 
 - dependencies (lines 18-23): These are dependencies that will be used in development and runtime. 
 Here you will put the bindings that are required. `@node-wot/core` is always needed so that functions like `produce()`, `start()` are available. 
 We also use the [request](https://www.npmjs.com/package/request) library for registration of the TD to a directory via HTTP and the [ajv](https://www.npmjs.com/package/ajv) for validation of inputs with the DataSchema of the TD.
 Below is an example with the HTTP binding but you can change it to [CoAP](https://www.npmjs.com/package/@node-wot/binding-coap) or [MQTT](https://www.npmjs.com/package/@node-wot/binding-mqtt) or anything else that node-wot supports.
 
-```js
+{{< highlight js >}}
 {  
   ...
   "dependencies": {
@@ -64,7 +64,7 @@ Below is an example with the HTTP binding but you can change it to [CoAP](https:
   }
   ...
 }
-```
+{{< / highlight >}}
 
 - scripts (lines 25-30): These are the scripts that are used to build, run and clean the repository.
 Other than the `clean` script, they are cross-platform, i.e. can run on Linux, macOS or Windows.
@@ -97,7 +97,7 @@ This is where the logic of the ExposedThing is implemented and its TD can be see
 - `myPropertyHandler()` (line 92): This is read handler that can be called from any setPropertyReadHandler. The logic of reading, like reading a GPIO pin, should happen here. The value of the property will be then returned in `resolve(myPropertyValue)`. Use of promises allows easier programming of asynchronous operations happening inside a property handler.
 - `myActionHandler()` (line 99): This is action invoke handler that can be called from any setActionHandler. The logic of the action handling, like rotating a robot arm, should happen here. The result of the action will be then returned in `resolve(myActionOutputData)`. Note that there should be no outputData returned if the action has no `output` member. Use of promises allows easier programming of asynchronous operations happening inside an action handler.
 - `listen_to_myEvent()` (line 106): This method shows how to listen to events asynchronously and emit them. The library you use can already provide eventing in which case you can emit it like shown in the `base.ts`. However, you can also do polling internally and emit an event when something is detected. Below is an example which polls every second if a variable is `isTrue` and emits an event if it is:
-```js
+{{< highlight js >}}
     private listen_to_myEvent() {
       let eventPolling = setInterval(function() {
         if (isTrue) {
@@ -105,8 +105,7 @@ This is where the logic of the ExposedThing is implemented and its TD can be see
         }
       }, 1000);
     }
-
-```
+{{< / highlight >}}
 
 ## What to change and get running
 

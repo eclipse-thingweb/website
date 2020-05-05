@@ -51,7 +51,7 @@ Note that, this TD can be set only partially.
 The full TD will then be produced by the `produce` method, assuming [default data](https://www.w3.org/TR/wot-thing-description/#sec-default-values) for non-specified TD terms and creating default protocol bindings (HTTP and CoAP).
 This produced TD can then be used by other Things or clients to interact with the Thing.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
 WoT.produce({
     title: 'Smart Coffee Machine',
     description: `A smart coffee machine with a range of capabilities.`,
@@ -93,7 +93,7 @@ WoT.produce({
         }
     }
 })
-```
+{{< / highlight >}}
 
 The full script is available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/coffee-machine.ts).
 Note that, all affordances (i.e. property, action and event) should be added withing the `produce` method.
@@ -102,7 +102,7 @@ After exposing the Thing, we need to initialize the properties and all required 
 This is done by chaining `.then` method after `WoT.produce()`.
 Property initialization looks as follows.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
 .then( (thing) => {
     thing.writeProperty('allAvailableResources', {
         water: readFromSensor('water'),
@@ -113,12 +113,12 @@ Property initialization looks as follows.
     thing.writeProperty('possibleDrinks', ['espresso', 'americano', 'cappuccino', 'latte', 'hotChocolate', 'hotWater']);
     thing.writeProperty('maintenanceNeeded', false);
     thing.writeProperty('schedules', []);
-```
+{{< / highlight >}}
 
 In case a property needs a special handler when writing its value, we first need to override its `propertyWriteHandler`.
 See an example below.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     // Override a write handler for servedCounter property,
     // raising maintenanceNeeded flag when the value exceeds 1000 drinks
     thing.setPropertyWriteHandler('servedCounter', (val) => {
@@ -129,17 +129,17 @@ See an example below.
             }
         });
     });
-```
+{{< / highlight >}}
 
 And then we are ready to initialize its value.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     thing.writeProperty('servedCounter', readFromSensor('servedCounter'));
-```
+{{< / highlight >}}
 
 We also want to override write and read handlers for `availableResourceLevel` property, since we need to utilize `uriVariables`.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     thing.setPropertyWriteHandler('availableResourceLevel', (val, options) => {
 
         // Check if uriVariables are provided
@@ -176,24 +176,24 @@ We also want to override write and read handlers for `availableResourceLevel` pr
             resolve('Please specify id variable as uriVariables.');
         });
     });
-```
+{{< / highlight >}}
 
 As it has already been mentioned, `maintenanceNeeded` property is observable, meaning we can get notified when its value changes.
 For that, we need to provide a callback for the `observeProperty` method.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     thing.observeProperty('maintenanceNeeded', (data) => {
         
         // Notify a "maintainer" when the value has changed
         // (the notify function here simply logs a message to the console)
         notify('admin@coffeeMachine.com', `maintenanceNeeded property has changed, new value is: ${data}`);
     });
-```
+{{< / highlight >}}
 
 Done with the Property Affordances!
 Now we need to set up action handlers, which proceed when another Thing or client invokes the action.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
  // Set up a handler for makeDrink action
     thing.setActionHandler('makeDrink', (params, options) => {
 
@@ -256,7 +256,7 @@ Now we need to set up action handlers, which proceed when another Thing or clien
             });
         });
     });
-```
+{{< / highlight >}}
 
 Notice, how in case of insufficient resources the `outOfResource` event is emitted.
 Note also that `uriVariables` is being passed into options variable as a second argument of the handler.
@@ -264,7 +264,7 @@ The first argument `params` contains a request body (i.e. payload of a request).
 
 Another handler is for `setSchedule` action.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     // Set up a handler for setSchedule action
     thing.setActionHandler('setSchedule', (params, options) => {
 
@@ -291,7 +291,7 @@ Another handler is for `setSchedule` action.
             resolve({result: false, message: `Please provide all the required parameters: time and mode.`});
         });
     });
-```
+{{< / highlight >}}
 
 As mentioned above, here we use the payload of a request, therefore we utilize the `params` variable.
 
@@ -300,7 +300,7 @@ Now our final affordances, that is Event Affordances.
 We can specify a handler for an event, which then gets executed whenever the event is emitted.
 In node-wot this process is called "subscribing" for an event.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     // Set up a handler for outOfResource event
     thing.subscribeEvent('outOfResource', (data) => {
 
@@ -308,15 +308,15 @@ In node-wot this process is called "subscribing" for an event.
         // (the notify function here simply logs a message to the console)
         notify('admin@coffeeMachine.com', `outOfResource event: ${data}`);
     });
-```
+{{< / highlight >}}
 
 Finally, expose the Thing!
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
     // Expose the Thing and log a message to the console
     thing.expose().then( () => { console.info(`${thing.getThingDescription().title} ready`); } ); 
     console.log(`Produced ${thing.getThingDescription().title}`);
-```
+{{< / highlight >}}
 
 ## Consume the Thing
 
@@ -325,27 +325,27 @@ The produced Thing Description is available at http://127.0.0.1:8080/Smart%20Cof
 By default, in HTTP binding the GET method is used for reading properties, PUT for writing and POST for invoking actions.
 So, for example the value of `allAvailableResources` property can be read as:
 
-```HTTP
+{{< highlight http "linenos=table" >}}
 GET /Smart%20Coffee%20Machine/properties/allAvailableResources HTTP/1.1
 Host: 127.0.0.1:8080
-```
+{{< / highlight >}}
 
 The value of `availableResourceLevel` property can be set as:
 
-```HTTP
+{{< highlight http "linenos=table" >}}
 PUT /Smart%20Coffee%20Machine/properties/availableResourceLevel?id=water HTTP/1.1
 Host: 127.0.0.1:8080
 Content-Type: application/json
-```
+{{< / highlight >}}
 
 And `makeDrink` and `setSchedule` actions can be invoked as:
 
-```HTTP
+{{< highlight http "linenos=table" >}}
 POST /Smart%20Coffee%20Machine/actions/makeDrink?drinkId=hotChocolate&size=s&quantity=5 HTTP/1.1
 Host: 127.0.0.1:8080
-```
+{{< / highlight >}}
 
-```HTTP
+{{< highlight http "linenos=table" >}}
 POST /Smart%20Coffee%20Machine/actions/setSchedule HTTP/1.1
 Host: 127.0.0.1:8080
 Content-Type: application/json
@@ -357,14 +357,14 @@ Content-Type: application/json
 	"time": "10:15",
 	"mode": "everyday"
 }
-```
+{{< / highlight >}}
 
 As we already mentioned, note that one uses query string and the other one uses a payload.
 
 We can also create a consumer Thing (i.e. a client) for our smart coffee machine using the node-wot API.
 In order to create a consumer Thing, we need to invoke `fetch` method of the WoTHelpers object giving it an exposed Thing Description as the only parameter, and then invoke `consume` method of the WoT object as follows.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
 // We could also use CoAP here
 WoTHelpers.fetch("http://127.0.0.1:8080/Smart%20Coffee%20Machine").then(async (td) => {
 
@@ -377,7 +377,7 @@ WoTHelpers.fetch("http://127.0.0.1:8080/Smart%20Coffee%20Machine").then(async (t
     }
 
 });
-```
+{{< / highlight >}}
 
 The full "client" script is available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/coffee-machine-client.ts).
 Notice that, we are awaiting asynchronous functions to complete before proceeding, which is quite logical here.
@@ -386,45 +386,45 @@ We could also chain the asynchronous `consume` method with other methods using `
 But let's stick with `async/await` for our example.
 A property can be read using `thing.readProperty` method.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         // Read property allAvailableResources
         let allAvailableResources = await thing.readProperty('allAvailableResources');
         log('allAvailableResources value is:', allAvailableResources);
 });
-```
+{{< / highlight >}}
 
 A property can be written using `thing.writeProperty` method.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         // Now let's change water level to 80
         await thing.writeProperty('availableResourceLevel', 80, {'uriVariables': {'id': 'water'}});
 });
-```
+{{< / highlight >}}
 
 Notice on usage of `uriVariables` here.
 In the same manner they can be used when reading properties which utilize `uriVariables`.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         // And see that the water level has changed
         let waterLevel = await thing.readProperty('availableResourceLevel', {'uriVariables': {'id': 'water'}});
         log('waterLevel value after change is:', waterLevel);
 });
-```
+{{< / highlight >}}
 
 It's also possible to set a client-side handler for observable properties.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         thing.observeProperty('maintenanceNeeded', (data) => {
             log('maintenanceNeeded property has changed! New value is:', data);
         });
 });
-```
+{{< / highlight >}}
 
 Notice that, here we don't need to await for a function to complete, since observing a property is a persistent action.
 
 We can invoke an action using `thing.invokeAction` method.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         // Now let's make 3 cups of latte!
         let makeCoffee = await thing.invokeAction('makeDrink', undefined, {'uriVariables': {'drinkId': 'latte', 'size': 'l', 'quantity': 3}});
         if (makeCoffee['result']) {
@@ -432,13 +432,13 @@ We can invoke an action using `thing.invokeAction` method.
         } else {
             log('Failed making your drink:', makeCoffee);
         } 
-```
+{{< / highlight >}}
 
 Notice on usage of `uriVariables` here.
 They are passed as a third argument, whereas the second one is the payload of a request.
 This can be well noted on invoking of `setSchedule` action.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         // Let's add a scheduled task
         let scheduledTask = await thing.invokeAction('setSchedule', {
             'drinkId': 'espresso',
@@ -448,14 +448,14 @@ This can be well noted on invoking of `setSchedule` action.
             'mode': 'everyday'
         });
         log(scheduledTask['message'], scheduledTask);
-```
+{{< / highlight >}}
 
 It's also possible to set a client-side handler for events.
 
-```TypeScript
+{{< highlight js "linenos=table" >}}
         thing.subscribeEvent('outOfResource', (data) => {
             log('outOfResource event:', data);
         });
-```
+{{< / highlight >}}
 
 Again, here we don't need to await for a function to complete, since subscribing for an event is a persistent action.

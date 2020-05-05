@@ -57,7 +57,7 @@ Insert the SD card into your card reader and create the two following files as i
 wpa_supplicant.conf: is the file that is used to configure your WiFi on the command line.
 This file must contain the following configuration where **######** is your WiFi password:
 
-```bash
+{{< highlight bash "linenos=table" >}}
 country=US
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
@@ -70,7 +70,7 @@ network={
   group=CCMP
   auth_alg=OPEN
 }
-```
+{{< / highlight >}}
 
 ### Installing Node.js
 Ideally, Node.js 10 should be installed.
@@ -81,29 +81,29 @@ Below the commands for the Raspberry Pi Zero W:
 
 
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ wget https://nodejs.org/dist/v10.15.0/node-v10.15.0-linux-armv6l.tar.xz
 wot@node-wot:~$ sudo mkdir /usr/local/lib/nodejs
 wot@node-wot:~$ sudo tar -xJvf node-v10.15.0-linux-armv6l.tar.xz -C /usr/local/lib/nodejs
 wot@node-wot:~$ sudo mv /usr/local/lib/nodejs/node-v10.15.0-linux-armv6l /usr/local/lib/nodejs/node-v10.15.0
 wot@node-wot:~$ nano ~/.profile
-
-```
+{{< / highlight >}}
 
 
 Inside the **~/.profile**, add the following:
 
-```console
+{{< highlight bash >}}
 export NODEJS_HOME=/usr/local/lib/nodejs/node-v10.15.0/bin
 export PATH=$NODEJS_HOME:$PATH
-```
+{{< / highlight >}}
 
+.
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ . ~/.profile
 wot@node-wot:~$ node -v
 wot@node-wot:~$ npm version
-```
+{{< / highlight >}}
 
 
 
@@ -119,10 +119,10 @@ The reference implementation of the Web of Things is published in GitHub as node
 The project is part of the Eclipse Foundation.
 Use the command below to clone the repository on your local system:
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ sudo apt install git
 wot@node-wot:~$ git clone https://github.com/eclipse/thingweb.node-wot
-```
+{{< / highlight >}}
 
 <img style="max-width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/clone-2.gif" alt="Cloning repo"/>
 
@@ -139,10 +139,10 @@ The second step installs and builds the node-wot project.
 Node-wot requires dependencies such as Typescript, lerna, etc.
 By running the command below, those dependencies are installed:
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ cd thingweb.node-wot
 wot@node-wot:~$ npm install
-```
+{{< / highlight >}}
 
 <img style="max-width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/install-3.gif" alt="Installation"/>
  
@@ -153,9 +153,9 @@ As the node-wot project is mainly developed using Typescript, `tsc` command need
 The command below builds the project and its packages:
 
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ npm run build
-```
+{{< / highlight >}}
 
 <img style="max-width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/build-4.gif" alt="Build"/>
  
@@ -164,9 +164,9 @@ wot@node-wot:~$ npm run build
 
 Run the command below to expose a "server" Servient:
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ node packages/cli/dist/cli.js examples/scripts/counter.js
-```
+{{< / highlight >}}
 
 You can access the Thing Description generated at http://localhost:8080/counter.
 
@@ -215,7 +215,7 @@ The structure of a Servient varies depending on the target behavior.
 However, it is centered on the Thing Description.
 To expose a new Thing (server mode), you need first to create the Thing by passing some metadata to the Scripting API as illustrated below:
 
-```javascript
+{{< highlight js "linenos=table" >}}
 let thing = WoT.produce({
       title: "counter",
       description: "counter example Thing",
@@ -238,8 +238,7 @@ let thing = WoT.produce({
         }
       }
    });
-
-```
+{{< / highlight >}}
 
 This code initiates the creation of a Thing named "counter" with its interactions and adds metadata such as context to that Thing.
 
@@ -254,7 +253,7 @@ Now that we have our property exposed, we can start adding our actions.
 An action is added to Servient as described below:
 
 
-```javascript
+{{< highlight js "linenos=table" >}}
 thing.setActionHandler("increment", (params, options) => {
         return thing.readProperty("count").then((count) => {
             let step = 1;
@@ -268,7 +267,7 @@ thing.setActionHandler("increment", (params, options) => {
             thing.writeProperty("count", value);
         });
     });
-```
+{{< / highlight >}}
 
 
 Within an action, you can retrieve properties using the "readProperty()" function and write the value to the Thing once your value manipulated using the "writeProperty()" function.
@@ -283,39 +282,38 @@ Assume that we have our counter example running on a machine, we can create a "c
 First step is to create the Thing that we are willing to consume.
 For that, we use the exposed Thing descriptor to create that "client" Thing as illustrated below:
 
-```javascript
+{{< highlight js "linenos=table" >}}
 WoTHelpers.fetch("http://localhost:8080/counter").then( async (td) => {
 
     let thing = await WoT.consume(td);
 
 }).catch( (err) => { console.error("Fetch error:", err); });
-
-```
+{{< / highlight >}}
 
 The created Thing enables access to all the properties and actions exposed by the "server" Thing.
 They can be accessed as described below:
 
-```javascript
+{{< highlight js "linenos=table" >}}
 // read property #1
 let read1 = await thing.readProperty("count");
 console.info("count value is", read1);
-```
+{{< / highlight >}}
 
 
-```javascript
+{{< highlight js "linenos=table" >}}
 // increment property #1
 await thing.invokeAction("increment");
 let inc1 = await thing.readProperty("count");
 console.info("count value after increment #1 is", inc1);
-```
+{{< / highlight >}}
 
 
 Modifying those properties by invoking the actions result on modifications on the "server" Thing.
 The full client example is available in the repository at `examples/scripts/counter-client.js`, which can be run using the same `cli.js` but with the `--clientonly` flag:
 
-```console
+{{< highlight bash >}}
 wot@node-wot:~$ node packages/cli/dist/cli.js examples/scripts/counter.js --clientonly
-```
+{{< / highlight >}}
 
 
 ## Conclusion
