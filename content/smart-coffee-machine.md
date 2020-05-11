@@ -53,7 +53,7 @@ This produced TD can then be used by other Things or clients to interact with th
 
 {{< highlight js "linenos=table" >}}
 WoT.produce({
-    title: 'Smart Coffee Machine',
+    title: 'Smart-Coffee-Machine',
     description: `A smart coffee machine with a range of capabilities.`,
     support: 'git://github.com/eclipse/thingweb.node-wot.git',
     '@context': [
@@ -321,19 +321,19 @@ Finally, expose the Thing!
 ## Consume the Thing
 
 So far we are done with the "producer" Thing and now our smart coffee machine can be interacted via any HTTP or CoAP client (default protocol bindings as mentioned above).
-The produced Thing Description is available at http://127.0.0.1:8080/Smart%20Coffee%20Machine for HTTP and coap://127.0.0.1:5683/Smart%20Coffee%20Machine for CoAP.
+The produced Thing Description is available at http://127.0.0.1:8080/Smart-Coffee-Machine for HTTP and coap://127.0.0.1:5683/Smart-Coffee-Machine for CoAP.
 By default, in HTTP binding the GET method is used for reading properties, PUT for writing and POST for invoking actions.
 So, for example the value of `allAvailableResources` property can be read as:
 
 {{< highlight http "linenos=table" >}}
-GET /Smart%20Coffee%20Machine/properties/allAvailableResources HTTP/1.1
+GET /Smart-Coffee-Machine/properties/allAvailableResources HTTP/1.1
 Host: 127.0.0.1:8080
 {{< / highlight >}}
 
 The value of `availableResourceLevel` property can be set as:
 
 {{< highlight http "linenos=table" >}}
-PUT /Smart%20Coffee%20Machine/properties/availableResourceLevel?id=water HTTP/1.1
+PUT /Smart-Coffee-Machine/properties/availableResourceLevel?id=water HTTP/1.1
 Host: 127.0.0.1:8080
 Content-Type: application/json
 {{< / highlight >}}
@@ -341,12 +341,12 @@ Content-Type: application/json
 And `makeDrink` and `setSchedule` actions can be invoked as:
 
 {{< highlight http "linenos=table" >}}
-POST /Smart%20Coffee%20Machine/actions/makeDrink?drinkId=hotChocolate&size=s&quantity=5 HTTP/1.1
+POST /Smart-Coffee-Machine/actions/makeDrink?drinkId=hotChocolate&size=s&quantity=5 HTTP/1.1
 Host: 127.0.0.1:8080
 {{< / highlight >}}
 
 {{< highlight http "linenos=table" >}}
-POST /Smart%20Coffee%20Machine/actions/setSchedule HTTP/1.1
+POST /Smart-Coffee-Machine/actions/setSchedule HTTP/1.1
 Host: 127.0.0.1:8080
 Content-Type: application/json
 
@@ -366,7 +366,7 @@ In order to create a consumer Thing, we need to invoke `fetch` method of the WoT
 
 {{< highlight js "linenos=table" >}}
 // We could also use CoAP here
-WoTHelpers.fetch("http://127.0.0.1:8080/Smart%20Coffee%20Machine").then(async (td) => {
+WoTHelpers.fetch("http://127.0.0.1:8080/Smart-Coffee-Machine").then(async (td) => {
 
     try {
         let thing = await WoT.consume(td);
