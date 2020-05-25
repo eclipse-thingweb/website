@@ -1,3 +1,8 @@
+---
+title: "Exposed Thing with node-wot as Dependency"
+draft: false
+---
+
 # Exposed Thing with node-wot as Dependency
 
 ## Introduction

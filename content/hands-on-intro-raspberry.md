@@ -1,3 +1,7 @@
+---
+title: "WoT - Introduction & Raspberry Pi Setup"
+draft: false
+---
 
 # WoT - Introduction & Raspberry Pi Setup
 
