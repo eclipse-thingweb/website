@@ -3,6 +3,22 @@ title: "Smart coffee machine and node-wot API usage"
 draft: false
 ---
 
+<aside>
+    <nav id="TableOfContents">
+        <h1>Table of Contents</h1>
+        <ul>
+            <li><a href="#smart-coffee-machine-and-node-wot-api-usage">Smart coffee machine and node-wot API usage</a></li>
+            <ul>
+                <li><a href="#expose-the-thing">Expose the Thing</a></li>
+                <li><a href="#consume-the-thing">Consume the Thing</a></li>
+                <li><a href="#running-scripts-from-node-wot-repository">Running scripts from node-wot repository</a></li>
+                <li><a href="#smart-coffee-machine-and-oauth-20">Smart coffee machine and oAuth 2.0</a></li>
+            </ul>
+        </ul>
+    </nav>
+</aside>
+
+
 # Smart coffee machine and node-wot API usage
 
 This article is a tutorial which considers a fictional smart coffee machine in order to demonstrate the capabilities of Web of Things (WoT) and the usage of [node-wot API](https://github.com/eclipse/thingweb.node-wot).
@@ -323,6 +339,7 @@ Finally, expose the Thing!
     console.log(`Produced ${thing.getThingDescription().title}`);
 {{< / highlight >}}
 
+
 ## Consume the Thing
 
 So far we are done with the "producer" Thing and now our smart coffee machine can be interacted via any HTTP or CoAP client (default protocol bindings as mentioned above).
@@ -464,3 +481,114 @@ It's also possible to set a client-side handler for events.
 {{< / highlight >}}
 
 Again, here we don't need to await for a function to complete, since subscribing for an event is a persistent action.
+
+
+## Running scripts from node-wot repository
+
+As it is mentioned above, these example scripts are available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts).
+In order to run them do the following:
+
+{{< highlight bash "linenos=table" >}}
+# 1. Clone the repo
+git clone https://github.com/eclipse/thingweb.node-wot
+# 2. cd to the project's root directory
+cd thingweb.node-wot
+# 3. Install dependencies 
+npm install
+# 4. Build the project
+npm run build
+{{< / highlight >}}
+
+Now you can run the scripts as follows:
+
+{{< highlight bash "linenos=table" >}}
+# 1. Run the producer Thing ("server")
+node packages/cli/dist/cli.js examples/scripts/coffee-machine.js
+# 2. Run the consumer Thing ("client")
+node packages/cli/dist/cli.js examples/scripts/coffee-machine-client.js --clientonly
+{{< / highlight >}}
+
+If you want to add your own example scripts be sure to follow the [workflow](https://github.com/eclipse/thingweb.node-wot/tree/master/packages/examples#workflow).
+
+
+## Smart coffee machine and oAuth 2.0
+
+Currently, node-wot supports different security schemas.
+In the example above we have used the [`NoSecurityScheme`](https://www.w3.org/TR/wot-thing-description/#sec-security-vocabulary-definition), as it is assumed by default if no security scheme is explicitly used.
+Node-wot also supports oAuth 2.0, so let's extend this tutorial with the same coffee machine having oAuth 2.0 authorization.
+
+Extend the Thing Description within the `produce` method with the following lines (add `id`, `securityDefinitions` and `security`):
+
+{{< highlight js "linenos=table" >}}
+    title: ...
+    id: 'urn:dev:wot:example:coffee-machine',
+    ...
+    securityDefinitions: {
+        oauth2_sc: {
+            scheme: 'oauth2',
+            flow: 'client_credentials',
+            token: 'https://127.0.0.1:3000/token',
+            scopes: [
+                'limited',
+            ],
+        },
+    },
+    security: [
+        'oauth2_sc',
+    ],
+    properties: {
+        ...
+{{< / highlight >}}
+
+The full script is available at node-wot GitHub repository as [coffee-machine-oauth.ts](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/coffee-machine-oauth.ts).
+
+Now if we run the producer and the consumer Things as before that will fail.
+The reason is simple - the client is not authorized.
+Let's fix it.
+
+We need an additional configuration file which will contain the appropriate credentials.
+The configuration file contains the following and is available as [coffee-machine-client.conf.json](https://github.com/eclipse/thingweb.node-wot/tree/master/examples/scripts/coffee-machine-client.conf.json):
+
+{{< highlight js "linenos=table" >}}
+{
+    "http": {
+        "allowSelfSigned": true
+    },
+    "credentials": {
+        "urn:dev:wot:example:coffee-machine": {
+            "clientId" : "node-wot",
+            "clientSecret": "isgreat!"
+        }
+    }
+}
+{{< / highlight >}}
+
+The first setting allows self-signed certificates, which is okay for testing and development purposes.
+The other setting provides the credentials in a form of "Thing id - credentials" pair.
+We will be using the oAuth 2.0 test server which is equipped with node-wot, and it expects exactly these `clientId` and `clientSecret`.
+
+Now run the test oAuth server:
+
+{{< highlight bash "linenos=table" >}}
+# 1. From the project's root directory run
+cd packages/examples/src/security/oauth
+# 2. Run the oAuth 2.0 test server
+npm run server
+{{< / highlight >}}
+
+You should see a message saying `listening`.
+Now in a different terminal run the coffee machine producer Thing as usual:
+
+{{< highlight bash "linenos=table" >}}
+# 1. From the project's root directory
+node packages/cli/dist/cli.js examples/scripts/coffee-machine.js
+{{< / highlight >}}
+
+Finally, from the third terminal run the coffee machine consumer Thing providing it with the configuration file we have created:
+
+{{< highlight bash "linenos=table" >}}
+# 1. From the project's root directory
+node packages/cli/dist/cli.js -f examples/scripts/coffee-machine-client.conf.json examples/scripts/coffee-machine-client.js --clientonly
+{{< / highlight >}}
+
+Now the client interacts with the smart coffee machine as before since it is authorized by the oAuth server.
