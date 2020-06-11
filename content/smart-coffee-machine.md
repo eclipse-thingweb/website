@@ -3,24 +3,22 @@ title: "Smart coffee machine and node-wot API usage"
 draft: false
 ---
 
+# Smart coffee machine and node-wot API usage
+
 <aside>
     <nav id="TableOfContents">
-        <h1>Table of Contents</h1>
-        <ul>
-            <li><a href="#smart-coffee-machine-and-node-wot-api-usage">Smart coffee machine and node-wot API usage</a></li>
-            <ul>
-                <li><a href="#expose-the-thing">Expose the Thing</a></li>
-                <li><a href="#consume-the-thing">Consume the Thing</a></li>
-                <li><a href="#running-scripts-from-node-wot-repository">Running scripts from node-wot repository</a></li>
-                <li><a href="#smart-coffee-machine-and-oauth-20">Smart coffee machine and oAuth 2.0</a></li>
-            </ul>
-        </ul>
+        <h2>Table of Contents</h2>
+		<ul>
+			<li><a href="#api-usage">API usage</a></li>
+			<li><a href="#expose-the-thing">Expose the Thing</a></li>
+			<li><a href="#consume-the-thing">Consume the Thing</a></li>
+			<li><a href="#running-scripts-from-node-wot-repository">Running scripts from node-wot repository</a></li>
+			<li><a href="#smart-coffee-machine-and-oauth-20">Smart coffee machine and oAuth 2.0</a></li>
+		</ul>
     </nav>
 </aside>
 
-
-# Smart coffee machine and node-wot API usage
-
+## API usage
 This article is a tutorial which considers a fictional smart coffee machine in order to demonstrate the capabilities of Web of Things (WoT) and the usage of [node-wot API](https://github.com/eclipse/thingweb.node-wot).
 In the world of Web of Thing properties, actions and events provided by a Thing are called Property Affordances, Action Affordances and Event Affordances, respectively.
 The difference of each becomes clear as we proceed the tutorial.
