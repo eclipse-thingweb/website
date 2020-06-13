@@ -318,18 +318,11 @@ Done with the Action Affordances!
 Now our final affordances, that is Event Affordances.
 We can specify a handler for an event, which then gets executed whenever the event is emitted.
 In node-wot this process is called "subscribing" for an event.
+Although it is possible to create event handlers in the producer Thing, usually it is done on the client side.
+So, the producer (server) only emits a particular event and the client is responsible for handling it.
+Below in the [client part](#consume-the-thing) we will cover this process.
 
-{{< highlight js "linenos=table" >}}
-    // Set up a handler for outOfResource event
-    thing.subscribeEvent('outOfResource', (data) => {
-
-        // Notify an "admin" when the event is emitted
-        // (the notify function here simply logs a message to the console)
-        notify('admin@coffeeMachine.com', `outOfResource event: ${data}`);
-    });
-{{< / highlight >}}
-
-Finally, expose the Thing!
+Now, finally, expose the Thing!
 
 {{< highlight js "linenos=table" >}}
     // Expose the Thing and log a message to the console
@@ -470,10 +463,13 @@ This can be well noted on invoking of `setSchedule` action.
         log(scheduledTask['message'], scheduledTask);
 {{< / highlight >}}
 
-It's also possible to set a client-side handler for events.
+As it is already mentioned above, we also want a client to subscribe for events emitted from the producer Thing. 
 
 {{< highlight js "linenos=table" >}}
+        // Let's set up a handler for outOfResource event
         thing.subscribeEvent('outOfResource', (data) => {
+            // Here we are simply logging the message when the event is emitted
+            // But, of course, could have a much more sophisticated handler
             log('outOfResource event:', data);
         });
 {{< / highlight >}}
