@@ -504,6 +504,11 @@ node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine-client.js --
 
 If you want to add your own example scripts be sure to follow the [workflow](https://github.com/eclipse/thingweb.node-wot/tree/master/packages/examples#workflow).
 
+In case you want to just consume a Thing you can use a tool like the [Browsified node-wot](http://plugfest.thingweb.io/webui/).
+It allows you to interact with Things right from your browser.
+There is a deployed smart coffee machine producer Thing at [http://plugfest.thingweb.io:8083/smart-coffee-machine](http://plugfest.thingweb.io:8083/smart-coffee-machine) that you can consume.
+You can also see its property values in real-time at [http://plugfest.thingweb.io/examples/smart-coffee-machine.html](http://plugfest.thingweb.io/examples/smart-coffee-machine.html).
+
 
 ## Smart coffee machine and oAuth 2.0
 
@@ -575,7 +580,7 @@ Now in a different terminal run the coffee machine producer Thing as usual:
 
 {{< highlight bash "linenos=table" >}}
 # 1. From the project's root directory
-node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine.js
+node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine-oauth.js
 {{< / highlight >}}
 
 Finally, from the third terminal run the coffee machine consumer Thing providing it with the configuration file we have created:
