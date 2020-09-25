@@ -580,7 +580,7 @@ Now in a different terminal run the coffee machine producer Thing as usual:
 
 {{< highlight bash "linenos=table" >}}
 # 1. From the project's root directory
-node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine.js
+node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine-oauth.js
 {{< / highlight >}}
 
 Finally, from the third terminal run the coffee machine consumer Thing providing it with the configuration file we have created:
