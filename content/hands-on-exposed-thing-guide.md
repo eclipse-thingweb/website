@@ -163,3 +163,8 @@ Resulting from the discussions in the Scripting API, the API has changed on 28.1
 - You cannot change the TD of an ExposedThing, i.e. you cannot do `thing.id="thingweb:io:example"`.
 
 You can see a git diff [here](https://github.com/tum-esi/wot-sys/commit/6cef8530b3317d98c2a7dea389c92ba2786be892#diff-0d33955cb472f41f07397fc2687c6425R10)
+
+
+## Change from Version 0.7.X to 0.8.X for Exposed Things
+
+<mark>TODO</mark>
