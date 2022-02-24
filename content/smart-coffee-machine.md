@@ -117,164 +117,165 @@ WoT.produce({
 The full script is available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine.ts).
 Note that, all affordances (i.e. property, action and event) should be added withing the `produce` method.
 
-After exposing the Thing, we need to initialize the properties and all required handlers.
+After producing the Thing, we need to initialize the properties and all required handlers.
 This is done by chaining `.then` method after `WoT.produce()`.
 Property initialization looks as follows.
 
 {{< highlight js "linenos=table" >}}
-.then( (thing) => {
-    thing.writeProperty('allAvailableResources', {
-        water: readFromSensor('water'),
-        milk: readFromSensor('milk'),
-        chocolate: readFromSensor('chocolate'),
-        coffeeBeans: readFromSensor('coffeeBeans'),
-    });
-    thing.writeProperty('possibleDrinks', ['espresso', 'americano', 'cappuccino', 'latte', 'hotChocolate', 'hotWater']);
-    thing.writeProperty('maintenanceNeeded', false);
-    thing.writeProperty('schedules', []);
+.then((thing) => {
+	// Initialize the property values
+	allAvailableResources = {
+		water: readFromSensor("water"),
+		milk: readFromSensor("milk"),
+		chocolate: readFromSensor("chocolate"),
+		coffeeBeans: readFromSensor("coffeeBeans"),
+	};
+	possibleDrinks = ["espresso", "americano", "cappuccino", "latte", "hotChocolate", "hotWater"];
+	maintenanceNeeded = false;
+	schedules = [];
+	thing.setPropertyReadHandler("allAvailableResources", async () => allAvailableResources);
+	thing.setPropertyReadHandler("possibleDrinks", async () => possibleDrinks);
+	thing.setPropertyReadHandler("maintenanceNeeded", async () => maintenanceNeeded);
+	thing.setPropertyReadHandler("schedules", async () => schedules);
 {{< / highlight >}}
 
-In case a property needs a special handler when writing its value, we first need to override its `propertyWriteHandler`.
+In case a property needs a write handler, we can set the according `propertyWriteHandler`.
 See an example below.
 
 {{< highlight js "linenos=table" >}}
-    // Override a write handler for servedCounter property,
-    // raising maintenanceNeeded flag when the value exceeds 1000 drinks
-    thing.setPropertyWriteHandler('servedCounter', (val) => {
-        return new Promise((resolve, reject) => {
-            resolve(val);
-            if (val > 1000) {
-                thing.writeProperty('maintenanceNeeded', true);
-            }
-        });
-    });
+	// set write handler for servedCounter property,
+	// raising maintenanceNeeded flag when the value exceeds 1000 drinks
+	thing.setPropertyWriteHandler("servedCounter", async (val) => {
+		servedCounter = await val.value();
+		if (servedCounter > 1000) {
+			maintenanceNeeded = true;
+			// Notify a "maintainer" when the value has changed
+			// (the notify function here simply logs a message to the console)
+			notify(
+				"admin@coffeeMachine.com",
+				`maintenanceNeeded property has changed, new value is: ${servedCounter}`
+			);
+		}
+	});
 {{< / highlight >}}
 
 And then we are ready to initialize its value.
 
 {{< highlight js "linenos=table" >}}
-    thing.writeProperty('servedCounter', readFromSensor('servedCounter'));
+    servedCounter = readFromSensor("servedCounter");
 {{< / highlight >}}
 
 We also want to override write and read handlers for `availableResourceLevel` property, since we need to utilize `uriVariables`.
 
 {{< highlight js "linenos=table" >}}
-    thing.setPropertyWriteHandler('availableResourceLevel', (val, options) => {
-
-        // Check if uriVariables are provided
-        if (options && typeof options === 'object' && 'uriVariables' in options) {
-            const uriVariables: any = options['uriVariables'];
-            if ('id' in uriVariables) {
-                return thing.readProperty('allAvailableResources').then((resources) => {
-                    const id = uriVariables['id'];
-                    resources[id] = val;
-                    return thing.writeProperty('allAvailableResources', resources);
-                });
-            }
-        }
-        return new Promise((resolve, reject) => {
-            resolve('Please specify id variable as uriVariables.');
-        });
-    });
-
-    thing.setPropertyReadHandler('availableResourceLevel', (options) => {
-
-        // Check if uriVariables are provided
-        if (options && typeof options === 'object' && 'uriVariables' in options) {
-            const uriVariables: any = options['uriVariables'];
-            if ('id' in uriVariables) {
-                return thing.readProperty('allAvailableResources').then((resources) => {
-                    const id = uriVariables['id'];
-                    return new Promise((resolve, reject) => {
-                        resolve(resources[id]);
-                    });
-                });
-            }
-        }
-        return new Promise((resolve, reject) => {
-            resolve('Please specify id variable as uriVariables.');
-        });
-    });
+	thing.setPropertyWriteHandler("availableResourceLevel", async (val, options) => {
+		// Check if uriVariables are provided
+		if (options && typeof options === "object" && "uriVariables" in options) {
+			const uriVariables = options.uriVariables;
+			if ("id" in uriVariables) {
+				const id = uriVariables.id;
+				allAvailableResources[id] = await val.value();
+				return;
+			}
+		}
+		throw Error("Please specify id variable as uriVariables.");
+	});
+	
+	thing.setPropertyReadHandler("availableResourceLevel", async (options) => {
+		// Check if uriVariables are provided
+		if (options && typeof options === "object" && "uriVariables" in options) {
+			const uriVariables = options.uriVariables;
+			if ("id" in uriVariables) {
+				const id = uriVariables.id;
+				return allAvailableResources[id];
+			}
+		}
+		throw Error("Please specify id variable as uriVariables.");
+	});
 {{< / highlight >}}
 
-As it has already been mentioned, `maintenanceNeeded` property is observable, meaning we can get notified when its value changes.
-For that, we need to provide a callback for the `observeProperty` method.
+As it has already been mentioned, `maintenanceNeeded` property is observable, meaning we can could get notified when its value changes. For that, we need to provide a callback for the `observeProperty` method.
 
-{{< highlight js "linenos=table" >}}
-    thing.observeProperty('maintenanceNeeded', (data) => {
-        
-        // Notify a "maintainer" when the value has changed
-        // (the notify function here simply logs a message to the console)
-        notify('admin@coffeeMachine.com', `maintenanceNeeded property has changed, new value is: ${data}`);
-    });
-{{< / highlight >}}
 
 Done with the Property Affordances!
 Now we need to set up action handlers, which proceed when another Thing or client invokes the action.
 
 {{< highlight js "linenos=table" >}}
- // Set up a handler for makeDrink action
-    thing.setActionHandler('makeDrink', (params, options) => {
-
-        // Default values
-        let drinkId = 'americano';
-        let size = 'm';
-        let quantity = 1;
-        
-        // Size quantifiers
-        const sizeQuantifiers: any = {'s': 0.1, 'm': 0.2, 'l': 0.3};
-        
-        // Drink recipes showing the amount of a resource consumed for a particular drink
-        const drinkRecipes: any = {
-            'espresso': { ... },
-            'americano': { ... },
-            'cappuccino': { ... },
-            'latte': { ... },
-            'hotChocolate': { ... },
-            'hotWater': { ... },
-        }
-
-        // Check if uriVariables are provided
-        if (options && typeof options === 'object' && 'uriVariables' in options) {
-            const uriVariables: any = options['uriVariables'];
-            drinkId = ('drinkId' in uriVariables) ? uriVariables['drinkId'] : drinkId;
-            size = ('size' in uriVariables) ? uriVariables['size'] : size;
-            quantity = ('quantity' in uriVariables) ? uriVariables['quantity'] : quantity;
-        }
-
-        // Read the current level of allAvailableResources
-        return thing.readProperty('allAvailableResources').then((resources) => {
-            
-            // Calculate the new level of resources
-            let newResources = Object.assign({}, resources);
-            newResources['water'] -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId]['water']);
-            newResources['milk'] -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId]['milk']);
-            newResources['chocolate'] -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId]['chocolate']);
-            newResources['coffeeBeans'] -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId]['coffeeBeans']);
-
-            // Check if the amount of available resources is sufficient to make a drink
-            for (let resource in newResources) {
-                if (newResources[resource] <= 0) {
-                    return new Promise((resolve, reject) => {
-                        thing.emitEvent('outOfResource', `Low level of ${resource}: ${resources[resource]}%`);
-                        resolve({result: false, message: `${resource} level is not sufficient`});
-                    });
-                }
-            }
-
-            // Now store the new level of allAvailableResources
-            return thing.writeProperty('allAvailableResources', newResources).then(() => {
-                return thing.readProperty('servedCounter').then((counter) => {
-                    return new Promise((resolve, reject) => {
-                        thing.writeProperty('servedCounter', counter + quantity);
-
-                        // Finally deliver the drink
-                        resolve({result: true, message: `Your ${drinkId} is in progress!`});
-                    });
-                });
-            });
-        });
-    });
+	// Set up a handler for makeDrink action
+	thing.setActionHandler("makeDrink", async (_params, options) => {
+		// Default values
+		let drinkId = "americano";
+		let size = "m";
+		let quantity = 1;
+		// Size quantifiers
+		const sizeQuantifiers = { s: 0.1, m: 0.2, l: 0.3 };
+		// Drink recipes showing the amount of a resource consumed for a particular drink
+		const drinkRecipes = {
+			espresso: {
+				water: 1,
+				milk: 0,
+				chocolate: 0,
+				coffeeBeans: 2,
+			},
+			americano: {
+				water: 2,
+				milk: 0,
+				chocolate: 0,
+				coffeeBeans: 2,
+			},
+			cappuccino: {
+				water: 1,
+				milk: 1,
+				chocolate: 0,
+				coffeeBeans: 2,
+			},
+			latte: {
+				water: 1,
+				milk: 2,
+				chocolate: 0,
+				coffeeBeans: 2,
+			},
+			hotChocolate: {
+				water: 0,
+				milk: 0,
+				chocolate: 1,
+				coffeeBeans: 0,
+			},
+			hotWater: {
+				water: 1,
+				milk: 0,
+				chocolate: 0,
+				coffeeBeans: 0,
+			},
+		};
+		// Check if uriVariables are provided
+		if (options && typeof options === "object" && "uriVariables" in options) {
+			const uriVariables = options.uriVariables;
+			drinkId = "drinkId" in uriVariables ? uriVariables.drinkId : drinkId;
+			size = "size" in uriVariables ? uriVariables.size : size;
+			quantity = "quantity" in uriVariables ? uriVariables.quantity : quantity;
+		}
+		// Calculate the new level of resources
+		const newResources = Object.assign({}, allAvailableResources);
+		newResources.water -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].water);
+		newResources.milk -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].milk);
+		newResources.chocolate -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].chocolate);
+		newResources.coffeeBeans -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].coffeeBeans);
+		// Check if the amount of available resources is sufficient to make a drink
+		for (const resource in newResources) {
+			if (newResources[resource] <= 0) {
+				return new Promise((resolve, reject) => {
+					thing.emitEvent("outOfResource", `Low level of ${resource}: ${newResources[resource]}%`);
+					return { result: false, message: `${resource} level is not sufficient` };
+				});
+			}
+		}
+		// Now store the new level of allAvailableResources
+		allAvailableResources = newResources;
+		servedCounter = servedCounter + quantity;
+		// Finally deliver the drink
+		return { result: true, message: `Your ${drinkId} is in progress!` };
+	});
 {{< / highlight >}}
 
 Notice, how in case of insufficient resources the `outOfResource` event is emitted.
@@ -284,32 +285,23 @@ The first argument `params` contains a request body (i.e. payload of a request).
 Another handler is for `setSchedule` action.
 
 {{< highlight js "linenos=table" >}}
-    // Set up a handler for setSchedule action
-    thing.setActionHandler('setSchedule', (params, options) => {
-
-        // Check if uriVariables are provided
-        if (params && typeof params === 'object' && 'time' in params && 'mode' in params) {
-
-            // Use default values if not provided
-            params['drinkId'] = ('drinkId' in params) ? params['drinkId'] : 'americano';
-            params['size'] = ('size' in params) ? params['size'] : 'm';
-            params['quantity'] = ('quantity' in params) ? params['quantity'] : 1;
-
-            // Now read the schedules property, add a new schedule to it and then rewrite the schedules property
-            return thing.readProperty('schedules').then((schedules) => {
-                schedules.push(params);
-                return thing.writeProperty('schedules', schedules).then(() => {
-                    return new Promise((resolve, reject) => {
-                        resolve({result: true, message: `Your schedule has been set!`});
-                    });
-                });
-            });
-
-        }
-        return new Promise((resolve, reject) => {
-            resolve({result: false, message: `Please provide all the required parameters: time and mode.`});
-        });
-    });
+	// Set up a handler for setSchedule action
+	thing.setActionHandler("setSchedule", async (params, options) => {
+		const paramsp = await params.value(); //  : any = await Helpers.parseInteractionOutput(params);
+		// Check if uriVariables are provided
+		if (paramsp && typeof paramsp === "object" && "time" in paramsp && "mode" in paramsp) {
+			// Use default values if not provided
+			paramsp.drinkId = "drinkId" in paramsp ? paramsp.drinkId : "americano";
+			paramsp.size = "size" in paramsp ? paramsp.size : "m";
+			paramsp.quantity = "quantity" in paramsp ? paramsp.quantity : 1;
+			// Now add a new schedule
+			schedules.push(paramsp);
+			return { result: true, message: `Your schedule has been set!` };
+		}
+		return new Promise((resolve, reject) => {
+			resolve({ result: false, message: `Please provide all the required parameters: time and mode.` });
+		});
+	});
 {{< / highlight >}}
 
 As mentioned above, here we use the payload of a request, therefore we utilize the `params` variable.
@@ -325,9 +317,11 @@ Below in the [client part](#consume-the-thing) we will cover this process.
 Now, finally, expose the Thing!
 
 {{< highlight js "linenos=table" >}}
-    // Expose the Thing and log a message to the console
-    thing.expose().then( () => { console.info(`${thing.getThingDescription().title} ready`); } ); 
-    console.log(`Produced ${thing.getThingDescription().title}`);
+	// Finally expose the thing
+	thing.expose().then(() => {
+		console.info(`${thing.getThingDescription().title} ready`);
+	});
+	console.log(`Produced ${thing.getThingDescription().title}`);
 {{< / highlight >}}
 
 
@@ -401,8 +395,8 @@ A property can be read using `thing.readProperty` method.
 
 {{< highlight js "linenos=table" >}}
         // Read property allAvailableResources
-        let allAvailableResources = await thing.readProperty('allAvailableResources');
-        log('allAvailableResources value is:', allAvailableResources);
+        let allAvailableResources = await (await thing.readProperty("allAvailableResources")).value();
+        log("allAvailableResources value is:", allAvailableResources);
 });
 {{< / highlight >}}
 
@@ -410,7 +404,7 @@ A property can be written using `thing.writeProperty` method.
 
 {{< highlight js "linenos=table" >}}
         // Now let's change water level to 80
-        await thing.writeProperty('availableResourceLevel', 80, {'uriVariables': {'id': 'water'}});
+        await thing.writeProperty("availableResourceLevel", 80, { uriVariables: { id: "water" } });
 });
 {{< / highlight >}}
 
@@ -419,16 +413,18 @@ In the same manner they can be used when reading properties which utilize `uriVa
 
 {{< highlight js "linenos=table" >}}
         // And see that the water level has changed
-        let waterLevel = await thing.readProperty('availableResourceLevel', {'uriVariables': {'id': 'water'}});
-        log('waterLevel value after change is:', waterLevel);
+        const waterLevel = await (
+            await thing.readProperty("availableResourceLevel", { uriVariables: { id: "water" } })
+        ).value();
+        log("waterLevel value after change is:", waterLevel);
 });
 {{< / highlight >}}
 
 It's also possible to set a client-side handler for observable properties.
 
 {{< highlight js "linenos=table" >}}
-        thing.observeProperty('maintenanceNeeded', (data) => {
-            log('maintenanceNeeded property has changed! New value is:', data);
+        thing.observeProperty("maintenanceNeeded", async (data) => {
+            log("maintenanceNeeded property has changed! New value is:", await data.value());
         });
 });
 {{< / highlight >}}
@@ -439,12 +435,15 @@ We can invoke an action using `thing.invokeAction` method.
 
 {{< highlight js "linenos=table" >}}
         // Now let's make 3 cups of latte!
-        let makeCoffee = await thing.invokeAction('makeDrink', undefined, {'uriVariables': {'drinkId': 'latte', 'size': 'l', 'quantity': 3}});
-        if (makeCoffee['result']) {
-            log('Enjoy your drink!', makeCoffee);
+        const makeCoffee = await thing.invokeAction("makeDrink", undefined, {
+            uriVariables: { drinkId: "latte", size: "l", quantity: 3 },
+        });
+        const makeCoffeep = await makeCoffee.value();
+        if (makeCoffeep.result) {
+            log("Enjoy your drink!", makeCoffeep);
         } else {
-            log('Failed making your drink:', makeCoffee);
-        } 
+            log("Failed making your drink:", makeCoffeep);
+        }
 {{< / highlight >}}
 
 Notice on usage of `uriVariables` here.
@@ -453,24 +452,28 @@ This can be well noted on invoking of `setSchedule` action.
 
 {{< highlight js "linenos=table" >}}
         // Let's add a scheduled task
-        let scheduledTask = await thing.invokeAction('setSchedule', {
-            'drinkId': 'espresso',
-            'size': 'm',
-            'quantity': 2,
-            'time': '10:00',
-            'mode': 'everyday'
+        const scheduledTask = await thing.invokeAction("setSchedule", {
+            drinkId: "espresso",
+            size: "m",
+            quantity: 2,
+            time: "10:00",
+            mode: "everyday",
         });
-        log(scheduledTask['message'], scheduledTask);
+        const scheduledTaskp = await scheduledTask.value();
+        log(scheduledTaskp.message, scheduledTaskp);
+        // See how it has been added to the schedules property
+        const schedules = await (await thing.readProperty("schedules")).value();
+        log("schedules value: ", schedules);
 {{< / highlight >}}
 
 As it is already mentioned above, we also want a client to subscribe for events emitted from the producer Thing. 
 
 {{< highlight js "linenos=table" >}}
         // Let's set up a handler for outOfResource event
-        thing.subscribeEvent('outOfResource', (data) => {
+        thing.subscribeEvent("outOfResource", async (data) => {
             // Here we are simply logging the message when the event is emitted
             // But, of course, could have a much more sophisticated handler
-            log('outOfResource event:', data);
+            log("outOfResource event:", await data.value());
         });
 {{< / highlight >}}
 
@@ -539,7 +542,6 @@ Extend the Thing Description within the `produce` method with the following line
         ...
 {{< / highlight >}}
 
-The full script is available at node-wot GitHub repository as [smart-coffee-machine-oauth.ts](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine-oauth.ts).
 
 Now if we run the producer and the consumer Things as before that will fail.
 The reason is simple - the client is not authorized.
