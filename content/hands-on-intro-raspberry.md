@@ -220,28 +220,45 @@ However, it is centered on the Thing Description.
 To expose a new Thing (server mode), you need first to create the Thing by passing some metadata to the Scripting API as illustrated below:
 
 {{< highlight js "linenos=table" >}}
-let thing = WoT.produce({
-      title: "counter",
-      description: "counter example Thing",
-      "@context": ["https://www.w3.org/2019/wot/td/v1", {"iot": "http://example.org/iot"}],
-      properties: {
+WoT.produce({
+    title: "counter",
+    description: "counter example Thing",
+    "@context": "https://www.w3.org/2019/wot/td/v1",
+    properties: {
         count: {
-          type: "integer",
-          description: "current counter value",
-          "iot:Custom": "example annotation",
-          observable: true,
-          readOnly: true
+            type: "integer",
+            description: "current counter value",
+            observable: true,
+            readOnly: true,
         }
-      },
-      actions: {
+    },
+    actions: {
         increment: {
-          description: "Incrementing counter value (with optional step parameter as uriVariable)",
-          uriVariables: {
-            step: { "type": "integer", "minimum": 1, "maximum": 250 }
-          }
+            description: "Incrementing counter value",
+            uriVariables: {
+                step: { type: "integer", minimum: 1, maximum: 250 },
+            },
         }
-      }
-   });
+    }
+})
+    .then((thing) => {
+        console.log("Produced " + thing.getThingDescription().title);
+
+        // init property values
+		// ...
+        // set property handlers
+		// ...
+        // set action handlers
+		// ...
+
+        // expose the thing
+        thing.expose().then(() => {
+            console.info(thing.getThingDescription().title + " ready");
+        });
+    })
+    .catch((e) => {
+        console.log(e);
+    });
 {{< / highlight >}}
 
 This code initiates the creation of a Thing named "counter" with its interactions and adds metadata such as context to that Thing.
@@ -253,28 +270,26 @@ Once your run the Servient, the exposed property will be accessible at http://lo
 <img style="max-width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/rest-9.png" alt="Result"/>
 
 
-Now that we have our property exposed, we can start adding our actions.
-An action is added to Servient as described below:
-
+Before we expose properties/actions/events, we need to add handlers (e.g., an action handler is added as described below).
 
 {{< highlight js "linenos=table" >}}
-thing.setActionHandler("increment", (params, options) => {
-        return thing.readProperty("count").then((count) => {
-            let step = 1;
-            if (options && typeof options === 'object' && 'uriVariables' in options) {
-                if ('step' in options['uriVariables'] && options['uriVariables'] instanceof Array) {
-                    step = options['uriVariables']['step'];
-                }
-            }
-            let value = count + step;
-            console.log("Incrementing count from " + count + " to " + value);
-            thing.writeProperty("count", value);
-        });
-    });
+thing.setActionHandler("increment", async (params, options) => {
+	let step = 1;
+	if (options && typeof options === "object" && "uriVariables" in options) {
+		if ("step" in options.uriVariables) {
+			const uriVariables = options.uriVariables as Record<string, unknown>;
+			step = uriVariables.step as number;
+		}
+	}
+	const newValue = count + step;
+	console.log("Incrementing count from " + count + " to " + newValue + " (with step " + step + ")");
+	count = newValue;
+	return undefined;
+});
 {{< / highlight >}}
 
 
-Within an action, you can retrieve properties using the "readProperty()" function and write the value to the Thing once your value manipulated using the "writeProperty()" function.
+Within an action, you can retrieve properties by accessing its local variable (i.e., `count` in handler above).
 
 The full counter example is available in the repository under `examples/scripts/counter.js`.
 
@@ -287,11 +302,21 @@ First step is to create the Thing that we are willing to consume.
 For that, we use the exposed Thing descriptor to create that "client" Thing as illustrated below:
 
 {{< highlight js "linenos=table" >}}
-WoTHelpers.fetch("http://localhost:8080/counter").then( async (td) => {
-
-    let thing = await WoT.consume(td);
-
-}).catch( (err) => { console.error("Fetch error:", err); });
+WoTHelpers.fetch("http://localhost:8080/counter")
+    .then(async (td) => {
+        // using await for serial execution (note 'async' in then() of fetch())
+        try {
+            const thing = await WoT.consume(td);
+            console.info("=== TD ===");
+            console.info(td);
+			// ...
+        } catch (err) {
+            console.error("Script error:", err);
+        }
+    })
+    .catch((err) => {
+        console.error("Fetch error:", err);
+    });
 {{< / highlight >}}
 
 The created Thing enables access to all the properties and actions exposed by the "server" Thing.
@@ -299,16 +324,16 @@ They can be accessed as described below:
 
 {{< highlight js "linenos=table" >}}
 // read property #1
-let read1 = await thing.readProperty("count");
-console.info("count value is", read1);
+const read1 = await thing.readProperty("count");
+console.log("count value is", await read1.value());
 {{< / highlight >}}
 
 
 {{< highlight js "linenos=table" >}}
-// increment property #1
+// increment property #1 (without step)
 await thing.invokeAction("increment");
-let inc1 = await thing.readProperty("count");
-console.info("count value after increment #1 is", inc1);
+const inc1 = await thing.readProperty("count");
+console.info("count value after increment #1 is", await inc1.value());
 {{< / highlight >}}
 
 
