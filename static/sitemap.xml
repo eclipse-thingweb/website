@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  full documentation at sitemaps.org -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.thingweb.io</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/get-involved.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/hands-on.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/hands-on-intro-raspberry.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/hands-on-exposed-thing-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/smart-coffee-machine.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/news.html</loc>
+  </url>
+  <url>
+    <loc>https://www.thingweb.io/videos.html</loc>
+  </url>
+</urlset>
