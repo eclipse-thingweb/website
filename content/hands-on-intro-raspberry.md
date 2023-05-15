@@ -119,13 +119,13 @@ wot@node-wot:~$ npm version
 
 ### Cloning the repository 
 
-The reference implementation of the Web of Things is published in GitHub as node-wot project at [GitHub](https://github.com/eclipse/thingweb.node-wot).
+The reference implementation of the Web of Things is published in GitHub as node-wot project at [GitHub](https://github.com/eclipse-thingweb/node-wot).
 The project is part of the Eclipse Foundation.
 Use the command below to clone the repository on your local system:
 
 {{< highlight bash >}}
 wot@node-wot:~$ sudo apt install git
-wot@node-wot:~$ git clone https://github.com/eclipse/thingweb.node-wot
+wot@node-wot:~$ git clone https://github.com/eclipse-thingweb/node-wot
 {{< / highlight >}}
 
 <img style="max-width:100%; height:auto; margin-left:auto; margin-right:auto; display:block;" src="../images/clone-2.gif" alt="Cloning repo"/>
@@ -144,7 +144,7 @@ Node-wot requires dependencies such as Typescript, lerna, etc.
 By running the command below, those dependencies are installed:
 
 {{< highlight bash >}}
-wot@node-wot:~$ cd thingweb.node-wot
+wot@node-wot:~$ cd node-wot
 wot@node-wot:~$ npm install
 {{< / highlight >}}
 

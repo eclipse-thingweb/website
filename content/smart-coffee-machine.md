@@ -19,7 +19,7 @@ draft: false
 </aside>
 
 ## Introduction
-This article is a tutorial which considers a fictional smart coffee machine in order to demonstrate the capabilities of Web of Things (WoT) and the usage of [node-wot API](https://github.com/eclipse/thingweb.node-wot).
+This article is a tutorial which considers a fictional smart coffee machine in order to demonstrate the capabilities of Web of Things (WoT) and the usage of [node-wot API](https://github.com/eclipse-thingweb/node-wot).
 In the world of Web of Thing properties, actions and events provided by a Thing are called Property Affordances, Action Affordances and Event Affordances, respectively.
 The difference of each becomes clear as we proceed the tutorial.
 So, we imagine a smart coffee machine which provides the following Property Affordances:
@@ -74,7 +74,7 @@ This produced TD can then be used by other Things or clients to interact with th
 WoT.produce({
     title: 'Smart-Coffee-Machine',
     description: `A smart coffee machine with a range of capabilities.`,
-    support: 'git://github.com/eclipse/thingweb.node-wot.git',
+    support: 'git://github.com/eclipse-thingweb/node-wot.git',
     '@context': [
         'https://www.w3.org/2019/wot/td/v1',
     ],
@@ -114,7 +114,7 @@ WoT.produce({
 })
 {{< / highlight >}}
 
-The full script is available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine.ts).
+The full script is available at [node-wot GitHub repository](https://github.com/eclipse-thingweb/node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine.ts).
 Note that, all affordances (i.e. property, action and event) should be added withing the `produce` method.
 
 After producing the Thing, we need to initialize the properties and all required handlers.
@@ -386,7 +386,7 @@ WoTHelpers.fetch("http://127.0.0.1:8080/smart-coffee-machine").then(async (td) =
 });
 {{< / highlight >}}
 
-The full "client" script is available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine-client.ts).
+The full "client" script is available at [node-wot GitHub repository](https://github.com/eclipse-thingweb/node-wot/blob/master/packages/examples/src/scripts/smart-coffee-machine-client.ts).
 Notice that, we are awaiting asynchronous functions to complete before proceeding, which is quite logical here.
 Remember that we need the `async` keyword in the outer function in order to use `await` inside the function.
 We could also chain the asynchronous `consume` method with other methods using `.then`.
@@ -482,14 +482,14 @@ Again, here we don't need to await for a function to complete, since subscribing
 
 ## Running scripts from node-wot repository
 
-As it is mentioned above, these example scripts are available at [node-wot GitHub repository](https://github.com/eclipse/thingweb.node-wot/blob/master/packages/examples/src/scripts).
+As it is mentioned above, these example scripts are available at [node-wot GitHub repository](https://github.com/eclipse-thingweb/node-wot/blob/master/packages/examples/src/scripts).
 In order to run them do the following:
 
 {{< highlight bash "linenos=table" >}}
 # 1. Clone the repo
-git clone https://github.com/eclipse/thingweb.node-wot
+git clone https://github.com/eclipse-thingweb/node-wot
 # 2. cd to the project's root directory
-cd thingweb.node-wot
+cd node-wot
 # 3. Install dependencies 
 npm install
 # 4. Build the project
@@ -505,7 +505,7 @@ node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine.js
 node packages/cli/dist/cli.js examples/scripts/smart-coffee-machine-client.js --clientonly
 {{< / highlight >}}
 
-If you want to add your own example scripts be sure to follow the [workflow](https://github.com/eclipse/thingweb.node-wot/tree/master/packages/examples#workflow).
+If you want to add your own example scripts be sure to follow the [workflow](https://github.com/eclipse-thingweb/node-wot/tree/master/packages/examples#workflow).
 
 In case you want to just consume a Thing you can use a tool like the [Browsified node-wot](http://plugfest.thingweb.io/webui/).
 It allows you to interact with Things right from your browser.
@@ -548,7 +548,7 @@ The reason is simple - the client is not authorized.
 Let's fix it.
 
 We need an additional configuration file which will contain the appropriate credentials.
-The configuration file contains the following and is available as [smart-coffee-machine-client.conf.json](https://github.com/eclipse/thingweb.node-wot/tree/master/examples/scripts/smart-coffee-machine-client.conf.json):
+The configuration file contains the following and is available as [smart-coffee-machine-client.conf.json](https://github.com/eclipse-thingweb/node-wot/tree/master/examples/scripts/smart-coffee-machine-client.conf.json):
 
 {{< highlight js "linenos=table" >}}
 {
