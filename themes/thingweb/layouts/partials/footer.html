@@ -1,8 +1,9 @@
-<div class="footer-shape">
-        	<img src="/img/others/footer-shape.jpg" class="img-fluid" width="100%"/>
+<div class="container">
+	<div class="">
+		<div class="footer-shape">
+        	<img src="/img/others/footer-shape.jpg" class="img-fluid" style="width: 100%" />
         </div>
-        <footer>
-        	<div class="container sp">
+        <footer><!-- width="100%" -->
 				<!--
                 <div class="foot-social text-center">
                 	<ul class="list-inline">     
@@ -14,7 +15,7 @@
                     </ul>
                 </div>
 				-->
-                <div class="foot-link text-center">
+                <div class="foot-link text-center" >
                 	<ul class="list-inline">     
                     	<li><a href="/">Home</a></li>
                         <li>|</li>
@@ -22,7 +23,7 @@
                         <li>|</li> 
                         <li><a href="#">Services</a></li>
                         <li>|</li>-->
-                        <li><a href="https://github.com/eclipse/thingweb.node-wot/">Project on Github</a></li>
+                        <li><a href="https://github.com/eclipse-thingweb/node-wot/">Project on Github</a></li>
                         <li>|</li>
                         <!-- <li><a href="#">Reviews</a></li>
                         <li>|</li>-->
@@ -30,12 +31,34 @@
                     </ul>
                 </div>
                 <div class="copy text-center">
-                	<p>Copyrights &copy; {{ dateFormat "2006" now }} Thingweb. All Rights Reserved. <span>|</span> <a href="http://www.eclipse.org/legal/termsofuse.php">Terms of Use</a> <span>|</span> <a href="http://www.eclipse.org/legal/privacy.php">Privacy  Policy</a></p>
+                	<p>
+						<a href="http://www.eclipse.org" target="_blank">Eclipse</a>
+						<span>|</span>
+						<a href="http://www.eclipse.org/legal/privacy.php" target="_blank">Privacy Policy</a>
+						<span>|</span>
+						<a href="http://www.eclipse.org/legal/termsofuse.php" target="_blank">Terms of Use</a>
+						<span>|</span>
+						<a href="http://www.eclipse.org/legal/copyright.php" target="_blank">Copyright Agent</a>
+						<span>|</span>
+						<a href="http://www.eclipse.org/legal" target="_blank">Legal</a>
+					</p>
+					</br>
+					<a href="https://www.eclipse.org" target="_blank">
+                        <img style="height: 120px" src="https://www.eclipse.org/hono/img/eclipse_foundation_logo_wo.svg" id="logo-eclipse-foundation">
+                    </a>
+					
+					<a href="https://iot.eclipse.org" target="_blank">
+                        <img style="height: 50px" src="https://www.eclipse.org/hono/img/iot-logo.png">
+                    </a>
                 </div>
-            </div>
+				<div class="copy text-center">
+                	<p>© {{ dateFormat "2006" now }} The Eclipse Thingweb Project</p>
+                </div>
         </footer>
     	
-        <script type="text/javascript" src="/js/jquery-1.11.3.min.js" language="javascript"></script>
-        <script type="text/javascript" src="/js/bootstrap.min.js" language="javascript"></script>
-		<script type="text/javascript" src="/js/custom.js" language="javascript"></script>
+        <script type="text/javascript" src="/js/jquery-1.11.3.min.js" ></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="/js/custom.js" ></script>
         <script type="text/javascript" src="/js/owl.carousel.js" ></script>
+	</div>
+</div>
