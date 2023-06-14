@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+      <link rel="icon" href="./img/favicon.png" type="image/png">
+      <title>Thingweb - WoT Plugfest services</title>
+      <style type="text/css">
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        
+        header {
+          border-top: 3px solid rgb(51, 184, 164);
+        }
+        
+        header img {
+          display: block;
+          margin: auto;
+        }
+        
+        .container {
+          padding: 10px 0;
+        }
+      
+        .wrapper {
+          font-family: sans-serif;
+          max-width: 680px;
+          margin: auto;
+        }
+        
+        footer {
+          box-sizing: border-box;
+          background-color: rgb(20, 20, 20);
+          display: block;
+          text-align: center !important;
+          padding: 5px 0 45px;
+        }
+        
+        .footer-shape img {
+          height: auto;
+          vertical-align: middle;
+          border-style: none;
+        }
+        
+        footer ul {
+          list-style: none;
+          padding: 15px 0;
+        }
+        
+        footer li, footer a {
+          display: inline-block;
+          color: white;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 17px;
+          padding: 0 5px;
+          text-decoration-line: none;
+        }
+        
+        footer p {
+          color: white;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 14px;
+          padding-top: 12px;
+        }
+        
+        form {
+          border: solid 1px black;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        
+        .form-control {
+          width: 100%;
+          text-align: right;
+        }
+        
+        table {
+          width: 100%;
+          text-align: center;
+        }
+        
+        textarea {
+          resize: vertical;
+          width: calc(100% - 2*3px);
+        }
+
+        .btn {
+          background: rgb(51, 184, 164);
+          border: 1px solid transparent;
+          border-radius: 200px;
+          color: white;
+          padding: 12px 25px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        
+        .highlighted {
+          text-align: center;
+          font-style: italic;
+        }
+
+        .framed {
+          padding: 12px 25px;
+          font-size: 16px;
+        }
+        
+        .framed a {
+          color: white;
+        }
+        
+        p.success {
+          background: rgb(51, 184, 164);
+          color: white;
+        }
+        
+        p.failure {
+          background: rgb(161, 33, 33);
+          color: white;
+        }
+        
+        table.success tr {
+          background: rgb(87, 109, 132);
+          color: white;
+        }
+        
+        table.failure tr {
+          background: rgb(161, 33, 33);
+          color: white;
+        }
+      </style>
+    </head>
+    <body>
+      <header>
+        <div class="container">
+          <img alt="Thingweb logo" src="./img/logo.png">
+        </div>
+      </header>
+    
+      <div class="wrapper">
+	  
+<h1>Services to support the W3C WoT Plugfests</h1>
+
+<p>We will provide sevices to support the operation of a Plugfest of W3C WoT</p>
+
+<!-- [DP] IAM Services not running anymore -->
+<!--
+<h2>IAM Services</h2>
+<p>See the <a href="http://w3c.github.io/wot/current-practices/wot-practices.html#security-mechanisms" target="_blank">security mechanisms</a> described in the Current Practices document. This service currently offers OAuth tokens using RS256 signatures.</p>
+<ul>
+    <li>Token endpoint:<br/> <a href="https://plugfest.thingweb.io:8443/wos/0.1/oauth/token">https://plugfest.thingweb.io:8443/wos/0.1/oauth/token</a></li>
+    <li>Registration endpoint:<br/> <a href="https://plugfest.thingweb.io:8443/wos/0.1/oauth/register">https://plugfest.thingweb.io:8443/wos/0.1/oauth/register</a> </li>
+    <li>Signing Key (RS256):<br/> <a href="https://plugfest.thingweb.io:8443/wos/0.1/oauth/jwk">https://plugfest.thingweb.io:8443/wos/0.1/oauth/jwk</a></li>
+</ul>
+-->
+
+
+
+<h2>TD Directory</h2>
+<p>REST interface to add, update and query TDs for discovery purposes. See how to interact with the directory <a href="http://petstore.swagger.io/?url=https://cdn.statically.io/gh/thingweb/thingweb-directory/6aca57d9/directory-servlet/src/main/webapp/api.json">here</a> (Swagger specification).</p>
+<ul style="opacity: 0.6; filter: alpha(opacity = 60);">
+    <li><a hrefX="http://plugfest.thingweb.io:8081">HTTP TD Repository</a> (Inactive)</li>
+	<li><a hrefX="coap://plugfest.thingweb.io:5681/td">CoAP TD Repository</a> (Inactive)</li>
+</ul>
+
+<h2>TD Playground</h2>
+
+<p>Tool to check the validity of a TD against its definition in the Current Practices document. It performs both syntactic checks <!-- (see <a href="https://github.com/thingweb/thingweb-playground/blob/master/WebContent/td-schema-bundang-simple.json">JSON schema</a>)--> and semantic checks (see <a href="https://cdn.statically.io/gh/w3c/wot/546d9acb/thing-description/w3c-wot-td-ontology.owl">ontology</a> &amp; its <a href="http://ceur-ws.org/Vol-1783/paper-06.pdf">core principles</a>).</p>
+<!-- 
+<p><i>Note: the playground is not online anymore. You can find the code on Github: <a href="https://github.com/thingweb/thingweb-playground">thingweb/thinwgweb-playground</a>.</i></p>
+-->
+<ul>
+    <li><a href="./playground/">Playground</a></li>
+</ul>
+
+
+<h2>WebUI <!-- and TD Transformer--></h2>
+<ul>
+	<li>Browsified node-wot, see <a href="http://plugfest.thingweb.io/webui/">http://plugfest.thingweb.io/webui/</a></li>
+	<li>
+		Browser Examples
+		<ul>
+			<li><a href="http://plugfest.thingweb.io/examples/smart-coffee-machine.html">Smart Coffee Machine</a></li>
+			<li><a href="http://plugfest.thingweb.io/examples/counter.html">Counter</a></li>
+		</ul>
+	</li>
+	<li>
+		JavaFX-based UI (see <a href="https://github.com/danielpeintner/wot-fxui">WoT-FXUI</a>)
+		<ul>
+			<li>See <a href="http://plugfest.thingweb.io:8088/test/fullscreen/default">running Web-UI instance</a> in browser without any plugin</li>
+			<li>Possible as a local desktop application and an Android/iOS app also</li>
+		</ul>
+	</li>
+
+
+	<!--
+    <li><a href="http://plugfest.thingweb.io/webui/">Thing Client UI</a> (Note: needs to be updated for Prague PlugFest)</li>
+	-->
+	<!-- <li><a href="/td-transformer/">Thing Description Transformer</a></li> -->
+</ul>
+		
+      </div>
+      
+      <div class="footer-shape">
+        <img src="./img/footer-shape.jpg" width="100%"/>
+      </div>
+      <footer>
+        <div class="links">
+          <ul>
+            <li>
+              <a href="http://www.eclipse.org">Eclipse Foundation</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www.eclipse.org/legal/privacy.php">Privacy policy</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www.eclipse.org/legal/termsofuse.php">Terms of use</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www.eclipse.org/legal/copyright.php">Copyright</a>
+            </li>
+            <li>|</li>
+            <li>
+              <a href="http://www.eclipse.org/legal">Legal</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p>Copyrights ©  2023 Eclipse Thingweb. All Rights Reserved.</p>
+        </div>
+      </footer>
+    </body>
+</html>
