@@ -174,31 +174,68 @@
     </p>
 
     <ul>
-      <li><a href="http://plugfest.thingweb.io/webui/">Browsified node-wot</a></li>: You can try different Things with
-      it.
-
       <li>
-        JavaFX-based UI (see <a href="https://github.com/danielpeintner/wot-fxui">WoT-FXUI</a>)
+        <a href="http://plugfest.thingweb.io/webui/">Browserified node-wot</a></li>: You can try interacting with different Things using this simple interface. Note that this just a demo page to showcase the <a href="https://github.com/eclipse-thingweb/node-wot/tree/master/packages/browser-bundle">browser bundle of node-wot</a>.
+      <li>
+        <a href="https://github.com/danielpeintner/wot-fxui">WoT-FXUI</a>: JavaFX-based UI to interact with Things.
         <ul>
-          <li>See <a href="http://plugfest.thingweb.io:8088/test/fullscreen/default">running Web-UI instance</a> in
-            browser without any plugin</li>
-          <li>Possible as a local desktop application and an Android/iOS app also</li>
+          <li>See <a href="http://plugfest.thingweb.io:8088/test/fullscreen/default">running Web-UI instance</a> in browser without any plugin</li>
+          <li><a href="https://github.com/danielpeintner/wot-fxui">GitHub Repository</a></li>
+          <li>Possible as a local desktop application or as an Android/iOS app</li>
         </ul>
       </li>
-
     </ul>
 
     <h2>Online Things for Testing</h2>
 
+    <p>
+      Eclipse Thingweb hosts Things that can be interacted with over the public Internet.
+      You can use them to test your WoT applications.
+    </p>
 
-    <li>
-      Browser Examples
-      <ul>
-        <li><a href="http://plugfest.thingweb.io/examples/smart-coffee-machine.html">Smart Coffee Machine</a></li>
-        <li><a href="http://plugfest.thingweb.io/examples/counter.html">Counter</a></li>
-      </ul>
-    </li>
+    <p>
+      All of them require no security mechanism to be communicated with and have same behavior from CoAP or HTTP endpoints.
+      Below are small explanations on what they can be used for:
+    </p>
+    
+    <ul>
+      <li>
+        <b>Counter:</b> It has a count property that can be read or observed and can be incremented or decremented via separate actions. 
+        It is also possible to reset the count the value, obtain when the last change occurred, subscribe to a change in the count value or get the count value as an image.
+        TDs:
+        <ul>
+          <li>HTTP: http://plugfest.thingweb.io:8083/counter</li>
+          <li>CoAP: coap://plugfest.thingweb.io:5683/counter</li>
+        </ul>
+      </li>
+      <li>
+        <b>TestThing:</b> This Thing exists primarily for testing different data schemas and payload formats. 
+        It also has events attached to affordances that notify when a value changes.
+        TDs
+        <ul>
+          <li>HTTP: http://plugfest.thingweb.io:8083/testthing</li>
+          <li>CoAP: coap://plugfest.thingweb.io:5683/testthing</li>
+        </ul>
+      </li>
+      <li>
+        <b>Smart Coffee Machine:</b> This is a simulation of a coffee machine that also has a simple user interface that displays the values of properties. 
+        In addition to proving a real life device example, it can be used for testing uriVariables. 
+        You can ask it to brew different coffees and monitor the available resource level.
+        TDs:
+        <ul>
+          <li>HTTP: http://plugfest.thingweb.io:8083/smart-coffee-machine</li>
+          <li>CoAP: coap://plugfest.thingweb.io:5683/smart-coffee-machine</li>
+        </ul>
+      </li>
+    </ul>
 
+    <p>
+      Additionally, Counter and Smart Coffee Machine offer simple UIs that reflects their state.
+    </p>
+    <ul>
+      <li><a href="http://plugfest.thingweb.io/examples/smart-coffee-machine.html">Smart Coffee Machine</a></li>
+      <li><a href="http://plugfest.thingweb.io/examples/counter.html">Counter</a></li>
+    </ul>
   </div>
 
   <div class="footer-shape">
