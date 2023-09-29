@@ -1,6 +1,6 @@
 # Eclipse Thingweb Website
 
-Rendered version: <https://www.thingweb.io/>
+Rendered version: <https://www.thingweb.io>
 
 ## How to contribute
 
