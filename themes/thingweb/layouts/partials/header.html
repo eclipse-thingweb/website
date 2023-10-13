@@ -1,19 +1,21 @@
-    	<header>
-            <div class="header-top-all">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <div class="logo">
-                                <a href="/"><img src="/img/logo.png" class="img-fluid"/></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="mainmenu">						
-                                <nav class="navbar navbar-expand-md">
-                                   <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                    <i class="fa fa-bars"></i>
-                                  </button>
-                                  <div class="collapse navbar-collapse" id="navbarNav">
+<header>
+    <div class="header-top-all">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="logo">
+                        <a href="/"><img src="/img/logo.png" class="img-fluid" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="mainmenu">
+                        <nav class="navbar navbar-expand-md">
+                            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse"
+                                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
                                     <ul class="navbar-nav">
 									  {{ $currentPage := . }}
 									  {{/* printf "%#v" $currentPage.URL */}}
@@ -28,7 +30,15 @@
 												<a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
 											</li>
 										{{ end }}
-									  <!--
+                                    <li class="nav-item">
+                                        <a class="nav-link" target="_blank" href="https://github.com/eclipse-thingweb">GitHub <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                fill="#676767" d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z" />
+                                        </svg></a>
+                                        
+                                    </li>
+                                    <!--
                                       <li class="nav-item">
                                         <a class="nav-link" href="#">About us</a>
                                       </li>
@@ -48,27 +58,27 @@
                                         <a class="nav-link" href="#"><i class="fa fa-search"></i></a>
                                       </li>
 									  -->
-                                    </ul>
-                                  </div>
-                                </nav>
-							</div>
-                        </div>
+                                </ul>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>
-			<div class="header-bottom">
-				<div class="container">
-					<div class="row">
-						<div class="owl-carousel">
-							<div class="item">
-								<img src="/img/banner/banner-shape-merged.jpg" style="width: 100%" alt="" />
-								<div class="container">
-									<div class="carousel-content-panel hidden-xs text-left" style="z-index: 0">
-										<h1>Thingweb</h1>
-										<p>Eclipse Thingweb node-wot is a runtime and tooling for web technology <br/> that enables easy creation of applications for the Internet of Things</p>
-										<!-- Note: Button hrefs are hided by banner-shape image -->
-										<!-- -->
-										<!--<ul class="list-inline" style="z-index: 100;">
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel">
+                    <div class="item">
+                        <img src="/img/banner/banner-shape-merged.jpg" style="width: 100%" alt="" />
+                        <div class="container">
+                            <div class="carousel-content-panel hidden-xs text-left col-sm-4"
+                                style="z-index: 0; margin-top: -3em;">
+                                <h1 style="font-size: 2.5em;">Pick what you need to build your IoT solution</h1>
+                                <!-- Note: Button hrefs are hided by banner-shape image -->
+                                <!-- -->
+                                <!--<ul class="list-inline" style="z-index: 100;">
 										<li>
 										<a href="/hands-on.html" class="btn btn-ban-1">Hands-on</a>
 										</li>
@@ -76,10 +86,10 @@
 										<a href="/news.html" class="btn btn-ban-2">News</a>
 										</li>
 										</ul>-->
-									</div>
-								</div>
-							</div>
-							<!--
+                            </div>
+                        </div>
+                    </div>
+                    <!--
 							<div class="item">
 								<img src="/img/banner/banner.jpg" width="100%" alt="2">
 								<div class="container">
@@ -98,13 +108,13 @@
 								</div>
 							</div>
 							-->
-						</div>
-					</div>
-					<!--<div class="row" style="">
+                </div>
+            </div>
+            <!--<div class="row" style="">
 						<div class="banner-shape">
 							<img src="/img/banner/banner-shape.png" class="img-fluid" width="100%"/>
 						</div>
 					</div>-->
-				</div>
-			</div>
-    	</header>
+        </div>
+    </div>
+</header>
