@@ -34,6 +34,12 @@ h6 {font-size:12px;}
 /*holder*/
 .wel-holder h1 { color:#1a1818; font-size:38px; text-transform:uppercase; font-weight:700; font-family: "Open Sans"; padding-top:20px; }
 .wel-holder p  { color:#7f7f7f; font-size:17px; font-family: 'Open Sans'; line-height:32px; padding:15px 0; }
+.wel-holder li {
+		color: #7f7f7f;
+		font-size: 17px;
+		font-family: 'Open Sans';
+		line-height: 32px;
+	}
 .wel-holder .btn-read { color:#33b8a4; font-size:16px; font-family:'Open Sans'; font-weight:600; border:2px solid #33b8a4; padding:12px 30px; border-radius:75px; text-transform:uppercase;  }
 /**/
 .why-bottom-all { background:url(img/others/center-shape.jpg) no-repeat; background-size:cover; }
