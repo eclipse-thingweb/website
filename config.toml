@@ -7,7 +7,7 @@ theme = "thingweb"
 
 # both following flags needed so that the content in /public uses correct locations
 uglyURLs = "true"
-relativeURLs = "true"
+#relativeURLs = "true" # https://github.com/eclipse-thingweb/website/issues/63
 
 #MetaDataFormat = "yaml"
 #DefaultContentLanguage = "en"
