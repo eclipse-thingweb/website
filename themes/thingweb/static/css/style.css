@@ -114,7 +114,7 @@ footer .copy  p a { color:#fff; text-decoration:none; }
 
 
 /*Analytics Banner*/
-.analytics-banner { position: fixed; bottom: 0; left: 0; width: 100%; padding: 2rem; text-align: left; background-color: #141414; box-shadow: 0px -5px 10px #7f7f7f73; font-family: 'Open Sans'; }
+.analytics-banner { position: fixed; bottom: 0; left: 0; z-index: 99999; width: 100%; padding: 2rem; text-align: left; background-color: #141414; box-shadow: 0px -5px 10px #7f7f7f73; font-family: 'Open Sans'; }
 .analytics-banner.hidden { display: none; }
 .analytics-banner__disclaimer { color: #eeeeee; margin-bottom: 1rem; }
 .analytics-banner__disclaimer h4{ color: #33b8a4; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; }
