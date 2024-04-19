@@ -118,7 +118,7 @@ footer .copy  p a { color:#fff; text-decoration:none; }
 .analytics-banner.hidden { display: none; }
 .analytics-banner__disclaimer { color: #eeeeee; margin-bottom: 1rem; }
 .analytics-banner__disclaimer h4{ color: #33b8a4; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; }
-.analytics-banner__disclaimer p{ margin-bottom: 0; }
+.analytics-banner__disclaimer p{ margin-bottom: 1rem; }
 .analytics-banner__disclaimer p a{ color: #838383; text-decoration: underline; }
 .analytics-banner__interactions { display: flex; align-items: center; justify-content: left; gap: 1rem; }
 .analytics-banner__interactions button{ padding: 0.35rem 1.5rem; border: none; cursor: pointer; font-weight: 600; color: #ffffff; border-radius: 50vw; border: 2px solid #33b8a4; transition: all 250ms ease-in-out; }
