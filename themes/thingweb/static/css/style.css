@@ -99,10 +99,6 @@ h6 {font-size:12px;}
 .test-holder .owl-next{ background:url(img/icons/pro-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-65px; bottom:42%;}
 
 
-
-
-
-
 /*footer*/
 footer { background: #141414 ;  padding:5px 0 45px; }
 footer .container.sp { background:url(img/others/foot-logo.png) center right no-repeat; padding:25px 15px; }
@@ -117,10 +113,23 @@ footer .copy  p a { color:#fff; text-decoration:none; }
 .footer-shape { margin-top:20px; }
 
 
+/*Analytics Banner*/
+.analytics-banner { position: fixed; bottom: 0; left: 0; z-index: 99999; width: 100%; padding: 2rem; text-align: left; background-color: #141414; box-shadow: 0px -5px 10px #7f7f7f73; font-family: 'Open Sans'; }
+.analytics-banner.hidden { display: none; }
+.analytics-banner__disclaimer { color: #eeeeee; margin-bottom: 1rem; }
+.analytics-banner__disclaimer h4{ color: #33b8a4; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; }
+.analytics-banner__disclaimer p{ margin-bottom: 1rem; }
+.analytics-banner__disclaimer p a{ color: #838383; text-decoration: underline; }
+.analytics-banner__interactions { display: flex; align-items: center; justify-content: left; gap: 1rem; }
+.analytics-banner__interactions button{ padding: 0.35rem 1.5rem; border: none; cursor: pointer; font-weight: 600; color: #ffffff; border-radius: 50vw; border: 2px solid #33b8a4; transition: all 250ms ease-in-out; }
+.analytics-banner__interactions button:hover{ background-color: #2d9687; color: #ffffff; border-color: #2d9687; }
+.analytics-banner__interactions .accept-btn{ background-color: #33b8a4; }
+.analytics-banner__interactions .decline-btn{ background-color: transparent; color: #33b8a4; }
+
+
 /*Responsive*/
 
 @media (max-width: 1320px) 
-
 {
 	header .mainmenu nav.navbar .navbar-nav li.nav-item a.nav-link {	font-family: 'Open Sans';	font-size: 14px;	color: #676767;	font-weight: 600;	text-transform: uppercase;	padding: 5px 11px;}
 	header .mainmenu .navbar {	margin: 0px;	padding: 0;	text-align: right;	margin-top: 18px;}
@@ -139,9 +148,9 @@ footer .copy  p a { color:#fff; text-decoration:none; }
 	.wel-holder h1 {	color: #1a1818;	font-size: 28px;	text-transform: uppercase;	font-weight: 700;	font-family: "Open Sans";	padding-top: 20px;}
 	
 	.project-holder .owl-prev{ background:url(img/icons/our-1.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; left:-35px; bottom:42%;}
-.project-holder .owl-next{ background:url(img/icons/our-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-35px; bottom:42%;}
+	.project-holder .owl-next{ background:url(img/icons/our-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-35px; bottom:42%;}
 
-header .mainmenu { position:relative; top:0px; }
+	header .mainmenu { position:relative; top:0px; }
 
 	.test-holder .owl-prev{ background:url(img/icons/pro-1.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; left:-35px; bottom:42%;}
 	.test-holder .owl-next{ background:url(img/icons/pro-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-35px; bottom:42%;}
@@ -150,7 +159,6 @@ header .mainmenu { position:relative; top:0px; }
 }
 
 @media (max-width: 1023px) 
-
 {
 	header .mainmenu nav.navbar .navbar-nav li.nav-item a.nav-link {	font-family: 'Open Sans';	font-size: 12px;	color: #676767;	font-weight: 600;	text-transform: uppercase;	padding: 5px 5px;}
 	header .mainmenu .navbar {	margin: 0px;	padding: 0;	text-align: right;	margin-top: 10px;}
@@ -168,10 +176,9 @@ header .mainmenu { position:relative; top:0px; }
 	.test-bottom h5 {	color: #414141;	font-size: 10px;	font-family: 'Open Sans';}
 	.test-bottom h6 {	color: #414141;	font-size: 8px;	font-family: 'Open Sans';}
 	*/
-	}
+}
 
 @media (max-width: 767px) 
-
 {
 	header .header-bottom .carousel-content-panel { display:none; }
 	header .navbar-expand-md .navbar-nav {	-webkit-box-orient: horizontal;	-webkit-box-direction: normal;	-ms-flex-direction: column;	flex-direction: column;	margin-left: auto;}
@@ -193,10 +200,10 @@ header .mainmenu { position:relative; top:0px; }
 	.project-holder h1 {color: black; font-size: 28px;	text-transform: uppercase;	font-weight: 700;	font-family: "Open Sans";	padding-bottom: 0;} /* color: #ffffff;	 */
 	
 	.project-holder .owl-prev{ background:url(img/icons/our-1.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; left:-05px; top:-45px;}
-.project-holder .owl-next{ background:url(img/icons/our-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-05px; top:-45px;}
+	.project-holder .owl-next{ background:url(img/icons/our-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-05px; top:-45px;}
 	.test-holder .owl-prev{ background:url(img/icons/pro-1.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; left:-05px; top:-75px;}
 	.test-holder .owl-next{ background:url(img/icons/pro-2.png) no-repeat !important; text-indent:-9999px; width:28px; height:57px; border:none !important; position:absolute; right:-05px; top:-75px;}
-.pro-all {	background: #fff;	margin: 45px 0 0;	padding: 10px;}
+	.pro-all {	background: #fff;	margin: 45px 0 0;	padding: 10px;}
 	.web-sh.sp1 {	position: absolute;	z-index: 9999;	width: 100%;	top: -2px;}
 	.why-sh {	position: relative;	top: -2px;}
 	.why-sh.sp {	position: relative;	top: 2px;}
@@ -213,7 +220,6 @@ header .mainmenu { position:relative; top:0px; }
 	border-radius: 0.25rem;
 	color: #fff;
 	margin-left: auto;
-}
-
+	}
 
 }
