@@ -1,25 +1,41 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/eclipse-thingweb/website/master/misc/thingweb_logo_for_dark_bg.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/eclipse-thingweb/website/master/misc/thingweb_logo.svg">
-  <img title="ThingWeb" alt="Thingweb logo" src="" width="300px">
-</picture>
+# Website
 
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Website
+### Installation
 
-Rendered version: <https://www.thingweb.io>
+```
+$ yarn
+```
 
-## How to contribute
+### Local Development
 
-- We use Hugo static site generator: https://gohugo.io/getting-started/quick-start/
-- In order to add new content, you can use `hugo new posts/my-first-post.md` or `hugo new single01.md`
+```
+$ yarn start
+```
 
-You can see the content in different ways locally:
-- Start the Hugo server with drafts enabled: `hugo server -D`
-- Build Hugo website  in `/public`: `hugo`
-- Build Hugo website with drafts enabled in `/public`: `hugo -D`
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-## Hugo Versions
+### Build
 
-Until we find a solution, it is recommended to use version 0.79.0 of Hugo.
-For convenience, you can find the Linux binary under [binaries](./binaries/) folder.
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
