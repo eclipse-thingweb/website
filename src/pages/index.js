@@ -187,7 +187,7 @@ export default function HomePage() {
               </div>
 
               <div className={styles.stat}>
-                <h3 className={clsx(styles.stat__number, 'hero-title')}>2</h3>
+                <h3 className={clsx(styles.stat__number, 'hero-title')}>X</h3>
                 <p className={styles.stat__description}>Adopters</p>
               </div>
             </div>
