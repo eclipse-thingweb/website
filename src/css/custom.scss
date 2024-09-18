@@ -143,6 +143,7 @@ html {
   background-color: var(--neutral-clr-50);
 }
 
+
 body,
 p,
 button,
@@ -152,6 +153,23 @@ a {
   letter-spacing: var(--ls-body);
   color: var(--neutral-clr-900);
   margin: 0;
+}
+
+.gridBackground {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  mask: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 5%,rgba(255, 255, 255, .25) 20%,rgba(255, 255, 255, .05) 35%, rgba(255, 255, 255, 0) 50%, transparent);
+  overflow: hidden;
+
+  svg {
+    max-width: 100rem;
+    max-height: 100rem;
+    min-width: 65rem;
+    min-height: 65rem;
+  }
 }
 
 .hero-title {
@@ -184,13 +202,15 @@ h3 {
   letter-spacing: var(--ls-header)
 }
 
-.hero-subheader, .subheader {
+.hero-subheader,
+.subheader {
   line-height: var(--lh-subheader);
   font-family: var(--ff-primary);
   letter-spacing: var(--ls-subheader);
   max-width: 50ch;
   color: var(--neutral-clr-700);
 }
+
 .hero-subheader {
   font-size: var(--fs-subheader-hero);
 }
@@ -225,6 +245,12 @@ img {
   height: 100%;
 } */
 
+/***********************/
+/****** Utilities ******/
+/***********************/
+
+
+/*** Buttons styles **/
 .btn {
   display: flex;
   flex-direction: row;
@@ -244,8 +270,6 @@ img {
   font-family: var(--ff-secondary);
   font-weight: var(--fw-medium);
   transition: all 250ms ease-in-out;
-  // transition: background-color 250ms ease-in-out, color 250ms ease-in-out, border-shadow 100ms ease-in-out;
-
 
   &>* {
     color: inherit;
@@ -257,8 +281,6 @@ img {
 .btn-primary {
   background-color: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
-  // border-bottom: 5px solid var(--ifm-color-primary-darkest);
-  // box-shadow: 0px 4px 0 var(--ifm-color-primary-darkest);
 
   &.btn-outline {
     background-color: transparent;
@@ -269,30 +291,12 @@ img {
     background-color: var(--ifm-color-primary-dark);
     border-color: var(--ifm-color-primary-dark);
     color: var(--neutral-clr-50);
-    // box-shadow: 5px 5px 0 var(--ifm-color-primary-darkest);
-    // transform: translate(-5px, -5px);
-
-    //TODO: remove if not needed
-    // &>* {
-    //   color: inherit;
-    // }
   }
 
   &:active {
     background-color: var(--ifm-color-primary-darkest);
     border-color: var(--ifm-color-primary-darkest);
     color: var(--neutral-clr-50);
-    // box-shadow: 0px 0px 0 var(--ifm-color-primary-darkest);
-    // transform: translateY(4px);
-
-    // box-shadow: 0px 0px 0 var(--ifm-color-primary-darkest);
-    // transform: translate(0px, 0px);
-
-    //TODO: remove if not needed
-    // &>* {
-    //   color: inherit;
-    //   fill: inherit;
-    // }
   }
 }
 
@@ -348,7 +352,56 @@ img {
   }
 }
 
-/******/
+/*** Scrollers ***/
+.scroller {
+  width: 100%;
+  padding: 2rem 0;
+  overflow: hidden;
+  mask: linear-gradient(90deg, transparent, rgb(255, 255, 255) 10%, white 90%, transparent);
+
+  & > * {
+    width: max-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    animation: scroll var(--_animation-duration, 60s) var(--_animation-direction, forwards) linear infinite;
+    gap: var(--_content-gap);
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  &[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  &[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  &[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  &[data-speed="slower"] {
+    --_animation-duration: 80s;
+  }
+
+  &[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - (var(--_content-gap)/2)));
+  }
+}
+
+
+/*** Overriding docusaurus styles ***/
 .navbar__title {
   font-family: var(--ff-primary);
   font-size: var(--fs-body-sm);
@@ -378,6 +431,7 @@ a.navbar__item {
 }
 
 footer.footer {
+
   div,
   ul,
   li,
@@ -385,14 +439,12 @@ footer.footer {
   p {
     font-size: var(--fs-footer);
     line-height: 2.5;
-    // line-height: var(--lh-body);
   }
 }
 
 .card h2 {
   letter-spacing: var(--ls-subheader);
 }
-/******/
 
 .header-github-link {
   &::before {
@@ -415,7 +467,7 @@ footer.footer {
 
 }
 
-/** Footer logos **/
+/*** Footer logos ***/
 .logos-wrapper {
   width: 100%;
   display: flex;

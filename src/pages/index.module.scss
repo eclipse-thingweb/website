@@ -116,6 +116,7 @@
         left: 50%;
         transform: translateX(-50%);
 
+
         .puzzleIcon {
           fill: var(--ifm-color-primary);
 
@@ -488,7 +489,7 @@
 }
 
 
-/*** Tools section ***/
+/****** Tools section *******/
 .toolsSection {
   padding: 4rem 0;
 
@@ -508,12 +509,14 @@
   &__tools {
     margin-top: 5rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 20rem);
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 18rem);
     grid-template-areas:
-      "node-wot node-wot td-playground"
-      "dart-wot td-tools td-playground"
-      "dart-wot domus-tdd domus-tdd";
+      "node-wot"
+      "td-playground"
+      "td-tools"
+      "dart-wot"
+      "domus-tdd";
     gap: 1rem;
 
     .tool {
@@ -529,9 +532,15 @@
       &__img {
         width: 100%;
         height: 100%;
-        // background-color: var(--neutral-clr-800);
         border-radius: 7px;
         margin-bottom: 1rem;
+      }
+
+      &__icon {
+        color: var(--neutral-clr-50);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        transition: all 300ms ease-in-out;
       }
 
       &__title {
@@ -547,6 +556,11 @@
       &__btnContainer {
         margin-top: 0;
         height: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .5rem;
         transition: all 300ms ease-in-out;
 
         .btn {
@@ -558,9 +572,18 @@
           opacity: 0;
           transition: all 300ms ease-in-out;
         }
+
+        .btnGithub {
+          font-size: var(--fs-body-sm);
+        }
       }
 
       &:hover {
+        .tool__icon {
+          color: var(--ifm-color-primary);
+          font-size: 2rem;
+        }
+
         .tool__btnContainer {
           margin-top: 1rem;
           height: 2.25rem;
@@ -595,6 +618,35 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .toolsSection {
+
+    &__tools {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 18rem);
+      grid-template-areas:
+        "node-wot td-playground"
+        "td-tools td-tools"
+        "dart-wot domus-tdd";
+    }
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .toolsSection {
+    &__tools {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 16rem);
+      grid-template-areas:
+        "node-wot node-wot td-playground"
+        "dart-wot td-tools td-playground"
+        "dart-wot domus-tdd domus-tdd";
+    }
+  }
+}
+
+
+
 /*** Community section ***/
 
 .communitySection {
@@ -608,14 +660,18 @@
     gap: 4rem;
   }
 
+  &__title {
+    text-align: center;
+  }
+
   &__stats {
     margin-top: 4rem;
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 3rem;
     padding: 3rem;
     background-color: var(--neutral-clr-900);
     border-radius: 15px;
@@ -639,56 +695,37 @@
     }
   }
 
-  &__scroller {
-    width: 100%;
-    padding: 5rem 0;
-    overflow: hidden;
-    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-
-    .adopters {
-      width: max-content;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8rem;
-      animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
-
-    }
-
-    &[data-direction="left"] {
-      --_animation-direction: forwards;
-    }
-
-    &[data-direction="right"] {
-      --_animation-direction: reverse;
-    }
-
-    &[data-speed="slow"] {
-      --_animation-duration: 60s;
-    }
-
-    &[data-speed="fast"] {
-      --_animation-duration: 20s;
-    }
+  .adopters {
+    --_content-gap: 8rem;
   }
 
   &__cta {
     width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
 
     .btn {
-      width: fit-content;
+      width: 100%;
     }
   }
 }
 
-@keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 4rem));
+@media screen and (min-width: 768px) {
+  .communitySection {
+    &__stats {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__cta {
+      flex-direction: row;
+
+      .btn {
+        width: fit-content;
+      }
+    }
   }
 }
