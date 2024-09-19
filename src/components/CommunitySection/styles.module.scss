@@ -1,0 +1,75 @@
+/*** Community section ***/
+.communitySection {
+    padding: 4rem 0;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__stats {
+        margin: 4rem 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 3rem;
+        padding: 3rem;
+        background-color: #fffffe;
+        border: 2px solid #e4e6e6;
+        border-radius: 15px;
+        box-shadow: 0 5px 0 #e4e6e6;
+
+        .stat {
+            flex: 1;
+            text-align: center;
+
+            &__number {
+                font-size: var(--fs-h1);
+                line-height: var(--lh-h1);
+                color: #141414;
+            }
+
+            &__description {
+                font-family: var(--ff-primary);
+                font-size: var(--fs-subheader);
+                color: #141414;
+            }
+        }
+    }
+
+    .adopters {
+        --_content-gap: 8rem;
+    }
+
+    &__cta {
+        margin-top: 4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .communitySection {
+        &__stats {
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        &__cta {
+            flex-direction: row;
+
+            .btn {
+                width: fit-content;
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+/****** Tools section *******/
+.toolsSection {
+    padding: 4rem 0;
+
+    &__title,
+    &__subheader {
+        text-align: center;
+    }
+
+    &__tools {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 18rem);
+        grid-template-areas:
+            "node-wot"
+            "td-playground"
+            "td-tools"
+            "dart-wot"
+            "domus-tdd";
+        gap: 1rem;
+
+        .tool {
+            background-color: #fffffe;
+            border: 1px solid #e4e6e6;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            overflow: hidden;
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                border-radius: 7px;
+                margin-bottom: 1rem;
+            }
+
+            &__icon {
+                color: #141414;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                transition: all 300ms ease-in-out;
+            }
+
+            &__title {
+                color: #141414;
+                margin-bottom: .5rem;
+            }
+
+            &__description {
+                font-weight: var(--fw-medium);
+                color: #656666;
+            }
+
+            &__btnContainer {
+                margin-top: 0;
+                height: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: .5rem;
+                transition: all 300ms ease-in-out;
+
+                .btn {
+                    width: fit-content;
+                    font-size: var(--fs-footer);
+                    border-radius: 50vw;
+                    padding: .5rem .75rem;
+                    transform: translateY(4rem);
+                    opacity: 0;
+                    transition: all 300ms ease-in-out;
+                }
+
+                .btnGithub {
+                    font-size: var(--fs-body-sm);
+                }
+            }
+
+            &:hover {
+                .tool__icon {
+                    color: var(--ifm-color-primary);
+                    font-size: 2rem;
+                }
+
+                .tool__btnContainer {
+                    margin-top: 1rem;
+                    height: 2.25rem;
+
+                    .btn {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .nodeWot {
+            grid-area: node-wot;
+        }
+
+        .playground {
+            grid-area: td-playground;
+        }
+
+        .dartWot {
+            grid-area: dart-wot;
+        }
+
+        .tdTools {
+            grid-area: td-tools;
+        }
+
+        .domusTdd {
+            grid-area: domus-tdd;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .toolsSection {
+
+        &__tools {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 18rem);
+            grid-template-areas:
+                "node-wot td-playground"
+                "td-tools td-tools"
+                "dart-wot domus-tdd";
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .toolsSection {
+        &__tools {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 16rem);
+            grid-template-areas:
+                "node-wot node-wot td-playground"
+                "dart-wot td-tools td-playground"
+                "dart-wot domus-tdd domus-tdd";
+        }
+    }
+}
