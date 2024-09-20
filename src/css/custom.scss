@@ -22,6 +22,7 @@
   --neutral-clr-700: #4c4d4c;
   --neutral-clr-800: #1e1e1e;
   --neutral-clr-900: #141414;
+  --box-shadow-clr: rgba(0, 0, 0, 0.1);
 
   --ifm-color-primary: #067362;
   --ifm-color-primary-dark: #056858;
@@ -118,6 +119,7 @@
   --neutral-clr-200: #4c4d4c;
   --neutral-clr-100: #1e1e1e;
   --neutral-clr-50: #141414;
+  --box-shadow-clr: rgba(255, 255, 255, 0.1);
 
   --ifm-color-primary: #33b8a4;
   --ifm-color-primary-dark: #2ea694;
@@ -468,25 +470,25 @@ footer.footer {
 }
 
 .btn-tertiary {
-  background-color: #e4e6e6;
-  border-color: #e4e6e6;
-  color: #141414;
+  background-color: var(--neutral-clr-100);
+  border-color: var(--neutral-clr-100);
+  color: var(--neutral-clr-900);
 
   &.btn-outline {
     background-color: transparent;
-    color: #fffffe;
+    color: var(--neutral-clr-50);
   }
 
   &:hover {
-    background-color: #cacccc;
-    border-color: #cacccc;
-    color: #141414;
+    background-color: var(--neutral-clr-200);
+    border-color: var(--neutral-clr-200);
+    color: var(--neutral-clr-900);
   }
 
   &:active {
-    background-color: #b1b3b3;
-    border-color: #b1b3b3;
-    color: #141414;
+    background-color: var(--neutral-clr-300);
+    border-color: var(--neutral-clr-300);
+    color: var(--neutral-clr-900);
   }
 }
 
@@ -496,7 +498,7 @@ footer.footer {
   width: 100%;
   padding: 2rem 0;
   overflow: hidden;
-  mask: linear-gradient(90deg, transparent, rgb(255, 255, 255) 10%, white 90%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(255, 255, 255) 1%, rgb(255, 255, 255) 99%, transparent);
 
   &>* {
     width: max-content;

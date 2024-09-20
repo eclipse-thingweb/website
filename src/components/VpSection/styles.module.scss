@@ -2,6 +2,7 @@
 .vpSection {
     padding: 4rem 0;
 
+
     &__title,
     &__subheader {
         text-align: center;
@@ -26,9 +27,9 @@
             min-height: 18rem;
             padding: 6rem 1rem 1rem;
             border-radius: 10px;
-            background-color: #fffffe;
-            border: 1px solid #e4e6e6;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--neutral-clr-50);
+            border: 1px solid var(--neutral-clr-200);
+            box-shadow: 1px 1px 10px var(--box-shadow-clr);
 
             &__description,
             &__title {
@@ -36,12 +37,12 @@
             }
 
             &__title {
-                color: #141414;
+                color: var(--neutral-clr-900);
             }
 
             &__description {
                 font-weight: var(--fw-medium);
-                color: #656666;
+                color: var(--neutral-clr-600);
             }
 
             &__icon {

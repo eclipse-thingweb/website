@@ -12,22 +12,20 @@
   top: 60px;
   left: 0;
   width: 100%;
-  z-index: -1;
-  mask: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 5%,rgba(255, 255, 255, .25) 20%,rgba(255, 255, 255, .05) 35%, rgba(255, 255, 255, 0) 50%, transparent);
+  z-index: -2;
+  mask: linear-gradient(120deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .05) 30%, transparent 45%, transparent);
   overflow: hidden;
   opacity: 0;
   animation: fadeIn 1s ease forwards 500ms;
 
   svg {
-    max-width: 100rem;
-    max-height: 100rem;
-    min-width: 65rem;
-    min-height: 65rem;
+    width: clamp(110rem, 94rem + 80vw, 190rem);
+    height: clamp(110rem, 94rem + 80vw, 190rem);
   }
 }
 
 @keyframes fadeIn {
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }

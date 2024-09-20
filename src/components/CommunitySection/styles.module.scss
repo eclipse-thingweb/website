@@ -15,10 +15,10 @@
         justify-content: space-between;
         gap: 3rem;
         padding: 3rem;
-        background-color: #fffffe;
-        border: 2px solid #e4e6e6;
         border-radius: 15px;
-        box-shadow: 0 5px 0 #e4e6e6;
+        background-color: var(--neutral-clr-50);
+        border: 2px solid var(--neutral-clr-200);
+        box-shadow: 0 5px 0 var(--neutral-clr-200);
 
         .stat {
             flex: 1;
@@ -27,13 +27,13 @@
             &__number {
                 font-size: var(--fs-h1);
                 line-height: var(--lh-h1);
-                color: #141414;
+                color: var(--neutral-clr-900);
             }
 
             &__description {
                 font-family: var(--ff-primary);
                 font-size: var(--fs-subheader);
-                color: #141414;
+                color: var(--neutral-clr-900);
             }
         }
     }

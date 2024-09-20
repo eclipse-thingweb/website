@@ -21,9 +21,9 @@
         gap: 1rem;
 
         .tool {
-            background-color: #fffffe;
-            border: 1px solid #e4e6e6;
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--neutral-clr-50);
+            border: 1px solid var(--neutral-clr-200);
+            box-shadow: 1px 1px 10px var(--box-shadow-clr);
             border-radius: 10px;
             padding: 1rem;
             display: flex;
@@ -39,21 +39,24 @@
                 margin-bottom: 1rem;
             }
 
+            &__icon,
+            &__title {
+                color: var(--neutral-clr-900);
+            }
+
             &__icon {
-                color: #141414;
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
                 transition: all 300ms ease-in-out;
             }
 
             &__title {
-                color: #141414;
                 margin-bottom: .5rem;
             }
 
             &__description {
                 font-weight: var(--fw-medium);
-                color: #656666;
+                color: var(--neutral-clr-600);
             }
 
             &__btnContainer {
