@@ -13,7 +13,40 @@
         gap: 2rem;
     }
 
-    &__subheader {
+    .subheader {
         max-width: unset;
+        font-size: var(--fs-icon);
+    }
+
+    a {
+        color: var(--ifm-color-primary);
+    }
+
+    .section {
+        padding: 4rem 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 2rem;
+
+        & > * {
+            width: 100%;
+        }
+    }
+
+    span {
+        font-weight: var(--fw-bold);
+    }
+
+    li {
+        margin-top: .5rem;
+    }
+
+    .link a{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: .5rem;
     }
 }
