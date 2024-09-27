@@ -1,6 +1,12 @@
 /****** Tools section *******/
+
 .toolsSection {
+    p, h1, h2, h3{
+        margin: 0;
+    }
+    
     padding: 4rem 0;
+    position: relative;
 
     &__title,
     &__subheader {
@@ -24,7 +30,7 @@
             background-color: var(--neutral-clr-50);
             border: 1px solid var(--neutral-clr-200);
             box-shadow: 1px 1px 10px var(--box-shadow-clr);
-            border-radius: 10px;
+            border-radius: 1rem;
             padding: 1rem;
             display: flex;
             flex-direction: column;
@@ -150,3 +156,4 @@
         }
     }
 }
+

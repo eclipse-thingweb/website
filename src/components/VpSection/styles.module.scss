@@ -1,7 +1,10 @@
 /*** Value proposition section ***/
 .vpSection {
-    padding: 4rem 0;
+    p, h1, h2, h3{
+        margin: 0;
+    }
 
+    padding: 4rem 0;
 
     &__title,
     &__subheader {
@@ -26,7 +29,7 @@
             text-align: center;
             min-height: 18rem;
             padding: 6rem 1rem 1rem;
-            border-radius: 10px;
+            border-radius: 1rem;
             background-color: var(--neutral-clr-50);
             border: 1px solid var(--neutral-clr-200);
             box-shadow: 1px 1px 10px var(--box-shadow-clr);
@@ -75,6 +78,7 @@
                     .line {
                         stroke-dashoffset: 10px;
                         stroke-dasharray: 80px;
+                        stroke: var(--neutral-clr-900);
                     }
                 }
 
@@ -97,19 +101,19 @@
 
         .powerfulFeatures:hover {
             .rocket {
-                animation: rocket 3s ease-in;
+                animation: rocket 2s ease-in;
             }
 
             .line1 {
-                animation: line 3s ease-in;
+                animation: line 2s ease-in;
             }
 
             .line2 {
-                animation: line 3s ease-in 250ms;
+                animation: line 2s ease-in 250ms;
             }
 
             .line3 {
-                animation: line 3s ease-in 500ms;
+                animation: line 2s ease-in 500ms;
             }
         }
 
@@ -125,27 +129,27 @@
 
         .communityDriven:hover {
             .headLeft {
-                animation: headLeft 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headLeft 2s cubic-bezier(.47, 1.64, .41, .8);
             }
 
             .bodyLeft {
-                animation: bodyLeft 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyLeft 2s cubic-bezier(.47, 1.64, .41, .8);
             }
 
             .headRight {
-                animation: headRight 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headRight 2s cubic-bezier(.47, 1.64, .41, .8);
             }
 
             .bodyRight {
-                animation: bodyRight 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyRight 2s cubic-bezier(.47, 1.64, .41, .8);
             }
 
             .headCenter {
-                animation: headCenter 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headCenter 2s cubic-bezier(.47, 1.64, .41, .8);
             }
 
             .bodyCenter {
-                animation: bodyCenter 3s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyCenter 2s cubic-bezier(.47, 1.64, .41, .8);
             }
         }
     }

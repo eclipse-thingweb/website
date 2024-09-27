@@ -1,5 +1,13 @@
 /****** Services section *******/
 .servicesSection {
+
+  p,
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+
   padding: 4rem 0;
 
   &__title,
@@ -14,9 +22,9 @@
   .thing,
   .protocol {
     width: 20rem;
-    height: 18rem;
+    height: 20rem;
     padding: 1rem;
-    border-radius: 10px;
+    border-radius: 1rem;
   }
 
   .thing {
@@ -24,6 +32,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 1rem;
     background-color: var(--neutral-clr-50);
     border: 1px solid var(--neutral-clr-200);
     box-shadow: 1px 1px 10px var(--box-shadow-clr);
@@ -50,12 +59,10 @@
 
     &__title {
       font-size: var(--fs-subheader);
-      margin-top: 1rem;
     }
 
     &__description {
       font-size: var(--fs-body-sm);
-      margin-bottom: 1rem;
       color: var(--neutral-clr-600);
     }
 

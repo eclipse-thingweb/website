@@ -2,30 +2,3 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
-/**************************/
-/**** Background style ****/
-/**************************/
-
-.gridBackground {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: -2;
-  mask: linear-gradient(120deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .05) 30%, transparent 45%, transparent);
-  overflow: hidden;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 500ms;
-
-  svg {
-    width: clamp(110rem, 94rem + 80vw, 190rem);
-    height: clamp(110rem, 94rem + 80vw, 190rem);
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}

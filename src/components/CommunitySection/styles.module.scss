@@ -1,6 +1,15 @@
 /*** Community section ***/
 .communitySection {
+    
     padding: 4rem 0;
+    position: relative;
+
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
 
     &__title {
         text-align: center;
@@ -15,10 +24,10 @@
         justify-content: space-between;
         gap: 3rem;
         padding: 3rem;
-        border-radius: 15px;
+        border-radius: 1rem;
         background-color: var(--neutral-clr-50);
         border: 2px solid var(--neutral-clr-200);
-        box-shadow: 0 5px 0 var(--neutral-clr-200);
+        box-shadow: 0 4px 0 var(--neutral-clr-200);
 
         .stat {
             flex: 1;
@@ -71,5 +80,20 @@
                 width: fit-content;
             }
         }
+    }
+}
+
+.gridBackground {
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden;
+    mask: linear-gradient(transparent, rgba(255, 255, 255, .1) 20%, rgba(255, 255, 255, 0.075) 50%, rgba(255, 255, 255, 0.05) 70%, transparent 85%, transparent);
+
+    svg {
+        width: 100%;
+        min-width: 110rem;
     }
 }

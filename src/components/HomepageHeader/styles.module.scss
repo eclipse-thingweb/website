@@ -1,5 +1,10 @@
-/*** Hero banner section ***/
 .heroBanner {
+
+    p {
+        margin: 0;
+    }
+
+    position: relative;
     min-height: 90vh;
     min-height: 90svh;
     display: flex;
@@ -24,6 +29,7 @@
         transform: translateY(1rem);
         opacity: 0;
         animation: fadeIn 1s ease forwards 250ms;
+        margin-bottom: 0;
     }
 }
 
@@ -41,6 +47,23 @@
 
     a {
         font-size: var(--fs-body);
+    }
+}
+
+.gridBackground {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    mask: linear-gradient(125deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .05) 30%, transparent 45%, transparent);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 500ms;
+
+    svg {
+        width: 100%;
+        min-width: 110rem;
     }
 }
 
