@@ -15,7 +15,7 @@ export default function CommunitySection() {
     if (statsContainer) {
 
       const statsItems = document.querySelectorAll('#stats-number');
-      let interval = 2500;
+      let interval = 4000;
       const appearOptions = {
         threshold: 0,
         rootMargin: "0px 0px -160px 0px"

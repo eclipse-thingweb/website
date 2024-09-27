@@ -185,7 +185,7 @@ export default function ServicesSection() {
                 </div>
 
                 <div className={styles.servicesSection__cta}>
-                    <a href="#" className={clsx('btn btn-primary', styles.btn)}>
+                    <a href="services" className={clsx('btn btn-primary', styles.btn)}>
                         View All Things
                         <FontAwesomeIcon icon={faArrowRight} className='icon' />
                     </a>

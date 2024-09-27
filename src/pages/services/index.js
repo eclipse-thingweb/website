@@ -21,13 +21,11 @@ export default function ServicesPage() {
               <li>
                 <a href="https://playground.thingweb.io" target="_blank">
                   Online Tool
-                  <FontAwesomeIcon icon={faUpRightFromSquare} />
                 </a>
               </li>
               <li>
                 <a href="https://github.com/eclipse-thingweb/playground" target="_blank">
                   Github Repository
-                  <FontAwesomeIcon icon={faUpRightFromSquare} />
                 </a>
               </li>
             </ul>
