@@ -1,9 +1,5 @@
 .heroBanner {
 
-    p {
-        margin: 0;
-    }
-
     position: relative;
     min-height: 90vh;
     min-height: 90svh;
@@ -12,6 +8,10 @@
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
+
+    p {
+        margin: 0;
+    }
 
     &__title {
         max-width: 25ch;

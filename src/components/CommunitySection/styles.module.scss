@@ -4,15 +4,9 @@
     padding: 4rem 0;
     position: relative;
 
-    p,
-    h1,
-    h2,
-    h3 {
-        margin: 0;
-    }
-
     &__title {
         text-align: center;
+        margin-bottom: 0;
     }
 
     &__stats {
@@ -41,14 +35,11 @@
 
             &__description {
                 font-family: var(--ff-primary);
-                font-size: var(--fs-subheader);
+                font-size: var(--fs-section-subheader);
+                line-height: var(--lh-section-subheader);
                 color: var(--neutral-clr-900);
             }
         }
-    }
-
-    .adopters {
-        --_content-gap: 8rem;
     }
 
     &__cta {

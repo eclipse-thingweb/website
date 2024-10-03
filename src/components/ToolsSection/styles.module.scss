@@ -1,12 +1,16 @@
 /****** Tools section *******/
 
 .toolsSection {
-    p, h1, h2, h3{
-        margin: 0;
-    }
-    
+
     padding: 4rem 0;
     position: relative;
+
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
 
     &__title,
     &__subheader {
@@ -29,7 +33,7 @@
         .tool {
             background-color: var(--neutral-clr-50);
             border: 1px solid var(--neutral-clr-200);
-            box-shadow: 1px 1px 10px var(--box-shadow-clr);
+            box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
             border-radius: 1rem;
             padding: 1rem;
             display: flex;
@@ -52,6 +56,7 @@
 
             &__icon {
                 font-size: 2.5rem;
+                color: var(--neutral-clr-400);
                 margin-bottom: 1rem;
                 transition: all 300ms ease-in-out;
             }
@@ -86,7 +91,7 @@
                 }
 
                 .btnGithub {
-                    font-size: var(--fs-body-sm);
+                    font-size: var(--fs-body);
                 }
             }
 
@@ -139,7 +144,7 @@
             grid-template-areas:
                 "node-wot td-playground"
                 "td-tools td-tools"
-                "dart-wot domus-tdd";
+                "domus-tdd dart-wot";
         }
     }
 }
@@ -151,9 +156,8 @@
             grid-template-rows: repeat(3, 16rem);
             grid-template-areas:
                 "node-wot node-wot td-playground"
-                "dart-wot td-tools td-playground"
-                "dart-wot domus-tdd domus-tdd";
+                "domus-tdd td-tools td-playground"
+                "domus-tdd dart-wot dart-wot ";
         }
     }
 }
-

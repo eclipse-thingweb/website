@@ -6,9 +6,9 @@ export default function VpSection() {
     return (
         <section className={styles.vpSection} id='vp-section'>
             <div className={clsx('container', 'section-wrapper')}>
-                <h2 className={clsx('hero-title', styles.vpSection__title)}>Unlock the True <span className={'text-highlight'}>Potential of IoT</span></h2>
+                <h2 className={clsx('hero-title', 'section-title', styles.vpSection__title)}>Unlock the True <span className={'text-highlight'}>Potential of IoT</span></h2>
 
-                <p className={clsx('subheader', styles.vpSection__subheader)}>Develop interoperable IoT applications
+                <p className={clsx('section-subheader', styles.vpSection__subheader)}>Develop interoperable IoT applications
                     with intuitive tools and leveraging well know web standards.</p>
 
                 <div className={styles.vpSection__features}>
@@ -22,7 +22,7 @@ export default function VpSection() {
                             </svg>
                         </div>
                         <h3 className={styles.feature__title}>Powerful Features</h3>
-                        <p className={styles.feature__description}>Develop interoperable solutions that work seamlessly across all domains.</p>
+                        <p className={styles.feature__description}>Build IoT applications with secure, scalable web capabilities, flexible protocols, device fleet management, and documentation.</p>
                     </div>
 
                     <div className={clsx(styles.feature, styles.seamlessIntegration)}>
@@ -37,7 +37,7 @@ export default function VpSection() {
 
                         </div>
                         <h3 className={styles.feature__title}>Seamless Integration</h3>
-                        <p className={styles.feature__description}>Leverage W3C standards that you love and know to ensure your applications remain compatible and adaptable.</p>
+                        <p className={styles.feature__description}>Eliminate compatibility headaches by leveraging Web standards to ensure your applications remain compatible and adaptable.</p>
                     </div>
 
                     <div className={clsx(styles.feature, styles.communityDriven)}>
@@ -52,7 +52,7 @@ export default function VpSection() {
                             </svg>
                         </div>
                         <h3 className={styles.feature__title}>Community Driven</h3>
-                        <p className={styles.feature__description}>Benefit from a collaborative development environment and have access to a plethora of community resources.</p>
+                        <p className={styles.feature__description}>Join our open community! Everyone has the power to contribute and make a meaningful impact on the future of Thingweb.</p>
                     </div>
                 </div>
             </div>

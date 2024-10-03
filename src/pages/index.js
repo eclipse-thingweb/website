@@ -11,16 +11,13 @@ import styles from './index.module.scss';
 export default function HomePage() {
   return (
     <Layout>
-
       <HomepageHeader />
-
       <main>
         <VpSection />
         <ToolsSection />
         <ServicesSection />
         <CommunitySection />
       </main>
-      
     </Layout>
   );
 }

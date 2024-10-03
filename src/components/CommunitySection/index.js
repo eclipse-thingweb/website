@@ -5,17 +5,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export default function CommunitySection() {
-  const scrollerAdoptersRef = useRef(null);
+
+  // const scrollerAdoptersRef = useRef(null);
   const statsContainerRef = useRef(null);
 
   useEffect(() => {
 
+    /** Stats counter animation **/
     const statsContainer = statsContainerRef.current;
 
     if (statsContainer) {
-
       const statsItems = document.querySelectorAll('#stats-number');
-      let interval = 4000;
+      let interval = 2000;
       const appearOptions = {
         threshold: 0,
         rootMargin: "0px 0px -160px 0px"
@@ -57,18 +58,34 @@ export default function CommunitySection() {
         startCounter.observe(item);
       });
     }
+    
 
+    /** Adopter scroller **/
+    eclipseFdnAdopters.getList({
+      project_id: "iot.thingweb",
+      selector: ".scroller",
+      ul_classes: "adopters",
+      logo_white: false,
+    });
 
-    const scrollerAdopters = scrollerAdoptersRef.current;
+    const adoptersContainer = document.querySelector('.adopters-container');
+    const config = {childList: true};
 
-    if (scrollerAdopters) {
-      const scrollerContent = Array.from(scrollerAdopters.children);
-
-      scrollerContent.forEach(adopter => {
+    const observer = new MutationObserver( () => {
+      const adopters = document.querySelector('.adopters');
+      const adoptersList = Array.from(document.querySelectorAll('.adopters li'));
+      
+      adoptersList.forEach(adopter => {
         const duplicatedAdopter = adopter.cloneNode(true);
         duplicatedAdopter.setAttribute('aria-hidden', 'true');
-        scrollerAdopters.appendChild(duplicatedAdopter);
-      })
+        adopters.appendChild(duplicatedAdopter);
+      });
+      
+      observer.disconnect();
+    })
+
+    if(adoptersContainer) {
+      observer.observe(adoptersContainer, config);
     }
   }, []);
 
@@ -76,7 +93,7 @@ export default function CommunitySection() {
   return (
     <section className={styles.communitySection}>
       <div className={clsx('container', 'section-wrapper')}>
-        <h2 className={clsx('hero-title', styles.communitySection__title)}>Join the Thingweb <span className={'text-highlight'}>Community</span></h2>
+        <h2 className={clsx('hero-title', 'section-title', styles.communitySection__title)}>Join the Thingweb <span className={'text-highlight'}>Community</span></h2>
 
         <div className={styles.communitySection__stats} ref={statsContainerRef}>
           <div className={styles.stat}>
@@ -95,7 +112,7 @@ export default function CommunitySection() {
           </div>
         </div>
 
-        <div className={'scroller'} data-direction="left" data-speed="slow">
+        {/* <div className={'scroller'} data-direction="left" data-speed="slow">
           <div className={styles.adopters} id='scroller-adopters' ref={scrollerAdoptersRef}>
             <h3 className={styles.adopters__logo}>BRAND</h3>
             <h3 className={styles.adopters__logo}>BRAND</h3>
@@ -104,6 +121,9 @@ export default function CommunitySection() {
             <h3 className={styles.adopters__logo}>BRAND</h3>
             <h3 className={styles.adopters__logo}>BRAND</h3>
           </div>
+        </div> */}
+
+        <div className={'scroller adopters-container'} data-direction="left" data-speed="slower">
         </div>
 
         <div className={styles.communitySection__cta}>
@@ -123,7 +143,8 @@ export default function CommunitySection() {
           <path d="M59.5 1860V-0.00390625M1019.5 1860.01V0M539.5 1860.01V0M299.5 1860.01V0M1259.5 1860.01V0.00390625M779.5 1860.01V0.00390625M179.5 1860.01V0M1139.5 1860.01V0.00390625M659.5 1860.01V0.00390625M419.5 1860.01V0.00390625M1379.5 1860.02V0.0078125M899.5 1860.02V0.0078125M119.5 1860.01V0M1079.5 1860.01V0.00390625M599.5 1860.01V0.00390625M359.5 1860.01V0.00390625M1319.5 1860.02V0.0078125M839.5 1860.02V0.0078125M239.5 1860.01V0.00390625M1199.5 1860.02V0.0078125M719.5 1860.02V0.0078125M479.5 1860.02V0.0078125M959.5 1860.02V0.0117188M0 59.5179H1440M0 419.518H1440M0 239.518H1440M0 599.518H1440M0 179.518H1440M0 539.518H1440M0 359.518H1440M0 719.518H1440M0 119.518H1440M0 480.018H1440M0 299.518H1440M0 659.518H1440M0 779.518H1440M0 959.518H1440M0 1139.52H1440M0 1559.51H1440M0 1379.52H1440M0 1799.51H1440M0 899.518H1440M0 1079.52H1440M0 1499.51H1440M0 1319.52H1440M0 1739.51H1440M0 839.518H1440M0 1019.52H1440M0 1259.52H1440M0 1679.51H1440M0 1199.52H1440M0 1619.51H1440M0 1439.52H1440" stroke="#33B8A4" strokeWidth="1" />
         </svg>
       </div>
-    </section>
 
+      <div className='adopters-api'></div>
+    </section>
   );
 }

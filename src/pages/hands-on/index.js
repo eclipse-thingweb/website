@@ -9,7 +9,7 @@ export default function HandsOnPage() {
   return (
     <Layout title="Hands-On">
       <main className={styles.handsOn}>
-        <div className={clsx('container', styles.pageWrapper)}>
+        <div className={clsx('container-docs', styles.pageWrapper)}>
           <h1 className={clsx('hero-title', styles.handsOn__title)}>Web of Things - <span className={'text-highlight'}>Hands-On</span></h1>
           <p className={clsx('subheader', styles.handsOn__subheader)}>This section aims to provide hands-on information about the Web of Things (WoT) in general and the technologies developed in this area. For more information please visit the following sub-pages: </p>
 

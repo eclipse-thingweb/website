@@ -4,12 +4,12 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Eclipse Thingweb',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one',
   favicon: 'img/favicon.ico',
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'Eclipse Thingweb', // Usually your GitHub org/user name.
-  projectName: 'Website', // Usually your repo name.
+  projectName: 'website', // Usually your repo name.
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
   // Even if you don't use internationalization, you can use this field to set
@@ -32,7 +32,34 @@ const config = {
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700',
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  scripts: [
+    {
+      src: 'https://api.eclipse.org/adopters/assets/js/eclipsefdn.adopters.js',
+      async: false,
+    },
+  ],
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/hands-on/intro-raspberry',
+            from: '/hands-on-intro-raspberry',
+          },
+          {
+            to: '/hands-on/exposed-thing',
+            from: '/hands-on-exposed-thing-guide',
+          },
+          {
+            to: '/hands-on/smart-coffee-machine',
+            from: '/smart-coffee-machine',
+          },
+        ],
+      },
+    ]
+  ],
   presets: [
     [
       'classic',
@@ -42,7 +69,7 @@ const config = {
           sidebarPath: './sidebars.js',
           editUrl:
             // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            '/',
+            'https://github.com/eclipse-thingweb/website',
         },
         blog: {
           showReadingTime: true,
@@ -75,19 +102,15 @@ const config = {
             label: 'Docs',
           },
           {
-            to: '/services', 
-            label: 'Services', 
+            to: '/services',
+            label: 'Services',
             position: 'left'
           },
           {
-            to: '/hands-on', 
-            label: 'Hands-On', 
+            to: '/hands-on',
+            label: 'Hands-On',
             position: 'left'
           },
-          {
-            to: '/blog', 
-            label: 'Blog', 
-            position: 'left'},
           {
             href: 'https://github.com/eclipse-thingweb/website',
             position: 'right',
@@ -152,15 +175,27 @@ const config = {
             ],
           },
           {
-            title: 'Docs',
+            title: 'WoT Spec',
             items: [
               {
-                label: 'Tutorial',
-                href: 'https://twitter.com/docusaurus',
+                label: 'TD',
+                href: 'https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/',
               },
               {
-                label: 'API',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Bindings',
+                href: 'https://www.w3.org/TR/wot-binding-templates/',
+              },
+              {
+                label: 'Discovery',
+                href: 'https://www.w3.org/TR/wot-discovery/',
+              },
+              {
+                label: 'Architecture',
+                href: 'https://www.w3.org/TR/wot-architecture11/',
+              },
+              {
+                label: 'Scripting API',
+                href: 'https://www.w3.org/TR/wot-scripting-api/',
               },
             ],
           },
@@ -168,33 +203,28 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Github',
-                href: 'https://twitter.com/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.com/invite/RJNYJsEgnb',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/W3C_WoT',
+              },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/@WoTCG',
+              },
+              {
+                label: 'Mastodon',
+                href: 'https://w3c.social/@wot',
               },
               {
                 label: 'Telegram',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://t.me/nodewot',
               },
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'Repositories',
-            items: [
-              {
-                label: 'TD Spec',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/web-of-things',
               },
             ],
           },
@@ -202,16 +232,12 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Services',
-                to: '/blog',
+                label: 'Web of Things',
+                href: 'https://www.w3.org/WoT/',
               },
               {
                 label: 'Eclipse Project',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-              {
-                label: 'Web of Things',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://projects.eclipse.org/projects/iot.thingweb',
               },
             ],
           },

@@ -2,19 +2,17 @@ import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import styles from './index.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 
 export default function ServicesPage() {
   return (
     <Layout title="Service">
       <main className={styles.services}>
-        <div className={clsx('container', styles.pageWrapper)}>
+        <div className={clsx('container-docs', styles.pageWrapper)}>
           <h1 className={clsx('hero-title', styles.services__title)}>Services for <span className={'text-highlight'}>W3C WoT</span> Developers</h1>
-          <p>Eclipse Thingweb provides services to support Web of Things developers. These services are listed below.</p>
+          <p className={clsx('subheader', styles.services__subheader)}>Eclipse Thingweb provides services to support Web of Things developers. These services are listed below.</p>
 
           <div className={clsx(styles.playground, styles.section)}>
-            <h2 className={clsx('hero-title', styles.title)}>Thing Description <span className={'text-highlight'}>Playground</span></h2>
+            <h2 className={clsx(styles.title)}>Thing Description <span className={'text-highlight'}>Playground</span></h2>
             <p>Playground is a tool to validate TDs and manipulate them for usage in other tools. You can do validation to check conformance, generate Open API and Async API documents, add or remove default values, visualize TDs and find spelling mistakes in TDs.</p>
 
             <ul className={styles.playground__links}>
@@ -32,7 +30,7 @@ export default function ServicesPage() {
           </div>
 
           <div className={clsx(styles.interactiveThings, styles.section)}>
-            <h2 className={clsx('hero-title', styles.title)}>Web-based <span className={'text-highlight'}>Interactions</span> with Things</h2>
+            <h2 className={clsx(styles.title)}>Web-based <span className={'text-highlight'}>Interactions</span> with Things</h2>
             <p>Playground is a tool to validate TDs and manipulate them for usage in other tools. You can do validation to check conformance, generate Open API and Async API documents, add or remove default values, visualize TDs and find spelling mistakes in TDs.</p>
 
             <ul className={styles.interactiveThings__links}>
@@ -62,7 +60,7 @@ export default function ServicesPage() {
           </div>
 
           <div className={clsx(styles.onlineThings, styles.section)}>
-            <h2 className={clsx('hero-title', styles.title)}><span className={'text-highlight'}>Online</span> Things for Testing</h2>
+            <h2 className={clsx(styles.title)}><span className={'text-highlight'}>Online</span> Things for Testing</h2>
 
             <p>Eclipse Thingweb hosts Things that can be interacted with over the public Internet. You can use them to test your WoT applications.
             Note: we also offer the <a href='test-things' target='_blank'>test-things</a> repository with a collection of IoT device simulators that can be used for testing and exploration purposes of different protocols and other Web of Things mechanisms.</p>

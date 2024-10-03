@@ -1,10 +1,11 @@
 /*** Value proposition section ***/
 .vpSection {
+
+    padding: 4rem 0;
+
     p, h1, h2, h3{
         margin: 0;
     }
-
-    padding: 4rem 0;
 
     &__title,
     &__subheader {
@@ -16,7 +17,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10rem;
+        gap: 11rem;
         margin-top: 10rem;
 
         .feature {
@@ -27,12 +28,12 @@
             justify-content: center;
             gap: 1rem;
             text-align: center;
-            min-height: 18rem;
+            min-height: 15rem;
             padding: 6rem 1rem 1rem;
             border-radius: 1rem;
             background-color: var(--neutral-clr-50);
             border: 1px solid var(--neutral-clr-200);
-            box-shadow: 1px 1px 10px var(--box-shadow-clr);
+            box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
 
             &__description,
             &__title {
@@ -41,6 +42,8 @@
 
             &__title {
                 color: var(--neutral-clr-900);
+                font-size: var(--fs-h2);
+                line-height: var(--lh-h2);
             }
 
             &__description {
@@ -50,13 +53,12 @@
 
             &__icon {
                 position: absolute;
-                --width-icon: 14rem;
+                --width-icon: 15rem;
                 width: var(--width-icon);
                 max-width: 80%;
-                top: calc(-1 * (var(--width-icon) + 5rem) / 2);
+                top: calc(-1 * (var(--width-icon) + 3rem) / 2);
                 left: 50%;
                 transform: translateX(-50%);
-
 
                 .puzzleIcon {
                     fill: var(--ifm-color-primary);
@@ -165,10 +167,10 @@
 
             .feature {
                 flex: 1;
-                min-height: 26rem;
+                min-height: 24rem;
 
                 &__icon {
-                    top: calc(-1 * (var(--width-icon) + 3rem) / 2);
+                    top: calc(-1 * (var(--width-icon) + 1rem) / 2);
                 }
             }
         }
@@ -179,7 +181,7 @@
     .vpSection {
         &__features {
             .feature {
-                min-height: 23rem;
+                min-height: 22rem;
 
                 &__icon {
                     top: calc(-1 * (var(--width-icon) + 5rem) / 2);

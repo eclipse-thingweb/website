@@ -164,9 +164,9 @@ export default function ServicesSection() {
     return (
         <section className={styles.servicesSection}>
             <div className={clsx('container', 'section-wrapper')}>
-                <h2 className={clsx('hero-title', styles.servicesSection__title)}>Test your <span className={'text-highlight'}>WoT</span> Applications</h2>
+                <h2 className={clsx('hero-title', 'section-title', styles.servicesSection__title)}>Test your <span className={'text-highlight'}>WoT</span> Applications</h2>
 
-                <p className={clsx('subheader', styles.servicesSection__subheader)}>Thingweb also provides you with a variety of publicly available Things for you to interact with over the internet.</p>
+                <p className={clsx('section-subheader', styles.servicesSection__subheader)}>Thingweb also provides you with a variety of publicly available Things for you to interact with over the internet.</p>
 
                 <div className={'scroller'} data-direction="left" data-speed="slower">
                     <div className={styles.things} id='scroller-things-1' ref={scrollerThings1Ref}>

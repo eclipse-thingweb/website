@@ -22,15 +22,8 @@
   --neutral-clr-700: #4c4d4c;
   --neutral-clr-800: #1e1e1e;
   --neutral-clr-900: #141414;
-  --box-shadow-clr: rgba(30, 30, 30, 0.1);
+  --box-shadow-clr: rgba(51, 51, 51, 0.1);
 
-  // --ifm-color-primary: #067362;
-  // --ifm-color-primary-dark: #056858;
-  // --ifm-color-primary-darker: #056253;
-  // --ifm-color-primary-darkest: #045145;
-  // --ifm-color-primary-light: #077e6c;
-  // --ifm-color-primary-lighter: #078471;
-  // --ifm-color-primary-lightest: #08967f;
   --ifm-color-primary: #33b8a4;
   --ifm-color-primary-dark: #2ea694;
   --ifm-color-primary-darker: #2b9c8b;
@@ -64,27 +57,23 @@
 
   --fs-hero: 3rem;
   --fs-h1: 3rem;
-  --fs-h2: 2.5rem;
+  --fs-h2: 2rem;
   --fs-h3: 1.5rem;
   --fs-subheader-hero: 1.375rem;
   --fs-subheader: 1.375rem;
-  --fs-icon: 1.25rem;
+
+
+  --fs-hero: clamp(3rem, 2.428571428571429rem + 2.857142857142857vw, 5rem);
+  --fs-section-title: clamp(2.5rem, 2.357142857142857rem + 0.7142857142857143vw, 3rem);
+  --fs-h1: clamp(2rem, 1.7142857142857144rem + 1.4285714285714286vw, 3rem);
+  --fs-h2: clamp(1.5rem, 1.3571428571428572rem + 0.7142857142857143vw, 2rem);
+  --fs-h3: clamp(1.25rem, 1.1785714285714286rem + 0.35714285714285715vw, 1.5rem);
+  --fs-subheader-hero: clamp(1.375rem, 1.3035714285714286rem + 0.35714285714285715vw, 1.625rem);
+  --fs-section-subheader: clamp(1.375rem, 1.3392857142857142rem + 0.17857142857142858vw, 1.5rem);
+  --fs-subheader: clamp(1.25rem, 1.2142857142857142rem + 0.17857142857142858vw, 1.375rem);
   --fs-body-lg: 1.125rem;
   --fs-body: 1rem;
   --fs-body-sm: .875rem;
-  --fs-footer: .75rem;
-
-  --fs-hero: clamp(3rem, 2.428571428571429rem + 2.857142857142857vw, 5rem);
-  --fs-h1: clamp(3rem, 2.7142857142857144rem + 1.4285714285714286vw, 4rem);
-  --fs-h2: clamp(2.5rem, 2.357142857142857rem + 0.7142857142857143vw, 3rem);
-  --fs-h3: clamp(1.5rem, 1.4285714285714286rem + 0.35714285714285715vw, 1.75rem);
-  --fs-subheader-hero: clamp(1.375rem, 1.3035714285714286rem + 0.35714285714285715vw, 1.625rem);
-  --fs-subheader: clamp(1.375rem, 1.3392857142857142rem + 0.17857142857142858vw, 1.5rem);
-  --fs-icon: clamp(1.25rem, 1.2142857142857142rem + 0.17857142857142858vw, 1.375rem);
-  --fs-body-lg: clamp(1.125rem, 1.0892857142857142rem + 0.17857142857142858vw, 1.25rem);
-  --fs-body: clamp(1rem, 0.9642857142857143rem + 0.17857142857142858vw, 1.125rem);
-  --fs-body-sm: clamp(0.875rem, 0.8392857142857143rem + 0.17857142857142858vw, 1rem);
-  --fs-footer: clamp(0.75rem, 0.7214285714285714rem + 0.14285714285714282vw, 0.85rem);
 
   /*Line Height
   *
@@ -92,24 +81,26 @@
   * body: the smaller the size the bigger the line height
   */
   --lh-hero: calc(var(--fs-hero) * 1.1);
+  --lh-section-title: calc(var(--fs-section-title) * 1.1);
   --lh-h1: calc(var(--fs-h1) * 1.1);
   --lh-h2: calc(var(--fs-h2) * 1.1);
   --lh-h3: calc(var(--fs-h3) * 1.1);
   --lh-subheader-hero: calc(var(--fs-subheader-hero) * 1.2);
+  --lh-section-subheader: calc(var(--fs-section-subheader) * 1.2);
   --lh-subheader: calc(var(--fs-subheader) * 1.2);
   --lh-body: calc(var(--fs-body) * 1.5);
   --lh-body-lg: calc(var(--fs-body-lg) * 1.5);
   --lh-body-sm: calc(var(--fs-body-sm) * 1.5);
 
   /*Letter Spacing
-  *
-  * Depends highly on the font-family, but as a general rule of thumb: the letter spacing can be -2px to -.25px for headings.
+  *Depends highly on the font-family, but as a general rule of thumb: the letter spacing can be -2px to -.25px for headings.
   */
-  --ls-hero: 1px;
-  --ls-header-lg: -2px;
-  --ls-header: -1px;
+  --ls-header: 1px;
   --ls-subheader: -.5px;
-  --ls-body: -.25px;
+
+
+  /*Logo color change*/
+  --adopters-color: brightness(0) invert(0);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -125,7 +116,7 @@
   --neutral-clr-200: #4c4d4c;
   --neutral-clr-100: #1e1e1e;
   --neutral-clr-50: #141414;
-  --box-shadow-clr: rgba(107, 107, 107, 0.1);
+  --box-shadow-clr: rgba(143, 143, 143, 0.1);
 
   --ifm-color-primary: #33b8a4;
   --ifm-color-primary-dark: #2ea694;
@@ -144,6 +135,8 @@
   --ifm-color-secondary-lightest: #e8a5d1;
 
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --adopters-color: brightness(0) invert(1);
 }
 
 html {
@@ -151,14 +144,11 @@ html {
   background-color: var(--neutral-clr-50);
 }
 
-body,
-p,
-button,
-a {
+body {
   font-size: var(--fs-body);
   font-family: var(--ff-secondary);
-  letter-spacing: var(--ls-body);
   color: var(--neutral-clr-900);
+  line-height: var(--lh-body);
 }
 
 h1,
@@ -226,17 +216,22 @@ a.navbar__item {
   }
 }
 
+.table-of-contents__link {
+  font-size: var(--fs-body-sm);
+}
+
 .footer {
+
   a,
   p {
-    font-size: var(--fs-footer);
-    line-height: 2.5;
     font-family: var(--ff-secondary);
+    font-size: var(--fs-body-sm);
+    line-height: 2.5;
   }
 
   &__title {
-    font-family: var(--ff-primary);
-    font-size: var(--fs-body-sm);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
   }
 }
 
@@ -337,10 +332,11 @@ a.navbar__item {
 
 .hero-title {
   font-family: var(--ff-hero);
-  letter-spacing: var(--ls-hero);
+  letter-spacing: var(--ls-header);
 }
 
 .hero-subheader,
+.section-subheader,
 .subheader {
   font-family: var(--ff-primary);
   letter-spacing: var(--ls-subheader);
@@ -353,14 +349,30 @@ a.navbar__item {
   line-height: var(--lh-subheader-hero);
 }
 
+.section-subheader {
+  font-size: var(--fs-section-subheader);
+  line-height: var(--lh-section-subheader);
+}
+
 .subheader {
   font-size: var(--fs-subheader);
   line-height: var(--lh-subheader);
 }
 
+.section-title {
+  font-size: var(--fs-section-title);
+  line-height: var(--lh-section-title);
+}
+
 .container {
   max-width: 1440px;
   padding: 0 2rem;
+  margin: 0 auto;
+}
+
+.container-docs {
+  max-width: 1180px;
+  padding: 0 1rem;
   margin: 0 auto;
 }
 
@@ -520,6 +532,26 @@ a.navbar__item {
 
   &[data-speed="fast"] {
     --_animation-duration: 20s;
+  }
+}
+
+/**********************/
+/****** Adopters ******/
+/**********************/
+
+.scroller .adopters {
+  --_content-gap: 14rem;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    width: 15rem;
+    
+    img {
+      width: 100%;
+      filter: var(--adopters-color);
+    }
   }
 }
 

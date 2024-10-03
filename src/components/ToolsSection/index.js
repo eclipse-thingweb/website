@@ -10,9 +10,9 @@ export default function ToolsSection() {
     <section className={styles.toolsSection}>
       <div className={clsx('container', 'section-wrapper')}>
 
-        <h2 className={clsx('hero-title', styles.toolsSection__title)}>Powerful <span className={'text-highlight'}>Tools</span> To Drive Your IoT Development</h2>
+        <h2 className={clsx('hero-title', 'section-title', styles.toolsSection__title)}>Powerful <span className={'text-highlight'}>Tools</span> To Drive Your IoT Development</h2>
 
-        <p className={clsx('subheader', styles.toolsSection__subheader)}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh.
+        <p className={clsx('section-subheader', styles.toolsSection__subheader)}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh.
           Suspendisse adipiscing convallis libero tristique auctor ultricies ut ullamcorper tincidunt. Ipsum nam nisl viverra semper sit. </p>
 
         <div className={styles.toolsSection__tools}>
@@ -48,17 +48,17 @@ export default function ToolsSection() {
             </div>
           </div>
 
-          <div className={clsx(styles.tool, styles.dartWot)}>
+          <div className={clsx(styles.tool, styles.domusTdd)}>
             <div className={styles.tool__img}></div>
-            <FontAwesomeIcon icon={faCode} className={styles.tool__icon} />
-            <h3 className={styles.tool__title}>dart-wot</h3>
+            <FontAwesomeIcon icon={faHouse} className={styles.tool__icon} />
+            <h3 className={styles.tool__title}>domus-tdd</h3>
             <p className={styles.tool__description}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh. </p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://pub.dev/packages/dart_wot' target='_blank'>
-                dart-wot
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/domus-tdd-api' target='_blank'>
+                domus-tdd
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/dart_wot' target='_blank'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/domus-tdd-api' target='_blank'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
@@ -80,17 +80,17 @@ export default function ToolsSection() {
             </div>
           </div>
 
-          <div className={clsx(styles.tool, styles.domusTdd)}>
+          <div className={clsx(styles.tool, styles.dartWot)}>
             <div className={styles.tool__img}></div>
-            <FontAwesomeIcon icon={faHouse} className={styles.tool__icon} />
-            <h3 className={styles.tool__title}>domus-tdd</h3>
+            <FontAwesomeIcon icon={faCode} className={styles.tool__icon} />
+            <h3 className={styles.tool__title}>dart-wot</h3>
             <p className={styles.tool__description}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh. </p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/domus-tdd-api' target='_blank'>
-                domus-tdd
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://pub.dev/packages/dart_wot' target='_blank'>
+                dart-wot
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/domus-tdd-api' target='_blank'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/dart_wot' target='_blank'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
