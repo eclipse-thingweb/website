@@ -22,7 +22,7 @@
   --neutral-clr-700: #4c4d4c;
   --neutral-clr-800: #1e1e1e;
   --neutral-clr-900: #141414;
-  --box-shadow-clr: rgba(51, 51, 51, 0.1);
+  --box-shadow-clr: rgba(138, 138, 138, 0.1);
 
   --ifm-color-primary: #33b8a4;
   --ifm-color-primary-dark: #2ea694;
@@ -370,6 +370,8 @@ a.navbar__item {
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 

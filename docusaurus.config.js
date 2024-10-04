@@ -175,7 +175,7 @@ const config = {
             ],
           },
           {
-            title: 'WoT Spec',
+            title: 'WoT Specification',
             items: [
               {
                 label: 'TD',
@@ -232,7 +232,7 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Web of Things',
+                label: 'Web of Things Homepage',
                 href: 'https://www.w3.org/WoT/',
               },
               {
