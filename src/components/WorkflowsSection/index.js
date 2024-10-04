@@ -15,21 +15,33 @@ export default function WorkflowsSection() {
         const homogenousWorkflowInput = document.getElementById('hw-btn');
         const professionalWorkflowInput = document.getElementById('pw-btn');
 
-        const simpleWorkflowSection = document.getElementById('simpleW');
-        const homogeneousWorkflowSection = document.getElementById('homogeneousW');
-        const professionalWorkflowSection = document.getElementById('professionalW');
+        const workflows = document.querySelectorAll('#workflow');
+        console.log(workflows);
+
 
         // console.log(simpleWorkflowSection, homogeneousWorkflowSection, professionalWorkflowSection);
-        
+
 
         simpleWorkflowInput.addEventListener('change', () => {
-            console.log(simpleWorkflowSection.dataset);
-            
-            
+            workflows.forEach(workflow => {
+                workflow.dataset.workflow = 'simple';
+            })
         });
-        
 
-        
+        homogenousWorkflowInput.addEventListener('change', () => {
+            workflows.forEach(workflow => {
+                workflow.dataset.workflow = 'homogeneous';
+            })
+        });
+
+        professionalWorkflowInput.addEventListener('change', () => {
+            workflows.forEach(workflow => {
+                workflow.dataset.workflow = 'professional';
+            })
+        });
+
+
+
     }, []);
 
     return (
@@ -43,7 +55,7 @@ export default function WorkflowsSection() {
 
                 <div className={styles.workflowsSection__workflows}>
                     <div className={styles.workflowsWrapper}>
-                        <div className={clsx(styles.workflow, styles.simpleW)} id='simpleW' data-visible="true">
+                        <div className={clsx(styles.workflow, styles.simpleW)} id='workflow' data-workflow="simple">
                             <div className={styles.workflow__illustration}>
                                 <svg width="100%" height="auto" viewBox="0 0 375 453" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M65 119L99 119C104.523 119 109 123.477 109 129L109 309" stroke="url(#paint0_linear_356_933)" strokeWidth="2" />
@@ -97,7 +109,7 @@ export default function WorkflowsSection() {
                             </div>
                         </div>
 
-                        <div className={clsx(styles.workflow, styles.homogeneousW)} id='homogeneousW' data-visible="false">
+                        <div className={clsx(styles.workflow, styles.homogeneousW)} id='workflow' data-workflow="simple">
                             <div className={styles.workflow__illustration}>
                                 <svg width="100%" height="auto" viewBox="0 0 375 453" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M65 119L99 119C104.523 119 109 123.477 109 129L109 309" stroke="url(#paint0_linear_356_933)" strokeWidth="2" />
@@ -151,7 +163,7 @@ export default function WorkflowsSection() {
                             </div>
                         </div>
 
-                        <div className={clsx(styles.workflow, styles.professionalW)} id='professionalW' data-visible="false">
+                        <div className={clsx(styles.workflow, styles.professionalW)} id='workflow' data-workflow="simple">
                             <div className={styles.workflow__illustration}>
                                 <svg width="100%" height="auto" viewBox="0 0 375 453" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M65 119L99 119C104.523 119 109 123.477 109 129L109 309" stroke="url(#paint0_linear_356_933)" strokeWidth="2" />

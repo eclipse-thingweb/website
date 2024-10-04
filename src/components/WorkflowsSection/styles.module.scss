@@ -81,6 +81,20 @@
             align-items: stretch;
             justify-content: space-between;
             gap: 4rem;
+            transition: transform 500ms ease-in-out;
+            // transform: translateX(calc(var(--_translation-multiplier) * var(--_workflow-width)));
+
+            &[data-workflow="simple"] {
+                transform: translateX(calc(0 * var(--_workflow-width)));
+            }
+
+            &[data-workflow="homogeneous"] {
+                transform: translateX(calc(-1 * var(--_workflow-width)));
+            }
+
+            &[data-workflow="professional"] {
+                transform: translateX(calc(-2 * var(--_workflow-width)));
+            }
 
             &__illustration {
                 flex: 1;
@@ -110,18 +124,6 @@
                     gap: 1rem;
                 }
             }
-        }
-
-        .simpleW[data-visible="true"] {
-            transform: translateX(calc(0 * var(--_workflow-width)));
-        }
-
-        .homogeneousW[data-visible="true"] {
-            transform: translateX(calc(-1 * var(--_workflow-width)));
-        }
-
-        .professionalW[data-visible="true"] {
-            transform: translateX(calc(-2 * var(--_workflow-width)));
         }
     }
 }

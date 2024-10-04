@@ -123,7 +123,7 @@ export default function CommunitySection() {
           </div>
         </div> */}
 
-        <div className={'scroller adopters-container'} data-direction="left" data-speed="slower">
+        <div className={'scroller adopters-container'} data-direction="left" data-speed="slow">
         </div>
 
         <div className={styles.communitySection__cta}>
