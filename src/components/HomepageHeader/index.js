@@ -11,7 +11,7 @@ export default function VpSection() {
         <h1 className={clsx('hero-title', styles.heroBanner__title)}>Thingweb: The <span className={'text-highlight'}>Future of IoT</span> Development</h1>
         <p className={clsx('hero-subheader', styles.heroBanner__subheader)}>Leverage web standards for faster development and better interoperability.</p>
         <div className={styles.bannerCta}>
-          <a className='btn btn-primary' href='/docs/intro'>
+          <a className='btn btn-primary' href='/docs/Introduction'>
             Get Started
             <FontAwesomeIcon icon={faCode} className='icon' />
           </a>

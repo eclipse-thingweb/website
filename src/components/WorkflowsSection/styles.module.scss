@@ -1,0 +1,127 @@
+.workflowsSection {
+
+    padding: 4rem;
+    background-color: var(--box-shadow-clr);
+
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__buttons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+        margin-bottom: 4rem;
+
+        .workflowBtn {
+            appearance: none;
+            position: relative;
+            font-size: var(--fs-h2);
+            line-height: var(--lh-h2);
+            font-family: var(--ff-primary);
+            font-weight: var(--fw-bold);
+            color: var(--neutral-clr-500);
+            border-bottom: 2px solid transparent;
+            padding: .5rem 1.5rem;
+            width: fit-content;
+            cursor: pointer;
+            transition: color 250ms ease-in-out;
+
+            &:hover {
+                color: var(--neutral-clr-900);
+            }
+
+            &:checked {
+                border-bottom: 2px solid var(--ifm-color-primary);
+                color: var(--neutral-clr-900);
+            }
+
+            &:nth-child(1)::before {
+                content: 'Consumer-Only';
+            }
+
+            &:nth-child(2)::before {
+                content: 'Homogeneous';
+            }
+
+            &:nth-child(3)::before {
+                content: 'Professional';
+            }
+        }
+    }
+
+    &__workflows {
+        width: 100%;
+        overflow: hidden;
+
+        .workflowsWrapper {
+            width: max-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .workflow {
+            --_workflow-width: calc(100vw - 12rem);
+            width: var(--_workflow-width);
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 4rem;
+
+            &__illustration {
+                flex: 1;
+                max-width: 33.75rem;
+                height: 100%;
+            }
+
+            &__content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                .title {
+                    margin-bottom: 2rem;
+                }
+
+                .description {
+                    margin-bottom: 1rem;
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 1rem;
+                }
+            }
+        }
+
+        .simpleW[data-visible="true"] {
+            transform: translateX(calc(0 * var(--_workflow-width)));
+        }
+
+        .homogeneousW[data-visible="true"] {
+            transform: translateX(calc(-1 * var(--_workflow-width)));
+        }
+
+        .professionalW[data-visible="true"] {
+            transform: translateX(calc(-2 * var(--_workflow-width)));
+        }
+    }
+}
