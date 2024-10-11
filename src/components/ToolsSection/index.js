@@ -19,7 +19,7 @@ export default function ToolsSection() {
           <div className={clsx(styles.tool, styles.nodeWot)}>
             <div className={styles.tool__img}></div>
             <FontAwesomeIcon icon={faCode} className={styles.tool__icon} />
-            <h3 className={styles.tool__title}>node-wot</h3>
+            <h3 className={styles.tool__title}>node wot</h3>
             <p className={styles.tool__description}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh. </p>
             <div className={styles.tool__btnContainer}>
               <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='#' target='_blank'>
@@ -51,7 +51,7 @@ export default function ToolsSection() {
           <div className={clsx(styles.tool, styles.domusTdd)}>
             <div className={styles.tool__img}></div>
             <FontAwesomeIcon icon={faHouse} className={styles.tool__icon} />
-            <h3 className={styles.tool__title}>domus-tdd</h3>
+            <h3 className={styles.tool__title}>domus tdd</h3>
             <p className={styles.tool__description}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh. </p>
             <div className={styles.tool__btnContainer}>
               <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/domus-tdd-api' target='_blank'>
@@ -83,7 +83,7 @@ export default function ToolsSection() {
           <div className={clsx(styles.tool, styles.dartWot)}>
             <div className={styles.tool__img}></div>
             <FontAwesomeIcon icon={faCode} className={styles.tool__icon} />
-            <h3 className={styles.tool__title}>dart-wot</h3>
+            <h3 className={styles.tool__title}>dart wot</h3>
             <p className={styles.tool__description}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh. </p>
             <div className={styles.tool__btnContainer}>
               <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://pub.dev/packages/dart_wot' target='_blank'>

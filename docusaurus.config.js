@@ -201,7 +201,7 @@ const config = {
             title: 'WoT Specification',
             items: [
               {
-                label: 'TD',
+                label: 'Thing Description',
                 href: 'https://www.w3.org/TR/wot-thing-description11/',
               },
               {
