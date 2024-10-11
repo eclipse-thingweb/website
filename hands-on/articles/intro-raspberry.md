@@ -1,3 +1,8 @@
+---
+sidebar_position: 1
+title: Raspberry Pi Setup
+description: This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices.
+---
 # WoT - Introduction & Raspberry Pi Setup
 
 This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices. As a growing area, IoT services and application have a huge potential. From home automation to smart-grid passing by industrial manufacturers, IoT is gaining popularity as a potential solution to address their need. Several technologies can be used to build an IoT application mainly because of the specific constraints of the devices. This creates interoperability challenges for communication between devices. WoT offers an approach to expose and consume IoT resources as web resources.
@@ -157,11 +162,11 @@ WoT.produce({
         console.log("Produced " + thing.getThingDescription().title);
 
         // init property values
-		    // ...
+        // ...
         // set property handlers
-		    // ...
+        // ...
         // set action handlers
-		    // ...
+        // ...
 
         // expose the thing
         thing.expose().then(() => {

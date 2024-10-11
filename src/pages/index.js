@@ -7,11 +7,13 @@ import WorkflowsSection from '@site/src/components/WorkflowsSection';
 import ToolsSection from '@site/src/components/ToolsSection';
 import ServicesSection from '@site/src/components/ServicesSection';
 import CommunitySection from '@site/src/components/CommunitySection';
+import FeedbackPrompt from '../components/FeedbackPrompt';
 import styles from './index.module.scss';
 
 export default function HomePage() {
   return (
     <Layout>
+      <FeedbackPrompt />
       <HomepageHeader />
       <main>
         <VpSection />

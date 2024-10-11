@@ -3,6 +3,8 @@ import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMicrochip, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 const thingsList1 = [
     {
@@ -98,8 +100,8 @@ const thingsList2 = [
     },
 ]
 
-function ThingCard({ type, title, description, tags}) {
-    if(type === 'protocol') {
+function ThingCard({ type, title, description, tags }) {
+    if (type === 'protocol') {
         return (
             <div className={styles.protocol}>
                 <h3 className={styles.protocol__title}>{title}</h3>
@@ -108,13 +110,13 @@ function ThingCard({ type, title, description, tags}) {
     }
     else {
         return (
-            <div className={styles.thing}>
+            <div className={clsx(styles.thing, 'thing')}>
                 <div className={styles.thing__icon}>
                     <FontAwesomeIcon icon={faMicrochip} className={styles.icon} />
                 </div>
                 <h3 className={styles.thing__title}>{title}</h3>
                 <p className={styles.thing__description}>{description}</p>
-                <div className={styles.thing__tags}>
+                <div className={clsx(styles.thing__tags, 'thing__tags')}>
                     {tags.map((tag, idx) => (
                         <Tag key={idx} tag={tag} />
                     ))}
@@ -132,33 +134,33 @@ function Tag({ tag }) {
 
 
 export default function ServicesSection() {
-    const scrollerThings1Ref = useRef(null);
-    const scrollerThings2Ref = useRef(null);
+    // const scrollerThings1Ref = useRef(null);
+    // const scrollerThings2Ref = useRef(null);
 
-    useEffect(() => {
-        const scrollerThings1 = scrollerThings1Ref.current;
-        const scrollerThings2 = scrollerThings2Ref.current;
+    // useEffect(() => {
+    //     const scrollerThings1 = scrollerThings1Ref.current;
+    //     const scrollerThings2 = scrollerThings2Ref.current;
 
-        if (scrollerThings1) {
-            const scrollerContent = Array.from(scrollerThings1.children);
+    //     if (scrollerThings1) {
+    //         const scrollerContent = Array.from(scrollerThings1.children);
 
-            scrollerContent.forEach(thing => {
-                const duplicatedThing = thing.cloneNode(true);
-                duplicatedThing.setAttribute('aria-hidden', 'true');
-                scrollerThings1.appendChild(duplicatedThing);
-            })
-        }
+    //         scrollerContent.forEach(thing => {
+    //             const duplicatedThing = thing.cloneNode(true);
+    //             duplicatedThing.setAttribute('aria-hidden', 'true');
+    //             scrollerThings1.appendChild(duplicatedThing);
+    //         })
+    //     }
 
-        if (scrollerThings2) {
-            const scrollerContent = Array.from(scrollerThings2.children);
+    //     if (scrollerThings2) {
+    //         const scrollerContent = Array.from(scrollerThings2.children);
 
-            scrollerContent.forEach(thing => {
-                const duplicatedThing = thing.cloneNode(true);
-                duplicatedThing.setAttribute('aria-hidden', 'true');
-                scrollerThings2.appendChild(duplicatedThing);
-            })
-        }
-    }, []);
+    //         scrollerContent.forEach(thing => {
+    //             const duplicatedThing = thing.cloneNode(true);
+    //             duplicatedThing.setAttribute('aria-hidden', 'true');
+    //             scrollerThings2.appendChild(duplicatedThing);
+    //         })
+    //     }
+    // }, []);
 
 
     return (
@@ -168,29 +170,73 @@ export default function ServicesSection() {
 
                 <p className={clsx('section-subheader', styles.servicesSection__subheader)}>Thingweb also provides you with a variety of publicly available Things for you to interact with over the internet.</p>
 
-                <div className={'scroller'} data-direction="left" data-speed="slower">
-                    <div className={styles.things} id='scroller-things-1' ref={scrollerThings1Ref}>
+                <Splide className='services-scroller' aria-label="Services" hasTrack={false} options={{
+                    type: 'loop',
+                    drag: 'free',
+                    gap: '3rem',
+                    arrows: false,
+                    pagination: false,
+                    width: 1440,
+                    autoWidth: true,
+                    autoplay: true,
+                    pauseOnHover: false,
+                    pauseOnFocus: true,
+                    resetProgress: false,
+                    easing: 'linear',
+                    speed: 10000,
+                    interval: 10000,
+                    direction: 'ltr',
+                }}>
+                    <SplideTrack>
                         {thingsList1.map((props, idx) => (
-                            <ThingCard key={idx} {...props} />
+                            <SplideSlide>
+                                <ThingCard key={idx} {...props} />
+                            </SplideSlide>
                         ))}
-                    </div>
-                </div>
+                    </SplideTrack>
+                </Splide>
 
-                <div className={'scroller'} data-direction="right" data-speed="slower">
+                <Splide className='services-scroller' aria-label="Services" hasTrack={false} options={{
+                    type: 'loop',
+                    drag: 'free',
+                    gap: '3rem',
+                    arrows: false,
+                    pagination: false,
+                    width: 1440,
+                    autoWidth: true,
+                    autoplay: true,
+                    pauseOnHover: false,
+                    pauseOnFocus: true,
+                    resetProgress: false,
+                    easing: 'linear',
+                    speed: 10000,
+                    interval: 10000,
+                    direction: 'rtl',
+                }}>
+                    <SplideTrack className={'reverse-services'}>
+                        {thingsList2.map((props, idx) => (
+                            <SplideSlide>
+                                <ThingCard key={idx} {...props} />
+                            </SplideSlide>
+                        ))}
+                    </SplideTrack>
+                </Splide>
+
+                {/* <div className={'scroller'} data-direction="right" data-speed="slower">
                     <div className={styles.things} id='scroller-things-2' ref={scrollerThings2Ref}>
                         {thingsList2.map((props, idx) => (
                             <ThingCard key={idx} {...props} />
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 <div className={styles.servicesSection__cta}>
                     <a href="services" className={clsx('btn btn-primary', styles.btn)}>
                         View All Things
                         <FontAwesomeIcon icon={faArrowRight} className='icon' />
                     </a>
-                </div>
+                </div>   
             </div>
-        </section>
+        </section >
     );
 }

@@ -1,3 +1,8 @@
+---
+sidebar_position: 2
+title: Exposed Thing with node-wot as Dependency
+description: In this document, we aim to introduce how to use the node-wot libraries to implement an Exposed Thing.
+---
 # Exposed Thing with node-wot as Dependency
 
 ## Introduction

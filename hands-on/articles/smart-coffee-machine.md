@@ -1,3 +1,9 @@
+---
+sidebar_position: 2
+title: Smart Coffee Machine and node-wot API
+description: This article is a tutorial which considers a fictional smart coffee machine in order to demonstrate the capabilities of Web of Things (WoT) and the usage of node-wot API.
+---
+
 # Smart coffee machine and node-wot API usage
 
 ## Introduction

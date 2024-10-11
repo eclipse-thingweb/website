@@ -38,6 +38,31 @@ const config = {
       async: false,
     },
   ],
+  presets: [
+    [
+      'classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      ({
+        docs: {
+          path: 'docs',
+          routeBasePath: 'docs',
+          sidebarPath: './sidebars.js',
+          editUrl: 'https://github.com/eclipse-thingweb/website',
+        },
+        blog: false,
+        theme: {
+          customCss: './src/css/custom.scss',
+        },
+        gtag: {
+          trackingID: 'G-FTBPVB8Z65',
+          anonymizeIP: true,
+        },
+        googleTagManager: {
+          containerId: 'G-FTBPVB8Z65',
+        },
+      }),
+    ],
+  ],
   plugins: [
     'docusaurus-plugin-sass',
     [
@@ -45,45 +70,39 @@ const config = {
       {
         redirects: [
           {
-            to: '/hands-on/intro-raspberry',
+            to: '/hands-on/articles/intro-raspberry',
             from: '/hands-on-intro-raspberry',
           },
           {
-            to: '/hands-on/exposed-thing',
+            to: '/hands-on/articles/exposed-thing',
             from: '/hands-on-exposed-thing-guide',
           },
           {
-            to: '/hands-on/smart-coffee-machine',
+            to: '/hands-on/articles/smart-coffee-machine',
             from: '/smart-coffee-machine',
           },
         ],
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'hands-on',
+        path: 'hands-on',
+        routeBasePath: 'hands-on',
+        sidebarPath: './sidebars-hands-on.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'services',
+        path: 'services',
+        routeBasePath: 'services',
+        sidebarPath: './sidebars-services.js',
+      },
     ]
   ],
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          editUrl:
-            // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            'https://github.com/eclipse-thingweb/website',
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl:
-            // 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-            '/',
-        },
-        theme: {
-          customCss: './src/css/custom.scss',
-        },
-      }),
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -97,19 +116,23 @@ const config = {
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Docs',
           },
           {
-            to: '/services',
+            type: 'docSidebar',
+            docsPluginId: 'services',
+            sidebarId: 'servicesSidebar',
+            position: 'left',
             label: 'Services',
-            position: 'left'
           },
           {
-            to: '/hands-on',
+            type: 'docSidebar',
+            docsPluginId: 'hands-on',
+            sidebarId: 'handsOnSidebar',
+            position: 'left',
             label: 'Hands-On',
-            position: 'left'
           },
           {
             href: 'https://github.com/eclipse-thingweb/website',
@@ -179,7 +202,7 @@ const config = {
             items: [
               {
                 label: 'TD',
-                href: 'https://www.w3.org/TR/2023/REC-wot-thing-description11-20231205/',
+                href: 'https://www.w3.org/TR/wot-thing-description11/',
               },
               {
                 label: 'Bindings',

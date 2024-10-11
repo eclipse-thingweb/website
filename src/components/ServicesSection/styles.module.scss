@@ -1,4 +1,5 @@
 /****** Services section *******/
+
 .servicesSection {
 
   p,
@@ -11,10 +12,6 @@
   &__title,
   &__subheader {
     text-align: center;
-  }
-
-  .things {
-    --_content-gap: 3rem;
   }
 
   .thing,
@@ -34,7 +31,7 @@
     gap: .5rem;
     background-color: var(--neutral-clr-50);
     border: 1px solid var(--neutral-clr-200);
-    // box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
+    text-align: left;
 
     &__icon {
       width: 100%;
@@ -57,6 +54,7 @@
     }
 
     &__title {
+      width: 100%;
       font-size: var(--fs-subheader);
     }
 
