@@ -19,13 +19,15 @@
         margin-top: 5rem;
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 18rem);
+        grid-template-rows: repeat(7, 16rem);
         grid-template-areas:
             "node-wot"
+            "dart-wot"
+            "domus-tdd"
             "td-playground"
             "td-tools"
-            "dart-wot"
-            "domus-tdd";
+            "td-code"
+            "wam";
         gap: 1rem;
 
         .tool {
@@ -130,6 +132,14 @@
         .domusTdd {
             grid-area: domus-tdd;
         }
+
+        .tdCode {
+            grid-area: td-code;
+        }
+
+        .wam {
+            grid-area: wam;
+        }
     }
 }
 
@@ -138,11 +148,12 @@
 
         &__tools {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 18rem);
+            grid-template-rows: repeat(4, 16rem);
             grid-template-areas:
-                "node-wot td-playground"
-                "td-tools td-tools"
-                "domus-tdd dart-wot";
+                "node-wot node-wot"
+                "dart-wot domus-tdd"
+                "td-playground td-tools"
+                "wam td-code";
         }
     }
 }
@@ -151,11 +162,12 @@
     .toolsSection {
         &__tools {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 16rem);
+            grid-template-rows: repeat(4, 15rem);
             grid-template-areas:
-                "node-wot node-wot td-playground"
-                "domus-tdd td-tools td-playground"
-                "domus-tdd dart-wot dart-wot ";
+                "node-wot td-code dart-wot"
+                "node-wot domus-tdd dart-wot"
+                "wam domus-tdd td-playground"
+                "td-tools td-tools td-playground";
         }
     }
 }

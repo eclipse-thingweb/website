@@ -118,7 +118,7 @@
   --neutral-clr-50: #141414;
   --box-shadow-clr: rgba(143, 143, 143, 0.1);
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(73, 73, 73, 0.3);
 
   --adopters-color: brightness(0) invert(1);
 }
@@ -494,10 +494,6 @@ a.navbar__item {
     justify-content: space-between;
     animation: scroll var(--_animation-duration, 60s) var(--_animation-direction, forwards) linear infinite;
     gap: var(--_content-gap);
-
-    &:hover {
-      animation-play-state: paused;
-    }
   }
 
   &[data-direction="left"] {

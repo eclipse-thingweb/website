@@ -134,35 +134,6 @@ function Tag({ tag }) {
 
 
 export default function ServicesSection() {
-    // const scrollerThings1Ref = useRef(null);
-    // const scrollerThings2Ref = useRef(null);
-
-    // useEffect(() => {
-    //     const scrollerThings1 = scrollerThings1Ref.current;
-    //     const scrollerThings2 = scrollerThings2Ref.current;
-
-    //     if (scrollerThings1) {
-    //         const scrollerContent = Array.from(scrollerThings1.children);
-
-    //         scrollerContent.forEach(thing => {
-    //             const duplicatedThing = thing.cloneNode(true);
-    //             duplicatedThing.setAttribute('aria-hidden', 'true');
-    //             scrollerThings1.appendChild(duplicatedThing);
-    //         })
-    //     }
-
-    //     if (scrollerThings2) {
-    //         const scrollerContent = Array.from(scrollerThings2.children);
-
-    //         scrollerContent.forEach(thing => {
-    //             const duplicatedThing = thing.cloneNode(true);
-    //             duplicatedThing.setAttribute('aria-hidden', 'true');
-    //             scrollerThings2.appendChild(duplicatedThing);
-    //         })
-    //     }
-    // }, []);
-
-
     return (
         <section className={styles.servicesSection}>
             <div className={clsx('container', 'section-wrapper')}>
@@ -222,16 +193,8 @@ export default function ServicesSection() {
                     </SplideTrack>
                 </Splide>
 
-                {/* <div className={'scroller'} data-direction="right" data-speed="slower">
-                    <div className={styles.things} id='scroller-things-2' ref={scrollerThings2Ref}>
-                        {thingsList2.map((props, idx) => (
-                            <ThingCard key={idx} {...props} />
-                        ))}
-                    </div>
-                </div> */}
-
                 <div className={styles.servicesSection__cta}>
-                    <a href="services" className={clsx('btn btn-primary', styles.btn)}>
+                    <a href="/services" className={clsx('btn btn-primary', styles.btn)}>
                         View All Things
                         <FontAwesomeIcon icon={faArrowRight} className='icon' />
                     </a>

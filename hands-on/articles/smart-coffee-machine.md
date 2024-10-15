@@ -101,55 +101,55 @@ After producing the Thing, we need to initialize the properties and all required
 In case a property needs a write handler, we can set the according propertyWriteHandler. See an example below.
 
 ```js
-    // set write handler for servedCounter property,
-    // raising maintenanceNeeded flag when the value exceeds 1000 drinks
-    thing.setPropertyWriteHandler("servedCounter", async (val) => {
-        servedCounter = await val.value();
-        if (servedCounter > 1000) {
-            maintenanceNeeded = true;
-            // Notify a "maintainer" when the value has changed
-            // (the notify function here simply logs a message to the console)
-            notify(
-                "admin@coffeeMachine.com",
-                `maintenanceNeeded property has changed, new value is: ${servedCounter}`
-            );
-        }
-    });
+// set write handler for servedCounter property,
+// raising maintenanceNeeded flag when the value exceeds 1000 drinks
+thing.setPropertyWriteHandler("servedCounter", async (val) => {
+    servedCounter = await val.value();
+    if (servedCounter > 1000) {
+        maintenanceNeeded = true;
+        // Notify a "maintainer" when the value has changed
+        // (the notify function here simply logs a message to the console)
+        notify(
+            "admin@coffeeMachine.com",
+            `maintenanceNeeded property has changed, new value is: ${servedCounter}`
+        );
+    }
+});
 ```
 
 And then we are ready to initialize its value.
 
 ```js
-    servedCounter = readFromSensor("servedCounter");
+servedCounter = readFromSensor("servedCounter");
 ```
 
 We also want to override write and read handlers for availableResourceLevel property, since we need to utilize uriVariables.
 
 ```js
-	thing.setPropertyWriteHandler("availableResourceLevel", async (val, options) => {
-		// Check if uriVariables are provided
-		if (options && typeof options === "object" && "uriVariables" in options) {
-			const uriVariables = options.uriVariables;
-			if ("id" in uriVariables) {
-				const id = uriVariables.id;
-				allAvailableResources[id] = await val.value();
-				return;
-			}
-		}
-		throw Error("Please specify id variable as uriVariables.");
-	});
-	
-	thing.setPropertyReadHandler("availableResourceLevel", async (options) => {
-		// Check if uriVariables are provided
-		if (options && typeof options === "object" && "uriVariables" in options) {
-			const uriVariables = options.uriVariables;
-			if ("id" in uriVariables) {
-				const id = uriVariables.id;
-				return allAvailableResources[id];
-			}
-		}
-		throw Error("Please specify id variable as uriVariables.");
-	});
+thing.setPropertyWriteHandler("availableResourceLevel", async (val, options) => {
+    // Check if uriVariables are provided
+    if (options && typeof options === "object" && "uriVariables" in options) {
+        const uriVariables = options.uriVariables;
+        if ("id" in uriVariables) {
+            const id = uriVariables.id;
+            allAvailableResources[id] = await val.value();
+            return;
+        }
+    }
+    throw Error("Please specify id variable as uriVariables.");
+});
+
+thing.setPropertyReadHandler("availableResourceLevel", async (options) => {
+    // Check if uriVariables are provided
+    if (options && typeof options === "object" && "uriVariables" in options) {
+        const uriVariables = options.uriVariables;
+        if ("id" in uriVariables) {
+            const id = uriVariables.id;
+            return allAvailableResources[id];
+        }
+    }
+    throw Error("Please specify id variable as uriVariables.");
+});
 ```
 
 As it has already been mentioned, maintenanceNeeded property is observable, meaning we can could get notified when its value changes. For that, we need to provide a callback for the observeProperty method.
@@ -157,81 +157,81 @@ As it has already been mentioned, maintenanceNeeded property is observable, mean
 Done with the Property Affordances! Now we need to set up action handlers, which proceed when another Thing or client invokes the action.
 
 ```js
-    // Set up a handler for makeDrink action
-    thing.setActionHandler("makeDrink", async (_params, options) => {
-        // Default values
-        let drinkId = "americano";
-        let size = "m";
-        let quantity = 1;
-        // Size quantifiers
-        const sizeQuantifiers = { s: 0.1, m: 0.2, l: 0.3 };
-        // Drink recipes showing the amount of a resource consumed for a particular drink
-        const drinkRecipes = {
-            espresso: {
-                water: 1,
-                milk: 0,
-                chocolate: 0,
-                coffeeBeans: 2,
-            },
-            americano: {
-                water: 2,
-                milk: 0,
-                chocolate: 0,
-                coffeeBeans: 2,
-            },
-            cappuccino: {
-                water: 1,
-                milk: 1,
-                chocolate: 0,
-                coffeeBeans: 2,
-            },
-            latte: {
-                water: 1,
-                milk: 2,
-                chocolate: 0,
-                coffeeBeans: 2,
-            },
-            hotChocolate: {
-                water: 0,
-                milk: 0,
-                chocolate: 1,
-                coffeeBeans: 0,
-            },
-            hotWater: {
-                water: 1,
-                milk: 0,
-                chocolate: 0,
-                coffeeBeans: 0,
-            },
-        };
-        // Check if uriVariables are provided
-        if (options && typeof options === "object" && "uriVariables" in options) {
-            const uriVariables = options.uriVariables;
-            drinkId = "drinkId" in uriVariables ? uriVariables.drinkId : drinkId;
-            size = "size" in uriVariables ? uriVariables.size : size;
-            quantity = "quantity" in uriVariables ? uriVariables.quantity : quantity;
+// Set up a handler for makeDrink action
+thing.setActionHandler("makeDrink", async (_params, options) => {
+    // Default values
+    let drinkId = "americano";
+    let size = "m";
+    let quantity = 1;
+    // Size quantifiers
+    const sizeQuantifiers = { s: 0.1, m: 0.2, l: 0.3 };
+    // Drink recipes showing the amount of a resource consumed for a particular drink
+    const drinkRecipes = {
+        espresso: {
+            water: 1,
+            milk: 0,
+            chocolate: 0,
+            coffeeBeans: 2,
+        },
+        americano: {
+            water: 2,
+            milk: 0,
+            chocolate: 0,
+            coffeeBeans: 2,
+        },
+        cappuccino: {
+            water: 1,
+            milk: 1,
+            chocolate: 0,
+            coffeeBeans: 2,
+        },
+        latte: {
+            water: 1,
+            milk: 2,
+            chocolate: 0,
+            coffeeBeans: 2,
+        },
+        hotChocolate: {
+            water: 0,
+            milk: 0,
+            chocolate: 1,
+            coffeeBeans: 0,
+        },
+        hotWater: {
+            water: 1,
+            milk: 0,
+            chocolate: 0,
+            coffeeBeans: 0,
+        },
+    };
+    // Check if uriVariables are provided
+    if (options && typeof options === "object" && "uriVariables" in options) {
+        const uriVariables = options.uriVariables;
+        drinkId = "drinkId" in uriVariables ? uriVariables.drinkId : drinkId;
+        size = "size" in uriVariables ? uriVariables.size : size;
+        quantity = "quantity" in uriVariables ? uriVariables.quantity : quantity;
+    }
+    // Calculate the new level of resources
+    const newResources = Object.assign({}, allAvailableResources);
+    newResources.water -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].water);
+    newResources.milk -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].milk);
+    newResources.chocolate -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].chocolate);
+    newResources.coffeeBeans -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].coffeeBeans);
+    // Check if the amount of available resources is sufficient to make a drink
+    for (const resource in newResources) {
+        if (newResources[resource] <= 0) {
+            return new Promise((resolve, reject) => {
+                thing.emitEvent("outOfResource", `Low level of ${resource}: ${newResources[resource]}%`);
+                return { result: false, message: `${resource} level is not sufficient` };
+            });
         }
-        // Calculate the new level of resources
-        const newResources = Object.assign({}, allAvailableResources);
-        newResources.water -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].water);
-        newResources.milk -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].milk);
-        newResources.chocolate -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].chocolate);
-        newResources.coffeeBeans -= Math.ceil(quantity * sizeQuantifiers[size] * drinkRecipes[drinkId].coffeeBeans);
-        // Check if the amount of available resources is sufficient to make a drink
-        for (const resource in newResources) {
-            if (newResources[resource] <= 0) {
-                return new Promise((resolve, reject) => {
-                    thing.emitEvent("outOfResource", `Low level of ${resource}: ${newResources[resource]}%`);
-                    return { result: false, message: `${resource} level is not sufficient` };
-                });
-            }
-        }
-        // Now store the new level of allAvailableResources
-        allAvailableResources = newResources;
-        servedCounter = servedCounter + quantity;
-        // Finally deliver the drink
-        return { result: true, message: `Your ${drinkId} is in progress!` };
-    });
+    }
+    // Now store the new level of allAvailableResources
+    allAvailableResources = newResources;
+    servedCounter = servedCounter + quantity;
+    // Finally deliver the drink
+    return { result: true, message: `Your ${drinkId} is in progress!` };
+});
 ```
 
 Notice, how in case of insufficient resources the outOfResource event is emitted. Note also that uriVariables is being passed into options variable as a second argument of the handler. The first argument params contains a request body (i.e. payload of a request).
@@ -239,23 +239,23 @@ Notice, how in case of insufficient resources the outOfResource event is emitted
 Another handler is for setSchedule action.
 
  ```js
-    // Set up a handler for setSchedule action
-    thing.setActionHandler("setSchedule", async (params, options) => {
-        const paramsp = await params.value(); //  : any = await Helpers.parseInteractionOutput(params);
-        // Check if uriVariables are provided
-        if (paramsp && typeof paramsp === "object" && "time" in paramsp && "mode" in paramsp) {
-            // Use default values if not provided
-            paramsp.drinkId = "drinkId" in paramsp ? paramsp.drinkId : "americano";
-            paramsp.size = "size" in paramsp ? paramsp.size : "m";
-            paramsp.quantity = "quantity" in paramsp ? paramsp.quantity : 1;
-            // Now add a new schedule
-            schedules.push(paramsp);
-            return { result: true, message: `Your schedule has been set!` };
-        }
-        return new Promise((resolve, reject) => {
-            resolve({ result: false, message: `Please provide all the required parameters: time and mode.` });
-        });
+// Set up a handler for setSchedule action
+thing.setActionHandler("setSchedule", async (params, options) => {
+    const paramsp = await params.value(); //  : any = await Helpers.parseInteractionOutput(params);
+    // Check if uriVariables are provided
+    if (paramsp && typeof paramsp === "object" && "time" in paramsp && "mode" in paramsp) {
+        // Use default values if not provided
+        paramsp.drinkId = "drinkId" in paramsp ? paramsp.drinkId : "americano";
+        paramsp.size = "size" in paramsp ? paramsp.size : "m";
+        paramsp.quantity = "quantity" in paramsp ? paramsp.quantity : 1;
+        // Now add a new schedule
+        schedules.push(paramsp);
+        return { result: true, message: `Your schedule has been set!` };
+    }
+    return new Promise((resolve, reject) => {
+        resolve({ result: false, message: `Please provide all the required parameters: time and mode.` });
     });
+});
 ```
 
 As mentioned above, here we use the payload of a request, therefore we utilize the params variable.
@@ -265,11 +265,11 @@ Done with the Action Affordances! Now our final affordances, that is Event Affor
 Now, finally, expose the Thing!
 
 ```js
-    // Finally expose the thing
-    thing.expose().then(() => {
-        console.info(`${thing.getThingDescription().title} ready`);
-    });
-    console.log(`Produced ${thing.getThingDescription().title}`);
+// Finally expose the thing
+thing.expose().then(() => {
+    console.info(`${thing.getThingDescription().title} ready`);
+});
+console.log(`Produced ${thing.getThingDescription().title}`);
 ```
 
 ## Consume the Thing
@@ -300,11 +300,11 @@ Host: 127.0.0.1:8080
 Content-Type: application/json
 
 {
-	"drinkId": "latte",
-	"size": "m",
-	"quantity": 2,
-	"time": "10:15",
-	"mode": "everyday"
+    "drinkId": "latte",
+    "size": "m",
+    "quantity": 2,
+    "time": "10:15",
+    "mode": "everyday"
 }
 ```
 
@@ -315,7 +315,6 @@ We can also create a consumer Thing (i.e. a client) for our smart coffee machine
 ```js
 // We could also use CoAP here
 WoTHelpers.fetch("http://127.0.0.1:8080/smart-coffee-machine").then(async (td) => {
-
     try {
         let thing = await WoT.consume(td);
         log('Thing Description:', td);
@@ -323,44 +322,43 @@ WoTHelpers.fetch("http://127.0.0.1:8080/smart-coffee-machine").then(async (td) =
     } catch (err) {
         console.error('Script error:', err);
     }
-
 });
 ```
 
 The full “client” script is available at node-wot GitHub repository. Notice that, we are awaiting asynchronous functions to complete before proceeding, which is quite logical here. Remember that we need the async keyword in the outer function in order to use await inside the function. We could also chain the asynchronous consume method with other methods using .then. But let’s stick with async/await for our example. A property can be read using thing.readProperty method.
 
 ```js
-        // Read property allAvailableResources
-        let allAvailableResources = await (await thing.readProperty("allAvailableResources")).value();
-        log("allAvailableResources value is:", allAvailableResources);
+    // Read property allAvailableResources
+    let allAvailableResources = await (await thing.readProperty("allAvailableResources")).value();
+    log("allAvailableResources value is:", allAvailableResources);
 });
 ```
 
 A property can be written using thing.writeProperty method.
 
 ```js
-        // Now let's change water level to 80
-        await thing.writeProperty("availableResourceLevel", 80, { uriVariables: { id: "water" } });
+    // Now let's change water level to 80
+    await thing.writeProperty("availableResourceLevel", 80, { uriVariables: { id: "water" } });
 });
 ```
 
 Notice on usage of uriVariables here. In the same manner they can be used when reading properties which utilize uriVariables.
 
 ```js
-        // And see that the water level has changed
-        const waterLevel = await (
-            await thing.readProperty("availableResourceLevel", { uriVariables: { id: "water" } })
-        ).value();
-        log("waterLevel value after change is:", waterLevel);
+    // And see that the water level has changed
+    const waterLevel = await (
+        await thing.readProperty("availableResourceLevel", { uriVariables: { id: "water" } })
+    ).value();
+    log("waterLevel value after change is:", waterLevel);
 });
 ```
 
 It’s also possible to set a client-side handler for observable properties.
 
 ```js
-        thing.observeProperty("maintenanceNeeded", async (data) => {
-            log("maintenanceNeeded property has changed! New value is:", await data.value());
-        });
+    thing.observeProperty("maintenanceNeeded", async (data) => {
+        log("maintenanceNeeded property has changed! New value is:", await data.value());
+    });
 });
 ```
 
@@ -369,45 +367,45 @@ Notice that, here we don’t need to await for a function to complete, since obs
 We can invoke an action using thing.invokeAction method.
 
 ```js
-        // Now let's make 3 cups of latte!
-        const makeCoffee = await thing.invokeAction("makeDrink", undefined, {
-            uriVariables: { drinkId: "latte", size: "l", quantity: 3 },
-        });
-        const makeCoffeep = await makeCoffee.value();
-        if (makeCoffeep.result) {
-            log("Enjoy your drink!", makeCoffeep);
-        } else {
-            log("Failed making your drink:", makeCoffeep);
-        }
+// Now let's make 3 cups of latte!
+const makeCoffee = await thing.invokeAction("makeDrink", undefined, {
+    uriVariables: { drinkId: "latte", size: "l", quantity: 3 },
+});
+const makeCoffeep = await makeCoffee.value();
+if (makeCoffeep.result) {
+    log("Enjoy your drink!", makeCoffeep);
+} else {
+    log("Failed making your drink:", makeCoffeep);
+}
 ```
 
 Notice on usage of uriVariables here. They are passed as a third argument, whereas the second one is the payload of a request. This can be well noted on invoking of setSchedule action.
 
 ```js
-        // Let's add a scheduled task
-        const scheduledTask = await thing.invokeAction("setSchedule", {
-            drinkId: "espresso",
-            size: "m",
-            quantity: 2,
-            time: "10:00",
-            mode: "everyday",
-        });
-        const scheduledTaskp = await scheduledTask.value();
-        log(scheduledTaskp.message, scheduledTaskp);
-        // See how it has been added to the schedules property
-        const schedules = await (await thing.readProperty("schedules")).value();
-        log("schedules value: ", schedules);
+// Let's add a scheduled task
+const scheduledTask = await thing.invokeAction("setSchedule", {
+    drinkId: "espresso",
+    size: "m",
+    quantity: 2,
+    time: "10:00",
+    mode: "everyday",
+});
+const scheduledTaskp = await scheduledTask.value();
+log(scheduledTaskp.message, scheduledTaskp);
+// See how it has been added to the schedules property
+const schedules = await (await thing.readProperty("schedules")).value();
+log("schedules value: ", schedules);
 ```
 
 As it is already mentioned above, we also want a client to subscribe for events emitted from the producer Thing.
 
 ```js
-        // Let's set up a handler for outOfResource event
-        thing.subscribeEvent("outOfResource", async (data) => {
-            // Here we are simply logging the message when the event is emitted
-            // But, of course, could have a much more sophisticated handler
-            log("outOfResource event:", await data.value());
-        });
+// Let's set up a handler for outOfResource event
+thing.subscribeEvent("outOfResource", async (data) => {
+    // Here we are simply logging the message when the event is emitted
+    // But, of course, could have a much more sophisticated handler
+    log("outOfResource event:", await data.value());
+});
 ```
 
 Again, here we don’t need to await for a function to complete, since subscribing for an event is a persistent action.
@@ -446,24 +444,24 @@ Currently, node-wot supports different security schemas. In the example above we
 Extend the Thing Description within the produce method with the following lines (add id, securityDefinitions and security):
 
 ```js
-    title: ...
-    id: 'urn:dev:wot:example:smart-coffee-machine',
-    ...
-    securityDefinitions: {
-        oauth2_sc: {
-            scheme: 'oauth2',
-            flow: 'client_credentials',
-            token: 'https://127.0.0.1:3000/token',
-            scopes: [
-                'limited',
-            ],
-        },
+title: ...
+id: 'urn:dev:wot:example:smart-coffee-machine',
+...
+securityDefinitions: {
+    oauth2_sc: {
+        scheme: 'oauth2',
+        flow: 'client_credentials',
+        token: 'https://127.0.0.1:3000/token',
+        scopes: [
+            'limited',
+        ],
     },
-    security: [
-        'oauth2_sc',
-    ],
-    properties: {
-        ...
+},
+security: [
+    'oauth2_sc',
+],
+properties: {
+...
 ```
 
 Now if we run the producer and the consumer Things as before that will fail. The reason is simple - the client is not authorized. Let’s fix it.

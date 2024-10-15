@@ -7,19 +7,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: .5rem;
 
     &__text {
         position: relative;
-        font-size: .75rem;
+        font-size: .6rem;
         background-color: var(--neutral-clr-100);
-        padding: .25rem .5rem;
-        border-radius: 5px;
+        border-radius: 2px;
         transform-origin: right;
         transform: scaleX(0);
-        animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBox 750ms ease-in-out forwards 10.5s;
-        width: 17rem;
-        height: 2rem;
+        animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBoxPhone 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
+        width: 12rem;
+        height: 1.5rem;
         overflow: hidden;
 
         p {
@@ -28,10 +27,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            padding: .25rem .5rem;
             transform: translateY(2rem);
             opacity: 0;
             margin-bottom: 0;
+            padding: 0 .5rem;
         }
 
         .text1 {
@@ -39,15 +38,15 @@
         }
 
         .text2 {
-            animation: showText2 1s ease-in-out forwards 11s;
+            animation: showText2 12s ease-in-out forwards 11s;
         }
     }
 
     &__btn {
         background-color: var(--ifm-color-primary);
-        width: 3rem;
-        height: 3rem;
-        border-radius: 10px;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 5px;
         cursor: pointer;
 
         a {
@@ -60,8 +59,36 @@
         }
 
         .icon {
-            font-size: 1.5rem;
+            font-size: 1rem;
             animation: rotatingIcon 8s ease-in-out infinite 4s;
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .feedbackPrompt {
+        gap: 1rem;
+    
+        &__text {
+            font-size: .75rem;
+            border-radius: 5px;
+            animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBoxDesktop 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
+            width: 14rem;
+            height: 2rem;
+    
+            p {
+                padding: .25rem .5rem;
+            }
+        }
+    
+        &__btn {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 10px;
+    
+            .icon {
+                font-size: 1.5rem;
+            }
         }
     }
 }
@@ -88,15 +115,28 @@
     }
 }
 
+
+@keyframes shrinkTextBoxPhone {
+    to {
+        width: 10rem;
+    }
+}
+
+@keyframes shrinkTextBoxDesktop {
+    to {
+        width: 12rem;
+    }
+}
+
 @keyframes showTextBox {
     to {
         transform: scaleX(1);
     }
 }
 
-@keyframes shrinkTextBox {
+@keyframes hideTextBox {
     to {
-        width: 12rem;
+        transform: scaleX(0);
     }
 }
 
@@ -120,8 +160,20 @@
 }
 
 @keyframes showText2 {
-    to {
+    0% {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+    10% {
         transform: translateY(0);
         opacity: 1;
+    }
+    90% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-2rem);
+        opacity: 0;
     }
 }

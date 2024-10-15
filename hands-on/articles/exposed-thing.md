@@ -41,6 +41,7 @@ Here, we will explain what every (or most!) of the lines do. If you just want to
     ...
     "devDependencies": {
         "typescript": "3.3.1",
+        // highlight-next-line
         "wot-typescript-definitions": "0.8.0-SNAPSHOT.22", //update this accordingly
         "@types/node": "11.9.4",
         "tslint": "5.12.1"
@@ -56,6 +57,7 @@ Here, we will explain what every (or most!) of the lines do. If you just want to
   ...
   "dependencies": {
     "@node-wot/binding-http": "0.8.0", //update this accordingly
+    // highlight-next-line
     "@node-wot/core": "0.8.0", //update this accordingly
     "request": "2.88.0",
     "ajv": "^6.10.2"

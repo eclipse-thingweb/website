@@ -2,40 +2,5 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## Adopters
+If you are using any Eclipse Thingweb component within your organization, please support us by adding your logo to the [Eclipse IoT adopters list](https://iot.eclipse.org/adopters/#iot.thingweb). To do so, simply open an issue at [the Eclipse Gitlab](https://gitlab.eclipse.org/eclipsefdn/it/api/eclipsefdn-project-adopters/-/issues/new?issuable_template=adopter_request) by providing the name of your organization, its logo, and a link to your organization or team. You should be affiliated with that organization for the issue to be implemented.

@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDiscord, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faCloudUpload} from '@fortawesome/free-solid-svg-icons'
 
 export default function CommunitySection() {
 
-  // const scrollerAdoptersRef = useRef(null);
   const statsContainerRef = useRef(null);
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function CommunitySection() {
 
                   if (startValue === endValue) {
 
-                    if (endValue >= 50) {
+                    if (endValue >= 30) {
                       target.textContent = endValue + "+";
                     }
                     clearInterval(counter);
@@ -97,41 +97,30 @@ export default function CommunitySection() {
 
         <div className={styles.communitySection__stats} ref={statsContainerRef}>
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="120" data-count="true">0</h3>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="130" data-count="true">0</h3>
             <p className={styles.stat__description}>Discord Members</p>
           </div>
 
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="50" data-count="true">0</h3>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="30" data-count="true">0</h3>
             <p className={styles.stat__description}>GitHub Contributors</p>
           </div>
 
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="10" data-count="true">0</h3>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="3" data-count="true">0</h3>
             <p className={styles.stat__description}>Adopters</p>
           </div>
         </div>
-
-        {/* <div className={'scroller'} data-direction="left" data-speed="slow">
-          <div className={styles.adopters} id='scroller-adopters' ref={scrollerAdoptersRef}>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-            <h3 className={styles.adopters__logo}>BRAND</h3>
-          </div>
-        </div> */}
 
         <div className={'scroller adopters-container'} data-direction="left" data-speed="slow">
         </div>
 
         <div className={styles.communitySection__cta}>
-          <a className={clsx('btn btn-primary', styles.btn)} href='https://github.com/eclipse-thingweb/website' target='_blank'>
-            Contribute and Provide Feedback
-            <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
+          <a className={clsx('btn btn-primary', styles.btn)} href='https://github.com/eclipse-thingweb/website?tab=readme-ov-file#adopters'>
+            Add your Organization
+              <FontAwesomeIcon icon={faCloudUpload} className={styles.btn__icon} />
           </a>
-          <a className={clsx('btn btn-primary btn-outline', styles.btn)} href='https://discord.gg/WfRyazju' target='_blank'>
+          <a className={clsx('btn btn-primary btn-outline', styles.btn)} href='https://discord.gg/WfRyazju'>
             Chat with our Community
             <FontAwesomeIcon icon={faDiscord} className={styles.btn__icon} />
           </a>
