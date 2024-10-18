@@ -71,23 +71,33 @@
                 }
 
                 .title {
-                    margin-bottom: 2rem;
-                }
-
-                .description,
-                li {
-                    color: var(--neutral-clr-600);
-                }
-
-                .description {
                     margin-bottom: 1rem;
                 }
 
-                li {
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-start;
-                    gap: 1rem;
+                .description {
+                   font-size: var(--fs-body-lg);
+                   margin-bottom: 2rem;
+                }
+
+                .description, .benefit {
+                    color: var(--neutral-clr-600);
+                }
+
+                .benefit {
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .icon {
+                        margin-right: 1rem;
+                        color: var(--ifm-color-primary);
+                    }
+
+                    span {
+                        font-weight: var(--fw-bold);
+                        color: var(--ifm-color-primary);
+                    }
                 }
             }
         }

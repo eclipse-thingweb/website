@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faWifi, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import ClientOnlyWorkflow from '@site/src/components/ClientOnlyWorkflow';
 import HomogeneousWorkflow from '@site/src/components/HomogeneousWorkflow';
 
@@ -65,9 +65,9 @@ export default function WorkflowsSection() {
                             <div className={styles.workflow__content}>
                                 <h1 className={styles.title}>Client-Only</h1>
                                 <p className={styles.description}>Start small and get an off-the-shelf IoT device.</p>
-                                <ul>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faWifi} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
+                                <ul className={styles.benefits}>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Standardized Interface:</span> Interact with different device types and brands through a single, fixed interface.</li>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Low Integration Barrier:</span> Quickly enables cross-manufacturer device connectivity without redesigning device protocols.</li>
                                 </ul>
                             </div>
                         </div>
@@ -79,9 +79,12 @@ export default function WorkflowsSection() {
                             <div className={styles.workflow__content}>
                                 <h1 className={styles.title}>Homogenous</h1>
                                 <p className={styles.description}>Integrate Thingweb components into your IoT application and be open to scale.</p>
-                                <ul>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faWifi} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
+                                <ul className={styles.benefits}>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Structured Interactions:</span> WoT transforms devices into documented APIs, making it easier for newcomers.</li>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Enhanced Accessibility:</span> Simplifies device control for broader audiences, allowing third parties to interface with devices seamlessly.
+                                    </li>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Built in security:</span> Use web tested access control policies and security protocols out of the box.</li>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Out of the box:</span> Decisions are taken for you, (protocol, best practices, documentation, security)</li>
                                 </ul>
                             </div>
                         </div>
@@ -93,9 +96,9 @@ export default function WorkflowsSection() {
                             <div className={styles.workflow__content}>
                                 <h1 className={styles.title}>Orchestration</h1>
                                 <p className={styles.description}>Easily manage a fleet of heterogeneous devices and orchestrate applications at scale.</p>
-                                <ul>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faWifi} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
-                                    <li className={styles.description}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} />Ipsum nam nisl viverra semper sit sed.</li>
+                                <ul className={styles.benefits}>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Scalability:</span> Supports complex setups with distributed devices and extensive device fleets.</li>
+                                    <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Ready to use microservices and fleet management:</span> Efficiently handle a wide range of devices using Thingweb’s microservices for scalability and organization.</li>
                                 </ul>
                             </div>
                         </div>

@@ -229,7 +229,6 @@
         background-color: var(--neutral-clr-75);
         border-radius: 5px;
         border: 1px solid var(--neutral-clr-300);
-        cursor: pointer;
         transition: all 350ms ease-in-out;
         display: flex;
         flex-direction: column;
@@ -263,40 +262,40 @@
             }
         }
 
-        &:hover {
-            border-color: var(--neutral-clr-75)!important;
-            background-color: var(--neutral-clr-50)!important;
-            transform: scale(1.05)!important;
-            box-shadow: 3px 3px 10px var(--box-shadow-clr)!important;
-            gap: .5rem!important;
+        // &:hover {
+        //     border-color: var(--neutral-clr-75)!important;
+        //     background-color: var(--neutral-clr-50)!important;
+        //     transform: scale(1.05)!important;
+        //     box-shadow: 3px 3px 10px var(--box-shadow-clr)!important;
+        //     gap: .5rem!important;
 
-            .icon {
-                font-size: 1.5rem;
-                font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem)!important;
-                transform: translateY(0)!important;
+        //     .icon {
+        //         font-size: 1.5rem;
+        //         font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem)!important;
+        //         transform: translateY(0)!important;
 
-                path {
-                    stroke-width: 0!important;
-                }
+        //         path {
+        //             stroke-width: 0!important;
+        //         }
 
-                &[data-color="primary"] {
-                    path {
-                        fill: var(--ifm-color-primary)!important;
-                    }
-                }
+        //         &[data-color="primary"] {
+        //             path {
+        //                 fill: var(--ifm-color-primary)!important;
+        //             }
+        //         }
 
-                &[data-color="secondary"] {
-                    path {
-                        fill: var(--ifm-color-secondary)!important;
-                    }
-                }
-            }
+        //         &[data-color="secondary"] {
+        //             path {
+        //                 fill: var(--ifm-color-secondary)!important;
+        //             }
+        //         }
+        //     }
 
-            p {
-                opacity: 1!important;
-                transform: translateY(0)!important;
-            }
-        }
+        //     p {
+        //         opacity: 1!important;
+        //         transform: translateY(0)!important;
+        //     }
+        // }
     }
 }
 

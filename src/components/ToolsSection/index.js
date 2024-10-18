@@ -12,8 +12,7 @@ export default function ToolsSection() {
 
         <h2 className={clsx('hero-title', 'section-title', styles.toolsSection__title)}>Powerful <span className={'text-highlight'}>Tools</span> To Drive Your IoT Development</h2>
 
-        <p className={clsx('section-subheader', styles.toolsSection__subheader)}>Convallis tellus tincidunt consequat nunc. Semper pretium ac amet nibh.
-          Suspendisse adipiscing convallis libero tristique auctor ultricies ut ullamcorper tincidunt. Ipsum nam nisl viverra semper sit. </p>
+        <p className={clsx('section-subheader', styles.toolsSection__subheader)}>Thingweb has the components you need to interact with your devices, tools to design Thing Descriptions and services to manage your devices. Pick what you need, use as you see fit. </p>
 
 
         <div className={styles.toolsSection__tools}>
@@ -25,11 +24,11 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>node wot</h3>
             <p className={styles.tool__description}>A fast and extensible framework to connect any device with your browser and backend applications.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='/docs/category/node-wot'>
                 node wot
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/node-wot'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
@@ -42,11 +41,11 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>td code</h3>
             <p className={styles.tool__description}>VS Code extension for validating and designing W3C Thing Descriptions and Thing Models.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://marketplace.visualstudio.com/items?itemName=arces-wot.td-code'>
                 td code
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/td-code'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
@@ -59,7 +58,7 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>dart wot</h3>
             <p className={styles.tool__description}>Framework to build Web of Things applications in Dart and Flutter.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://pub.dev/packages/dart_wot'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/dart_wot'>
                 dart wot
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
@@ -76,11 +75,11 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>wam</h3>
             <p className={styles.tool__description}>WoT Application Manager - a CLI to quickly build a Web of Things application.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://playground.thingweb.io'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/wam'>
                 wam
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/playground'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/wam'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
@@ -127,11 +126,11 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>td tools</h3>
             <p className={styles.tool__description}>Utility libraries for W3C Thing Descriptions and Thing Models.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/td-tools'>
                 td tools
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='#'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/td-tools'>
                 <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
