@@ -1,5 +1,5 @@
 .workflowsSection {
-    background-color: var(--box-shadow-clr);
+    background-color: var(--neutral-clr-75);
 
     p,
     h1,
@@ -53,10 +53,9 @@
 
             &__illustration {
                 order: 2;
-                width: 50%;
-                max-width: 30rem;
+                width: 100%;
                 display: grid;
-                place-items: center;
+                justify-content: center;
             }
 
             &__content {
@@ -95,30 +94,57 @@
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 900px) {
     .workflowsSection {
-
         &__buttons {
-            position: relative;
             width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-around;
+            justify-content: space-between;
             gap: 1rem;
             margin-bottom: 4rem;
+
+            .progressBar {
+                position: relative;
+                height: 2px;
+                flex: 1;
+
+                &.barLeft {
+                    background-color: var(--ifm-color-primary);
+                }
+
+                &.barRight {
+                    background-color: var(--ifm-color-secondary);
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--neutral-clr-300);
+                    transform-origin: right;
+                    transform: scaleX(1);
+                    transition: all 500ms ease-in-out;
+                }
+
+                &[data-show="true"] {
+                    &::before {
+                        transform: scaleX(0);
+                    }
+                }
+            }
 
             .workflowBtn {
                 appearance: none;
                 position: relative;
-                font-size: var(--fs-h3);
-                line-height: var(--lh-h3);
+                font-size: clamp(2rem, 0.8571428571428572rem + 2.380952380952381vw, 3rem);
                 line-height: normal;
-                font-family: var(--ff-primary);
+                font-family: var(--ff-hero);
                 font-weight: var(--fw-bold);
-                color: var(--neutral-clr-500);
-                border-bottom: 2px solid transparent;
-                padding: .5rem 1.5rem;
-                width: fit-content;
+                color: var(--neutral-clr-300);
                 cursor: pointer;
                 transition: color 250ms ease-in-out;
 
@@ -127,20 +153,19 @@
                 }
 
                 &:checked {
-                    border-bottom: 2px solid var(--ifm-color-primary);
                     color: var(--neutral-clr-900);
                 }
 
                 &:nth-child(1)::before {
-                    content: 'Client-Only';
-                }
-
-                &:nth-child(2)::before {
-                    content: 'Homogeneous';
+                    content: 'CLIENT-ONLY';
                 }
 
                 &:nth-child(3)::before {
-                    content: 'Orchestration';
+                    content: 'HOMOGENEOUS';
+                }
+
+                &:nth-child(5)::before {
+                    content: 'ORCHESTRATION';
                 }
             }
         }
@@ -160,6 +185,7 @@
 
                 &__illustration {
                     order: 1;
+                    width: 50%;
                 }
 
                 &__content {
@@ -183,67 +209,5 @@
                 }
             }
         }
-    }
-}
-
-.homogeneousSvg {
-    &__line1 {
-        transform-origin: top;
-        stroke-dashoffset: 200px;
-        stroke-dasharray: 200px;
-        animation: connect 15s ease-in-out infinite;
-    }
-
-    &__nodeWot {
-        fill: var(--box-shadow-clr);
-        stroke: var(--neutral-clr-700);
-        animation: connectBox 15s ease-in-out infinite 250ms;
-    }
-
-    &__dartWot {
-        fill: var(--box-shadow-clr);
-        stroke: var(--neutral-clr-700);
-        animation: connectBox 15s ease-in-out infinite 500ms;
-    }
-}
-
-@keyframes connect {
-    0% {
-        stroke-dashoffset: 200px;
-    }
-    10% {
-        stroke-dashoffset: 0px;
-    }
-    50% {
-        stroke-dashoffset: 0px;
-    }
-    55% {
-        stroke-dashoffset: -200px;
-    }
-    100% {
-        stroke-dashoffset: -200px;
-    }
-}
-
-@keyframes connectBox {
-    0% {
-        fill: transparent;
-        stroke: var(--neutral-clr-700);
-    }
-    5% {
-        fill: var(--ifm-color-primary);
-        stroke: transparent;
-    }
-    50% {
-        fill: var(--ifm-color-primary);
-        stroke: transparent;
-    }
-    55% {
-        fill: transparent;
-        stroke: var(--neutral-clr-700);
-    }
-    100% {
-        fill: transparent;
-        stroke: var(--neutral-clr-700);
     }
 }

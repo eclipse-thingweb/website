@@ -14,7 +14,7 @@ export default function FeedbackPrompt() {
             </div>
             <div className={styles.feedbackPrompt__btn}>
                 <a href='https://github.com/orgs/eclipse-thingweb/discussions/8'>
-                    <FontAwesomeIcon icon={faCommentDots} className={styles.icon} />
+                    <FontAwesomeIcon icon={faCommentDots} className={styles.icon} bounce/>
                 </a>
             </div>
         </div>

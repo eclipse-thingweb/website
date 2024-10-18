@@ -60,7 +60,9 @@
 
         .icon {
             font-size: 1rem;
-            animation: rotatingIcon 8s ease-in-out infinite 4s;
+            --fa-animation-duration: 2s;
+            --fa-animation-delay: 5s;
+            --fa-animation-iteration-count: 4;
         }
     }
 }
@@ -93,27 +95,27 @@
     }
 }
 
-@keyframes rotatingIcon {
-    0% {
-        transform: rotate(0);
-    }
+// @keyframes rotatingIcon {
+//     0% {
+//         transform: rotate(0);
+//     }
 
-    5% {
-        transform: rotate(10deg);
-    }
+//     5% {
+//         transform: rotate(10deg);
+//     }
 
-    15% {
-        transform: rotate(-10deg);
-    }
+//     15% {
+//         transform: rotate(-10deg);
+//     }
 
-    20% {
-        transform: rotate(0deg);
-    }
+//     20% {
+//         transform: rotate(0deg);
+//     }
 
-    100% {
-        transform: rotate(0deg);
-    }
-}
+//     100% {
+//         transform: rotate(0deg);
+//     }
+// }
 
 
 @keyframes shrinkTextBoxPhone {
