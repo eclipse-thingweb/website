@@ -12,7 +12,7 @@ const config = {
   tagline: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one',
   favicon: 'img/favicon.ico',
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://thingweb.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
