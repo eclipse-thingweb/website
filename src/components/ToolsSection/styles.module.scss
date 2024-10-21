@@ -1,0 +1,173 @@
+/****** Tools section *******/
+
+.toolsSection {
+    position: relative;
+
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    &__title,
+    &__subheader {
+        text-align: center;
+    }
+
+    &__tools {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 16rem);
+        grid-template-areas:
+            "node-wot"
+            "dart-wot"
+            "domus-tdd"
+            "td-playground"
+            "td-tools"
+            "td-code"
+            "wam";
+        gap: 1rem;
+
+        .tool {
+            background-color: var(--neutral-clr-50);
+            border: 1px solid var(--neutral-clr-200);
+            box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
+            border-radius: 1rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-end;
+            overflow: hidden;
+
+            &__img {
+                width: 100%;
+                height: 100%;
+                border-radius: 7px;
+                margin-bottom: 1rem;
+            }
+
+            &__icon,
+            &__title {
+                color: var(--neutral-clr-900);
+            }
+
+            &__icon {
+                font-size: 2.5rem;
+                color: var(--neutral-clr-400);
+                margin-bottom: 1rem;
+                transition: all 300ms ease-in-out;
+            }
+
+            &__title {
+                margin-bottom: .5rem;
+            }
+
+            &__description {
+                font-weight: var(--fw-medium);
+                color: var(--neutral-clr-600);
+            }
+
+            &__btnContainer {
+                margin-top: 0;
+                height: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: .5rem;
+                transition: all 300ms ease-in-out;
+
+                .btn {
+                    width: fit-content;
+                    font-size: var(--fs-footer);
+                    border-radius: 50vw;
+                    padding: .5rem .75rem;
+                    transform: translateY(4rem);
+                    opacity: 0;
+                    transition: all 300ms ease-in-out;
+                }
+
+                .btnGithub {
+                    font-size: var(--fs-body);
+                }
+            }
+
+            &:hover {
+                .tool__icon {
+                    color: var(--ifm-color-primary);
+                    font-size: 2rem;
+                }
+
+                .tool__btnContainer {
+                    margin-top: 1rem;
+                    height: 2.25rem;
+
+                    .btn {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .nodeWot {
+            grid-area: node-wot;
+        }
+
+        .playground {
+            grid-area: td-playground;
+        }
+
+        .dartWot {
+            grid-area: dart-wot;
+        }
+
+        .tdTools {
+            grid-area: td-tools;
+        }
+
+        .domusTdd {
+            grid-area: domus-tdd;
+        }
+
+        .tdCode {
+            grid-area: td-code;
+        }
+
+        .wam {
+            grid-area: wam;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .toolsSection {
+
+        &__tools {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 16rem);
+            grid-template-areas:
+                "node-wot node-wot"
+                "dart-wot domus-tdd"
+                "td-playground td-tools"
+                "wam td-code";
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .toolsSection {
+        &__tools {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 15rem);
+            grid-template-areas:
+                "node-wot td-code dart-wot"
+                "node-wot domus-tdd dart-wot"
+                "wam domus-tdd td-playground"
+                "td-tools td-tools td-playground";
+        }
+    }
+}

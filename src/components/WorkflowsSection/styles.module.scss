@@ -1,0 +1,223 @@
+.workflowsSection {
+    background-color: var(--neutral-clr-75);
+
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    &__buttons {
+        display: none;
+    }
+
+    &__workflows {
+        width: 100%;
+        overflow: hidden;
+
+        .workflowsWrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8rem;
+        }
+
+        .workflow {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            transition: transform 500ms ease-in-out;
+
+            &[data-workflow="simple"] {
+                transform: translateX(0);
+            }
+
+            &[data-workflow="homogeneous"] {
+                transform: translateX(-100%);
+            }
+
+            &[data-workflow="professional"] {
+                transform: translateX(-200%);
+            }
+
+            &__illustration {
+                order: 2;
+                width: 100%;
+                display: grid;
+                justify-content: center;
+            }
+
+            &__content {
+                order: 1;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &>* {
+                    text-align: center;
+                }
+
+                .title {
+                    margin-bottom: 1rem;
+                }
+
+                .description {
+                   font-size: var(--fs-body-lg);
+                   margin-bottom: 2rem;
+                }
+
+                .description, .benefit {
+                    color: var(--neutral-clr-600);
+                }
+
+                .benefit {
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                    
+                    .icon {
+                        margin-right: 1rem;
+                        color: var(--ifm-color-primary);
+                    }
+
+                    span {
+                        font-weight: var(--fw-bold);
+                        color: var(--ifm-color-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .workflowsSection {
+        &__buttons {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 4rem;
+
+            .progressBar {
+                position: relative;
+                height: 2px;
+                flex: 1;
+
+                &.barLeft {
+                    background-color: var(--ifm-color-primary);
+                }
+
+                &.barRight {
+                    background-color: var(--ifm-color-secondary);
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--neutral-clr-300);
+                    transform-origin: right;
+                    transform: scaleX(1);
+                    transition: all 500ms ease-in-out;
+                }
+
+                &[data-show="true"] {
+                    &::before {
+                        transform: scaleX(0);
+                    }
+                }
+            }
+
+            .workflowBtn {
+                appearance: none;
+                position: relative;
+                font-size: clamp(2rem, 0.8571428571428572rem + 2.380952380952381vw, 3rem);
+                line-height: normal;
+                font-family: var(--ff-hero);
+                font-weight: var(--fw-bold);
+                color: var(--neutral-clr-300);
+                cursor: pointer;
+                transition: color 250ms ease-in-out;
+
+                &:hover {
+                    color: var(--neutral-clr-900);
+                }
+
+                &:checked {
+                    color: var(--neutral-clr-900);
+                }
+
+                &:nth-child(1)::before {
+                    content: 'CLIENT-ONLY';
+                }
+
+                &:nth-child(3)::before {
+                    content: 'SDK';
+                }
+
+                &:nth-child(5)::before {
+                    content: 'PLATFORM';
+                }
+            }
+        }
+
+        &__workflows {
+
+            .workflowsWrapper {
+                width: 300%;
+                flex-direction: row;
+                gap: 0;
+            }
+
+            .workflow {
+                padding: 0 2rem;
+                flex-direction: row;
+                gap: 8rem;
+
+                &__illustration {
+                    order: 1;
+                    width: 50%;
+                }
+
+                &__content {
+                    order: 2;
+                    width: 50%;
+                    align-items: flex-start;
+
+                    &>* {
+                        text-align: left;
+                    }
+                }
+
+                &:nth-child(2) {
+                    .workflow__illustration {
+                        order: 2;
+                    }
+
+                    .workflow__content {
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+}

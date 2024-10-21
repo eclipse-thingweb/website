@@ -1,0 +1,10 @@
+{
+    "label": "Web of Things - Hands-On",
+    "className": "hands-on-articles",
+    "position": 1,
+    "link": {
+        "type": "generated-index",
+        "slug": "articles",
+        "description": "This section aims to provide hands-on information about the Web of Things (WoT) in general and the technologies developed in this area. For more information please visit the following sub-pages:"
+    }
+}

@@ -1,0 +1,552 @@
+.clientOnlyWorkflow {
+    position: relative;
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid: repeat(6, 1fr) / repeat(5, 1fr);
+    gap: .5rem;
+    grid-template-areas:
+        ". . td . ."
+        "thing1 . . . nodeWot"
+        ". . . tools ."
+        "thing2 . . playground ."
+        ". tm . . dartWot"
+        ". . domus . nodeRed";
+
+    &__line {
+        position: absolute;
+    }
+
+    .line1 {
+        top: 6rem;
+        left: 6rem;
+        width: 8.25rem;
+        height: auto;
+        stroke-dasharray: 12rem;
+        stroke-dashoffset: 12rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+
+    .line2 {
+        top: 6rem;
+        left: 14.6rem;
+        width: auto;
+        height: 14rem;
+        stroke-dasharray: 15.5rem;
+        stroke-dashoffset: 15.5rem;
+        animation: animateLine2 10s ease-in-out infinite 250ms;
+    }
+
+    .line3 {
+        top: 11rem;
+        left: 22.25rem;
+        width: auto;
+        height: 9rem;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine3 10s ease-in-out infinite 250ms;
+    }
+
+    .line4 {
+        top: 20.5rem;
+        left: 6rem;
+        width: 2.75rem;
+        height: auto;
+        stroke-dasharray: 5rem;
+        stroke-dashoffset: 5rem;
+        animation: animateLine4 10s ease-in-out infinite 5.25s;
+    }
+
+    .line5 {
+        top: 14.5rem;
+        left: 9.5rem;
+        width: auto;
+        height: 8.5rem;
+        stroke-dasharray: 14.5rem;
+        stroke-dashoffset: 14.5rem;
+        animation: animateLine5 10s ease-in-out infinite 5.25s;
+    }
+
+    .line6 {
+        top: 14.5rem;
+        left: 22.5rem;
+        width: auto;
+        height: 8.5rem;
+        stroke-dasharray: 10.5rem;
+        stroke-dashoffset: 10.5rem;
+        animation: animateLine6 10s ease-in-out infinite 5.25s;
+    }
+
+
+    .thing1 {
+        grid-area: thing1;
+        animation: showItemBox 10s ease-in-out infinite;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .thing2 {
+        grid-area: thing2;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .td {
+        grid-area: td;
+        animation: showItemBox 10s ease-in-out infinite;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .tm {
+        grid-area: tm;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .domus {
+        grid-area: domus;
+    }
+
+    .tools {
+        grid-area: tools;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .playground {
+        grid-area: playground;
+        animation: showItemBox 10s ease-in-out infinite;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .nodeWot {
+        grid-area: nodeWot;
+        animation: showItemBox 10s ease-in-out infinite;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .dartWot {
+        grid-area: dartWot;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .nodeRed {
+        grid-area: nodeRed;
+    }
+
+    &__item {
+        aspect-ratio: 1/1;
+        min-width: clamp(4rem, 2.857142857142857rem + 2.380952380952381vw, 5rem);
+        background-color: var(--neutral-clr-75);
+        border-radius: 5px;
+        border: 1px solid var(--neutral-clr-300);
+        transition: all 350ms ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 0;
+
+        p {
+            font-size: 0.6rem;
+            font-size: clamp(0.6rem, 0.4857142857142857rem + 0.23809523809523803vw, 0.7rem);
+            line-height: normal;
+            font-weight: var(--fw-bold);
+            font-family: var(--ff-primary);
+            opacity: 0;
+            transform: translateY(.9rem);
+            transition: all 350ms ease-in-out;
+        }
+
+        .icon {
+            transform: translateY(.4rem);
+            font-size: 1.75rem;
+            font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+            transition: all 350ms ease-in-out;
+
+            path {
+                transition: all 350ms ease-in-out;
+                stroke: var(--neutral-clr-300);
+                stroke-width: 20px;
+                fill: var(--neutral-clr-75);
+            }
+        }
+    }
+}
+
+@keyframes showItemBox {
+    0% {
+        border-color: var(--neutral-clr-300);
+        background-color: var(--neutral-clr-75);
+        transform: scale(1);
+        box-shadow: 0 0 0 var(--box-shadow-clr);
+        gap: 0;
+    }
+
+    4% {
+        border-color: var(--neutral-clr-75);
+        background-color: var(--neutral-clr-50);
+        transform: scale(1.05);
+        box-shadow: 3px 3px 10px var(--box-shadow-clr);
+        gap: .5rem;
+    }
+
+    30% {
+        border-color: var(--neutral-clr-75);
+        background-color: var(--neutral-clr-50);
+        transform: scale(1.05);
+        box-shadow: 3px 3px 10px var(--box-shadow-clr);
+        gap: .5rem;
+    }
+
+    38% {
+        border-color: var(--neutral-clr-300);
+        background-color: var(--neutral-clr-75);
+        transform: scale(1);
+        box-shadow: 0 0 0 var(--box-shadow-clr);
+        gap: 0;
+    }
+
+    100% {
+        border-color: var(--neutral-clr-300);
+        background-color: var(--neutral-clr-75);
+        transform: scale(1);
+        box-shadow: 0 0 0 var(--box-shadow-clr);
+        gap: 0;
+    }
+}
+
+@keyframes showItemIconSvg {
+    0% {
+        transform: translateY(.4rem);
+        font-size: 1.75rem;
+        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+    }
+
+    6% {
+        transform: translateY(0);
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem);
+    }
+
+    30% {
+        transform: translateY(0);
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem);
+    }
+
+    38% {
+        transform: translateY(.4rem);
+        font-size: 1.75rem;
+        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+    }
+
+    100% {
+        transform: translateY(.4rem);
+        font-size: 1.75rem;
+        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+    }
+}
+
+@keyframes showItemIconPathPrimary {
+    0% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+
+    4% {
+        stroke-width: 0;
+        fill: var(--ifm-color-primary);
+    }
+
+    30% {
+        stroke-width: 0;
+        fill: var(--ifm-color-primary);
+    }
+
+    38% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+
+    100% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+}
+
+@keyframes showItemIconPathSecondary {
+    0% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+
+    4% {
+        stroke-width: 0;
+        fill: var(--ifm-color-secondary);
+    }
+
+    30% {
+        stroke-width: 0;
+        fill: var(--ifm-color-secondary);
+    }
+
+    38% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+
+    100% {
+        stroke-width: 20px;
+        fill: var(--neutral-clr-75);
+    }
+}
+
+@keyframes showItemText {
+    0% {
+        transform: translateY(.9rem);
+        opacity: 0;
+    }
+
+    4% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    38% {
+        transform: translateY(.9rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(.9rem);
+        opacity: 0;
+    }
+}
+
+@keyframes animateLine1 {
+    0% {
+        stroke-dashoffset: 12rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -12rem;
+    }
+
+    100% {
+        stroke-dashoffset: -12rem;
+    }
+}
+
+@keyframes animateLine2 {
+    0% {
+        stroke-dashoffset: 15.5rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -15.5rem;
+    }
+
+    100% {
+        stroke-dashoffset: -15.5rem;
+    }
+}
+
+@keyframes animateLine3 {
+    0% {
+        stroke-dashoffset: 10rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -10rem;
+    }
+
+    100% {
+        stroke-dashoffset: -10rem;
+    }
+}
+
+@keyframes animateLine4 {
+    0% {
+        stroke-dashoffset: 5rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -5rem;
+    }
+
+    100% {
+        stroke-dashoffset: -5rem;
+    }
+}
+
+@keyframes animateLine5 {
+    0% {
+        stroke-dashoffset: 14.5rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -14.5rem;
+    }
+
+    100% {
+        stroke-dashoffset: -14.5rem;
+    }
+}
+
+@keyframes animateLine6 {
+    0% {
+        stroke-dashoffset: 10.5rem;
+    }
+
+    4% {
+        stroke-dashoffset: 0;
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+    }
+
+    38% {
+        stroke-dashoffset: -10.5rem;
+    }
+
+    100% {
+        stroke-dashoffset: -10.5rem;
+    }
+}

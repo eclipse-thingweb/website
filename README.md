@@ -1,25 +1,6 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/eclipse-thingweb/website/master/misc/thingweb_logo_for_dark_bg.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/eclipse-thingweb/website/master/misc/thingweb_logo.svg">
-  <img title="ThingWeb" alt="Thingweb logo" src="" width="300px">
-</picture>
+# Website
 
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Website
-
-Rendered version: <https://www.thingweb.io>
-
-## How to contribute
-
-- We use Hugo static site generator: https://gohugo.io/getting-started/quick-start/
-- In order to add new content, you can use `hugo new posts/my-first-post.md` or `hugo new single01.md`
-
-You can see the content in different ways locally:
-- Start the Hugo server with drafts enabled: `hugo server -D`
-- Build Hugo website  in `/public`: `hugo`
-- Build Hugo website with drafts enabled in `/public`: `hugo -D`
-
-## Hugo Versions
-
-Until we find a solution, it is recommended to use version 0.79.0 of Hugo.
-For convenience, you can find the Linux binary under [binaries](./binaries/) folder.
+## Adopters
+If you are using any Eclipse Thingweb component within your organization, please support us by adding your logo to the [Eclipse IoT adopters list](https://iot.eclipse.org/adopters/#iot.thingweb). To do so, simply open an issue at [the Eclipse Gitlab](https://gitlab.eclipse.org/eclipsefdn/it/api/eclipsefdn-project-adopters/-/issues/new?issuable_template=adopter_request) by providing the name of your organization, its logo, and a link to your organization or team. You should be affiliated with that organization for the issue to be implemented.
