@@ -1,4 +1,4 @@
-.clientOnlyWorkflow {
+.SDKWorkflow {
     position: relative;
     padding: 1rem;
     width: 100%;
@@ -8,75 +8,15 @@
     gap: .5rem;
     grid-template-areas:
         ". . td . ."
-        "thing1 . . . nodeWot"
-        ". . . tools ."
-        "thing2 . . playground ."
-        ". tm . . dartWot"
-        ". . domus . nodeRed";
+        ". . . . desktop"
+        "thing1 . . nodeWot ."
+        ". tm . . phone"
+        "thing2 . dartWot . tablet"
+        ". . . nodeRed .";
 
-    &__line {
-        position: absolute;
-    }
-
-    .line1 {
-        top: 6rem;
-        left: 6rem;
-        width: 8.25rem;
-        height: auto;
-        stroke-dasharray: 12rem;
-        stroke-dashoffset: 12rem;
-        animation: animateLine1 10s ease-in-out infinite 250ms;
-    }
-
-    .line2 {
-        top: 6rem;
-        left: 14.6rem;
-        width: auto;
-        height: 14rem;
-        stroke-dasharray: 15.5rem;
-        stroke-dashoffset: 15.5rem;
-        animation: animateLine2 10s ease-in-out infinite 250ms;
-    }
-
-    .line3 {
-        top: 11rem;
-        left: 22.25rem;
-        width: auto;
-        height: 9rem;
-        stroke-dasharray: 10rem;
-        stroke-dashoffset: 10rem;
-        animation: animateLine3 10s ease-in-out infinite 250ms;
-    }
-
-    .line4 {
-        top: 20.5rem;
-        left: 6rem;
-        width: 2.75rem;
-        height: auto;
-        stroke-dasharray: 5rem;
-        stroke-dashoffset: 5rem;
-        animation: animateLine4 10s ease-in-out infinite 5.25s;
-    }
-
-    .line5 {
-        top: 14.5rem;
-        left: 9.5rem;
-        width: auto;
-        height: 8.5rem;
-        stroke-dasharray: 14.5rem;
-        stroke-dashoffset: 14.5rem;
-        animation: animateLine5 10s ease-in-out infinite 5.25s;
-    }
-
-    .line6 {
-        top: 14.5rem;
-        left: 22.5rem;
-        width: auto;
-        height: 8.5rem;
-        stroke-dasharray: 10.5rem;
-        stroke-dashoffset: 10.5rem;
-        animation: animateLine6 10s ease-in-out infinite 5.25s;
-    }
+    // &__line {
+    //     position: absolute;
+    // }
 
 
     .thing1 {
@@ -115,74 +55,23 @@
 
     .td {
         grid-area: td;
-        animation: showItemBox 10s ease-in-out infinite;
-
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite;
-
-            path {
-                animation: showItemIconPathSecondary 10s ease-in-out infinite;
-            }
-        }
-
-        p {
-            animation: showItemText 10s ease-in-out infinite;
-        }
     }
 
     .tm {
         grid-area: tm;
-        animation: showItemBox 10s ease-in-out infinite 5s;
+        // animation: showItemBox 10s ease-in-out infinite 5s;
 
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+        // .icon {
+        //     animation: showItemIconSvg 10s ease-in-out infinite 5s;
 
-            path {
-                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
-            }
-        }
+        //     path {
+        //         animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
+        //     }
+        // }
 
-        p {
-            animation: showItemText 10s ease-in-out infinite 5s;
-        }
-    }
-
-    .domus {
-        grid-area: domus;
-    }
-
-    .tools {
-        grid-area: tools;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
-
-            path {
-                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
-            }
-        }
-
-        p {
-            animation: showItemText 10s ease-in-out infinite 5s;
-        }
-    }
-
-    .playground {
-        grid-area: playground;
-        animation: showItemBox 10s ease-in-out infinite;
-
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite;
-
-            path {
-                animation: showItemIconPathPrimary 10s ease-in-out infinite;
-            }
-        }
-
-        p {
-            animation: showItemText 10s ease-in-out infinite;
-        }
+        // p {
+        //     animation: showItemText 10s ease-in-out infinite 5s;
+        // }
     }
 
     .nodeWot {
@@ -221,6 +110,70 @@
 
     .nodeRed {
         grid-area: nodeRed;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .desktop {
+        grid-area: desktop;
+        animation: showItemBox 10s ease-in-out infinite;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .phone {
+        grid-area: phone;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
+    }
+
+    .tablet {
+        grid-area: tablet;
+        animation: showItemBox 10s ease-in-out infinite 5s;
+
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite 5s;
+
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+            }
+        }
+
+        p {
+            animation: showItemText 10s ease-in-out infinite 5s;
+        }
     }
 
     &__item {
@@ -416,137 +369,5 @@
     100% {
         transform: translateY(.9rem);
         opacity: 0;
-    }
-}
-
-@keyframes animateLine1 {
-    0% {
-        stroke-dashoffset: 12rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -12rem;
-    }
-
-    100% {
-        stroke-dashoffset: -12rem;
-    }
-}
-
-@keyframes animateLine2 {
-    0% {
-        stroke-dashoffset: 15.5rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -15.5rem;
-    }
-
-    100% {
-        stroke-dashoffset: -15.5rem;
-    }
-}
-
-@keyframes animateLine3 {
-    0% {
-        stroke-dashoffset: 10rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -10rem;
-    }
-
-    100% {
-        stroke-dashoffset: -10rem;
-    }
-}
-
-@keyframes animateLine4 {
-    0% {
-        stroke-dashoffset: 5rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -5rem;
-    }
-
-    100% {
-        stroke-dashoffset: -5rem;
-    }
-}
-
-@keyframes animateLine5 {
-    0% {
-        stroke-dashoffset: 14.5rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -14.5rem;
-    }
-
-    100% {
-        stroke-dashoffset: -14.5rem;
-    }
-}
-
-@keyframes animateLine6 {
-    0% {
-        stroke-dashoffset: 10.5rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -10.5rem;
-    }
-
-    100% {
-        stroke-dashoffset: -10.5rem;
     }
 }

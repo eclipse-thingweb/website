@@ -62,9 +62,6 @@ export default function ToolsSection() {
                 dart wot
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/dart_wot'>
-                <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
-              </a>
             </div>
           </div>
 
@@ -78,9 +75,6 @@ export default function ToolsSection() {
               <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/wam'>
                 wam
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
-              </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/wam'>
-                <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
           </div>
@@ -113,9 +107,6 @@ export default function ToolsSection() {
                 domus tdd
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
               </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/domus-tdd-api'>
-                <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
-              </a>
             </div>
           </div>
 
@@ -129,9 +120,6 @@ export default function ToolsSection() {
               <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/td-tools'>
                 td tools
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
-              </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/td-tools'>
-                <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
           </div>

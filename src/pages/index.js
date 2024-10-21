@@ -9,6 +9,7 @@ import CommunitySection from '@site/src/components/CommunitySection';
 import FeedbackPrompt from '@site/src/components/FeedbackPrompt';
 
 export default function HomePage() {
+  
   return (
     <Layout>
       <FeedbackPrompt />

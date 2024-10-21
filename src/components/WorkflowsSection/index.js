@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import ClientOnlyWorkflow from '@site/src/components/ClientOnlyWorkflow';
-import HomogeneousWorkflow from '@site/src/components/HomogeneousWorkflow';
+import SDKWorkflow from '@site/src/components/SDKWorkflow';
 
 export default function WorkflowsSection() {
 
@@ -74,10 +74,10 @@ export default function WorkflowsSection() {
 
                         <div className={clsx(styles.workflow, styles.homogeneousW)} id='workflow' data-workflow="simple">
                             <div className={styles.workflow__illustration}>
-                                <HomogeneousWorkflow />
+                                <SDKWorkflow />
                             </div>
                             <div className={styles.workflow__content}>
-                                <h1 className={styles.title}>Homogenous</h1>
+                                <h1 className={styles.title}>SDK</h1>
                                 <p className={styles.description}>Integrate Thingweb components into your IoT application and be open to scale.</p>
                                 <ul className={styles.benefits}>
                                     <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Structured Interactions:</span> WoT transforms devices into documented APIs, making it easier for newcomers.</li>
@@ -94,7 +94,7 @@ export default function WorkflowsSection() {
 
                             </div>
                             <div className={styles.workflow__content}>
-                                <h1 className={styles.title}>Orchestration</h1>
+                                <h1 className={styles.title}>Platform</h1>
                                 <p className={styles.description}>Easily manage a fleet of heterogeneous devices and orchestrate applications at scale.</p>
                                 <ul className={styles.benefits}>
                                     <li className={styles.benefit}><FontAwesomeIcon icon={faThumbsUp} className={styles.icon} /><span className={styles.highlight}>Scalability:</span> Supports complex setups with distributed devices and extensive device fleets.</li>
@@ -104,8 +104,6 @@ export default function WorkflowsSection() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
     );
