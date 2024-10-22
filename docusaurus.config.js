@@ -35,11 +35,11 @@ const config = {
   scripts: [
     {
       src: 'https://api.eclipse.org/adopters/assets/js/eclipsefdn.adopters.js',
-      async: true,
+      async: false,
     },
     {
       src: '/js/consentBanner.js',
-      async: true,
+      async: false,
     }
   ],
   presets: [

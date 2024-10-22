@@ -7,18 +7,13 @@ import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faCloudUpload } from '@fortawesome/free-solid-svg-icons'
 
 export default function CommunitySection() {
-
   const statsContainerRef = useRef(null);
   const adoptersListRef = useRef(null);
   const { colorMode } = useColorMode();
 
-
-
   useEffect(() => {
-
     /** Stats counter animation **/
     const statsContainer = statsContainerRef.current;
-
 
     if (statsContainer) {
       const statsItems = document.querySelectorAll('#stats-number');
@@ -68,27 +63,38 @@ export default function CommunitySection() {
     /** Adopter scroller */
     const adoptersList = adoptersListRef.current;
 
+
     if (colorMode === 'dark') {
       while (adoptersList.lastElementChild) {
         adoptersList.removeChild(adoptersList.lastElementChild);
       }
-      eclipseFdnAdopters.getList({
-        project_id: "iot.thingweb",
-        selector: ".scroller",
-        ul_classes: "adopters",
-        logo_white: true,
-      });
+      try {
+        eclipseFdnAdopters.getList({
+          project_id: "iot.thingweb",
+          selector: ".scroller",
+          ul_classes: "adopters",
+          logo_white: true,
+        });
+      }
+      catch (error) {
+        console.error('Error loading adopters list', error);
+      }
     }
     else {
       while (adoptersList.lastElementChild) {
         adoptersList.removeChild(adoptersList.lastElementChild);
       }
-      eclipseFdnAdopters.getList({
-        project_id: "iot.thingweb",
-        selector: ".scroller",
-        ul_classes: "adopters",
-        logo_white: false,
-      });
+      try {
+        eclipseFdnAdopters.getList({
+          project_id: "iot.thingweb",
+          selector: ".scroller",
+          ul_classes: "adopters",
+          logo_white: false,
+        });
+      }
+      catch (error) {
+        console.error('Error loading adopters list', error);
+      }
     }
 
     const adoptersContainer = document.querySelector('.adopters-container');
