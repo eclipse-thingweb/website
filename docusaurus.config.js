@@ -78,12 +78,28 @@ const config = {
             from: '/hands-on-intro-raspberry',
           },
           {
+            to: '/hands-on/articles/intro-raspberry',
+            from: '/hands-on-intro-raspberry.html',
+          },
+          {
             to: '/hands-on/articles/exposed-thing',
             from: '/hands-on-exposed-thing-guide',
           },
           {
+            to: '/hands-on/articles/exposed-thing',
+            from: '/hands-on-exposed-thing-guide.html',
+          },
+          {
             to: '/hands-on/articles/smart-coffee-machine',
             from: '/smart-coffee-machine',
+          },
+          {
+            to: '/hands-on/articles/smart-coffee-machine',
+            from: '/smart-coffee-machine.html',
+          },
+          {
+            to: '/services/',
+            from: '/services.html',
           },
         ],
       },
