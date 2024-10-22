@@ -12,8 +12,6 @@ export default function CommunitySection() {
   const adoptersListRef = useRef(null);
   const { colorMode } = useColorMode();
 
-
-
   useEffect(() => {
 
     /** Stats counter animation **/
@@ -68,28 +66,30 @@ export default function CommunitySection() {
     /** Adopter scroller */
     const adoptersList = adoptersListRef.current;
 
-    if (colorMode === 'dark') {
-      while (adoptersList.lastElementChild) {
-        adoptersList.removeChild(adoptersList.lastElementChild);
+    document.addEventListener("DOMContentLoaded", function () {
+      if (colorMode === 'dark') {
+        while (adoptersList.lastElementChild) {
+          adoptersList.removeChild(adoptersList.lastElementChild);
+        }
+        eclipseFdnAdopters.getList({
+          project_id: "iot.thingweb",
+          selector: ".scroller",
+          ul_classes: "adopters",
+          logo_white: true,
+        });
       }
-      eclipseFdnAdopters.getList({
-        project_id: "iot.thingweb",
-        selector: ".scroller",
-        ul_classes: "adopters",
-        logo_white: true,
-      });
-    }
-    else {
-      while (adoptersList.lastElementChild) {
-        adoptersList.removeChild(adoptersList.lastElementChild);
+      else {
+        while (adoptersList.lastElementChild) {
+          adoptersList.removeChild(adoptersList.lastElementChild);
+        }
+        eclipseFdnAdopters.getList({
+          project_id: "iot.thingweb",
+          selector: ".scroller",
+          ul_classes: "adopters",
+          logo_white: false,
+        });
       }
-      eclipseFdnAdopters.getList({
-        project_id: "iot.thingweb",
-        selector: ".scroller",
-        ul_classes: "adopters",
-        logo_white: false,
-      });
-    }
+    });
 
     const adoptersContainer = document.querySelector('.adopters-container');
     const config = { childList: true };
