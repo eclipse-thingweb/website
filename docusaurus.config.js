@@ -74,6 +74,14 @@ const config = {
       {
         redirects: [
           {
+            to: '/hands-on/articles',
+            from: '/hands-on',
+          },
+          {
+            to: '/hands-on/articles',
+            from: '/hands-on.html',
+          },
+          {
             to: '/hands-on/articles/intro-raspberry',
             from: '/hands-on-intro-raspberry',
           },
