@@ -2,68 +2,99 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFile, faLaptopCode, faDisplay, faMobile, faTablet } from '@fortawesome/free-solid-svg-icons'
+import { faQuestion, faFile, faLaptopCode, faHouse, faScrewdriverWrench, faDisplay, faMobile, faCubes } from '@fortawesome/free-solid-svg-icons'
 
-export default function SDKWorkflow() {
+export default function PlatformWorkflow() {
     return (
-        <div className={styles.SDKWorkflow}>
-            <svg width="auto" height="auto" viewBox="0 0 84 2" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line1)}>
-                <path d="M0 1H84" stroke="url(#paint0_linear_4_66)" />
+        <div className={styles.PlatformWorkflow}>
+            <svg width="auto" height="auto" viewBox="0 0 38 128" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line1)}>
+                <path d="M37 128V11C37 5.47716 32.5228 1 27 1H0" stroke="url(#paint0_linear_16_342)" />
                 <defs>
-                    <linearGradient id="paint0_linear_4_66" x1="0" y1="1" x2="15.6806" y2="34.2344" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="paint0_linear_16_342" x1="18.5" y1="1" x2="18.5" y2="128" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#D65CAB" />
+                        <stop offset="1" stop-color="#33B8A4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="auto" height="auto" viewBox="0 0 35 127" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line2)}>
+                <path d="M1 127V11C1 5.47715 5.47715 1 11 1H35" stroke="url(#paint0_linear_16_341)" />
+                <defs>
+                    <linearGradient id="paint0_linear_16_341" x1="18" y1="1" x2="18" y2="127" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#33B8A4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="auto" height="auto" viewBox="0 0 94 70" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line3)}>
+                <path d="M0 69H24.6316C30.1544 69 34.6316 64.5228 34.6316 59V11C34.6316 5.47715 39.1087 1 44.6316 1H94" stroke="url(#paint0_linear_16_348)" />
+                <defs>
+                    <linearGradient id="paint0_linear_16_348" x1="47" y1="1" x2="47" y2="69" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#D65CAB" />
+                        <stop offset="1" stop-color="#33B8A4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="auto" height="auto" viewBox="0 0 94 1" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line4)}>
+                <path d="M93.5 0.5H0.5" stroke="url(#paint0_linear_16_346)" />
+                <defs>
+                    <linearGradient id="paint0_linear_16_346" x1="47" y1="0.5" x2="47" y2="1.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#33B8A4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="auto" height="auto" viewBox="0 0 94 69" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line5)}>
+                <path d="M0 1H49C54.5228 1 59 5.47715 59 11V58C59 63.5228 63.4772 68 69 68H94" stroke="url(#paint0_linear_16_350)" />
+                <defs>
+                    <linearGradient id="paint0_linear_16_350" x1="47" y1="1" x2="47" y2="68" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#33B8A4" />
                         <stop offset="1" stop-color="#D65CAB" />
                     </linearGradient>
                 </defs>
             </svg>
-            <svg width="auto" height="auto" viewBox="0 0 48 47" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line2)}>
-                <path d="M0 46H37C42.5228 46 47 41.5228 47 36V0" stroke="url(#paint0_linear_4_82)" />
+            <svg width="auto" height="auto" viewBox="0 0 39 127" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line6)}>
+                <path d="M1 0V116C1 121.523 5.47715 126 11 126H39" stroke="url(#paint0_linear_16_343)" />
                 <defs>
-                    <linearGradient id="paint0_linear_4_82" x1="47" y1="0" x2="-6.50196" y2="36.4585" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="paint0_linear_16_343" x1="20" y1="0" x2="20" y2="126" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#33B8A4" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <svg width="auto" height="auto" viewBox="0 0 42 126" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line7)}>
+                <path d="M41 0V115C41 120.523 36.5228 125 31 125H0" stroke="url(#paint0_linear_16_344)" />
+                <defs>
+                    <linearGradient id="paint0_linear_16_344" x1="20.5" y1="0" x2="20.5" y2="125" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#33B8A4" />
                         <stop offset="1" stop-color="#D65CAB" />
                     </linearGradient>
                 </defs>
             </svg>
-            <svg width="auto" height="auto" viewBox="0 0 85 2" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line3)}>
-                <path d="M0 1L85 1" stroke="url(#paint0_linear_4_67)" />
+            <svg width="auto" height="auto" viewBox="0 0 94 72" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line8)}>
+                <path d="M94 1H64.2116C58.6888 1 54.2116 5.47715 54.2116 11V61C54.2116 66.5228 49.7345 71 44.2116 71H0" stroke="url(#paint0_linear_16_347)" />
                 <defs>
-                    <linearGradient id="paint0_linear_4_67" x1="0" y1="1" x2="15.5624" y2="34.3765" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="paint0_linear_16_347" x1="47" y1="1" x2="47" y2="71" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#33B8A4" />
-                        <stop offset="1" stop-color="#D65CAB" />
                     </linearGradient>
                 </defs>
             </svg>
-            <svg width="auto" height="auto" viewBox="0 0 135 41" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line4)}>
-                <path d="M1 41V11C1 5.47715 5.47715 1 11 1H135" stroke="url(#paint0_linear_21_61)" />
+            <svg width="auto" height="auto" viewBox="0 0 94 1" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line9)}>
+                <path d="M93.5 0.5H0.5" stroke="url(#paint0_linear_16_349)" />
                 <defs>
-                    <linearGradient id="paint0_linear_21_61" x1="135" y1="1" x2="97.7215" y2="84.2901" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#33B8A4" />
-                        <stop offset="1" stop-color="#D65CAB" />
+                    <linearGradient id="paint0_linear_16_349" x1="0.5" y1="0.5" x2="93.5" y2="0.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#D65CAB" />
+                        <stop offset="1" stop-color="#33B8A4" />
                     </linearGradient>
                 </defs>
             </svg>
-            <svg width="auto" height="auto" viewBox="0 0 207 47" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line5)}>
-                <path d="M1 0V36C1 41.5228 5.47715 46 11 46H207" stroke="url(#paint0_linear_21_45)" />
+            <svg width="auto" height="auto" viewBox="0 0 94 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.PlatformWorkflow__line, styles.line10)}>
+                <path d="M94 63H41.8387C36.3159 63 31.8387 58.5228 31.8387 53V11C31.8387 5.47715 27.3616 1 21.8387 1H0" stroke="url(#paint0_linear_16_345)" />
                 <defs>
-                    <linearGradient id="paint0_linear_21_45" x1="1" y1="0" x2="209.535" y2="23.5632" gradientUnits="userSpaceOnUse">
+                    <linearGradient id="paint0_linear_16_345" x1="47" y1="1" x2="47" y2="63" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#33B8A4" />
-                        <stop offset="1" stop-color="#D65CAB" />
-                    </linearGradient>
-                </defs>
-            </svg>
-            <svg width="auto" height="auto" viewBox="0 0 53 46" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.SDKWorkflow__line, styles.line6)}>
-                <path d="M0 45H42C47.5228 45 52 40.5228 52 35V0" stroke="url(#paint0_linear_21_60)" />
-                <defs>
-                    <linearGradient id="paint0_linear_21_60" x1="52" y1="0" x2="-2.38081" y2="41.9108" gradientUnits="userSpaceOnUse">
-                        <stop stop-color="#33B8A4" />
-                        <stop offset="1" stop-color="#D65CAB" />
                     </linearGradient>
                 </defs>
             </svg>
 
 
-            <div className={clsx(styles.SDKWorkflow__item, styles.thing1)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.thing1)}>
                 <svg width="auto" height="auto" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.icon, styles.thingwebLogo)}>
                     <path d="M11.2439 25C11.2362 24.4834 11.0511 24.0053 10.9509 23.5041C10.92 23.3653 10.8275 23.3268 10.7041 23.3113C10.4111 23.2651 10.1104 23.2496 9.84052 23.1417C9.42414 22.9721 9.1851 23.1186 8.96149 23.4655C8.76872 23.7663 8.60679 24.1904 8.29065 24.2752C7.9745 24.36 7.64294 24.0361 7.31909 23.8896C6.94126 23.7277 6.57885 23.5427 6.20102 23.373C6.01596 23.2959 5.95427 23.188 6.01596 22.9875C6.10849 22.6713 6.14704 22.3321 6.24728 22.0236C6.33981 21.746 6.28584 21.5687 6.03909 21.4145C5.77692 21.2525 5.53018 21.0598 5.31427 20.8439C5.10608 20.6434 4.92873 20.6434 4.70512 20.7899C4.69741 20.7976 4.68199 20.8053 4.67428 20.8053C4.28874 20.9672 3.89549 21.3991 3.55621 21.2911C3.21693 21.1831 2.99332 20.6897 2.73115 20.3658C2.50754 20.0959 2.29935 19.8183 2.07573 19.5562C1.95236 19.4097 1.95236 19.3017 2.07573 19.1552C2.28393 18.9239 2.44585 18.6617 2.66947 18.4458C2.92392 18.1991 2.9779 17.9677 2.74658 17.6824C2.68489 17.6053 2.6232 17.5128 2.60007 17.4126C2.45356 16.6646 1.96778 16.5181 1.2661 16.5952C0.595259 16.6646 0.587548 16.6106 0.425621 15.9398C0.302248 15.4155 0.194297 14.8911 0.0477916 14.3745C-0.0138949 14.1586 0.0477916 14.0815 0.22514 14.0044C0.564416 13.8579 0.895981 13.6805 1.23526 13.534C1.39718 13.4646 1.46658 13.3721 1.45887 13.187C1.43574 12.7861 1.44345 12.3928 1.45887 11.9919C1.46658 11.8068 1.40489 11.7143 1.23526 11.6526C0.88827 11.5138 0.556705 11.3442 0.217429 11.1976C0.0400808 11.1205 -0.0370273 11.028 0.0169484 10.8198C0.178875 10.1644 0.31767 9.50127 0.456465 8.83814C0.495019 8.64537 0.587548 8.56055 0.79574 8.56826C1.15815 8.58368 1.51285 8.56055 1.87525 8.57597C2.09116 8.58368 2.19911 8.51429 2.27622 8.31381C2.42272 7.95911 2.59236 7.61212 2.762 7.27285C2.84682 7.11092 2.84682 7.00297 2.71573 6.86417C2.46128 6.58658 2.25308 6.27815 1.99863 6.00827C1.8367 5.83863 1.85212 5.73068 1.99092 5.56105C2.42272 5.03671 2.84682 4.50466 3.2632 3.96491C3.38657 3.80298 3.49452 3.76443 3.67958 3.87238C4.00344 4.04973 4.35042 4.19623 4.67428 4.37358C4.8362 4.4584 4.94416 4.45069 5.08295 4.32732C5.37596 4.07286 5.66897 3.82611 5.98512 3.61021C6.17018 3.47913 6.19331 3.34033 6.13933 3.14756C6.0468 2.80058 5.96198 2.45359 5.86174 2.1066C5.80777 1.92154 5.85403 1.79817 6.0468 1.71335C6.67138 1.42034 7.29595 1.11962 7.91282 0.811187C8.06703 0.734078 8.19812 0.718657 8.29065 0.896005C8.29836 0.903716 8.30607 0.919138 8.31378 0.926849C8.60679 1.26612 8.78414 1.80588 9.17739 1.92154C9.54751 2.02949 10.0102 1.77504 10.442 1.69793C10.6887 1.65938 10.8198 1.54371 10.8506 1.28926C10.9046 0.949981 10.9894 0.610705 11.0511 0.27143C11.082 0.0863704 11.1591 -0.0138702 11.375 0.00155142C11.7065 0.0246839 12.0458 0.016973 12.3774 0.00155142C12.5701 -0.00615939 12.6473 0.0478163 12.6473 0.256008C12.6395 1.58227 12.6395 2.90082 12.6473 4.22708C12.6473 4.48153 12.5162 4.47382 12.3388 4.48153C8.81498 4.61262 6.3321 6.33213 4.98271 9.55525C3.10898 14.0506 5.90801 19.2554 10.6579 20.2887C11.213 20.4121 11.7682 20.4738 12.3388 20.466C12.5393 20.466 12.6395 20.4969 12.6395 20.7359C12.6318 22.0622 12.6318 23.3807 12.6395 24.707C12.6395 24.8149 12.6087 24.9075 12.5547 24.9923C12.1152 25 11.6834 25 11.2439 25Z" fill="#33B8A4" />
                     <path d="M12.4933 14.7757C12.4933 16.2253 12.4933 17.6827 12.4933 19.1323C12.4933 19.2094 12.4933 19.2865 12.4933 19.3636C12.4856 19.4716 12.5241 19.6027 12.339 19.6104C12.154 19.6181 12.1771 19.4947 12.1771 19.3791C12.1771 19.1092 12.1771 18.8393 12.1771 18.5694C12.1771 17.621 12.1771 16.6649 12.1771 15.7164C12.1771 15.0687 11.7993 14.6909 11.1593 14.6678C10.6427 14.6523 10.5578 14.5675 10.5578 14.0586C10.5578 13.5034 10.5656 12.956 10.5578 12.4008C10.5578 12.2311 10.5964 12.1309 10.7429 12.0229C11.167 11.6991 11.2056 11.2056 10.8663 10.8509C10.5501 10.5193 10.0181 10.5348 9.70966 10.8895C9.40123 11.2519 9.47063 11.7608 9.90243 12.0461C10.0644 12.154 10.0798 12.2697 10.0798 12.4316C10.0798 12.9868 10.0721 13.5343 10.0798 14.0894C10.0875 14.8065 10.3882 15.1227 11.0976 15.1535C11.5834 15.1767 11.7145 15.3077 11.7145 15.7781C11.7145 16.9502 11.7068 18.1145 11.7222 19.2865C11.7222 19.5179 11.6913 19.5795 11.4292 19.541C10.5116 19.4022 10.5039 19.4176 10.5039 18.5077C10.5039 18.1222 10.5116 17.7367 10.5039 17.3511C10.4885 16.8036 10.126 16.4412 9.57858 16.4412C8.69183 16.4335 7.80509 16.4335 6.91835 16.4412C6.71016 16.4412 6.59449 16.3796 6.48654 16.2022C6.21666 15.7318 6.00076 15.2461 5.8157 14.7371C5.73859 14.5135 5.76173 14.4056 6.0316 14.4133C6.30148 14.421 6.5251 14.4056 6.71787 14.6909C6.97232 15.0687 7.50437 15.0687 7.83593 14.7449C8.15208 14.4364 8.15979 13.9584 7.85135 13.6422C7.55063 13.3261 6.98003 13.3106 6.73329 13.6808C6.44799 14.0972 6.07016 13.9044 5.73088 13.9352C5.60751 13.9429 5.58438 13.8041 5.56896 13.7039C5.51498 13.249 5.45329 12.7863 5.46871 12.3237C5.47643 12.1463 5.55353 12.1155 5.70775 12.1155C6.57136 12.1232 7.42726 12.1155 8.29087 12.1155C8.56846 12.1155 8.72268 12.2697 8.72268 12.5473C8.73039 13.141 8.72268 13.727 8.73039 14.3208C8.73039 14.4827 8.63015 14.5367 8.52991 14.6215C8.15208 14.9453 8.12123 15.4851 8.46051 15.809C8.78436 16.1174 9.30099 16.0865 9.58629 15.7473C9.91014 15.3694 9.84074 14.8759 9.39352 14.5906C9.21617 14.475 9.19304 14.3593 9.19304 14.182C9.20075 13.6576 9.20075 13.1256 9.19304 12.6013C9.18533 11.9921 8.84605 11.6451 8.2369 11.6374C7.44268 11.6297 6.64076 11.6297 5.84654 11.6374C5.62293 11.6374 5.50727 11.5988 5.56124 11.3367C6.13956 8.55308 7.75883 6.69477 10.4422 5.73863C10.8046 5.60755 10.8894 5.70779 10.8509 6.05477C10.8277 6.2861 10.8354 6.51742 10.8509 6.74875C10.8663 7.09573 10.8586 7.38874 10.5039 7.62778C10.1492 7.86681 10.2032 8.41428 10.5193 8.715C10.8354 9.01573 11.3212 9.0003 11.6219 8.68416C11.915 8.36802 11.9304 7.84368 11.5834 7.58923C11.3444 7.41188 11.3058 7.22682 11.3135 6.97236C11.3212 6.5714 11.3212 6.17815 11.3135 5.77718C11.3058 5.59213 11.3675 5.50731 11.568 5.48417C12.4933 5.37622 12.4933 5.36851 12.4933 6.30923C12.4933 7.27308 12.4856 8.23693 12.501 9.20079C12.501 9.43211 12.447 9.50922 12.2003 9.50922C11.2904 9.4938 10.3728 9.50151 9.46291 9.50922C9.3087 9.50922 9.21617 9.46295 9.11593 9.33187C8.79207 8.90006 8.32171 8.8538 7.95931 9.19307C7.61232 9.52464 7.61232 10.0336 7.96702 10.342C8.32171 10.6504 8.85376 10.5887 9.13135 10.1646C9.24701 9.98729 9.37038 9.96416 9.54002 9.96416C10.4113 9.97187 11.2904 9.97958 12.1617 9.95644C12.4393 9.94873 12.501 10.0413 12.501 10.3034C12.4856 11.7993 12.4933 13.2875 12.4933 14.7757Z" fill="#33B8A4" />
@@ -81,7 +112,11 @@ export default function SDKWorkflow() {
                 </svg>
                 <p>Thing</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.thing2)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.thing2)}>
+                <FontAwesomeIcon icon={faQuestion} className={styles.icon} />
+                <p>Thing</p>
+            </div>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.thingweb)}>
                 <svg width="auto" height="auto" viewBox="0 0 30 25" fill="none" xmlns="http://www.w3.org/2000/svg" className={clsx(styles.icon, styles.thingwebLogo)}>
                     <path d="M11.2439 25C11.2362 24.4834 11.0511 24.0053 10.9509 23.5041C10.92 23.3653 10.8275 23.3268 10.7041 23.3113C10.4111 23.2651 10.1104 23.2496 9.84052 23.1417C9.42414 22.9721 9.1851 23.1186 8.96149 23.4655C8.76872 23.7663 8.60679 24.1904 8.29065 24.2752C7.9745 24.36 7.64294 24.0361 7.31909 23.8896C6.94126 23.7277 6.57885 23.5427 6.20102 23.373C6.01596 23.2959 5.95427 23.188 6.01596 22.9875C6.10849 22.6713 6.14704 22.3321 6.24728 22.0236C6.33981 21.746 6.28584 21.5687 6.03909 21.4145C5.77692 21.2525 5.53018 21.0598 5.31427 20.8439C5.10608 20.6434 4.92873 20.6434 4.70512 20.7899C4.69741 20.7976 4.68199 20.8053 4.67428 20.8053C4.28874 20.9672 3.89549 21.3991 3.55621 21.2911C3.21693 21.1831 2.99332 20.6897 2.73115 20.3658C2.50754 20.0959 2.29935 19.8183 2.07573 19.5562C1.95236 19.4097 1.95236 19.3017 2.07573 19.1552C2.28393 18.9239 2.44585 18.6617 2.66947 18.4458C2.92392 18.1991 2.9779 17.9677 2.74658 17.6824C2.68489 17.6053 2.6232 17.5128 2.60007 17.4126C2.45356 16.6646 1.96778 16.5181 1.2661 16.5952C0.595259 16.6646 0.587548 16.6106 0.425621 15.9398C0.302248 15.4155 0.194297 14.8911 0.0477916 14.3745C-0.0138949 14.1586 0.0477916 14.0815 0.22514 14.0044C0.564416 13.8579 0.895981 13.6805 1.23526 13.534C1.39718 13.4646 1.46658 13.3721 1.45887 13.187C1.43574 12.7861 1.44345 12.3928 1.45887 11.9919C1.46658 11.8068 1.40489 11.7143 1.23526 11.6526C0.88827 11.5138 0.556705 11.3442 0.217429 11.1976C0.0400808 11.1205 -0.0370273 11.028 0.0169484 10.8198C0.178875 10.1644 0.31767 9.50127 0.456465 8.83814C0.495019 8.64537 0.587548 8.56055 0.79574 8.56826C1.15815 8.58368 1.51285 8.56055 1.87525 8.57597C2.09116 8.58368 2.19911 8.51429 2.27622 8.31381C2.42272 7.95911 2.59236 7.61212 2.762 7.27285C2.84682 7.11092 2.84682 7.00297 2.71573 6.86417C2.46128 6.58658 2.25308 6.27815 1.99863 6.00827C1.8367 5.83863 1.85212 5.73068 1.99092 5.56105C2.42272 5.03671 2.84682 4.50466 3.2632 3.96491C3.38657 3.80298 3.49452 3.76443 3.67958 3.87238C4.00344 4.04973 4.35042 4.19623 4.67428 4.37358C4.8362 4.4584 4.94416 4.45069 5.08295 4.32732C5.37596 4.07286 5.66897 3.82611 5.98512 3.61021C6.17018 3.47913 6.19331 3.34033 6.13933 3.14756C6.0468 2.80058 5.96198 2.45359 5.86174 2.1066C5.80777 1.92154 5.85403 1.79817 6.0468 1.71335C6.67138 1.42034 7.29595 1.11962 7.91282 0.811187C8.06703 0.734078 8.19812 0.718657 8.29065 0.896005C8.29836 0.903716 8.30607 0.919138 8.31378 0.926849C8.60679 1.26612 8.78414 1.80588 9.17739 1.92154C9.54751 2.02949 10.0102 1.77504 10.442 1.69793C10.6887 1.65938 10.8198 1.54371 10.8506 1.28926C10.9046 0.949981 10.9894 0.610705 11.0511 0.27143C11.082 0.0863704 11.1591 -0.0138702 11.375 0.00155142C11.7065 0.0246839 12.0458 0.016973 12.3774 0.00155142C12.5701 -0.00615939 12.6473 0.0478163 12.6473 0.256008C12.6395 1.58227 12.6395 2.90082 12.6473 4.22708C12.6473 4.48153 12.5162 4.47382 12.3388 4.48153C8.81498 4.61262 6.3321 6.33213 4.98271 9.55525C3.10898 14.0506 5.90801 19.2554 10.6579 20.2887C11.213 20.4121 11.7682 20.4738 12.3388 20.466C12.5393 20.466 12.6395 20.4969 12.6395 20.7359C12.6318 22.0622 12.6318 23.3807 12.6395 24.707C12.6395 24.8149 12.6087 24.9075 12.5547 24.9923C12.1152 25 11.6834 25 11.2439 25Z" fill="#33B8A4" />
                     <path d="M12.4933 14.7757C12.4933 16.2253 12.4933 17.6827 12.4933 19.1323C12.4933 19.2094 12.4933 19.2865 12.4933 19.3636C12.4856 19.4716 12.5241 19.6027 12.339 19.6104C12.154 19.6181 12.1771 19.4947 12.1771 19.3791C12.1771 19.1092 12.1771 18.8393 12.1771 18.5694C12.1771 17.621 12.1771 16.6649 12.1771 15.7164C12.1771 15.0687 11.7993 14.6909 11.1593 14.6678C10.6427 14.6523 10.5578 14.5675 10.5578 14.0586C10.5578 13.5034 10.5656 12.956 10.5578 12.4008C10.5578 12.2311 10.5964 12.1309 10.7429 12.0229C11.167 11.6991 11.2056 11.2056 10.8663 10.8509C10.5501 10.5193 10.0181 10.5348 9.70966 10.8895C9.40123 11.2519 9.47063 11.7608 9.90243 12.0461C10.0644 12.154 10.0798 12.2697 10.0798 12.4316C10.0798 12.9868 10.0721 13.5343 10.0798 14.0894C10.0875 14.8065 10.3882 15.1227 11.0976 15.1535C11.5834 15.1767 11.7145 15.3077 11.7145 15.7781C11.7145 16.9502 11.7068 18.1145 11.7222 19.2865C11.7222 19.5179 11.6913 19.5795 11.4292 19.541C10.5116 19.4022 10.5039 19.4176 10.5039 18.5077C10.5039 18.1222 10.5116 17.7367 10.5039 17.3511C10.4885 16.8036 10.126 16.4412 9.57858 16.4412C8.69183 16.4335 7.80509 16.4335 6.91835 16.4412C6.71016 16.4412 6.59449 16.3796 6.48654 16.2022C6.21666 15.7318 6.00076 15.2461 5.8157 14.7371C5.73859 14.5135 5.76173 14.4056 6.0316 14.4133C6.30148 14.421 6.5251 14.4056 6.71787 14.6909C6.97232 15.0687 7.50437 15.0687 7.83593 14.7449C8.15208 14.4364 8.15979 13.9584 7.85135 13.6422C7.55063 13.3261 6.98003 13.3106 6.73329 13.6808C6.44799 14.0972 6.07016 13.9044 5.73088 13.9352C5.60751 13.9429 5.58438 13.8041 5.56896 13.7039C5.51498 13.249 5.45329 12.7863 5.46871 12.3237C5.47643 12.1463 5.55353 12.1155 5.70775 12.1155C6.57136 12.1232 7.42726 12.1155 8.29087 12.1155C8.56846 12.1155 8.72268 12.2697 8.72268 12.5473C8.73039 13.141 8.72268 13.727 8.73039 14.3208C8.73039 14.4827 8.63015 14.5367 8.52991 14.6215C8.15208 14.9453 8.12123 15.4851 8.46051 15.809C8.78436 16.1174 9.30099 16.0865 9.58629 15.7473C9.91014 15.3694 9.84074 14.8759 9.39352 14.5906C9.21617 14.475 9.19304 14.3593 9.19304 14.182C9.20075 13.6576 9.20075 13.1256 9.19304 12.6013C9.18533 11.9921 8.84605 11.6451 8.2369 11.6374C7.44268 11.6297 6.64076 11.6297 5.84654 11.6374C5.62293 11.6374 5.50727 11.5988 5.56124 11.3367C6.13956 8.55308 7.75883 6.69477 10.4422 5.73863C10.8046 5.60755 10.8894 5.70779 10.8509 6.05477C10.8277 6.2861 10.8354 6.51742 10.8509 6.74875C10.8663 7.09573 10.8586 7.38874 10.5039 7.62778C10.1492 7.86681 10.2032 8.41428 10.5193 8.715C10.8354 9.01573 11.3212 9.0003 11.6219 8.68416C11.915 8.36802 11.9304 7.84368 11.5834 7.58923C11.3444 7.41188 11.3058 7.22682 11.3135 6.97236C11.3212 6.5714 11.3212 6.17815 11.3135 5.77718C11.3058 5.59213 11.3675 5.50731 11.568 5.48417C12.4933 5.37622 12.4933 5.36851 12.4933 6.30923C12.4933 7.27308 12.4856 8.23693 12.501 9.20079C12.501 9.43211 12.447 9.50922 12.2003 9.50922C11.2904 9.4938 10.3728 9.50151 9.46291 9.50922C9.3087 9.50922 9.21617 9.46295 9.11593 9.33187C8.79207 8.90006 8.32171 8.8538 7.95931 9.19307C7.61232 9.52464 7.61232 10.0336 7.96702 10.342C8.32171 10.6504 8.85376 10.5887 9.13135 10.1646C9.24701 9.98729 9.37038 9.96416 9.54002 9.96416C10.4113 9.97187 11.2904 9.97958 12.1617 9.95644C12.4393 9.94873 12.501 10.0413 12.501 10.3034C12.4856 11.7993 12.4933 13.2875 12.4933 14.7757Z" fill="#33B8A4" />
@@ -97,39 +132,39 @@ export default function SDKWorkflow() {
                     <path d="M14.6753 6.03119C15.8319 6.27794 16.8343 6.70974 17.6825 7.45769C17.9293 7.6736 18.2223 7.84323 18.3919 8.14395C18.469 8.27504 18.4459 8.3213 18.3302 8.36757C18.2917 8.38299 18.2608 8.39841 18.23 8.41383C17.9215 8.56034 17.6054 8.83793 17.3047 8.82251C16.9731 8.79937 16.9114 8.3213 16.7109 8.05142C16.2175 7.39601 15.6931 6.77914 15.0069 6.30878C14.9066 6.23938 14.8141 6.14685 14.6753 6.03119Z" fill="#33B8A4" />
                     <path d="M15.1453 18.8082C15.9086 18.145 16.5409 17.4048 17.0421 16.5412C17.1115 16.4178 17.1886 16.4255 17.2966 16.4795C17.3891 16.5335 17.4739 16.5797 17.5587 16.6337C18.353 17.1503 18.3298 16.9961 17.6359 17.5976C16.9187 18.2067 16.0937 18.6308 15.1453 18.8082Z" fill="#33B8A4" />
                 </svg>
-                <p>Thing</p>
+                <p className={styles.itemName}>Thingweb</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.td)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.td)}>
                 <FontAwesomeIcon icon={faFile} className={styles.icon} />
-                <p>TD</p>
+                <p className={styles.itemName}>TD</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.tm)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.tm)}>
                 <FontAwesomeIcon icon={faFile} className={styles.icon} />
-                <p>TM</p>
+                <p className={styles.itemName}>TM</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.nodeWot)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.domus)}>
+                <FontAwesomeIcon icon={faHouse} className={styles.icon} />
+                <p className={styles.itemName}>Domus TDD</p>
+            </div>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.tools)}>
+                <FontAwesomeIcon icon={faScrewdriverWrench} className={styles.icon} />
+                <p className={styles.itemName}>TD Tools</p>
+            </div>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.playground)}>
                 <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
-                <p>node-wot</p>
+                <p className={styles.itemName}>Playground</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.dartWot)}>
-                <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
-                <p>dart_wot</p>
-            </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.nodeRed)}>
-                <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
-                <p>Node-RED</p>
-            </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.desktop)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.nodeWot)}>
                 <FontAwesomeIcon icon={faDisplay} className={styles.icon} />
-                <p>Browser</p>
+                <p className={styles.itemName}>node-wot</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.phone)}>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.dartWot)}>
                 <FontAwesomeIcon icon={faMobile} className={styles.icon} />
-                <p>Mobile</p>
+                <p className={styles.itemName}>dart_wot</p>
             </div>
-            <div className={clsx(styles.SDKWorkflow__item, styles.tablet)}>
-                <FontAwesomeIcon icon={faTablet} className={styles.icon} />
-                <p>Mobile</p>
+            <div className={clsx(styles.PlatformWorkflow__item, styles.nodeRed)}>
+                <FontAwesomeIcon icon={faCubes} className={styles.icon} />
+                <p className={styles.itemName}>Node-RED</p>
             </div>
         </div>
     );

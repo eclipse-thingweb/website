@@ -14,14 +14,21 @@
         ". tm . . dartWot"
         ". . domus . nodeRed";
 
+    --_item-width: clamp(2.5rem, 1.7857142857142858rem + 3.571428571428571vw, 5rem);
+    --_item-gap: clamp(0.25rem, 0.17857142857142858rem + 0.35714285714285715vw, 0.5rem);
+    --_item-font-size: clamp(0.35rem, 0.25rem + 0.49999999999999994vw, 0.7rem);
+    --_item-inactive-icon: clamp(1.25rem, 0.9642857142857143rem + 1.4285714285714286vw, 2.25rem);
+    --_item-active-icon: clamp(1rem, 0.7857142857142857rem + 1.0714285714285714vw, 1.75rem);
+    --_item-translate-icon: clamp(0.2rem, 0.14285714285714288rem + 0.2857142857142857vw, 0.4rem);
+
     &__line {
         position: absolute;
     }
 
     .line1 {
-        top: 6rem;
-        left: 6rem;
-        width: 8.25rem;
+        top: clamp(3rem, 2.142857142857143rem + 4.285714285714286vw, 6rem);
+        left: clamp(3rem, 2.142857142857143rem + 4.285714285714286vw, 6rem);
+        width: clamp(5rem, 4.071428571428571rem + 4.642857142857143vw, 8.25rem);
         height: auto;
         stroke-dasharray: 12rem;
         stroke-dashoffset: 12rem;
@@ -29,29 +36,29 @@
     }
 
     .line2 {
-        top: 6rem;
-        left: 14.6rem;
+        top: clamp(3.25rem, 2.5357142857142856rem + 3.571428571428571vw, 5.75rem);
+        left: clamp(8.5rem, 6.757142857142857rem + 8.714285714285714vw, 14.6rem);
         width: auto;
-        height: 14rem;
+        height: clamp(8rem, 6.214285714285714rem + 8.928571428571429vw, 14.25rem);
         stroke-dasharray: 15.5rem;
         stroke-dashoffset: 15.5rem;
         animation: animateLine2 10s ease-in-out infinite 250ms;
     }
 
     .line3 {
-        top: 11rem;
-        left: 22.25rem;
+        top: clamp(6.25rem, 4.892857142857143rem + 6.785714285714286vw, 11rem);
+        left: clamp(12.5rem, 9.714285714285715rem + 13.928571428571429vw, 22.25rem);
         width: auto;
-        height: 9rem;
-        stroke-dasharray: 10rem;
-        stroke-dashoffset: 10rem;
+        height: clamp(5rem, 3.857142857142857rem + 5.714285714285714vw, 9rem);
+        stroke-dasharray: 10.5rem;
+        stroke-dashoffset: 10.5rem;
         animation: animateLine3 10s ease-in-out infinite 250ms;
     }
 
     .line4 {
-        top: 20.5rem;
-        left: 6rem;
-        width: 2.75rem;
+        left: clamp(3.25rem, 2.4642857142857144rem + 3.9285714285714284vw, 6rem);
+        top: clamp(11.25rem, 8.607142857142858rem + 13.214285714285715vw, 20.5rem);
+        width: clamp(2rem, 1.7857142857142856rem + 1.0714285714285714vw, 2.75rem);
         height: auto;
         stroke-dasharray: 5rem;
         stroke-dashoffset: 5rem;
@@ -59,20 +66,20 @@
     }
 
     .line5 {
-        top: 14.5rem;
-        left: 9.5rem;
+        top: clamp(8.25rem, 6.464285714285714rem + 8.928571428571429vw, 14.5rem);
+        left: clamp(5.5rem, 4.357142857142858rem + 5.714285714285714vw, 9.5rem);
         width: auto;
-        height: 8.5rem;
+        height: clamp(4.75rem, 3.678571428571429rem + 5.357142857142857vw, 8.5rem);
         stroke-dasharray: 14.5rem;
         stroke-dashoffset: 14.5rem;
         animation: animateLine5 10s ease-in-out infinite 5.25s;
     }
 
     .line6 {
-        top: 14.5rem;
-        left: 22.5rem;
+        top: clamp(8.25rem, 6.464285714285714rem + 8.928571428571429vw, 14.5rem);
+        left: clamp(12.5rem, 9.642857142857142rem + 14.285714285714285vw, 22.5rem);
         width: auto;
-        height: 8.5rem;
+        height: clamp(5rem, 4rem + 5vw, 8.5rem);
         stroke-dasharray: 10.5rem;
         stroke-dashoffset: 10.5rem;
         animation: animateLine6 10s ease-in-out infinite 5.25s;
@@ -225,7 +232,7 @@
 
     &__item {
         aspect-ratio: 1/1;
-        min-width: clamp(4rem, 2.857142857142857rem + 2.380952380952381vw, 5rem);
+        min-width: var(--_item-width);
         background-color: var(--neutral-clr-75);
         border-radius: 5px;
         border: 1px solid var(--neutral-clr-300);
@@ -238,8 +245,8 @@
         gap: 0;
 
         p {
-            font-size: 0.6rem;
-            font-size: clamp(0.6rem, 0.4857142857142857rem + 0.23809523809523803vw, 0.7rem);
+            font-size: 0.35rem;
+            font-size: var(--_item-font-size);
             line-height: normal;
             font-weight: var(--fw-bold);
             font-family: var(--ff-primary);
@@ -249,9 +256,9 @@
         }
 
         .icon {
-            transform: translateY(.4rem);
-            font-size: 1.75rem;
-            font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+            transform: translateY(var(--_item-translate-icon));
+            font-size: 1.25rem;
+            font-size: var(--_item-inactive-icon);
             transition: all 350ms ease-in-out;
 
             path {
@@ -272,23 +279,22 @@
         box-shadow: 0 0 0 var(--box-shadow-clr);
         gap: 0;
     }
-
     4% {
         border-color: var(--neutral-clr-75);
         background-color: var(--neutral-clr-50);
         transform: scale(1.05);
         box-shadow: 3px 3px 10px var(--box-shadow-clr);
-        gap: .5rem;
+        gap: 0.25rem;
+        gap: var(--_item-gap);
     }
-
     30% {
         border-color: var(--neutral-clr-75);
         background-color: var(--neutral-clr-50);
         transform: scale(1.05);
         box-shadow: 3px 3px 10px var(--box-shadow-clr);
-        gap: .5rem;
+        gap: 0.25rem;
+        gap: var(--_item-gap);
     }
-
     38% {
         border-color: var(--neutral-clr-300);
         background-color: var(--neutral-clr-75);
@@ -296,7 +302,6 @@
         box-shadow: 0 0 0 var(--box-shadow-clr);
         gap: 0;
     }
-
     100% {
         border-color: var(--neutral-clr-300);
         background-color: var(--neutral-clr-75);
@@ -308,33 +313,29 @@
 
 @keyframes showItemIconSvg {
     0% {
-        transform: translateY(.4rem);
-        font-size: 1.75rem;
-        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+        transform: translateY(var(--_item-translate-icon));
+        font-size: 1.25rem;
+        font-size: var(--_item-inactive-icon);
     }
-
     6% {
         transform: translateY(0);
-        font-size: 1.5rem;
-        font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem);
+        font-size: 1rem;
+        font-size: var(--_item-active-icon);
     }
-
     30% {
         transform: translateY(0);
-        font-size: 1.5rem;
-        font-size: clamp(1.5rem, 1.2142857142857144rem + 0.5952380952380952vw, 1.75rem);
+        font-size: 1rem;
+        font-size: var(--_item-active-icon);
     }
-
     38% {
-        transform: translateY(.4rem);
-        font-size: 1.75rem;
-        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+        transform: translateY(var(--_item-translate-icon));
+        font-size: 1.25rem;
+        font-size: var(--_item-inactive-icon);
     }
-
     100% {
-        transform: translateY(.4rem);
-        font-size: 1.75rem;
-        font-size: clamp(1.75rem, 1.1785714285714286rem + 1.1904761904761905vw, 2.25rem);
+        transform: translateY(var(--_item-translate-icon));
+        font-size: 1.25rem;
+        font-size: var(--_item-inactive-icon);
     }
 }
 
@@ -343,22 +344,18 @@
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
-
     4% {
         stroke-width: 0;
         fill: var(--ifm-color-primary);
     }
-
     30% {
         stroke-width: 0;
         fill: var(--ifm-color-primary);
     }
-
     38% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
-
     100% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
@@ -370,22 +367,18 @@
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
-
     4% {
         stroke-width: 0;
         fill: var(--ifm-color-secondary);
     }
-
     30% {
         stroke-width: 0;
         fill: var(--ifm-color-secondary);
     }
-
     38% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
-
     100% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
@@ -397,22 +390,18 @@
         transform: translateY(.9rem);
         opacity: 0;
     }
-
     4% {
         transform: translateY(0);
         opacity: 1;
     }
-
     30% {
         transform: translateY(0);
         opacity: 1;
     }
-
     38% {
         transform: translateY(.9rem);
         opacity: 0;
     }
-
     100% {
         transform: translateY(.9rem);
         opacity: 0;
@@ -423,19 +412,15 @@
     0% {
         stroke-dashoffset: 12rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
         stroke-dashoffset: -12rem;
     }
-
     100% {
         stroke-dashoffset: -12rem;
     }
@@ -445,19 +430,15 @@
     0% {
         stroke-dashoffset: 15.5rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
         stroke-dashoffset: -15.5rem;
     }
-
     100% {
         stroke-dashoffset: -15.5rem;
     }
@@ -465,23 +446,19 @@
 
 @keyframes animateLine3 {
     0% {
-        stroke-dashoffset: 10rem;
+        stroke-dashoffset: 10.5rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
-        stroke-dashoffset: -10rem;
+        stroke-dashoffset: -10.5rem;
     }
-
     100% {
-        stroke-dashoffset: -10rem;
+        stroke-dashoffset: -10.5rem;
     }
 }
 
@@ -489,19 +466,15 @@
     0% {
         stroke-dashoffset: 5rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
         stroke-dashoffset: -5rem;
     }
-
     100% {
         stroke-dashoffset: -5rem;
     }
@@ -511,19 +484,15 @@
     0% {
         stroke-dashoffset: 14.5rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
         stroke-dashoffset: -14.5rem;
     }
-
     100% {
         stroke-dashoffset: -14.5rem;
     }
@@ -533,19 +502,15 @@
     0% {
         stroke-dashoffset: 10.5rem;
     }
-
     4% {
         stroke-dashoffset: 0;
     }
-
     30% {
         stroke-dashoffset: 0;
     }
-
     38% {
         stroke-dashoffset: -10.5rem;
     }
-
     100% {
         stroke-dashoffset: -10.5rem;
     }

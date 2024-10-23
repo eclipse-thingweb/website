@@ -17,8 +17,8 @@
 
   .thing,
   .protocol {
-    width: 19rem;
-    height: 19rem;
+    width: 18rem;
+    height: 18rem;
     padding: 1rem;
     border-radius: 1rem;
     box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
@@ -62,6 +62,7 @@
     &__description {
       font-size: var(--fs-body-sm);
       color: var(--neutral-clr-600);
+      direction: ltr;
     }
 
     &__tags {
@@ -97,7 +98,6 @@
 
 @media screen and (min-width: 768px) {
   .servicesSection {
-
     .thing,
     .protocol {
       height: 16rem;

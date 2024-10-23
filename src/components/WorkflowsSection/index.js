@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 import ClientOnlyWorkflow from '@site/src/components/ClientOnlyWorkflow';
 import SDKWorkflow from '@site/src/components/SDKWorkflow';
+import PlatformWorkflow from '@site/src/components/PlatformWorkflow';
 
 export default function WorkflowsSection() {
 
@@ -49,7 +50,7 @@ export default function WorkflowsSection() {
         <section className={styles.workflowsSection}>
             <div className={clsx('container', 'section-wrapper')}>
                 <div className={styles.workflowsSection__buttons}>
-                    <input type="radio" id="sw-btn" className={styles.workflowBtn} name="workflow-btn" value="sw" defaultChecked />
+                    <input type="radio" id="sw-btn" className={styles.workflowBtn} name="workflow-btn" value="sw" defaultChecked/>
                     <div className={clsx(styles.progressBar, styles.barLeft)} data-show="false" id='progress-bar-left'></div>
                     <input type="radio" id="hw-btn" className={styles.workflowBtn} name="workflow-btn" value="hw" />
                     <div className={clsx(styles.progressBar, styles.barRight)} data-show="false" id='progress-bar-right'></div>
@@ -91,7 +92,7 @@ export default function WorkflowsSection() {
 
                         <div className={clsx(styles.workflow, styles.professionalW)} id='workflow' data-workflow="simple">
                             <div className={styles.workflow__illustration}>
-
+                                <PlatformWorkflow />
                             </div>
                             <div className={styles.workflow__content}>
                                 <h1 className={styles.title}>Platform</h1>
