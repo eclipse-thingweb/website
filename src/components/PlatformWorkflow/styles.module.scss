@@ -1,4 +1,4 @@
-.SDKWorkflow {
+.PlatformWorkflow {
     position: relative;
     padding: 1rem;
     width: 100%;
@@ -7,11 +7,11 @@
     grid: repeat(5, 1fr);
     gap: .5rem;
     grid-template-areas:
-        ". . td desktop ."
-        "thing1 . nodeWot . ."
-        ". tm . . phone"
-        "thing2 . dartWot . tablet"
-        ". . . nodeRed .";
+        ". td . nodeWot ."
+        "thing1 . . . tools"
+        "tm . thingweb . playground"
+        "domus . . . nodeRed"
+        ". thing2 . dartWot .";
 
     --_item-width: clamp(2.5rem, 1.7857142857142858rem + 3.571428571428571vw, 5rem);
     --_item-gap: clamp(0.25rem, 0.17857142857142858rem + 0.35714285714285715vw, 0.5rem);
@@ -27,78 +27,113 @@
     }
 
     .line1 {
-        top: clamp(5.25rem, 4.178571428571429rem + 5.357142857142857vw, 9rem);
-        left: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
-        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        top: clamp(2.25rem, 1.9642857142857144rem + 1.4285714285714286vw, 3.25rem);
+        left: clamp(6.5rem, 5.214285714285714rem + 6.428571428571428vw, 11rem);
+        width: clamp(1.5rem, 1.1428571428571428rem + 1.7857142857142856vw, 2.75rem);
         height: auto;
-        stroke-dasharray: 8rem;
-        stroke-dashoffset: 8rem;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+    .line2 {
+        top: clamp(2.25rem, 1.9642857142857144rem + 1.4285714285714286vw, 3.25rem);
+        left: clamp(8.5rem, 6.642857142857142rem + 9.285714285714286vw, 15rem);
+        width: clamp(1.5rem, 1.1428571428571428rem + 1.7857142857142856vw, 2.75rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+    .line6 {
+        top: clamp(9.5rem, 7.428571428571429rem + 10.357142857142856vw, 16.75rem);
+        left: clamp(8.5rem, 6.642857142857142rem + 9.285714285714286vw, 15rem);
+        width: clamp(1.5rem, 1.1428571428571428rem + 1.7857142857142856vw, 2.75rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+    .line7 {
+        top: clamp(9.4rem, 7.300000000000001rem + 10.5vw, 16.75rem);
+        left: clamp(6.4rem, 5.1571428571428575rem + 6.2142857142857135vw, 10.75rem);
+        width: clamp(1.65rem, 1.2642857142857142rem + 1.9285714285714288vw, 3rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
         animation: animateLine1 10s ease-in-out infinite 250ms;
     }
 
-    .line2 {
-        top: clamp(3.35rem, 2.6642857142857146rem + 3.428571428571428vw, 5.75rem);
-        left: clamp(9.35rem, 7.235714285714286rem + 10.571428571428571vw, 16.75rem);
-        width: clamp(2rem, 1.5714285714285714rem + 2.142857142857143vw, 3.5rem);
+    .line3 {
+        top: clamp(5.25rem, 4.178571428571429rem + 5.357142857142857vw, 9rem);
+        left: clamp(9.5rem, 7.357142857142858rem + 10.714285714285714vw, 17rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+
+    .line5 {
+        top: clamp(8.75rem, 6.821428571428571rem + 9.642857142857142vw, 15.5rem);
+        left: clamp(9.5rem, 7.357142857142858rem + 10.714285714285714vw, 17rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+
+    .line8 {
+        top: clamp(8.75rem, 6.821428571428571rem + 9.642857142857142vw, 15.5rem);
+        left: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+
+    .line10 {
+        top: clamp(5.25rem, 4.035714285714286rem + 6.071428571428571vw, 9.5rem);
+        left: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        height: auto;
+        stroke-dasharray: 10rem;
+        stroke-dashoffset: 10rem;
+        animation: animateLine1 10s ease-in-out infinite 250ms;
+    }
+
+    .line4 {
+        top: clamp(8.25rem, 6.464285714285714rem + 8.928571428571429vw, 14.5rem);
+        left: clamp(9.5rem, 7.357142857142858rem + 10.714285714285714vw, 17rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        height: auto;
+        stroke-dasharray: 6rem;
+        stroke-dashoffset: 6rem;
+        animation: animateLine2 10s ease-in-out infinite 250ms;
+        transform: rotate(180deg);
+    }
+
+    .line9 {
+        top: clamp(8.25rem, 6.464285714285714rem + 8.928571428571429vw, 14.5rem);
+        left: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
+        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
         height: auto;
         stroke-dasharray: 6rem;
         stroke-dashoffset: 6rem;
         animation: animateLine2 10s ease-in-out infinite 250ms;
     }
 
-    .line3 {
-        top: clamp(11.25rem, 8.75rem + 12.5vw, 20rem);
-        left: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
-        width: clamp(3.5rem, 2.7857142857142856rem + 3.571428571428571vw, 6rem);
-        height: auto;
-        stroke-dasharray: 8rem;
-        stroke-dashoffset: 8rem;
-        animation: animateLine3 10s ease-in-out infinite 5.25s;
-    }
-
-    .line4 {
-        top: clamp(8.25rem, 6.392857142857142rem + 9.285714285714286vw, 14.75rem);
-        left: clamp(8.25rem, 6.535714285714286rem + 8.571428571428571vw, 14.25rem);
-        width: clamp(5.75rem, 4.821428571428571rem + 4.642857142857143vw, 9rem);
-        height: auto;
-        stroke-dasharray: 11rem;
-        stroke-dashoffset: 11rem;
-        animation: animateLine4 10s ease-in-out infinite 5.25s;
-    }
-
-    .line5 {
-        top: clamp(12.5rem, 9.642857142857142rem + 14.285714285714285vw, 22.5rem);
-        left: clamp(2.25rem, 2.0357142857142856rem + 1.0714285714285714vw, 3rem);
-        width: clamp(8rem, 6rem + 10vw, 15rem);
-        height: auto;
-        stroke-dasharray: 17rem;
-        stroke-dashoffset: 17rem;
-        animation: animateLine5 10s ease-in-out infinite 5.25s;
-    }
-
-    .line6 {
-        top: clamp(12.5rem, 9.642857142857142rem + 14.285714285714285vw, 22.5rem);
-        left: clamp(12.25rem, 9.464285714285715rem + 13.928571428571429vw, 22rem);
-        width: clamp(2rem, 1.5rem + 2.5vw, 3.75rem);
-        height: auto;
-        stroke-dasharray: 6rem;
-        stroke-dashoffset: 6rem;
-        animation: animateLine6 10s ease-in-out infinite 5.25s;
-    }
-
 
     .thing1 {
         grid-area: thing1;
         animation: showItemBox 10s ease-in-out infinite;
-
         .icon {
             animation: showThingwebSvg 10s ease-in-out infinite;
-
             path {
                 animation: showThingwebPath 10s ease-in-out infinite;
             }
         }
-
         p {
             animation: showItemText 10s ease-in-out infinite;
         }
@@ -106,41 +141,55 @@
 
     .thing2 {
         grid-area: thing2;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
+        animation: showItemBox 10s ease-in-out infinite;
         .icon {
-            animation: showThingwebSvg 10s ease-in-out infinite 5s;
-
+            animation: showItemIconSvg 10s ease-in-out infinite;
             path {
-                animation: showThingwebPath 10s ease-in-out infinite 5s;
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
             }
         }
-
         p {
-            animation: showItemText 10s ease-in-out infinite 5s;
+            animation: showItemText 10s ease-in-out infinite;
         }
     }
 
     .td {
         grid-area: td;
+        animation: showItemBox 10s ease-in-out infinite;
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+            }
+        }
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
     }
 
     .tm {
         grid-area: tm;
+        animation: showItemBox 10s ease-in-out infinite;
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+            }
+        }
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
     }
 
     .nodeWot {
         grid-area: nodeWot;
         animation: showItemBox 10s ease-in-out infinite;
-
         .icon {
             animation: showItemIconSvg 10s ease-in-out infinite;
-
             path {
-                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
             }
         }
-
         p {
             animation: showItemText 10s ease-in-out infinite;
         }
@@ -148,86 +197,85 @@
 
     .dartWot {
         grid-area: dartWot;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
-
-            path {
-                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
-            }
-        }
-
-        p {
-            animation: showItemText 10s ease-in-out infinite 5s;
-        }
-    }
-
-    .nodeRed {
-        grid-area: nodeRed;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
-        .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
-
-            path {
-                animation: showItemIconPathSecondary 10s ease-in-out infinite 5s;
-            }
-        }
-
-        p {
-            animation: showItemText 10s ease-in-out infinite 5s;
-        }
-    }
-
-    .desktop {
-        grid-area: desktop;
         animation: showItemBox 10s ease-in-out infinite;
-
         .icon {
             animation: showItemIconSvg 10s ease-in-out infinite;
-
             path {
                 animation: showItemIconPathPrimary 10s ease-in-out infinite;
             }
         }
-
         p {
             animation: showItemText 10s ease-in-out infinite;
         }
     }
 
-    .phone {
-        grid-area: phone;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
+    .nodeRed {
+        grid-area: nodeRed;
+        animation: showItemBox 10s ease-in-out infinite;
         .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
-
+            animation: showItemIconSvg 10s ease-in-out infinite;
             path {
-                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
             }
         }
-
         p {
-            animation: showItemText 10s ease-in-out infinite 5s;
+            animation: showItemText 10s ease-in-out infinite;
         }
     }
 
-    .tablet {
-        grid-area: tablet;
-        animation: showItemBox 10s ease-in-out infinite 5s;
-
+    .domus {
+        grid-area: domus;
+        animation: showItemBox 10s ease-in-out infinite;
         .icon {
-            animation: showItemIconSvg 10s ease-in-out infinite 5s;
-
+            animation: showItemIconSvg 10s ease-in-out infinite;
             path {
-                animation: showItemIconPathPrimary 10s ease-in-out infinite 5s;
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
             }
         }
-
         p {
-            animation: showItemText 10s ease-in-out infinite 5s;
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .tools {
+        grid-area: tools;
+        animation: showItemBox 10s ease-in-out infinite;
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+            path {
+                animation: showItemIconPathSecondary 10s ease-in-out infinite;
+            }
+        }
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .playground {
+        grid-area: playground;
+        animation: showItemBox 10s ease-in-out infinite;
+        .icon {
+            animation: showItemIconSvg 10s ease-in-out infinite;
+            path {
+                animation: showItemIconPathPrimary 10s ease-in-out infinite;
+            }
+        }
+        p {
+            animation: showItemText 10s ease-in-out infinite;
+        }
+    }
+
+    .thingweb {
+        grid-area: thingweb;
+        animation: showItemBox 10s ease-in-out infinite;
+        .icon {
+            animation: showThingwebSvg 10s ease-in-out infinite;
+            path {
+                animation: showThingwebPath 10s ease-in-out infinite;
+            }
+        }
+        p {
+            animation: showItemText 10s ease-in-out infinite;
         }
     }
 
@@ -295,7 +343,7 @@
         gap: var(--_item-gap);
     }
 
-    30% {
+    50% {
         border-color: var(--neutral-clr-75);
         background-color: var(--neutral-clr-50);
         transform: scale(1.05);
@@ -304,7 +352,7 @@
         gap: var(--_item-gap);
     }
 
-    38% {
+    58% {
         border-color: var(--neutral-clr-300);
         background-color: var(--neutral-clr-75);
         transform: scale(1);
@@ -334,13 +382,13 @@
         font-size: var(--_item-active-icon);
     }
 
-    30% {
+    50% {
         transform: translateY(0);
         font-size: 1rem;
         font-size: var(--_item-active-icon);
     }
 
-    38% {
+    58% {
         transform: translateY(var(--_item-translate-icon));
         font-size: 1.25rem;
         font-size: var(--_item-inactive-icon);
@@ -364,12 +412,12 @@
         height: var(--_thingweb-active-icon);
     }
 
-    30% {
+    50% {
         transform: translateY(0);
         height: var(--_thingweb-active-icon);
     }
 
-    38% {
+    58% {
         transform: translateY(var(--_item-translate-icon));
         height: var(--_thingweb-inactive-icon);
 
@@ -393,12 +441,12 @@
         fill: var(--ifm-color-primary);
     }
 
-    30% {
+    50% {
         stroke-width: 0;
         fill: var(--ifm-color-primary);
     }
 
-    38% {
+    58% {
         stroke-width: .75px;
         fill: var(--neutral-clr-75);
     }
@@ -420,12 +468,12 @@
         fill: var(--ifm-color-primary);
     }
 
-    30% {
+    50% {
         stroke-width: 0;
         fill: var(--ifm-color-primary);
     }
 
-    38% {
+    58% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
@@ -447,12 +495,12 @@
         fill: var(--ifm-color-secondary);
     }
 
-    30% {
+    50% {
         stroke-width: 0;
         fill: var(--ifm-color-secondary);
     }
 
-    38% {
+    58% {
         stroke-width: 20px;
         fill: var(--neutral-clr-75);
     }
@@ -474,12 +522,12 @@
         opacity: 1;
     }
 
-    30% {
+    50% {
         transform: translateY(0);
         opacity: 1;
     }
 
-    38% {
+    58% {
         transform: translateY(.9rem);
         opacity: 0;
     }
@@ -492,23 +540,23 @@
 
 @keyframes animateLine1 {
     0% {
-        stroke-dashoffset: 8rem;
+        stroke-dashoffset: 10rem;
     }
 
     4% {
         stroke-dashoffset: 0;
     }
 
-    30% {
+    50% {
         stroke-dashoffset: 0;
     }
 
-    38% {
-        stroke-dashoffset: -8rem;
+    58% {
+        stroke-dashoffset: -10rem;
     }
 
     100% {
-        stroke-dashoffset: -8rem;
+        stroke-dashoffset: -10rem;
     }
 }
 
@@ -521,99 +569,11 @@
         stroke-dashoffset: 0;
     }
 
-    30% {
+    50% {
         stroke-dashoffset: 0;
     }
 
-    38% {
-        stroke-dashoffset: -6rem;
-    }
-
-    100% {
-        stroke-dashoffset: -6rem;
-    }
-}
-
-@keyframes animateLine3 {
-    0% {
-        stroke-dashoffset: 8rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -8rem;
-    }
-
-    100% {
-        stroke-dashoffset: -8rem;
-    }
-}
-
-@keyframes animateLine4 {
-    0% {
-        stroke-dashoffset: 11rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -11rem;
-    }
-
-    100% {
-        stroke-dashoffset: -11rem;
-    }
-}
-
-@keyframes animateLine5 {
-    0% {
-        stroke-dashoffset: 17rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
-        stroke-dashoffset: -17rem;
-    }
-
-    100% {
-        stroke-dashoffset: -17rem;
-    }
-}
-
-@keyframes animateLine6 {
-    0% {
-        stroke-dashoffset: 6rem;
-    }
-
-    4% {
-        stroke-dashoffset: 0;
-    }
-
-    30% {
-        stroke-dashoffset: 0;
-    }
-
-    38% {
+    58% {
         stroke-dashoffset: -6rem;
     }
 
