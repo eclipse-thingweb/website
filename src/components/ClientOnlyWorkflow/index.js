@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -64,43 +64,43 @@ export default function ClientOnlyWorkflow() {
 
 
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.thing1)}>
-                <FontAwesomeIcon icon={faQuestion} className={styles.icon} data-color="primary" />
+                <FontAwesomeIcon icon={faQuestion} className={styles.icon} />
                 <p className={styles.itemName}>Thing</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.thing2)}>
-                <FontAwesomeIcon icon={faQuestion} className={styles.icon} data-color="primary" />
+                <FontAwesomeIcon icon={faQuestion} className={styles.icon} />
                 <p className={styles.itemName}>Thing</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.td)}>
-                <FontAwesomeIcon icon={faFile} className={styles.icon} data-color="secondary" />
+                <FontAwesomeIcon icon={faFile} className={styles.icon} />
                 <p className={styles.itemName}>TD</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.tm)}>
-                <FontAwesomeIcon icon={faFile} className={styles.icon} data-color="secondary" />
+                <FontAwesomeIcon icon={faFile} className={styles.icon} />
                 <p className={styles.itemName}>TM</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.domus)}>
-                <FontAwesomeIcon icon={faHouse} className={styles.icon} data-color="primary" />
+                <FontAwesomeIcon icon={faHouse} className={styles.icon} />
                 <p className={styles.itemName}>Domus TDD</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.tools)}>
-                <FontAwesomeIcon icon={faScrewdriverWrench} className={styles.icon} data-color="primary" />
+                <FontAwesomeIcon icon={faScrewdriverWrench} className={styles.icon} />
                 <p className={styles.itemName}>TD Tools</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.playground)}>
-                <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} data-color="primary" />
+                <FontAwesomeIcon icon={faLaptopCode} className={styles.icon} />
                 <p className={styles.itemName}>Playground</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.nodeWot)}>
-                <FontAwesomeIcon icon={faDisplay} className={styles.icon} data-color="secondary" />
+                <FontAwesomeIcon icon={faDisplay} className={styles.icon} />
                 <p className={styles.itemName}>node-wot</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.dartWot)}>
-                <FontAwesomeIcon icon={faMobile} className={styles.icon} data-color="secondary" />
+                <FontAwesomeIcon icon={faMobile} className={styles.icon} />
                 <p className={styles.itemName}>dart_wot</p>
             </div>
             <div className={clsx(styles.clientOnlyWorkflow__item, styles.nodeRed)}>
-                <FontAwesomeIcon icon={faCubes} className={styles.icon} data-color="secondary" />
+                <FontAwesomeIcon icon={faCubes} className={styles.icon} />
                 <p className={styles.itemName}>Node-RED</p>
             </div>
         </div>
