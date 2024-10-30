@@ -19,10 +19,7 @@ Playground is a tool to validate TDs and manipulate them for usage in other tool
 Using the tools below, you can interact with different WoT Things over your browser.
 
 * [Browserified node-wot](http://plugfest.thingweb.io/webui/): You can try interacting with different Things using this simple interface. Note that this is just a demo page to showcase the [browser bundle of node-wot](https://github.com/eclipse-thingweb/node-wot/tree/master/packages/browser-bundle).
-* [WoT-FXUI](https://github.com/danielpeintner/wot-fxui): JavaFX-based UI to interact with Things.
-  * See [running Web-UI instance](http://plugfest.thingweb.io:8088/test/fullscreen/default) in browser without any plugin
-  * [GitHub Repository](https://github.com/danielpeintner/wot-fxui)
-  * Possible as a local desktop application or as an Android/iOS app
+* [WoT-FXUI](https://github.com/danielpeintner/wot-fxui): JavaFX-based UI to interact with Things (runnable as Web application, local desktop application or as an Android/iOS app).
 
 ## Online Things for Testing
 
