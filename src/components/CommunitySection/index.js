@@ -137,7 +137,7 @@ export default function CommunitySection() {
           </div>
 
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="5" data-count="true">0</h3>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="6" data-count="true">0</h3>
             <p className={styles.stat__description}>Adopters</p>
           </div>
         </div>
