@@ -70,6 +70,11 @@ export default function CommunitySection() {
 
     if (statsContainer) {
       const statsItems = document.querySelectorAll('#stats-number');
+      //Making sure the animation will run again when the adopter count updates
+      statsItems.forEach(item => {
+        item.dataset.count = 'true';
+      });
+      
       let interval = 2000;
       const appearOptions = {
         threshold: 0,
