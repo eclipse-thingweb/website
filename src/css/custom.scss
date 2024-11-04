@@ -487,7 +487,7 @@ a.navbar__item {
   width: 100%;
   padding: 2rem 0;
   overflow: hidden;
-  mask: linear-gradient(90deg, transparent, rgba(255, 255, 255) 1%, rgb(255, 255, 255) 99%, transparent);
+  mask: linear-gradient(90deg, transparent, rgba(255, 255, 255) 5%, rgb(255, 255, 255) 95%, transparent);
 
   &>* {
     width: max-content;
@@ -543,8 +543,8 @@ a.navbar__item {
 /****** Adopters ******/
 /**********************/
 
-.scroller .adopters {
-  --_content-gap: 8rem;
+.scroller .adopters, .scroller .adopters-header, .scroller .adopters-about {
+  --_content-gap: clamp(4rem, 3.428571428571429rem + 2.857142857142857vw, 6rem);
   padding: 0;
   margin: 0;
 
@@ -553,16 +553,16 @@ a.navbar__item {
 
     a {
       .adopters-img {
-        width: 15rem;
-        max-height: 5rem;
+        width: 10rem;
+        max-height: 3rem;
         object-fit: contain;
 
         &[alt="Microsoft"] {
-          max-height: 7rem;
+          max-height: 5rem;
         }
 
         &[alt="Technical University of Munich (TUM)"] {
-          max-height: 3rem;
+          max-height: 2rem;
         }
       }
     }
