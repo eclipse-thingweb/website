@@ -210,7 +210,7 @@ const config = {
                     </a>
 
                     <a href="https://www.w3.org" rel="noopener noreferrer" class="footer-logo w3c-logo">
-                      <img src="https://www.w3.org/assets/logos/w3c/w3c-no-bars.svg" alt="w3c logo" />
+                      <img src="/img/w3c-logo.svg" alt="w3c logo" />
                     </a>
 
                     <a href="https://www.w3.org/WoT/" rel="noopener noreferrer" class="footer-logo wot-logo">
