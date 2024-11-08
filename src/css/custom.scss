@@ -259,13 +259,23 @@ a.navbar__item {
   flex-wrap: wrap;
   gap: 1rem;
 
-  .foundation-logo {
+  a {
+    display: grid;
+    place-items: center;
+  }
+
+  .foundation-logo, .wot-logo {
     width: 7rem;
   }
 
   .iot-logo,
   .w3c-logo {
     width: 3.5rem;
+  }
+
+  .w3c-logo {
+    border-radius: 5px;
+    overflow: hidden;
   }
 }
 
@@ -296,7 +306,7 @@ a.navbar__item {
     width: 8rem;
     justify-content: space-between;
 
-    .foundation-logo {
+    .foundation-logo, .wot-logo {
       width: 100%;
     }
 
