@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 
 export default function VpSection() {
+
     return (
         <section className={styles.vpSection} id='vp-section'>
             <div className={clsx('container', 'section-wrapper')}>

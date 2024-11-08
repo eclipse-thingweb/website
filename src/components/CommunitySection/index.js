@@ -1,68 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { useColorMode } from '@docusaurus/theme-common';
+import React, { useRef, useEffect} from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 import { faCloudUpload } from '@fortawesome/free-solid-svg-icons';
 
-export default function CommunitySection() {
+export default function CommunitySection({ adopterCount }) {
   const statsContainerRef = useRef(null);
-  const adoptersListRef = useRef(null);
-  const [adopterCount, setAdopterCount] = useState(0); // New state for adopter count
-  const { colorMode } = useColorMode();
-
-  useEffect(() => {
-    /** Function to load adopters list and update count **/
-    async function loadAdopters() {
-      const adoptersList = adoptersListRef.current;
-
-      // Clear existing adopters
-      while (adoptersList.lastElementChild) {
-        adoptersList.removeChild(adoptersList.lastElementChild);
-      }
-
-      // Load new adopters list based on color mode
-      try {
-        await eclipseFdnAdopters.getList({
-          project_id: "iot.thingweb",
-          selector: ".scroller",
-          ul_classes: "adopters",
-          logo_white: colorMode === 'dark' ? true : false,
-        });
-      } catch (error) {
-        console.error('Error loading adopters list', error);
-      }
-
-      const adoptersContainer = document.querySelector('.adopters-container');
-      const config = { childList: true };
-
-      /**
-       * Check for changes in the adopters list container to update the adopter count
-       * as well as duplicating the adopters list for the scroller effect
-       */
-      const observer = new MutationObserver(() => {
-        const adopters = document.querySelector('.adopters');
-        const adoptersList = Array.from(document.querySelectorAll('.adopters li'));
-
-        setAdopterCount(adoptersList.length); // Update the adopter count
-
-        adoptersList.forEach(adopter => {
-          const duplicatedAdopter = adopter.cloneNode(true);
-          duplicatedAdopter.setAttribute('aria-hidden', 'true');
-          adopters.appendChild(duplicatedAdopter);
-        });
-
-        observer.disconnect();
-      })
-
-      if (adoptersContainer) {
-        observer.observe(adoptersContainer, config);
-      }
-    }
-
-    loadAdopters(); // Call function to load adopters on color mode change
-  }, [colorMode]);
 
   useEffect(() => {
     /** Stats counter animation **/
@@ -140,9 +84,6 @@ export default function CommunitySection() {
             <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val={adopterCount} data-count="true">0</h3>
             <p className={styles.stat__description}>Adopters</p>
           </div>
-        </div>
-
-        <div className={'scroller adopters-container'} data-direction="left" data-speed="fast" ref={adoptersListRef}>
         </div>
 
         <div className={styles.communitySection__cta}>
