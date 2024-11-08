@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+slug: /node-wot/node-wot-api
 ---
 # node-wot API
 

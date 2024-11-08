@@ -186,6 +186,11 @@ a.navbar__item {
   font-weight: var(--fw-regular);
 }
 
+div.header-search {
+  order: 3;
+  padding-right: 0;
+}
+
 .navbar-sidebar__back {
   font-weight: var(--fw-regular);
 }

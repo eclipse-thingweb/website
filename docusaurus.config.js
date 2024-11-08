@@ -171,6 +171,7 @@ const config = {
           {
             type: 'search',
             position: 'right',
+            className: 'header-search',
           }
         ],
       },
@@ -329,6 +330,27 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.vsDark,
+      },
+      algolia: {
+        // The application ID provided by Algolia
+        appId: '1NS3BU5ITA',
+
+        // Public API key: it is safe to commit it
+        apiKey: 'fb9d7453a75b892d307c3a1d0f941b98',
+
+        indexName: 'thingweb',
+
+        // Optional: see doc section below
+        contextualSearch: true,
+
+        // Optional: Algolia search parameters
+        // searchParameters: {},
+
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+
+        // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+        insights: false,
       },
     }),
 };
