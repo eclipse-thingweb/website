@@ -1,13 +1,24 @@
-.heroBanner {
+.headerHero {
+    min-height: 94vh;
+    min-height: 94svh;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    position: relative;
-    min-height: 90vh;
-    min-height: 90svh;
+.headerContainer {
+    flex: 1;
+    display: grid;
+    place-items: center;
+}
+
+.heroBanner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
 
     p {
         margin: 0;
@@ -21,14 +32,14 @@
         margin-bottom: 2rem;
         transform: translateY(1rem);
         opacity: 0;
-        animation: fadeIn 1s ease forwards;
+        animation: fadeIn 1s ease forwards 250ms;
     }
 
     &__subheader {
         text-align: center;
         transform: translateY(1rem);
         opacity: 0;
-        animation: fadeIn 1s ease forwards 250ms;
+        animation: fadeIn 1s ease forwards 500ms;
         margin-bottom: 0;
     }
 }
@@ -43,10 +54,29 @@
     margin: 4rem 0;
     transform: translateY(1rem);
     opacity: 0;
-    animation: fadeIn 1s ease forwards 500ms;
+    animation: fadeIn 1s ease forwards 750ms;
 
     a {
         font-size: var(--fs-body);
+    }
+}
+
+.adoptersContainer{
+    background-color: var(--neutral-clr-50);
+    padding: 2rem 0;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 750ms ease forwards 1s;
+    mask: linear-gradient(180deg, transparent, rgba(255, 255, 255) 10%, rgb(255, 255, 255));
+
+    p {
+        text-align: center;
+        color: var(--neutral-clr-700);
+        text-transform: uppercase;
+        font-weight: var(--fw-bold);
+        font-family: var(--ff-primary);
+        letter-spacing: var(ls-subheader);
+        font-size: var(--fs-subheader);
     }
 }
 
@@ -59,7 +89,7 @@
     mask: linear-gradient(125deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .05) 30%, transparent 45%, transparent);
     overflow: hidden;
     opacity: 0;
-    animation: fadeIn 1s ease forwards 500ms;
+    animation: fadeIn 1s ease forwards 1.15s;
 
     svg {
         width: 100%;

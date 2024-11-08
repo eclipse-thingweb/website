@@ -98,10 +98,6 @@
   */
   --ls-header: 1px;
   --ls-subheader: -.5px;
-
-
-  /*Logo color change*/
-  --adopters-color: brightness(0) invert(0);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -121,8 +117,6 @@
   --box-shadow-clr: rgba(143, 143, 143, 0.1);
 
   --docusaurus-highlighted-code-line-bg: rgba(73, 73, 73, 0.3);
-
-  --adopters-color: brightness(0) invert(1);
 }
 
 html {
@@ -397,7 +391,7 @@ a.navbar__item {
   font-size: var(--fs-body);
   font-family: var(--ff-secondary);
   font-weight: var(--fw-medium);
-  transition: all 250ms ease-in-out;
+  transition: all 150ms ease-in-out;
 
   &>* {
     color: inherit;
@@ -415,7 +409,7 @@ a.navbar__item {
     color: var(--ifm-color-primary);
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--ifm-color-primary-dark);
     border-color: var(--ifm-color-primary-dark);
     color: var(--neutral-clr-50);
@@ -437,7 +431,7 @@ a.navbar__item {
     color: var(--ifm-color-secondary);
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--ifm-color-secondary-dark);
     border-color: var(--ifm-color-secondary-dark);
     color: var(--neutral-clr-50);
@@ -468,7 +462,7 @@ a.navbar__item {
     color: var(--neutral-clr-50);
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: var(--neutral-clr-200);
     border-color: var(--neutral-clr-200);
     color: var(--neutral-clr-900);
@@ -508,15 +502,19 @@ a.navbar__item {
   }
 
   &[data-speed="slow"] {
-    --_animation-duration: 60s;
+    --_animation-duration: 50s;
   }
 
   &[data-speed="slower"] {
-    --_animation-duration: 80s;
+    --_animation-duration: 70s;
   }
 
   &[data-speed="fast"] {
-    --_animation-duration: 40s;
+    --_animation-duration: 30s;
+  }
+
+  &[data-speed="faster"] {
+    --_animation-duration: 20s;
   }
 }
 
@@ -543,13 +541,18 @@ a.navbar__item {
 /****** Adopters ******/
 /**********************/
 
-.scroller .adopters, .scroller .adopters-header, .scroller .adopters-about {
+.adopters-scroller .adopters {
   --_content-gap: clamp(4rem, 3.428571428571429rem + 2.857142857142857vw, 6rem);
   padding: 0;
   margin: 0;
 
   li {
     display: flex;
+    transition: transform 250ms ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     a {
       .adopters-img {

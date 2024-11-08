@@ -5,69 +5,6 @@ import styles from './styles.module.scss';
 
 export default function VpSection() {
 
-    const adoptersAboutListRef = useRef(null);
-  const { colorMode } = useColorMode();
-
-  useEffect(() => {
-    /** Adopter scroller */
-    const adoptersAboutList = adoptersAboutListRef.current;
-
-
-    if (colorMode === 'dark') {
-      while (adoptersAboutList.lastElementChild) {
-        adoptersAboutList.removeChild(adoptersAboutList.lastElementChild);
-      }
-      try {
-        eclipseFdnAdopters.getList({
-          project_id: "iot.thingweb",
-          selector: ".scroller-about",
-          ul_classes: "adopters-about",
-          logo_white: true,
-        });
-      }
-      catch (error) {
-        console.error('Error loading adopters list', error);
-      }
-    }
-    else {
-      while (adoptersAboutList.lastElementChild) {
-        adoptersAboutList.removeChild(adoptersAboutList.lastElementChild);
-      }
-      try {
-        eclipseFdnAdopters.getList({
-          project_id: "iot.thingweb",
-          selector: ".scroller-about",
-          ul_classes: "adopters-about",
-          logo_white: false,
-        });
-      }
-      catch (error) {
-        console.error('Error loading adopters list', error);
-      }
-    }
-
-    const adoptersAboutContainer = document.querySelector('.adopters-about-container');
-    const config = { childList: true };
-
-    const observer = new MutationObserver(() => {
-      const adopters = document.querySelector('.adopters-about');
-      const adoptersList = Array.from(document.querySelectorAll('.adopters-about li'));
-
-
-      adoptersList.forEach(adopter => {
-        const duplicatedAdopter = adopter.cloneNode(true);
-        duplicatedAdopter.setAttribute('aria-hidden', 'true');
-        adopters.appendChild(duplicatedAdopter);
-      });
-
-      observer.disconnect();
-    })
-
-    if (adoptersAboutContainer) {
-      observer.observe(adoptersAboutContainer, config);
-    }
-  }, [colorMode]);
-
     return (
         <section className={styles.vpSection} id='vp-section'>
             <div className={clsx('container', 'section-wrapper')}>
@@ -119,9 +56,6 @@ export default function VpSection() {
                         <h3 className={styles.feature__title}>Community Driven</h3>
                         <p className={styles.feature__description}>Join our open community! Everyone has the power to contribute and make a meaningful impact on the future of Thingweb.</p>
                     </div>
-                </div>
-
-                <div className={'scroller scroller-about adopters-about-container'} data-direction="left" data-speed="slow" ref={adoptersAboutListRef}>
                 </div>
             </div>
         </section>

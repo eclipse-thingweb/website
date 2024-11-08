@@ -7,18 +7,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
+    gap: clamp(0.5rem, -0.3695652173913043rem + 4.3478260869565215vw, 1rem); //0.5rem to 1rem - viewports 20rem to 31.5rem
 
     &__text {
         position: relative;
-        font-size: .6rem;
+        font-size: clamp(0.6rem, 0.3391304347826086rem + 1.3043478260869565vw, 0.75rem); //0.6rem to 0.75rem - viewports 20rem to 31.5rem
         background-color: var(--neutral-clr-100);
         border-radius: 2px;
         transform-origin: right;
         transform: scaleX(0);
-        animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBoxPhone 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
-        width: 12rem;
-        height: 1.5rem;
+        animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBox 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
+        width: clamp(12rem, 8.521739130434783rem + 17.391304347826086vw, 14rem); //12rem to 14rem - viewports 20rem to 31.5rem
+        height: clamp(1.5rem, 0.6304347826086957rem + 4.3478260869565215vw, 2rem); //1.5rem to 2rem - viewports 20rem to 31.5rem
         overflow: hidden;
         pointer-events: none;
 
@@ -31,7 +31,7 @@
             transform: translateY(2rem);
             opacity: 0;
             margin-bottom: 0;
-            padding: 0 .5rem;
+            padding: clamp(0rem, -0.43478260869565216rem + 2.1739130434782608vw, 0.25rem) .5rem; //0rem to 0.25rem padding top and bottom - viewports 20rem to 31.5rem
         }
 
         .text1 {
@@ -45,10 +45,11 @@
 
     &__btn {
         background-color: var(--ifm-color-primary);
-        width: 2rem;
-        height: 2rem;
+        width: clamp(2rem, 0.26086956521739135rem + 8.695652173913043vw, 3rem); //2rem to 3rem - viewports 20rem to 31.5rem
+        height: clamp(2rem, 0.26086956521739135rem + 8.695652173913043vw, 3rem); //2rem to 3rem - viewports 20rem to 31.5rem
         border-radius: 5px;
         cursor: pointer;
+        transition: background-color 150ms ease-in-out;
 
         a {
             color: var(--neutral-clr-50);
@@ -60,10 +61,15 @@
         }
 
         .icon {
-            font-size: 1rem;
+            font-size: clamp(1rem, 0.13043478260869568rem + 4.3478260869565215vw, 1.5rem); //1rem to 1.5rem - viewports 20rem to 31.5rem
             --fa-animation-duration: 2s;
             --fa-animation-delay: 5s;
             --fa-animation-iteration-count: 4;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: var(--ifm-color-primary-dark);
         }
     }
 }
@@ -71,63 +77,21 @@
 @media screen and (min-width: 500px) {
     .feedbackPrompt {
         gap: 1rem;
-    
+
         &__text {
-            font-size: .75rem;
             border-radius: 5px;
-            animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBoxDesktop 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
-            width: 14rem;
-            height: 2rem;
-    
-            p {
-                padding: .25rem .5rem;
-            }
+            animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBox 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
         }
-    
+
         &__btn {
-            width: 3rem;
-            height: 3rem;
             border-radius: 10px;
-    
-            .icon {
-                font-size: 1.5rem;
-            }
         }
     }
 }
 
-// @keyframes rotatingIcon {
-//     0% {
-//         transform: rotate(0);
-//     }
-
-//     5% {
-//         transform: rotate(10deg);
-//     }
-
-//     15% {
-//         transform: rotate(-10deg);
-//     }
-
-//     20% {
-//         transform: rotate(0deg);
-//     }
-
-//     100% {
-//         transform: rotate(0deg);
-//     }
-// }
-
-
-@keyframes shrinkTextBoxPhone {
+@keyframes shrinkTextBox {
     to {
-        width: 10rem;
-    }
-}
-
-@keyframes shrinkTextBoxDesktop {
-    to {
-        width: 12rem;
+        width: clamp(10rem, 6.521739130434783rem + 17.391304347826086vw, 12rem); //10rem to 12rem - viewports 20rem to 31.5rem
     }
 }
 
@@ -148,14 +112,17 @@
         transform: translateY(2rem);
         opacity: 0;
     }
+
     20% {
         transform: translateY(0);
         opacity: 1;
     }
+
     80% {
         transform: translateY(0);
         opacity: 1;
     }
+
     100% {
         transform: translateY(-2rem);
         opacity: 0;
@@ -167,14 +134,17 @@
         transform: translateY(2rem);
         opacity: 0;
     }
+
     10% {
         transform: translateY(0);
         opacity: 1;
     }
+
     90% {
         transform: translateY(0);
         opacity: 1;
     }
+
     100% {
         transform: translateY(-2rem);
         opacity: 0;
