@@ -12,11 +12,7 @@ For the moment the Get Involved page is still under construction. For more infor
 
 There are various ways to get involved via GitHub : https://github.com/eclipse-thingweb
 
-You can pick one of the Eclipse Thingweb components such as [node-wot](https://github.com/eclipse-thingweb/node-wot) or [playground](https://playground.thingweb.io) and start using them. Even better, you can contribute to their source code! Below are some examples of what you can contribute with:
-
-* node-wot: Create and contribute your own protocols bindings besides HTTP, CoAP, Websockets, ...
-* playground: Add tools that take Thing Descriptions and generate developer tooling for other systems
-* All components: Report any issue you encounter (and even better, provide a fix)
+You can pick one of the Eclipse Thingweb components such as [node-wot](https://github.com/eclipse-thingweb/node-wot) or [playground](https://playground.thingweb.io) and start using them. Even better, you can contribute to their source code! See the full component list by [clicking here](/#tools-section).
 
 ## Licenses
 

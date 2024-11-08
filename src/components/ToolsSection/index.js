@@ -7,7 +7,7 @@ import { faCode, faArrowRight, faLaptopCode, faScrewdriverWrench, faHouse } from
 
 export default function ToolsSection() {
   return (
-    <section className={styles.toolsSection}>
+    <section className={styles.toolsSection} id='tools-section'>
       <div className={clsx('container', 'section-wrapper')}>
 
         <h2 className={clsx('hero-title', 'section-title', styles.toolsSection__title)}>Powerful <span className={'text-highlight'}>Tools</span> To Drive Your IoT Development</h2>
