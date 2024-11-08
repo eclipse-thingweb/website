@@ -109,6 +109,10 @@ const config = {
             to: '/services/',
             from: '/services.html',
           },
+          {
+            to: '/get-involved/',
+            from: '/get-involved.html',
+          },
         ],
       },
     ],
@@ -128,6 +132,15 @@ const config = {
         path: 'services',
         routeBasePath: 'services',
         sidebarPath: './sidebars-services.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'get-involved',
+        path: 'get-involved',
+        routeBasePath: 'get-involved',
+        sidebarPath: './sidebars-get-involved.js',
       },
     ]
   ],
@@ -161,6 +174,13 @@ const config = {
             sidebarId: 'handsOnSidebar',
             position: 'left',
             label: 'Hands-On',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'get-involved',
+            sidebarId: 'getInvolvedSidebar',
+            position: 'left',
+            label: 'Get Involved',
           },
           {
             href: 'https://github.com/eclipse-thingweb/website',
