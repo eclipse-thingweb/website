@@ -57,13 +57,6 @@ const config = {
         theme: {
           customCss: './src/css/custom.scss',
         },
-        // gtag: {
-        //   trackingID: 'G-FTBPVB8Z65',
-        //   anonymizeIP: true,
-        // },
-        // googleTagManager: {
-        //   containerId: 'G-FTBPVB8Z65',
-        // },
       }),
     ],
   ],
@@ -361,10 +354,10 @@ const config = {
         indexName: 'thingweb',
 
         // Optional: see doc section below
-        contextualSearch: true,
+        contextualSearch: false,
 
         // Optional: Algolia search parameters
-        // searchParameters: {},
+        searchParameters: {},
 
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
