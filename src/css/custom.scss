@@ -258,7 +258,12 @@ div.header-search {
   flex-wrap: wrap;
   gap: 1rem;
 
-  .foundation-logo {
+  a {
+    display: grid;
+    place-items: center;
+  }
+
+  .foundation-logo, .wot-logo {
     width: 7rem;
   }
 
@@ -295,7 +300,7 @@ div.header-search {
     width: 8rem;
     justify-content: space-between;
 
-    .foundation-logo {
+    .foundation-logo, .wot-logo {
       width: 100%;
     }
 
