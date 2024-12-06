@@ -88,7 +88,7 @@ export default function CommunitySection({ adopterCount }) {
 
         <div className={styles.communitySection__cta}>
           <a className={clsx('btn btn-primary', styles.btn)} href='https://github.com/eclipse-thingweb/website?tab=readme-ov-file#adopters'>
-            Add your Organization
+            Become an Adopter
             <FontAwesomeIcon icon={faCloudUpload} className={styles.btn__icon} />
           </a>
           <a className={clsx('btn btn-primary btn-outline', styles.btn)} href='https://discord.gg/WfRyazju'>
