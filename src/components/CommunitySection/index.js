@@ -67,12 +67,14 @@ export default function CommunitySection({ adopterCount }) {
   return (
     <section className={styles.communitySection}>
       <div className={clsx('container', 'section-wrapper')}>
-        <h2 className={clsx('hero-title', 'section-title', styles.communitySection__title)}>Join the Thingweb <span className={'text-highlight'}>Community</span></h2>
+        <h2 className={clsx('hero-title', 'section-title', styles.communitySection__title)}>Join the Thingweb and Web of Things<span className={'text-highlight'}>Community</span></h2>
+
+        <p>Thingweb is part of the wide W3C WoT community and ecosystem</p>
 
         <div className={styles.communitySection__stats} ref={statsContainerRef}>
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="130" data-count="true">0</h3>
-            <p className={styles.stat__description}>Discord Members</p>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="140" data-count="true">0</h3>
+            <p className={styles.stat__description}>WoT CG Discord Members</p>
           </div>
 
           <div className={styles.stat}>
