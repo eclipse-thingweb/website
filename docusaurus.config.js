@@ -236,7 +236,7 @@ const config = {
             ],
           },
           {
-            title: 'WoT Specification',
+            title: 'WoT Specifications',
             items: [
               {
                 label: 'Thing Description',
@@ -261,30 +261,30 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: 'Wide WoT Community',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discord.com/invite/RJNYJsEgnb',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/W3C_WoT',
-              },
-              {
-                label: 'YouTube',
-                href: 'https://www.youtube.com/@WoTCG',
-              },
-              {
-                label: 'Mastodon',
-                href: 'https://w3c.social/@wot',
-              },
-              {
-                label: 'Telegram',
+                label: 'Thingweb Telegram Group',
                 href: 'https://t.me/nodewot',
               },
               {
-                label: 'Stack Overflow',
+                label: 'WoT CG Discord',
+                href: 'https://discord.com/invite/RJNYJsEgnb',
+              },
+              {
+                label: 'WoT CG YouTube',
+                href: 'https://www.youtube.com/@WoTCG',
+              },
+              {
+                label: 'Official W3C WoT Twitter',
+                href: 'https://twitter.com/W3C_WoT',
+              },
+              {
+                label: 'Official W3C WoT Mastodon',
+                href: 'https://w3c.social/@wot',
+              },
+              {
+                label: 'Stack Overflow Tag for WoT',
                 href: 'https://stackoverflow.com/questions/tagged/web-of-things',
               },
             ],
