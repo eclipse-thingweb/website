@@ -67,7 +67,7 @@ export default function CommunitySection({ adopterCount }) {
   return (
     <section className={styles.communitySection}>
       <div className={clsx('container', 'section-wrapper')}>
-        <h2 className={clsx('hero-title', 'section-title', styles.communitySection__title)}>Join the Thingweb and Web of Things<span className={'text-highlight'}>Community</span></h2>
+        <h2 className={clsx('hero-title', 'section-title', styles.communitySection__title)}>Join the Thingweb and Web of Things <span className={'text-highlight'}>Community</span></h2>
 
         <p>Thingweb is part of the wide W3C WoT community and ecosystem</p>
 

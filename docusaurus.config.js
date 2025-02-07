@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Eclipse Thingweb | Leverage web standards for faster development',
+  title: 'Eclipse Thingweb | Leverage web standards for better interoperability',
   tagline: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one',
   favicon: 'img/favicon.ico',
   // Set the production url of your site here
@@ -142,12 +142,12 @@ const config = {
     ({
       image: 'https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true',
       metadata: [
-        {name: 'og:description', content: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.'},
+        {property: 'og:description', content: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.'},
         {name: 'twitter:card', content: 'summary_large_image'},
-        {name: 'twitter:title', content: 'Eclipse Thingweb | Leverage web standards for faster development'},
+        {name: 'twitter:title', content: 'Eclipse Thingweb | Leverage web standards for better interoperability'},
         {name: 'twitter:description', content: 'Eclipse Thingweb™ offers components for making IoT solutions interoperable at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one'},
         {name: 'twitter:image', content: 'https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true'},
-
+        {name: 'keywords', content: 'thingweb, wot, iot, eclipse, open source, standards, interoperability, w3c'},
       ],
       navbar: {
         title: 'THINGWEB',
