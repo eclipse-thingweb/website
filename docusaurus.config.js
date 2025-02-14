@@ -8,7 +8,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Eclipse Thingweb | Leverage web standards for better interoperability',
+  title: 'Eclipse Thingweb | Connect More, Code Less',
   tagline: 'Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.',
   favicon: 'img/favicon.ico',
   // Set the production url of your site here
