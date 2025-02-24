@@ -35,7 +35,7 @@ All of them require no security mechanism to be communicated with and have same 
 
 * TestThing: This Thing exists primarily for testing different data schemas and payload formats. It also has events attached to affordances that notify when a value changes. TDs:
 
-  * HTTP: [http://plugfest.thingweb.io:8083/testthing](http://plugfest.thingweb.io:8083/testthing)
+  * HTTP: [http://plugfest.thingweb.io/http-data-schema-thing](http://plugfest.thingweb.io/http-data-schema-thing)
   * CoAP: coap://plugfest.thingweb.io:5683/testthing
 
 * Smart Coffee Machine: This is a simulation of a coffee machine that also has a simple user interface that displays the values of properties. In addition to proving a real life device example, it can be used for testing uriVariables. You can ask it to brew different coffees and monitor the available resource level. TDs:
