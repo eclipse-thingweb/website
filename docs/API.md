@@ -1,18 +1,14 @@
----
-sidebar_position: 1
-slug: /node-wot/node-wot-api
----
-# node-wot API
+### What to do with the library
 
 The two main functionalities of node-wot are creating WoT Things and interacting with other WoT Things.
 These can be combined into a Thing that interacts with other Things.
 
-## Creating a WoT Thing
+#### Creating a WoT Thing
 
 Creating a WoT Thing is called exposing a Thing.
 Exposing a Thing creates a Thing Description that can be used to by others to interact with this Thing.
 
-### Starting a Servient
+##### Starting a Servient
 
 ```javascript
 WotCore = require("@node-wot/core");
@@ -20,7 +16,7 @@ let servient = new WotCore.Servient();
 let WoT = await servient.start();
 ```
 
-### In Client mode, add factories
+##### In Client mode, add factories
 
 ```javascript
 WotCore = require("@node-wot/core");
@@ -36,7 +32,7 @@ These need to be added in order to be able to access devices through this protoc
 
 For more details on bindings, e.g. configuration options for a specific `*ClientFactory`, look at the `README.md` files in their respective directories.
 
-### In Server mode, add servers
+##### In Server mode, add servers
 
 ```javascript
 WotCore = require("@node-wot/core");
@@ -47,7 +43,7 @@ servient.addServer(new CoapServer());
 
 Same as for clients, bindings offer servers.
 
-### Credentials
+##### Credentials
 
 ```javascript
 let servient = new (require("@node-wot/core")).Servient();
@@ -65,7 +61,7 @@ They are either used to authenticate clients when running in server mode or used
 This example uses `username` and `password`, but other authentication mechanisms are supported as well.
 Authentication data is always mapped to a Thing through its id.
 
-### Expose a Thing
+##### Expose a Thing
 
 ```javascript
 let thing = WoT.produce({
@@ -81,7 +77,7 @@ thing.expose();
 Here, an object named `thing` is produced. At this stage, it has only a name and a description for humans to read.
 `thing.expose();` exposes/starts the exposed Thing in order to process external requests. This also creates a Thing Description that describes the interfaces of the `counter` thing.
 
-### Add a Property definition to the Thing
+##### Add a Property definition to the Thing
 
 Properties expose internal state of a Thing that can be directly accessed (get) and optionally manipulated (set).
 
@@ -122,7 +118,7 @@ WoT.produce({
 });
 ```
 
-### Add a Property read handler
+##### Add a Property read handler
 
 ```javascript
 thing.setPropertyReadHandler("counter", (propertyName) => {
@@ -136,7 +132,7 @@ thing.setPropertyReadHandler("counter", (propertyName) => {
 You can specify if the Thing needs to do something in case of a property read.
 Here, instead of reading a static value, a new random value is generated on every invocation.
 
-### Add a Property write handler
+##### Add a Property write handler
 
 ```javascript
 thing.setPropertyWriteHandler("brightness", (value) => {
@@ -152,7 +148,7 @@ You can specify if the Thing needs do to something in case of a property write.
 Here, the value written is used to set the brightness of an LED that requires a specific function (`setBrightness()`) to do that.
 The property value becomes the value passed to `resolve()`, which in this case would mean the number modulo 2.
 
-### Add an Action definition to the Thing
+##### Add an Action definition to the Thing
 
 Actions offer functions of the Thing.
 These functions may manipulate the interal state of a Thing in a way that is not possible through setting Properties.
@@ -176,7 +172,7 @@ WoT.produce({
 
 As can be seen above, `input` and `output` data types can be specified, similar to how property types are described in TDs.
 
-### Add an Action invoke handler
+##### Add an Action invoke handler
 
 You need to write what will happen if an Action is invoked. This is done by setting an Action Handler:
 
@@ -192,7 +188,7 @@ thing.setActionHandler("increment", () => {
 
 Here, you see also how to access the properties of a Thing you are creating.
 
-### Add an Event definition to the Thing
+##### Add an Event definition to the Thing
 
 The Event Interaction Affordance describes event sources that asynchronously push messages.
 This means that instead of communicating state, state transitions (events) are communicated (e.g. "clicked").
@@ -213,7 +209,7 @@ WoT.produce({
 });
 ```
 
-### Emit Event, i.e. notify all listeners subscribed to that Event
+##### Emit Event, i.e. notify all listeners subscribed to that Event
 
 ```javascript
 setInterval(async () => {
@@ -242,11 +238,11 @@ Here the event is triggered in regular intervals but emitting an event can be do
   * to update a Property value;
   * to run an Action: take the parameters from the request, execute the defined action, and return the result; -->
 
-## Interacting with another WoT Thing
+#### Interacting with another WoT Thing
 
 Interacting with another WoT Thing is called consuming a Thing and works by using its Thing Description.
 
-### Fetch a Thing Description of a Thing given its URL
+##### Fetch a Thing Description of a Thing given its URL
 
 ```javascript
 WoT.requestThingDescription("http://localhost:8080/counter").then(async(td) => {
@@ -256,7 +252,7 @@ WoT.requestThingDescription("http://localhost:8080/counter").then(async(td) => {
 
 URLs can have various schemes, including `file://` to read from the local filesystem.
 
-### Consume a TD of a Thing, including parsing the TD and generating the protocol bindings in order to access lower level functionality
+##### Consume a TD of a Thing, including parsing the TD and generating the protocol bindings in order to access lower level functionality
 
 ```javascript
 WoT.requestThingDescription("http://localhost:8080/counter").then(async (td) => {
@@ -269,11 +265,11 @@ Things can be `consume`d no matter if they were fetched with `WoT.requestThingDe
 `consume` only requires a TD as an `Object`, so you could also use `fs.readFile` and `JSON.parse` or inline it into your code.
 As long at it results in a TD Object, you can receive it over Fax, Morse it or use smoke signals.
 
-## On a consumed Thing
+#### On a consumed Thing
 
 You can access all the interactions this Thing has and interact with them.
 
-### Read the value of a Property or set of properties
+##### Read the value of a Property or set of properties
 
 You can read the property values with the `readProperty` function.
 It is an asynchronous function that will take some time to complete.
@@ -282,10 +278,11 @@ Here we use the await functionality of Node.js.
 
 ```javascript
 let read1 = await thing.readProperty("count");
-console.info("count value is", read1);
+let value = await read1.value();
+console.info("count value is", value);
 ```
 
-### Set the value of a Property or a set of properties
+##### Set the value of a Property or a set of properties
 
 You can write to a property by using the `writeProperty` function.
 
@@ -295,7 +292,7 @@ thing.writeProperty("color", { r: 255, g: 255, b: 0 });
 
 <!-- * Observe value changes of a Property. -->
 
-### Invoke an Action
+##### Invoke an Action
 
 You can invoke an action by using the `invokeAction` function.
 It is an asynchronous function that will take some time to complete.
