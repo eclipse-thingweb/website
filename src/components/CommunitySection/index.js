@@ -73,7 +73,7 @@ export default function CommunitySection({ adopterCount }) {
 
         <div className={styles.communitySection__stats} ref={statsContainerRef}>
           <div className={styles.stat}>
-            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="140" data-count="true">0</h3>
+            <h3 className={clsx(styles.stat__number, 'hero-title')} id='stats-number' data-val="150" data-count="true">0</h3>
             <p className={styles.stat__description}>WoT CG Discord Members</p>
           </div>
 
