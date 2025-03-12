@@ -141,7 +141,7 @@ const config = {
       {
         name: "node-wot-documentation",
         sourceBaseUrl: "https://raw.githubusercontent.com/eclipse-thingweb/node-wot/refs/heads/master/",
-        outDir: "docs",
+        outDir: "docs/node-wot",
         documents: ["API.md"],
       },
     ],
