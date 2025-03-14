@@ -9,8 +9,7 @@
 .cache-loader
 
 # remote content files
-docs/*
-!docs/introduction.md
+
 
 # Misc
 .DS_Store
