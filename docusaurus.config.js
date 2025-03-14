@@ -39,7 +39,7 @@ const config = {
     },
     {
       src: '/js/consentBanner.js',
-      async: false,
+      async: true,
     }
   ],
   presets: [
