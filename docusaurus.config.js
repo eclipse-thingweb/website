@@ -135,7 +135,16 @@ const config = {
         routeBasePath: 'get-involved',
         sidebarPath: './sidebars-get-involved.js',
       },
-    ]
+    ],
+    [
+      "docusaurus-plugin-remote-content",
+      {
+        name: "node-wot-documentation",
+        sourceBaseUrl: "https://raw.githubusercontent.com/eclipse-thingweb/node-wot/refs/heads/master/",
+        outDir: "docs/node-wot",
+        documents: ["API.md"],
+      },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
