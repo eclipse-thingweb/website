@@ -40,7 +40,11 @@ const config = {
     {
       src: '/js/consentBanner.js',
       async: false,
-    }
+    },
+    {
+      src: 'https://buttons.github.io/buttons.js',
+      async: false,
+    },
   ],
   presets: [
     [
@@ -191,6 +195,12 @@ const config = {
             sidebarId: 'getInvolvedSidebar',
             position: 'left',
             label: 'Get Involved',
+          },
+          {
+            type: 'html',
+            position: 'right',
+            className: 'header-github-star-button',
+            value: `<a class="github-button" href="https://github.com/buttons/github-buttons" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star buttons/github-buttons on GitHub">Star</a>`,
           },
           {
             href: 'https://github.com/eclipse-thingweb/website',

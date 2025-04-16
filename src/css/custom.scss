@@ -224,6 +224,10 @@ div.header-search {
   letter-spacing: var(--ls-subheader);
 }
 
+.header-github-star-button {
+  margin-bottom: -7px;
+}
+
 .header-github-link {
   &::before {
     content: '';
