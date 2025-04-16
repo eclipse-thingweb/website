@@ -24,12 +24,9 @@ export default function ToolsSection() {
             <h3 className={styles.tool__title}>node wot</h3>
             <p className={styles.tool__description}>A fast and extensible framework to connect any device with your browser and backend applications.</p>
             <div className={styles.tool__btnContainer}>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='/docs/category/node-wot'>
+              <a className={clsx('btn', 'btn-tertiary', styles.btn)} href='https://github.com/eclipse-thingweb/node-wot'>
                 node wot
                 <FontAwesomeIcon icon={faArrowRight} className={styles.btn__icon} />
-              </a>
-              <a className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)} href='https://github.com/eclipse-thingweb/node-wot'>
-                <FontAwesomeIcon icon={faGithub} className={styles.btn__icon} />
               </a>
             </div>
           </div>
