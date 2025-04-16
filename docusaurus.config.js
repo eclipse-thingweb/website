@@ -200,7 +200,7 @@ const config = {
             type: 'html',
             position: 'right',
             className: 'header-github-star-button',
-            value: `<a class="github-button" href="https://github.com/buttons/github-buttons" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star buttons/github-buttons on GitHub">Star</a>`,
+            value: `<a class="github-button" href="https://github.com/eclipse-thingweb/website" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star eclipse-thingweb/website on GitHub">Star</a>`,
           },
           {
             href: 'https://github.com/eclipse-thingweb/website',
