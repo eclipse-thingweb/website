@@ -2,9 +2,8 @@ import React from 'react';
 import clsx from 'clsx';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
-import {faGithub} from '@fortawesome/free-brands-svg-icons';
 import styles from './styles.module.scss';
-import GitHubStarButton from './GitHubStarButton';
+import GitHubButton from './GitHubButton';
 
 export default function ToolCard({icon, title, description, docLink, githubRepo, gridAreaClass}) {
 	const isExternal = docLink?.startsWith('http');
@@ -28,15 +27,7 @@ export default function ToolCard({icon, title, description, docLink, githubRepo,
 				)}
 				{githubRepo && (
 					<>
-						<a
-							className={clsx('btn', 'btn-tertiary', styles.btn, styles.btnGithub)}
-							href={`https://github.com/${githubRepo}`}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<FontAwesomeIcon icon={faGithub} className={styles.btn__icon}/>
-						</a>
-						<GitHubStarButton repo={githubRepo}/>
+						<GitHubButton repo={githubRepo}/>
 					</>
 				)}
 			</div>
