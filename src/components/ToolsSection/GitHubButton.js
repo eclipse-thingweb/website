@@ -31,13 +31,16 @@ export default function GitHubButton({repo}) {
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<span>
+			<span className={styles.btn__icon}>
 				<FontAwesomeIcon icon={faGithub}/>
 			</span>
 			{stars !== null && (
-				<span className={styles.btn__right}>
-					{stars} Stars
-				</span>
+				<>
+					<span className={styles.btn__divider}></span>
+					<span className={styles.btn__right}>
+						{stars} Stars
+					</span>
+				</>
 			)}
 		</a>
 	);

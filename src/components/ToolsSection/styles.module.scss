@@ -143,6 +143,12 @@
     font-size: 1em;
 }
 
+.btn__divider {
+    width: 1px;
+    height: 1rem;
+    background-color: #ccc;
+}
+
 .btn__right {
     display: inline-flex;
     align-items: center;
