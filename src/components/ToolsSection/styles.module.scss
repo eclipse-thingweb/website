@@ -89,10 +89,6 @@
                     opacity: 0;
                     transition: all 300ms ease-in-out;
                 }
-
-                .btnGithub {
-                    font-size: var(--fs-body);
-                }
             }
 
             &:hover {
@@ -141,6 +137,25 @@
             grid-area: wam;
         }
     }
+}
+
+.btn__icon {
+    font-size: 1em;
+}
+
+.btn__divider {
+    width: 1px;
+    height: 1rem;
+    background-color: #ccc;
+}
+
+.btn__right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color:  var(--ifm-color-primary);
+    font-weight: 600;
+    font-size: 0.85rem;
 }
 
 @media screen and (min-width: 768px) {
