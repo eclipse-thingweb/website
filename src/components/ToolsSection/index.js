@@ -23,7 +23,7 @@ export default function ToolsSection() {
 						icon={faCode}
 						title="node wot"
 						description="A fast and extensible framework to connect any device with your browser and backend applications."
-						docLink="/docs/category/node-wot"
+						docLink="/docs/node-wot/API"
 						githubRepo="eclipse-thingweb/node-wot"
 						gridAreaClass={styles.nodeWot}
 					/>
