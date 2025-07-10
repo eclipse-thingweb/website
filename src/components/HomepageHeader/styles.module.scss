@@ -61,7 +61,7 @@
     }
 }
 
-.adoptersContainer{
+.adoptersContainer {
     background-color: var(--neutral-clr-50);
     padding: 2rem 0;
     width: 100%;
@@ -86,7 +86,14 @@
     left: 0;
     width: 100%;
     z-index: -1;
-    mask: linear-gradient(125deg, rgba(255, 255, 255, 0.5) 5%, rgba(255, 255, 255, .25) 20%, rgba(255, 255, 255, .05) 30%, transparent 45%, transparent);
+    mask: linear-gradient(
+        125deg,
+        rgba(255, 255, 255, 0.5) 5%,
+        rgba(255, 255, 255, 0.25) 20%,
+        rgba(255, 255, 255, 0.05) 30%,
+        transparent 45%,
+        transparent
+    );
     overflow: hidden;
     opacity: 0;
     animation: fadeIn 1s ease forwards 1.15s;
@@ -98,7 +105,6 @@
 }
 
 @media screen and (min-width: 500px) {
-
     .bannerCta {
         flex-direction: row;
 

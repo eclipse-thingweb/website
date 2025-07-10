@@ -2,7 +2,7 @@
 
 This content is produced and maintained by the Eclipse Thingweb project.
 
--   Project home: https://projects.eclipse.org/projects/iot.thingweb
+- Project home: https://projects.eclipse.org/projects/iot.thingweb
 
 ## Trademarks
 
@@ -41,6 +41,7 @@ another country, of encryption software. BEFORE using any encryption software,
 please check the country's laws, regulations and policies concerning the import,
 possession, or use, and re-export of encryption software, to see if this is
 permitted.
+
 <!--- https://www.eclipse.org/security/ --->
 
 _ISO 27005 defines vulnerability as:
