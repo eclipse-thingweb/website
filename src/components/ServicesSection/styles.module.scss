@@ -1,107 +1,108 @@
 /****** Services section *******/
 
 .servicesSection {
-  overflow-x: hidden;
+    overflow-x: hidden;
 
-  p,
-  h1,
-  h2,
-  h3 {
-    margin: 0;
-  }
-
-  &__title,
-  &__subheader {
-    text-align: center;
-  }
-
-  .thing,
-  .protocol {
-    width: 18rem;
-    height: 18rem;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
-  }
-
-  .thing {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: .5rem;
-    background-color: var(--neutral-clr-50);
-    border: 1px solid var(--neutral-clr-200);
-    text-align: left;
-
-    &__icon {
-      width: 100%;
-      text-align: right;
-      color: var(--neutral-clr-50);
-
-      .icon {
-        padding: .70rem;
-        border-radius: 10px;
-        background-color: var(--ifm-color-primary);
-        border: 1px solid var(--neutral-clr-200);
-        box-shadow: 2px 2px 0 var(--neutral-clr-200);
-        font-size: var(--fs-body-lg);
-      }
+    p,
+    h1,
+    h2,
+    h3 {
+        margin: 0;
     }
 
     &__title,
-    .tag {
-      color: var(--neutral-clr-900);
+    &__subheader {
+        text-align: center;
     }
 
-    &__title {
-      width: 100%;
-      font-size: var(--fs-subheader);
+    .thing,
+    .protocol {
+        width: 18rem;
+        height: 18rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow:
+            1px 1px 10px var(--box-shadow-clr),
+            inset 0px 0px 5px var(--box-shadow-clr);
     }
 
-    &__description {
-      font-size: var(--fs-body-sm);
-      color: var(--neutral-clr-600);
-      direction: ltr;
+    .thing {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.5rem;
+        background-color: var(--neutral-clr-50);
+        border: 1px solid var(--neutral-clr-200);
+        text-align: left;
+
+        &__icon {
+            width: 100%;
+            text-align: right;
+            color: var(--neutral-clr-50);
+
+            .icon {
+                padding: 0.7rem;
+                border-radius: 10px;
+                background-color: var(--ifm-color-primary);
+                border: 1px solid var(--neutral-clr-200);
+                box-shadow: 2px 2px 0 var(--neutral-clr-200);
+                font-size: var(--fs-body-lg);
+            }
+        }
+
+        &__title,
+        .tag {
+            color: var(--neutral-clr-900);
+        }
+
+        &__title {
+            width: 100%;
+            font-size: var(--fs-subheader);
+        }
+
+        &__description {
+            font-size: var(--fs-body-sm);
+            color: var(--neutral-clr-600);
+            direction: ltr;
+        }
+
+        &__tags {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+
+            .tag {
+                padding: 0.25rem 0.75rem;
+                background-color: var(--neutral-clr-100);
+                border-radius: 5px;
+                font-size: var(--fs-body-sm);
+                font-weight: var(--fw-medium);
+            }
+        }
     }
 
-    &__tags {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: .5rem;
+    .protocol {
+        background-color: var(--ifm-color-primary);
+        display: grid;
+        place-items: center;
 
-      .tag {
-        padding: .25rem .75rem;
-        background-color: var(--neutral-clr-100);
-        border-radius: 5px;
-        font-size: var(--fs-body-sm);
-        font-weight: var(--fw-medium);
-      }
+        &__title {
+            font-size: var(--fs-hero);
+            line-height: var(--lh-hero);
+            color: var(--neutral-clr-50);
+        }
     }
-  }
-
-  .protocol {
-    background-color: var(--ifm-color-primary);
-    display: grid;
-    place-items: center;
-
-    &__title {
-      font-size: var(--fs-hero);
-      line-height: var(--lh-hero);
-      color: var(--neutral-clr-50);
-    }
-
-  }
 }
 
 @media screen and (min-width: 768px) {
-  .servicesSection {
-    .thing,
-    .protocol {
-      height: 16rem;
-      width: 25rem;
+    .servicesSection {
+        .thing,
+        .protocol {
+            height: 16rem;
+            width: 25rem;
+        }
     }
-  }
 }

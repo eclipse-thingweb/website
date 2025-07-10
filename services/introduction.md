@@ -3,6 +3,7 @@ sidebar_position: 1
 title: Services
 slug: /
 ---
+
 # Services for W3C WoT Developers
 
 Eclipse Thingweb provides services to support Web of Things developers. These services are listed below.
@@ -11,15 +12,15 @@ Eclipse Thingweb provides services to support Web of Things developers. These se
 
 Playground is a tool to validate TDs and manipulate them for usage in other tools. You can do validation to check conformance, generate Open API and Async API documents, add or remove default values, visualize TDs and find spelling mistakes in TDs.
 
-* [Online Tool](https://playground.thingweb.io)
-* [GitHub Repository](https://github.com/eclipse-thingweb/playground)
+- [Online Tool](https://playground.thingweb.io)
+- [GitHub Repository](https://github.com/eclipse-thingweb/playground)
 
 ## Web-based Interactions with Things
 
 Using the tools below, you can interact with different WoT Things over your browser.
 
-* [Browserified node-wot](https://thingweb.io/webui/): You can try interacting with different Things using this simple interface. Note that this is just a demo page to showcase the [browser bundle of node-wot](https://github.com/eclipse-thingweb/node-wot/tree/master/packages/browser-bundle).
-* [WoT-FXUI](https://github.com/danielpeintner/wot-fxui): JavaFX-based UI to interact with Things (runnable as Web application, local desktop application or as an Android/iOS app).
+- [Browserified node-wot](https://thingweb.io/webui/): You can try interacting with different Things using this simple interface. Note that this is just a demo page to showcase the [browser bundle of node-wot](https://github.com/eclipse-thingweb/node-wot/tree/master/packages/browser-bundle).
+- [WoT-FXUI](https://github.com/danielpeintner/wot-fxui): JavaFX-based UI to interact with Things (runnable as Web application, local desktop application or as an Android/iOS app).
 
 ## Online Things for Testing
 

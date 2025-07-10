@@ -1,28 +1,29 @@
 window.onload = function () {
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag() {
+        dataLayer.push(arguments);
+    }
 
-    if (localStorage.getItem('consentMode') === null) {
-        gtag('consent', 'default', {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'personalization_storage': 'denied',
-            'functionality_storage': 'denied',
-            'security_storage': 'denied',
+    if (localStorage.getItem("consentMode") === null) {
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            personalization_storage: "denied",
+            functionality_storage: "denied",
+            security_storage: "denied",
         });
-    }
-    else {
-        gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')))
+    } else {
+        gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
     }
 
-    gtag('js', new Date());
-    gtag('config', 'G-FTBPVB8Z65');
+    gtag("js", new Date());
+    gtag("config", "G-FTBPVB8Z65");
 
-    const consentBanner = document.createElement('div');
-    consentBanner.id = 'analytics-banner';
-    consentBanner.classList.add('analytics-banner', 'hidden');
+    const consentBanner = document.createElement("div");
+    consentBanner.id = "analytics-banner";
+    consentBanner.classList.add("analytics-banner", "hidden");
     consentBanner.innerHTML = `
     <div class="analytics-banner__disclaimer">
         <h3>Site Analytics Consent</h3>
@@ -39,10 +40,9 @@ window.onload = function () {
 
     document.body.appendChild(consentBanner);
 
-
-    const analyticsAcceptBtn = document.getElementById("accept-analytics-btn")
-    const analyticsDeclineBtn = document.getElementById("decline-analytics-btn")
-    const analyticsBanner = document.getElementById("analytics-banner")
+    const analyticsAcceptBtn = document.getElementById("accept-analytics-btn");
+    const analyticsDeclineBtn = document.getElementById("decline-analytics-btn");
+    const analyticsBanner = document.getElementById("analytics-banner");
 
     // Polling mechanism for the manage consent link
     const checkConsentLink = setInterval(function () {
@@ -52,56 +52,55 @@ window.onload = function () {
             manageAnalyticsLink.addEventListener("click", () => {
                 analyticsBanner.classList.remove("hidden");
             });
-            clearInterval(checkConsentLink);  // Stop polling once the element is found
+            clearInterval(checkConsentLink); // Stop polling once the element is found
         }
     }, 500); // Check every 500ms
 
-
     // Show banner if the user has not set any preference
-    if (localStorage.getItem('consentMode') === null) {
-        analyticsBanner.classList.remove("hidden")
+    if (localStorage.getItem("consentMode") === null) {
+        analyticsBanner.classList.remove("hidden");
     }
 
     //If analytics are rejected, close the banner and update the new user preference
     analyticsDeclineBtn.addEventListener("click", () => {
-        analyticsBanner.classList.add("hidden")
+        analyticsBanner.classList.add("hidden");
 
         const consentPreferences = {
-            'ad_storage': 'denied',
-            'analytics_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'personalization_storage': 'denied',
-            'functionality_storage': 'denied',
-            'security_storage': 'denied',
-        }
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            personalization_storage: "denied",
+            functionality_storage: "denied",
+            security_storage: "denied",
+        };
 
-        updateConsentMode(consentPreferences)
-    })
+        updateConsentMode(consentPreferences);
+    });
 
     //If analytics are accepted, close the banner and update the new user preference
     analyticsAcceptBtn.addEventListener("click", () => {
-        analyticsBanner.classList.add("hidden")
+        analyticsBanner.classList.add("hidden");
 
         const consentPreferences = {
-            'ad_storage': 'denied',
-            'analytics_storage': 'granted',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
-            'personalization_storage': 'denied',
-            'functionality_storage': 'denied',
-            'security_storage': 'denied',
-        }
+            ad_storage: "denied",
+            analytics_storage: "granted",
+            ad_user_data: "denied",
+            ad_personalization: "denied",
+            personalization_storage: "denied",
+            functionality_storage: "denied",
+            security_storage: "denied",
+        };
 
-        updateConsentMode(consentPreferences)
-    })
+        updateConsentMode(consentPreferences);
+    });
 
     /**
      * Update the user preferences to grant or decline google analytics tracking
-     * @param { Object } preferences 
+     * @param { Object } preferences
      */
     function updateConsentMode(preferences) {
-        gtag('consent', 'update', preferences)
-        localStorage.setItem('consentMode', JSON.stringify(preferences))
+        gtag("consent", "update", preferences);
+        localStorage.setItem("consentMode", JSON.stringify(preferences));
     }
-}
+};

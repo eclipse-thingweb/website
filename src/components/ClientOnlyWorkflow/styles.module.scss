@@ -5,7 +5,7 @@
     height: 100%;
     display: grid;
     grid: repeat(6, 1fr) / repeat(5, 1fr);
-    gap: .5rem;
+    gap: 0.5rem;
     grid-template-areas:
         ". . td . ."
         "thing1 . . . nodeWot"
@@ -84,7 +84,6 @@
         stroke-dashoffset: 10.5rem;
         animation: animateLine6 10s ease-in-out infinite 5.25s;
     }
-
 
     .thing1 {
         grid-area: thing1;
@@ -251,7 +250,7 @@
             font-weight: var(--fw-bold);
             font-family: var(--ff-primary);
             opacity: 0;
-            transform: translateY(.9rem);
+            transform: translateY(0.9rem);
             transition: all 350ms ease-in-out;
         }
 
@@ -387,7 +386,7 @@
 
 @keyframes showItemText {
     0% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
     4% {
@@ -399,11 +398,11 @@
         opacity: 1;
     }
     38% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
     100% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
 }

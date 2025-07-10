@@ -7,18 +7,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(0.5rem, -0.3695652173913043rem + 4.3478260869565215vw, 1rem); //0.5rem to 1rem - viewports 20rem to 31.5rem
+    gap: clamp(
+        0.5rem,
+        -0.3695652173913043rem + 4.3478260869565215vw,
+        1rem
+    ); //0.5rem to 1rem - viewports 20rem to 31.5rem
 
     &__text {
         position: relative;
-        font-size: clamp(0.6rem, 0.3391304347826086rem + 1.3043478260869565vw, 0.75rem); //0.6rem to 0.75rem - viewports 20rem to 31.5rem
+        font-size: clamp(
+            0.6rem,
+            0.3391304347826086rem + 1.3043478260869565vw,
+            0.75rem
+        ); //0.6rem to 0.75rem - viewports 20rem to 31.5rem
         background-color: var(--neutral-clr-100);
         border-radius: 2px;
         transform-origin: right;
         transform: scaleX(0);
-        animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBox 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
-        width: clamp(12rem, 8.521739130434783rem + 17.391304347826086vw, 14rem); //12rem to 14rem - viewports 20rem to 31.5rem
-        height: clamp(1.5rem, 0.6304347826086957rem + 4.3478260869565215vw, 2rem); //1.5rem to 2rem - viewports 20rem to 31.5rem
+        animation:
+            showTextBox 750ms ease-in-out forwards 2s,
+            shrinkTextBox 750ms ease-in-out forwards 10.5s,
+            hideTextBox 750ms ease-in-out forwards 23s;
+        width: clamp(
+            12rem,
+            8.521739130434783rem + 17.391304347826086vw,
+            14rem
+        ); //12rem to 14rem - viewports 20rem to 31.5rem
+        height: clamp(
+            1.5rem,
+            0.6304347826086957rem + 4.3478260869565215vw,
+            2rem
+        ); //1.5rem to 2rem - viewports 20rem to 31.5rem
         overflow: hidden;
         pointer-events: none;
 
@@ -31,7 +50,7 @@
             transform: translateY(2rem);
             opacity: 0;
             margin-bottom: 0;
-            padding: clamp(0rem, -0.43478260869565216rem + 2.1739130434782608vw, 0.25rem) .5rem; //0rem to 0.25rem padding top and bottom - viewports 20rem to 31.5rem
+            padding: clamp(0rem, -0.43478260869565216rem + 2.1739130434782608vw, 0.25rem) 0.5rem; //0rem to 0.25rem padding top and bottom - viewports 20rem to 31.5rem
         }
 
         .text1 {
@@ -45,8 +64,16 @@
 
     &__btn {
         background-color: var(--ifm-color-primary);
-        width: clamp(2rem, 0.26086956521739135rem + 8.695652173913043vw, 3rem); //2rem to 3rem - viewports 20rem to 31.5rem
-        height: clamp(2rem, 0.26086956521739135rem + 8.695652173913043vw, 3rem); //2rem to 3rem - viewports 20rem to 31.5rem
+        width: clamp(
+            2rem,
+            0.26086956521739135rem + 8.695652173913043vw,
+            3rem
+        ); //2rem to 3rem - viewports 20rem to 31.5rem
+        height: clamp(
+            2rem,
+            0.26086956521739135rem + 8.695652173913043vw,
+            3rem
+        ); //2rem to 3rem - viewports 20rem to 31.5rem
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 150ms ease-in-out;
@@ -61,7 +88,11 @@
         }
 
         .icon {
-            font-size: clamp(1rem, 0.13043478260869568rem + 4.3478260869565215vw, 1.5rem); //1rem to 1.5rem - viewports 20rem to 31.5rem
+            font-size: clamp(
+                1rem,
+                0.13043478260869568rem + 4.3478260869565215vw,
+                1.5rem
+            ); //1rem to 1.5rem - viewports 20rem to 31.5rem
             --fa-animation-duration: 2s;
             --fa-animation-delay: 5s;
             --fa-animation-iteration-count: 4;
@@ -80,7 +111,10 @@
 
         &__text {
             border-radius: 5px;
-            animation: showTextBox 750ms ease-in-out forwards 2s, shrinkTextBox 750ms ease-in-out forwards 10.5s, hideTextBox 750ms ease-in-out forwards 23s;
+            animation:
+                showTextBox 750ms ease-in-out forwards 2s,
+                shrinkTextBox 750ms ease-in-out forwards 10.5s,
+                hideTextBox 750ms ease-in-out forwards 23s;
         }
 
         &__btn {
@@ -91,7 +125,11 @@
 
 @keyframes shrinkTextBox {
     to {
-        width: clamp(10rem, 6.521739130434783rem + 17.391304347826086vw, 12rem); //10rem to 12rem - viewports 20rem to 31.5rem
+        width: clamp(
+            10rem,
+            6.521739130434783rem + 17.391304347826086vw,
+            12rem
+        ); //10rem to 12rem - viewports 20rem to 31.5rem
     }
 }
 

@@ -4,213 +4,232 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Eclipse Thingweb | Connect More, Code Less',
-  tagline: 'Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.',
-  favicon: 'img/favicon.ico',
-  // Set the production url of your site here
-  url: 'https://thingweb.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'eclipse-thingweb', // Usually your GitHub org/user name.
-  projectName: 'website', // Usually your repo name.
-  onBrokenLinks: 'ignore',
-  onBrokenMarkdownLinks: 'warn',
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
-  i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
-  },
-  stylesheets: [
-    'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700',
-  ],
-  scripts: [
-    {
-      src: 'https://api.eclipse.org/adopters/assets/js/eclipsefdn.adopters.js',
-      async: false,
+    title: "Eclipse Thingweb | Connect More, Code Less",
+    tagline:
+        "Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.",
+    favicon: "img/favicon.ico",
+    // Set the production url of your site here
+    url: "https://thingweb.io",
+    // Set the /<baseUrl>/ pathname under which your site is served
+    // For GitHub pages deployment, it is often '/<projectName>/'
+    baseUrl: "/",
+    // GitHub pages deployment config.
+    // If you aren't using GitHub pages, you don't need these.
+    organizationName: "eclipse-thingweb", // Usually your GitHub org/user name.
+    projectName: "website", // Usually your repo name.
+    onBrokenLinks: "ignore",
+    onBrokenMarkdownLinks: "warn",
+    // Even if you don't use internationalization, you can use this field to set
+    // useful metadata like html lang. For example, if your site is Chinese, you
+    // may want to replace "en" with "zh-Hans".
+    i18n: {
+        defaultLocale: "en",
+        locales: ["en"],
     },
-    {
-      src: '/js/consentBanner.js',
-      async: false,
-    }
-  ],
-  presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          path: 'docs',
-          routeBasePath: 'docs',
-          sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/eclipse-thingweb/website',
-        },
-        blog: false,
-        theme: {
-          customCss: './src/css/custom.scss',
-        },
-      }),
+    stylesheets: [
+        "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Mono:wght@400;500;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700",
     ],
-  ],
-  plugins: [
-    'docusaurus-plugin-sass',
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            to: '/hands-on/articles',
-            from: '/hands-on',
-          },
-          {
-            to: '/hands-on/articles',
-            from: '/hands-on.html',
-          },
-          {
-            to: '/hands-on/articles/intro-raspberry',
-            from: '/hands-on-intro-raspberry',
-          },
-          {
-            to: '/hands-on/articles/intro-raspberry',
-            from: '/hands-on-intro-raspberry.html',
-          },
-          {
-            to: '/hands-on/articles/exposed-thing',
-            from: '/hands-on-exposed-thing-guide',
-          },
-          {
-            to: '/hands-on/articles/exposed-thing',
-            from: '/hands-on-exposed-thing-guide.html',
-          },
-          {
-            to: '/hands-on/articles/smart-coffee-machine',
-            from: '/smart-coffee-machine',
-          },
-          {
-            to: '/hands-on/articles/smart-coffee-machine',
-            from: '/smart-coffee-machine.html',
-          },
-          {
-            to: '/services/',
-            from: '/services.html',
-          },
-          {
-            to: '/get-involved/',
-            from: '/get-involved.html',
-          },
+    scripts: [
+        {
+            src: "https://api.eclipse.org/adopters/assets/js/eclipsefdn.adopters.js",
+            async: false,
+        },
+        {
+            src: "/js/consentBanner.js",
+            async: false,
+        },
+    ],
+    presets: [
+        [
+            "classic",
+            /** @type {import('@docusaurus/preset-classic').Options} */
+            ({
+                docs: {
+                    path: "docs",
+                    routeBasePath: "docs",
+                    sidebarPath: "./sidebars.js",
+                    editUrl: "https://github.com/eclipse-thingweb/website",
+                },
+                blog: false,
+                theme: {
+                    customCss: "./src/css/custom.scss",
+                },
+            }),
         ],
-      },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'hands-on',
-        path: 'hands-on',
-        routeBasePath: 'hands-on',
-        sidebarPath: './sidebars-hands-on.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'services',
-        path: 'services',
-        routeBasePath: 'services',
-        sidebarPath: './sidebars-services.js',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'get-involved',
-        path: 'get-involved',
-        routeBasePath: 'get-involved',
-        sidebarPath: './sidebars-get-involved.js',
-      },
-    ],
-    [
-      "docusaurus-plugin-remote-content",
-      {
-        name: "node-wot-documentation",
-        sourceBaseUrl: "https://raw.githubusercontent.com/eclipse-thingweb/node-wot/refs/heads/master/",
-        outDir: "docs/node-wot",
-        documents: ["API.md"],
-      },
-    ],
-  ],
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      image: 'https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true',
-      metadata: [
-        {property: 'og:description', content: 'Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.'},
-        {name: 'twitter:card', content: 'summary_large_image'},
-        {name: 'twitter:title', content: 'Eclipse Thingweb | Leverage web standards for better interoperability'},
-        {name: 'twitter:description', content: 'Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.'},
-        {name: 'twitter:image', content: 'https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true'},
-        {name: 'keywords', content: 'thingweb, wot, iot, eclipse, open source, standards, interoperability, w3c, protocols'},
-      ],
-      navbar: {
-        title: 'THINGWEB',
-        logo: {
-          alt: 'Eclipse Thingweb Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'docsSidebar',
-            position: 'left',
-            label: 'Documentation',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'services',
-            sidebarId: 'servicesSidebar',
-            position: 'left',
-            label: 'Services',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'hands-on',
-            sidebarId: 'handsOnSidebar',
-            position: 'left',
-            label: 'Hands-On',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'get-involved',
-            sidebarId: 'getInvolvedSidebar',
-            position: 'left',
-            label: 'Get Involved',
-          },
-          {
-            href: 'https://github.com/eclipse-thingweb/website',
-            position: 'right',
-            className: 'header-github-link',
-            'aria-label': 'GitHub repository',
-          },
-          {
-            type: 'search',
-            position: 'right',
-            className: 'header-search',
-          }
+    plugins: [
+        "docusaurus-plugin-sass",
+        [
+            "@docusaurus/plugin-client-redirects",
+            {
+                redirects: [
+                    {
+                        to: "/hands-on/articles",
+                        from: "/hands-on",
+                    },
+                    {
+                        to: "/hands-on/articles",
+                        from: "/hands-on.html",
+                    },
+                    {
+                        to: "/hands-on/articles/intro-raspberry",
+                        from: "/hands-on-intro-raspberry",
+                    },
+                    {
+                        to: "/hands-on/articles/intro-raspberry",
+                        from: "/hands-on-intro-raspberry.html",
+                    },
+                    {
+                        to: "/hands-on/articles/exposed-thing",
+                        from: "/hands-on-exposed-thing-guide",
+                    },
+                    {
+                        to: "/hands-on/articles/exposed-thing",
+                        from: "/hands-on-exposed-thing-guide.html",
+                    },
+                    {
+                        to: "/hands-on/articles/smart-coffee-machine",
+                        from: "/smart-coffee-machine",
+                    },
+                    {
+                        to: "/hands-on/articles/smart-coffee-machine",
+                        from: "/smart-coffee-machine.html",
+                    },
+                    {
+                        to: "/services/",
+                        from: "/services.html",
+                    },
+                    {
+                        to: "/get-involved/",
+                        from: "/get-involved.html",
+                    },
+                ],
+            },
         ],
-      },
-      footer: {
-        links: [
-          {
-            items: [
-              {
-                html: `
+        [
+            "@docusaurus/plugin-content-docs",
+            {
+                id: "hands-on",
+                path: "hands-on",
+                routeBasePath: "hands-on",
+                sidebarPath: "./sidebars-hands-on.js",
+            },
+        ],
+        [
+            "@docusaurus/plugin-content-docs",
+            {
+                id: "services",
+                path: "services",
+                routeBasePath: "services",
+                sidebarPath: "./sidebars-services.js",
+            },
+        ],
+        [
+            "@docusaurus/plugin-content-docs",
+            {
+                id: "get-involved",
+                path: "get-involved",
+                routeBasePath: "get-involved",
+                sidebarPath: "./sidebars-get-involved.js",
+            },
+        ],
+        [
+            "docusaurus-plugin-remote-content",
+            {
+                name: "node-wot-documentation",
+                sourceBaseUrl: "https://raw.githubusercontent.com/eclipse-thingweb/node-wot/refs/heads/master/",
+                outDir: "docs/node-wot",
+                documents: ["API.md"],
+            },
+        ],
+    ],
+    themeConfig:
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        ({
+            image: "https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true",
+            metadata: [
+                {
+                    property: "og:description",
+                    content:
+                        "Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.",
+                },
+                { name: "twitter:card", content: "summary_large_image" },
+                {
+                    name: "twitter:title",
+                    content: "Eclipse Thingweb | Leverage web standards for better interoperability",
+                },
+                {
+                    name: "twitter:description",
+                    content:
+                        "Eclipse Thingweb™ offers components for making protocol-agnostic IoT solutions at scale by leveraging the W3C WoT standards, no matter if improving an existing solution or building a new one.",
+                },
+                {
+                    name: "twitter:image",
+                    content:
+                        "https://github.com/eclipse-thingweb/thingweb/blob/main/brand/logos/thingweb_social_preview.png?raw=true",
+                },
+                {
+                    name: "keywords",
+                    content: "thingweb, wot, iot, eclipse, open source, standards, interoperability, w3c, protocols",
+                },
+            ],
+            navbar: {
+                title: "THINGWEB",
+                logo: {
+                    alt: "Eclipse Thingweb Logo",
+                    src: "img/logo.svg",
+                },
+                items: [
+                    {
+                        type: "docSidebar",
+                        sidebarId: "docsSidebar",
+                        position: "left",
+                        label: "Documentation",
+                    },
+                    {
+                        type: "docSidebar",
+                        docsPluginId: "services",
+                        sidebarId: "servicesSidebar",
+                        position: "left",
+                        label: "Services",
+                    },
+                    {
+                        type: "docSidebar",
+                        docsPluginId: "hands-on",
+                        sidebarId: "handsOnSidebar",
+                        position: "left",
+                        label: "Hands-On",
+                    },
+                    {
+                        type: "docSidebar",
+                        docsPluginId: "get-involved",
+                        sidebarId: "getInvolvedSidebar",
+                        position: "left",
+                        label: "Get Involved",
+                    },
+                    {
+                        href: "https://github.com/eclipse-thingweb/website",
+                        position: "right",
+                        className: "header-github-link",
+                        "aria-label": "GitHub repository",
+                    },
+                    {
+                        type: "search",
+                        position: "right",
+                        className: "header-search",
+                    },
+                ],
+            },
+            footer: {
+                links: [
+                    {
+                        items: [
+                            {
+                                html: `
                   <div class="logos-wrapper">
                     <a href="https://www.eclipse.org" rel="noopener noreferrer" class="footer-logo foundation-logo">
                       <svg width="auto" height="auto" viewBox="0 0 120 39" xmlns="http://www.w3.org/2000/svg">
@@ -249,83 +268,83 @@ const config = {
                     </a>
                   </div>
                 `,
-              },
-            ],
-          },
-          {
-            title: 'WoT Specifications',
-            items: [
-              {
-                label: 'Thing Description',
-                href: 'https://www.w3.org/TR/wot-thing-description11/',
-              },
-              {
-                label: 'Bindings',
-                href: 'https://www.w3.org/TR/wot-binding-templates/',
-              },
-              {
-                label: 'Discovery',
-                href: 'https://www.w3.org/TR/wot-discovery/',
-              },
-              {
-                label: 'Architecture',
-                href: 'https://www.w3.org/TR/wot-architecture11/',
-              },
-              {
-                label: 'Scripting API',
-                href: 'https://www.w3.org/TR/wot-scripting-api/',
-              },
-            ],
-          },
-          {
-            title: 'Wide WoT Community',
-            items: [
-              {
-                label: 'Thingweb Telegram Group',
-                href: 'https://t.me/nodewot',
-              },
-              {
-                label: 'WoT CG Discord',
-                href: 'https://discord.com/invite/RJNYJsEgnb',
-              },
-              {
-                label: 'WoT CG YouTube',
-                href: 'https://www.youtube.com/@WoTCG',
-              },
-              {
-                label: 'Official W3C WoT Twitter',
-                href: 'https://twitter.com/W3C_WoT',
-              },
-              {
-                label: 'Official W3C WoT Mastodon',
-                href: 'https://w3c.social/@wot',
-              },
-              {
-                label: 'Stack Overflow Tag for WoT',
-                href: 'https://stackoverflow.com/questions/tagged/web-of-things',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Web of Things Homepage',
-                href: 'https://www.w3.org/WoT/',
-              },
-              {
-                label: 'Eclipse Project',
-                href: 'https://projects.eclipse.org/projects/iot.thingweb',
-              },
-              {
-                label: 'Manage Consent',
-                href: '#',
-                id: 'consent-link',
-              },
-            ],
-          },
-        ],
-        copyright: `
+                            },
+                        ],
+                    },
+                    {
+                        title: "WoT Specifications",
+                        items: [
+                            {
+                                label: "Thing Description",
+                                href: "https://www.w3.org/TR/wot-thing-description11/",
+                            },
+                            {
+                                label: "Bindings",
+                                href: "https://www.w3.org/TR/wot-binding-templates/",
+                            },
+                            {
+                                label: "Discovery",
+                                href: "https://www.w3.org/TR/wot-discovery/",
+                            },
+                            {
+                                label: "Architecture",
+                                href: "https://www.w3.org/TR/wot-architecture11/",
+                            },
+                            {
+                                label: "Scripting API",
+                                href: "https://www.w3.org/TR/wot-scripting-api/",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Wide WoT Community",
+                        items: [
+                            {
+                                label: "Thingweb Telegram Group",
+                                href: "https://t.me/nodewot",
+                            },
+                            {
+                                label: "WoT CG Discord",
+                                href: "https://discord.com/invite/RJNYJsEgnb",
+                            },
+                            {
+                                label: "WoT CG YouTube",
+                                href: "https://www.youtube.com/@WoTCG",
+                            },
+                            {
+                                label: "Official W3C WoT Twitter",
+                                href: "https://twitter.com/W3C_WoT",
+                            },
+                            {
+                                label: "Official W3C WoT Mastodon",
+                                href: "https://w3c.social/@wot",
+                            },
+                            {
+                                label: "Stack Overflow Tag for WoT",
+                                href: "https://stackoverflow.com/questions/tagged/web-of-things",
+                            },
+                        ],
+                    },
+                    {
+                        title: "More",
+                        items: [
+                            {
+                                label: "Web of Things Homepage",
+                                href: "https://www.w3.org/WoT/",
+                            },
+                            {
+                                label: "Eclipse Project",
+                                href: "https://projects.eclipse.org/projects/iot.thingweb",
+                            },
+                            {
+                                label: "Manage Consent",
+                                href: "#",
+                                id: "consent-link",
+                            },
+                        ],
+                    },
+                ],
+                copyright: `
           <svg width="auto" height="auto" viewBox="0 0 91 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="thingweb-footer-logo">
             <g>
               <path d="M9.15905 20C9.15288 19.5867 9.00484 19.2042 8.92464 18.8033C8.89997 18.6922 8.82594 18.6614 8.72725 18.6491C8.49284 18.6121 8.25226 18.5997 8.03636 18.5134C7.70325 18.3776 7.51202 18.4949 7.33313 18.7724C7.17892 19.013 7.04937 19.3523 6.79646 19.4201C6.54354 19.488 6.27829 19.2289 6.01921 19.1117C5.71695 18.9822 5.42702 18.8341 5.12476 18.6984C4.97671 18.6367 4.92736 18.5504 4.97671 18.39C5.05073 18.1371 5.08157 17.8656 5.16177 17.6189C5.23579 17.3968 5.19261 17.255 4.99521 17.1316C4.78548 17.002 4.58808 16.8478 4.41536 16.6751C4.24881 16.5147 4.10693 16.5147 3.92804 16.6319C3.92187 16.6381 3.90953 16.6443 3.90336 16.6443C3.59493 16.7738 3.28033 17.1192 3.00891 17.0329C2.73749 16.9465 2.5586 16.5517 2.34886 16.2926C2.16997 16.0767 2.00342 15.8547 1.82453 15.6449C1.72583 15.5277 1.72583 15.4414 1.82453 15.3242C1.99108 15.1391 2.12062 14.9294 2.29951 14.7566C2.50308 14.5593 2.54626 14.3742 2.3612 14.146C2.31185 14.0843 2.2625 14.0102 2.244 13.93C2.12679 13.3317 1.73817 13.2145 1.17682 13.2762C0.640148 13.3317 0.633979 13.2885 0.504438 12.7518C0.405739 12.3324 0.319378 11.9129 0.202174 11.4996C0.152825 11.3269 0.202174 11.2652 0.344053 11.2035C0.615473 11.0863 0.880725 10.9444 1.15215 10.8272C1.28169 10.7717 1.33721 10.6977 1.33104 10.5496C1.31253 10.2289 1.3187 9.91426 1.33104 9.59349C1.33721 9.44544 1.28786 9.37142 1.15215 9.32207C0.874557 9.21103 0.609305 9.07532 0.337884 8.95812C0.196005 8.89643 0.134319 8.82241 0.177499 8.65586C0.307041 8.13152 0.418076 7.60102 0.529112 7.07051C0.559955 6.9163 0.633979 6.84844 0.800533 6.85461C1.09046 6.86695 1.37422 6.84844 1.66414 6.86078C1.83687 6.86695 1.92323 6.81143 1.98491 6.65104C2.10212 6.36729 2.23783 6.0897 2.37354 5.81828C2.44139 5.68874 2.44139 5.60237 2.33653 5.49134C2.13296 5.26927 1.96641 5.02252 1.76284 4.80662C1.6333 4.67091 1.64564 4.58455 1.75667 4.44884C2.10212 4.02937 2.44139 3.60373 2.7745 3.17193C2.8732 3.04238 2.95956 3.01154 3.10761 3.0979C3.36669 3.23978 3.64428 3.35699 3.90336 3.49886C4.0329 3.56672 4.11927 3.56055 4.2303 3.46185C4.46471 3.25829 4.69912 3.06089 4.95203 2.88817C5.10008 2.7833 5.11859 2.67227 5.07541 2.51805C5.00138 2.24046 4.93353 1.96287 4.85333 1.68528C4.81015 1.53723 4.84717 1.43854 5.00138 1.37068C5.50104 1.13627 6.0007 0.895695 6.4942 0.648949C6.61757 0.587263 6.72243 0.574925 6.79646 0.716804C6.80263 0.722973 6.8088 0.73531 6.81497 0.741479C7.04937 1.0129 7.19125 1.4447 7.50585 1.53723C7.80195 1.6236 8.17207 1.42003 8.51751 1.35834C8.71491 1.3275 8.81977 1.23497 8.84445 1.03141C8.88763 0.759985 8.95549 0.488564 9.00484 0.217144C9.02951 0.0690963 9.0912 -0.0110962 9.26392 0.00124114C9.52917 0.0197471 9.80059 0.0135784 10.0658 0.00124114C10.2201 -0.00492751 10.2817 0.038253 10.2817 0.204807C10.2756 1.26581 10.2756 2.32065 10.2817 3.38166C10.2817 3.58523 10.1769 3.57906 10.035 3.58523C7.21593 3.69009 5.22962 5.0657 4.15011 7.6442C2.65113 11.2405 4.89035 15.4044 8.69023 16.231C9.13438 16.3297 9.57852 16.379 10.035 16.3728C10.1954 16.3728 10.2756 16.3975 10.2756 16.5887C10.2694 17.6497 10.2694 18.7046 10.2756 19.7656C10.2756 19.852 10.2509 19.926 10.2077 19.9938C9.85611 20 9.51066 20 9.15905 20Z" fill="#141414"/>
@@ -353,33 +372,33 @@ const config = {
           </svg>
           <p> Copyright © ${new Date().getFullYear()} Eclipse Thingweb. Built with Docusaurus. </p>
         `,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.vsDark,
-      },
-      algolia: {
-        // The application ID provided by Algolia
-        appId: '1NS3BU5ITA',
+            },
+            prism: {
+                theme: prismThemes.github,
+                darkTheme: prismThemes.vsDark,
+            },
+            algolia: {
+                // The application ID provided by Algolia
+                appId: "1NS3BU5ITA",
 
-        // Public API key: it is safe to commit it
-        apiKey: 'fb9d7453a75b892d307c3a1d0f941b98',
+                // Public API key: it is safe to commit it
+                apiKey: "fb9d7453a75b892d307c3a1d0f941b98",
 
-        indexName: 'thingweb',
+                indexName: "thingweb",
 
-        // Optional: see doc section below
-        contextualSearch: false,
+                // Optional: see doc section below
+                contextualSearch: false,
 
-        // Optional: Algolia search parameters
-        searchParameters: {},
+                // Optional: Algolia search parameters
+                searchParameters: {},
 
-        // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: 'search',
+                // Optional: path for search page that enabled by default (`false` to disable it)
+                searchPagePath: "search",
 
-        // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-        insights: false,
-      },
-    }),
+                // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+                insights: false,
+            },
+        }),
 };
 
 export default config;
