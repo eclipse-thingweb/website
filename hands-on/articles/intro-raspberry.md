@@ -10,9 +10,9 @@ This document aims to introduce the Web of Things (WoT) as building blocks for a
 
 WoT is an initiative by the W3C to apply on the IoT device the same principles as for the existing web resources across the Internet. The main idea behind WoT is exposing virtual or physical devices as a resource with a description of its capabilities. That resource can then be accessed from a browser or another device in the same manner as a web page. WoT is not a proposition for a new communication protocol between devices, it uses existing protocols to communicate with the devices according to their communication capabilities. It presents a set of architectural and programming patterns for building interoperable devices based on the following three fundamentals:
 
-- Uniform Resource Identifier (URI) for identifying devices and their descriptions
-- A wide variety of existing protocols for accessing the devices
-- A description of the description as metadata used both for interoperability and presentability purposes
+-   Uniform Resource Identifier (URI) for identifying devices and their descriptions
+-   A wide variety of existing protocols for accessing the devices
+-   A description of the description as metadata used both for interoperability and presentability purposes
 
 ## WoT Architecture
 
