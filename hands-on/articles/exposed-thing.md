@@ -111,7 +111,7 @@ If you don’t need to understand everything in the code, just make sure you do 
 - index.js:
     - Add the required bindings in index.js in 3 locations:
         - CoapServer = require("@node-wot/binding-coap").CoapServer (line 15)
-            <!--* var coapServer = new CoapServer({port: 5683}); (line 20)-->
+          <!--* var coapServer = new CoapServer({port: 5683}); (line 20)-->
         - servient.addServer(coapServer); (line 28)
     - Change or remove the TD_DIRECTORY value in index.js (line 9)
 - base.ts:
@@ -135,7 +135,7 @@ If you don’t need to understand everything in the code, just make sure you do 
 - index.js:
     - Add the required bindings in index.js in 3 locations:
         - CoapServer = require("@node-wot/binding-coap").CoapServer (line 15)
-            <!--* var coapServer = new CoapServer({port: 5683}); (line 20)-->
+          <!--* var coapServer = new CoapServer({port: 5683}); (line 20)-->
         - servient.addServer(coapServer); (line 28)
     - Change or remove the TD_DIRECTORY value in index.js (line 9)
 - base.ts:
