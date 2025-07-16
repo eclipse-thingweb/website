@@ -5,7 +5,7 @@
     height: 100%;
     display: grid;
     grid: repeat(5, 1fr);
-    gap: .5rem;
+    gap: 0.5rem;
     grid-template-areas:
         ". . td desktop ."
         "thing1 . nodeWot . ."
@@ -85,7 +85,6 @@
         stroke-dashoffset: 6rem;
         animation: animateLine6 10s ease-in-out infinite 5.25s;
     }
-
 
     .thing1 {
         grid-area: thing1;
@@ -252,7 +251,7 @@
             font-weight: var(--fw-bold);
             font-family: var(--ff-primary);
             opacity: 0;
-            transform: translateY(.9rem);
+            transform: translateY(0.9rem);
         }
 
         .icon {
@@ -270,7 +269,7 @@
                 height: var(--_thingweb-inactive-icon);
 
                 path {
-                    stroke-width: .75px;
+                    stroke-width: 0.75px;
                 }
             }
         }
@@ -372,19 +371,17 @@
     38% {
         transform: translateY(var(--_item-translate-icon));
         height: var(--_thingweb-inactive-icon);
-
     }
 
     100% {
         transform: translateY(var(--_item-translate-icon));
         height: var(--_thingweb-inactive-icon);
-
     }
 }
 
 @keyframes showThingwebPath {
     0% {
-        stroke-width: .75px;
+        stroke-width: 0.75px;
         fill: var(--neutral-clr-75);
     }
 
@@ -399,12 +396,12 @@
     }
 
     38% {
-        stroke-width: .75px;
+        stroke-width: 0.75px;
         fill: var(--neutral-clr-75);
     }
 
     100% {
-        stroke-width: .75px;
+        stroke-width: 0.75px;
         fill: var(--neutral-clr-75);
     }
 }
@@ -465,7 +462,7 @@
 
 @keyframes showItemText {
     0% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
 
@@ -480,12 +477,12 @@
     }
 
     38% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
 
     100% {
-        transform: translateY(.9rem);
+        transform: translateY(0.9rem);
         opacity: 0;
     }
 }

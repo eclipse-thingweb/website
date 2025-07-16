@@ -3,15 +3,16 @@ sidebar_position: 1
 title: Raspberry Pi Setup
 description: This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices.
 ---
+
 # WoT - Introduction & Raspberry Pi Setup
 
 This document aims to introduce the Web of Things (WoT) as building blocks for applications based on the IoT devices. As a growing area, IoT services and application have a huge potential. From home automation to smart-grid passing by industrial manufacturers, IoT is gaining popularity as a potential solution to address their need. Several technologies can be used to build an IoT application mainly because of the specific constraints of the devices. This creates interoperability challenges for communication between devices. WoT offers an approach to expose and consume IoT resources as web resources.
 
 WoT is an initiative by the W3C to apply on the IoT device the same principles as for the existing web resources across the Internet. The main idea behind WoT is exposing virtual or physical devices as a resource with a description of its capabilities. That resource can then be accessed from a browser or another device in the same manner as a web page. WoT is not a proposition for a new communication protocol between devices, it uses existing protocols to communicate with the devices according to their communication capabilities. It presents a set of architectural and programming patterns for building interoperable devices based on the following three fundamentals:
 
-* Uniform Resource Identifier (URI) for identifying devices and their descriptions
-* A wide variety of existing protocols for accessing the devices
-* A description of the description as metadata used both for interoperability and presentability purposes
+-   Uniform Resource Identifier (URI) for identifying devices and their descriptions
+-   A wide variety of existing protocols for accessing the devices
+-   A description of the description as metadata used both for interoperability and presentability purposes
 
 ## WoT Architecture
 
@@ -85,6 +86,7 @@ wot@node-wot:~$ git clone https://github.com/eclipse-thingweb/node-wot
 The installation process is composed of mainly two steps. The first step installs the Node.js dependences. The second step installs and builds the node-wot project.
 
 ### Installing the packages
+
 Node-wot requires dependencies such as Typescript, lerna, etc. By running the command below, those dependencies are installed:
 
 ```bash
@@ -147,7 +149,7 @@ WoT.produce({
             description: "current counter value",
             observable: true,
             readOnly: true,
-        }
+        },
     },
     actions: {
         increment: {
@@ -155,8 +157,8 @@ WoT.produce({
             uriVariables: {
                 step: { type: "integer", minimum: 1, maximum: 250 },
             },
-        }
-    }
+        },
+    },
 })
     .then((thing) => {
         console.log("Produced " + thing.getThingDescription().title);
@@ -214,20 +216,20 @@ First step is to create the Thing that we are willing to consume. For that, we u
 
 ```js
 WoTHelpers.fetch("http://localhost:8080/counter")
-  .then(async (td) => {
-      // using await for serial execution (note 'async' in then() of fetch())
-      try {
-          const thing = await WoT.consume(td);
-          console.info("=== TD ===");
-          console.info(td);
-    // ...
-      } catch (err) {
-          console.error("Script error:", err);
-      }
-  })
-  .catch((err) => {
-      console.error("Fetch error:", err);
-  });
+    .then(async (td) => {
+        // using await for serial execution (note 'async' in then() of fetch())
+        try {
+            const thing = await WoT.consume(td);
+            console.info("=== TD ===");
+            console.info(td);
+            // ...
+        } catch (err) {
+            console.error("Script error:", err);
+        }
+    })
+    .catch((err) => {
+        console.error("Fetch error:", err);
+    });
 ```
 
 The created Thing enables access to all the properties and actions exposed by the “server” Thing. They can be accessed as described below:
@@ -254,5 +256,6 @@ wot@node-wot:~$ node packages/cli/dist/cli.js examples/scripts/counter.js --clie
 WoT presents an interesting approach to build IoT applications. Its adoption by the industry will be a significant step towards fighting the risk of fragmentation that may limit the development of IoT applications. The Scripting API provides a way to substantially increase the interoperability.
 
 References
+
 1. https://www.w3.org/TR/wot-architecture/
 2. https://github.com/w3c/wot

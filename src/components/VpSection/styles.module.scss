@@ -1,7 +1,9 @@
 /*** Value proposition section ***/
 .vpSection {
-
-    p, h1, h2, h3{
+    p,
+    h1,
+    h2,
+    h3 {
         margin: 0;
     }
 
@@ -32,7 +34,9 @@
             border-radius: 1rem;
             background-color: var(--neutral-clr-50);
             border: 1px solid var(--neutral-clr-200);
-            box-shadow: 1px 1px 10px var(--box-shadow-clr), inset 0px 0px 5px var(--box-shadow-clr);
+            box-shadow:
+                1px 1px 10px var(--box-shadow-clr),
+                inset 0px 0px 5px var(--box-shadow-clr);
 
             &__description,
             &__title {
@@ -120,42 +124,41 @@
 
         .seamlessIntegration:hover {
             .removedPiece {
-                animation: removedPiece 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: removedPiece 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .stationaryPiece {
-                animation: stationaryPiece 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: stationaryPiece 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
         }
 
         .communityDriven:hover {
             .headLeft {
-                animation: headLeft 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headLeft 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .bodyLeft {
-                animation: bodyLeft 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyLeft 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .headRight {
-                animation: headRight 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headRight 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .bodyRight {
-                animation: bodyRight 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyRight 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .headCenter {
-                animation: headCenter 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: headCenter 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
 
             .bodyCenter {
-                animation: bodyCenter 2s cubic-bezier(.47, 1.64, .41, .8);
+                animation: bodyCenter 2s cubic-bezier(0.47, 1.64, 0.41, 0.8);
             }
         }
     }
 }
-
 
 @media screen and (min-width: 768px) {
     .vpSection {
@@ -271,7 +274,7 @@
     }
 
     8% {
-        transform: translate(0, -.15rem) rotate(1deg);
+        transform: translate(0, -0.15rem) rotate(1deg);
     }
 
     16% {
@@ -279,7 +282,7 @@
     }
 
     24% {
-        transform: translate(0, -.15rem) rotate(1deg);
+        transform: translate(0, -0.15rem) rotate(1deg);
     }
 
     32% {
@@ -287,7 +290,7 @@
     }
 
     40% {
-        transform: translate(0, -.15rem) rotate(1deg);
+        transform: translate(0, -0.15rem) rotate(1deg);
     }
 
     50% {
@@ -296,12 +299,12 @@
     }
 
     75% {
-        transform: translate(15rem, -15rem) rotate(0) scale(.25);
+        transform: translate(15rem, -15rem) rotate(0) scale(0.25);
         opacity: 0;
     }
 
     76% {
-        transform: translate(-10rem, 10rem) rotate(0) scale(.5);
+        transform: translate(-10rem, 10rem) rotate(0) scale(0.5);
         opacity: 0;
     }
 
@@ -321,7 +324,7 @@
     }
 
     50% {
-        transform: translate(0, -.5rem);
+        transform: translate(0, -0.5rem);
     }
 
     75% {
@@ -361,7 +364,7 @@
     }
 
     50% {
-        transform: translate(0, -.5rem);
+        transform: translate(0, -0.5rem);
     }
 
     75% {
@@ -397,7 +400,7 @@
     }
 
     25% {
-        transform: translate(0, .5rem);
+        transform: translate(0, 0.5rem);
     }
 
     50% {
@@ -405,7 +408,7 @@
     }
 
     75% {
-        transform: translate(0, .5rem);
+        transform: translate(0, 0.5rem);
     }
 
     100% {
@@ -419,11 +422,11 @@
     }
 
     25% {
-        transform: scaleY(.95);
+        transform: scaleY(0.95);
     }
 
     75% {
-        transform: scaleY(.95);
+        transform: scaleY(0.95);
     }
 
     100% {
