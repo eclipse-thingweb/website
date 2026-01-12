@@ -117,7 +117,10 @@ export default function CommunitySection({ adopterCount }) {
                         Become an Adopter
                         <FontAwesomeIcon icon={faCloudUpload} className={styles.btn__icon} />
                     </a>
-                    <a className={clsx("btn btn-primary btn-outline", styles.btn)} href="https://discord.gg/WfRyazju">
+                    <a
+                        className={clsx("btn btn-primary btn-outline", styles.btn)}
+                        href="https://discord.com/invite/RJNYJsEgnb"
+                    >
                         Chat with our Community
                         <FontAwesomeIcon icon={faDiscord} className={styles.btn__icon} />
                     </a>
