@@ -23,11 +23,6 @@ if (localStorage.getItem("consentMode") === null) {
 gtag("js", new Date());
 gtag("config", "G-FTBPVB8Z65", { anonymize_ip: true });
 
-// 4. Load the gtag.js script
-var gtagScript = document.createElement("script");
-gtagScript.async = true;
-gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-FTBPVB8Z65";
-document.head.appendChild(gtagScript);
 
 // Banner UI setup after DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
