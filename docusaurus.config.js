@@ -39,6 +39,10 @@ const config = {
             async: false,
         },
         {
+            src:"https://www.googletagmanager.com/gtag/js?id=G-FTBPVB8Z65",
+            async: true,
+        },
+        {
             src: "/js/consentBanner.js",
             async: false,
         },
