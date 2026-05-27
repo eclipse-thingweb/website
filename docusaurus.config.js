@@ -59,7 +59,6 @@ const config = {
                     customCss: "./src/css/custom.scss",
                 },
             }),
-            '@docusaurus/preset-classic',
             {
                 gtag: {
                   trackingID: 'G-FTBPVB8Z65',
