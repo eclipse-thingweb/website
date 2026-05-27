@@ -1,9 +1,10 @@
-// Set consent defaults immediately, BEFORE gtag.js loads via Docusaurus plugin
+// 1. Set up dataLayer and gtag function
 window.dataLayer = window.dataLayer || [];
 function gtag() {
     dataLayer.push(arguments);
 }
 
+// 2. Set consent defaults FIRST, before any other gtag commands
 if (localStorage.getItem("consentMode") === null) {
     gtag("consent", "default", {
         ad_storage: "denied",
@@ -17,6 +18,16 @@ if (localStorage.getItem("consentMode") === null) {
 } else {
     gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
 }
+
+// 3. Initialize gtag AFTER consent defaults
+gtag("js", new Date());
+gtag("config", "G-FTBPVB8Z65", { anonymize_ip: true });
+
+// 4. Load the gtag.js script
+var gtagScript = document.createElement("script");
+gtagScript.async = true;
+gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-FTBPVB8Z65";
+document.head.appendChild(gtagScript);
 
 // Banner UI setup after DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
