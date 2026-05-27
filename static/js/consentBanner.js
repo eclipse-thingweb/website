@@ -1,26 +1,25 @@
-window.onload = function () {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+// Set consent defaults immediately, BEFORE gtag.js loads via Docusaurus plugin
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
 
-    if (localStorage.getItem("consentMode") === null) {
-        gtag("consent", "default", {
-            ad_storage: "denied",
-            analytics_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-            personalization_storage: "denied",
-            functionality_storage: "denied",
-            security_storage: "denied",
-        });
-    } else {
-        gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
-    }
+if (localStorage.getItem("consentMode") === null) {
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        personalization_storage: "denied",
+        functionality_storage: "denied",
+        security_storage: "denied",
+    });
+} else {
+    gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
+}
 
-    gtag("js", new Date());
-    gtag("config", "G-FTBPVB8Z65");
-
+// Banner UI setup after DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
     const consentBanner = document.createElement("div");
     consentBanner.id = "analytics-banner";
     consentBanner.classList.add("analytics-banner", "hidden");
@@ -103,4 +102,4 @@ window.onload = function () {
         gtag("consent", "update", preferences);
         localStorage.setItem("consentMode", JSON.stringify(preferences));
     }
-};
+});
