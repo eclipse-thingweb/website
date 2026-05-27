@@ -23,7 +23,6 @@ if (localStorage.getItem("consentMode") === null) {
 gtag("js", new Date());
 gtag("config", "G-FTBPVB8Z65", { anonymize_ip: true });
 
-
 // Banner UI setup after DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
     const consentBanner = document.createElement("div");
