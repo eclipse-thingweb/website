@@ -1,26 +1,30 @@
-window.onload = function () {
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
+// 1. Set up dataLayer and gtag function
+window.dataLayer = window.dataLayer || [];
+function gtag() {
+    dataLayer.push(arguments);
+}
 
-    if (localStorage.getItem("consentMode") === null) {
-        gtag("consent", "default", {
-            ad_storage: "denied",
-            analytics_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-            personalization_storage: "denied",
-            functionality_storage: "denied",
-            security_storage: "denied",
-        });
-    } else {
-        gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
-    }
+// 2. Set consent defaults FIRST, before any other gtag commands
+if (localStorage.getItem("consentMode") === null) {
+    gtag("consent", "default", {
+        ad_storage: "denied",
+        analytics_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        personalization_storage: "denied",
+        functionality_storage: "denied",
+        security_storage: "denied",
+    });
+} else {
+    gtag("consent", "default", JSON.parse(localStorage.getItem("consentMode")));
+}
 
-    gtag("js", new Date());
-    gtag("config", "G-FTBPVB8Z65");
+// 3. Initialize gtag AFTER consent defaults
+gtag("js", new Date());
+gtag("config", "G-FTBPVB8Z65", { anonymize_ip: true });
 
+// Banner UI setup after DOM is ready
+document.addEventListener("DOMContentLoaded", function () {
     const consentBanner = document.createElement("div");
     consentBanner.id = "analytics-banner";
     consentBanner.classList.add("analytics-banner", "hidden");
@@ -103,4 +107,4 @@ window.onload = function () {
         gtag("consent", "update", preferences);
         localStorage.setItem("consentMode", JSON.stringify(preferences));
     }
-};
+});
