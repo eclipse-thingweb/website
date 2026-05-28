@@ -76,7 +76,7 @@ export default function CommunitySection({ adopterCount }) {
                         <h3
                             className={clsx(styles.stat__number, "hero-title")}
                             id="stats-number"
-                            data-val="150"
+                            data-val="200"
                             data-count="true"
                         >
                             0
